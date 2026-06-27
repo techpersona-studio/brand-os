@@ -155,16 +155,30 @@ Run `.claude/skills/02a-visual-strategist/SKILL.md`
 → REVIEW: outputs/{slug}/details/02a-visual-strategist-brief.md
 → HITL: check color direction, typography, layout decisions. Note any adjustments.
 
-### Step 2b — Branding Guide Generator
+### Step 2b — Branding guide (hybrid: script + JSON fill + merge)
+
+**2b-1 — Scaffold (script):**
+
+```bash
+node scripts/generate-branding-guide.js {slug} --brand "{clientName}" --lang en --date YYYY-MM-DD
+# For versioned handoffs:
+node scripts/generate-branding-guide.js {slug} --brand "{clientName}" --handoff outputs/{slug}/handoff/02b-visual-strategy-handoff-v2.md
+```
+
+**2b-2 — Fill JSON (skill):**
 
 Run `.claude/skills/02b-branding-guide-generator/SKILL.md`
 
-- clientName: [name]
-- slug: [slug]
-- hitlAnswers: [your adjustments from 2a review, optional]
-- clientReferences: [reference URLs, optional]
+- Reads: fill-manifest.json + 02b handoff + 01c-ba-handoff.md
+- Writes: `{slug}-branding-visual-guide.fills.json` only (do not edit HTML)
 
-→ REVIEW: outputs/{slug}/deliverble/{slug}-branding-visual-guide.html
+**2b-3 — Merge (script):**
+
+```bash
+node scripts/merge-branding-fills.js {slug}
+```
+
+→ REVIEW: `outputs/{slug}/deliverable/{slug}-branding-visual-guide.html`
 
 ### Step 3 — SEO Foundation Brief
 

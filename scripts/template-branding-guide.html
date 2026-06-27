@@ -507,10 +507,9 @@ td:first-child { color: var(--ink); font-weight: 500; }
         <div class="card-shell">
           <div class="card-core">
             <h3>What this mix prevents</h3>
-            <!-- FILL:s02_prevents — 3-4 <li> inside .rule-list.dont-list
-                 Specific visual anti-patterns this mix explicitly avoids.
-                 Example: "Any Cutting-edge influence — creates distance" -->
             <ul class="rule-list dont-list" style="margin-top:.75rem;">
+              <!-- FILL:s02_prevents — 3-4 <li> inside .rule-list.dont-list
+                   Specific visual anti-patterns this mix explicitly avoids. -->
             </ul>
           </div>
         </div>
@@ -555,10 +554,7 @@ td:first-child { color: var(--ink); font-weight: 500; }
       </div>
       <div>
         <h3>Never do this</h3>
-        <!-- FILL:s03_never — 4-5 items as .rule-list.dont-list <li> elements.
-             Each must be brand-specific (pure white, second accent, tech gradients, etc.)
-             Draw from the handoff anti-patterns and color system constraints. -->
-        <ul class="rule-list dont-list"></ul>
+        <ul class="rule-list dont-list"><!-- FILL:s03_never — 4-5 items as .rule-list.dont-list <li> elements. Brand-specific anti-patterns from handoff. --></ul>
       </div>
     </div>
   </div>
@@ -580,32 +576,15 @@ td:first-child { color: var(--ink); font-weight: 500; }
       <p><!-- FILL:s04_intro --></p>
     </div>
 
-    <!-- FILL:s04_specimens
-         Two .type-specimen cards in .grid-2:
-         LEFT  — Primary font (e.g. 90%): show weight 800 heading at 2rem,
-                 weight 700 subheading at 1.25rem, weight 400 body, kicker label.
-                 Use style="font-family:var(--font-sans)" on each element.
-         RIGHT — Accent font (e.g. 10%): show italic display at 2.5rem in
-                 color var(--accent), then a realistic usage example (heading
-                 with serif italic fragment). Include "never in body or UI" rule.
-         If a script/signature font exists, add a third card or row showing it
-         at signature scale (2.5–3rem) with font-family:var(--font-script).
-    -->
-    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
-    </div>
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;"><!-- FILL:s04_specimens — full inner HTML: two .type-specimen cards (primary + accent font). --></div>
 
     <h3 style="margin-bottom:1rem;">Type scale</h3>
-    <!-- FILL:s04_scale_table
-         Table with: Level | Font | Weight | Size (desktop) | Tracking | Case
-         Rows: Display/Hero, H1, H2, H3, Body, Kicker, Caption
-         Example row: <tr><td>H1</td><td>Hanken Grotesk</td><td>800</td><td>3–3.5rem</td><td>−.04em</td><td>Sentence</td></tr>
-    -->
     <div style="overflow-x:auto;">
       <table>
         <thead>
           <tr><th>Level</th><th>Font</th><th>Weight</th><th>Size (desktop)</th><th>Tracking</th><th>Case</th></tr>
         </thead>
-        <tbody>
+        <tbody><!-- FILL:s04_scale_table -->
         </tbody>
       </table>
     </div>
@@ -631,37 +610,16 @@ td:first-child { color: var(--ink); font-weight: 500; }
     <div class="grid-2" style="gap:2rem;margin-bottom:2.5rem;">
       <div>
         <h3>Section banding sequence</h3>
-        <!-- FILL:s05_band_diagram
-             A .band-diagram with one .band-row per homepage section.
-             Each row: <div class="band-swatch" style="background:var(--TOKEN)"></div>
-                       <span class="band-name">Section Name</span>
-                       <span class="band-label">- -TOKEN</span>
-             Use the section sequence from the homepage application plan.
-             Alternate: --base, --base-deep, --base-wash, --anchor-dark.
-             Include a note about "no two adjacent bands sharing a shade."
-        -->
-        <div class="band-diagram"></div>
+        <div class="band-diagram"><!-- FILL:s05_band_diagram — one .band-row per homepage section with band-swatch, band-name, band-label. --></div>
         <p style="margin-top:1rem;font-size:.8125rem;color:var(--ink-faint);">
           <!-- FILL:s05_band_note — 1 sentence rule about adjacent bands. -->
         </p>
       </div>
       <div>
         <h3>Grid and spacing</h3>
-        <!-- FILL:s05_grid_table
-             Table (no headers) with:
-             Max content width | 1160px (or 1200px)
-             Column grid        | 12-column, 24px gutters
-             Section padding    | 120px top/bottom (desktop)
-             Section padding    | 72px (tablet), 48px (mobile)
-             Text column max    | 680px (body-led sections)
-             Use <tbody> with <tr><td>Label</td><td>Value</td></tr> rows.
-        -->
-        <table style="margin-bottom:1.5rem;"><tbody></tbody></table>
+        <table style="margin-bottom:1.5rem;"><tbody><!-- FILL:s05_grid_table — <tr> rows: max-width, columns, padding, gutter, text-col. --></tbody></table>
         <h3 style="margin-top:1.5rem;">Section patterns used</h3>
-        <!-- FILL:s05_patterns — 4-5 <li> in .rule-list.do-list
-             Use the locked section patterns from the handoff:
-             e.g. Full-width narrative, 2-column split, proof band, CTA band, process steps. -->
-        <ul class="rule-list do-list" style="margin-top:.5rem;"></ul>
+        <ul class="rule-list do-list" style="margin-top:.5rem;"><!-- FILL:s05_patterns — 4-5 <li> locked section patterns from handoff. --></ul>
       </div>
     </div>
   </div>
@@ -681,46 +639,12 @@ td:first-child { color: var(--ink); font-weight: 500; }
       <h2><!-- FILL:s06_h2 --></h2>
     </div>
 
-    <!-- FILL:s06_card_and_buttons
-         Two columns (.grid-2, gap:2rem, margin-bottom:3rem):
-         LEFT  — Double-shell card demo:
-                 <h3>Double-shell card</h3>
-                 A live .card-shell > .card-core with a realistic service name,
-                 kicker, body copy (1 sentence), and a .btn-ghost link.
-                 Below: <p> explaining the outer shell / inner core construction.
-         RIGHT — Signature button demo:
-                 <h3>[Signature component name] — the signature control</h3>
-                 Three rows: Primary (.btn-primary), Accent (.btn-accent, labeled
-                 "one per page only"), Ghost (.btn-ghost secondary).
-                 Each row: <span class="type-label">Label</span> then the button.
-    -->
-    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;"></div>
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;"><!-- FILL:s06_card_and_buttons — two cols: double-shell card demo (left) + button system primary/secondary/ghost (right). --></div>
 
-    <!-- FILL:s06_chips_and_cred
-         Two columns (.grid-2, gap:2rem, margin-bottom:3rem):
-         LEFT  — Proof chips:
-                 <h3>Proof chips</h3>
-                 3 × .proof-chip examples (brand-specific — draw from the
-                 Business Persona: client outcomes, response times, etc.)
-                 Below: <p> describing pill shape, --core bg, accent dot.
-         RIGHT — Credential bar:
-                 <h3>Credential bar</h3>
-                 .cred-bar with 3 .cred-item separated by .cred-sep spans.
-                 Use real credential signals from the handoff (years experience,
-                 unique offer, delivery time, reach, etc.)
-                 Below: <p> describing --base-wash bg, pill shape, honest signals.
-    -->
-    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;"></div>
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;"><!-- FILL:s06_chips_and_cred — two cols: proof chips (left) + credential bar with brand-specific copy (right). --></div>
 
     <h3 style="margin-bottom:1rem;">Radius system</h3>
-    <!-- FILL:s06_radius — .grid-4 with 4 demo boxes:
-         Card outer (1.75rem), Card inner (calc(1.75rem - 10px)),
-         Buttons · pill (999px), Input (0.625rem).
-         Each: <div style="background:var(--base-deep);border-radius:X;height:80px;
-                display:flex;align-items:center;justify-content:center;
-                font-size:.75rem;font-weight:600;color:var(--ink-faint);">Label</div>
-    -->
-    <div class="grid-4" style="margin-bottom:2rem;"></div>
+    <div class="grid-4" style="margin-bottom:2rem;"><!-- FILL:s06_radius — 4 demo boxes: card outer (1.75rem), card inner (calc(1.75rem-10px)), pill (999px), input (0.625rem). Each: <div class="radius-demo" style="border-radius:X">Label<br>value</div> + <p> token name below. --></div>
   </div>
 </section>
 
@@ -738,23 +662,10 @@ td:first-child { color: var(--ink); font-weight: 500; }
       <p><!-- FILL:s07_intro --></p>
     </div>
 
-    <!-- FILL:s07_phases
-         .grid-2 with two .card-shell > .card-core cards:
-         Phase 1 — now (zero / few reviews):
-           List 4-5 .impl-list <li> items for proof available immediately.
-           Draw from handoff proof modules and Business Persona trust strategy.
-         Phase 2 — first reviews arrive:
-           List 3-4 <li> describing how proof evolves when real data exists.
-           e.g. Replace placeholder with real testimonial, add platform links.
-    -->
-    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;"></div>
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;"><!-- FILL:s07_phases — two .card-shell cards: Phase 1 (proof available now) + Phase 2 (as proof grows). --></div>
 
     <h3 style="margin-bottom:.75rem;">What must never be fabricated</h3>
-    <!-- FILL:s07_no_fabricate — 4-5 .rule-list.dont-list <li> items.
-         Brand-specific: review counts, revenue numbers, named client results
-         without permission, AI transformation metrics, testimonials without
-         real name + real photo. -->
-    <ul class="rule-list dont-list"></ul>
+    <ul class="rule-list dont-list"><!-- FILL:s07_no_fabricate — 4-5 <li> fabrication prohibitions (review counts, capacity, pricing, awards not verified). --></ul>
   </div>
 </section>
 
@@ -773,25 +684,11 @@ td:first-child { color: var(--ink); font-weight: 500; }
     <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
       <div>
         <h3 style="margin-bottom:1rem;">Photography direction</h3>
-        <!-- FILL:s08_photo_table
-             Table (no thead) with rows drawn from the handoff imagery section:
-             Direction | [Founder-led / Team-led / etc.]
-             Subject priority | [People first > Proof > Place]
-             Mood | [Warm · Intimate]
-             Lighting | [Natural or soft · Never cold studio]
-             Composition | [Close-medium · Polished-candid]
-             Icons | [Minimal outline · N px stroke · color token]
-        -->
-        <table><tbody></tbody></table>
+        <table><tbody><!-- FILL:s08_photo_table — <tr> rows: Direction, Subject, Mood, Lighting, Composition per handoff imagery section. --></tbody></table>
       </div>
       <div>
         <h3 style="margin-bottom:1rem;">Never use these</h3>
-        <!-- FILL:s08_never — 6-7 .rule-list.dont-list <li> items.
-             Pull from the handoff imagery anti-patterns:
-             stock photography types, phone mockups, workflow diagrams,
-             dashboard screenshots, generic headshots, cliché category visuals,
-             fabricated before/after results. -->
-        <ul class="rule-list dont-list"></ul>
+        <ul class="rule-list dont-list"><!-- FILL:s08_never — 6-7 <li> imagery anti-patterns from handoff. --></ul>
       </div>
     </div>
   </div>
@@ -810,25 +707,11 @@ td:first-child { color: var(--ink); font-weight: 500; }
     <div class="grid-2" style="gap:2rem;">
       <div>
         <h3 style="margin-bottom:1rem;">Motion rules</h3>
-        <!-- FILL:s09_motion_table
-             Table (no thead) from the handoff motion section:
-             Level | Restrained / Moderate / None
-             Role  | Scroll reveal + button hover only
-             Scroll behavior | Fade-up once on viewport enter
-             Button | [Magnetic drift / Tactile / Quiet]
-             Properties | transform + opacity only
-             Reduced motion | Required guard on every animation
-        -->
-        <table><tbody></tbody></table>
+        <table><tbody><!-- FILL:s09_motion_table — <tr> rows from handoff motion section: trigger, duration, easing, rule. --></tbody></table>
       </div>
       <div>
         <h3 style="margin-bottom:1rem;">What must never animate</h3>
-        <!-- FILL:s09_no_animate — 5-6 .rule-list.dont-list <li> items.
-             Draw from handoff "What should never animate" + motion anti-patterns:
-             background color transitions, layout-triggering properties,
-             imagery parallax, looping animations, proof numbers/metrics,
-             floating persistent widgets. -->
-        <ul class="rule-list dont-list"></ul>
+        <ul class="rule-list dont-list"><!-- FILL:s09_no_animate — 5-6 <li> motion prohibitions from handoff. --></ul>
         <h3 style="margin-top:1.5rem;margin-bottom:.5rem;">Easing curves</h3>
         <p style="font-size:.875rem;"><code>--ease: cubic-bezier(.32,.72,0,1)</code> — UI transitions</p>
         <p style="font-size:.875rem;"><code>--ease-soft: cubic-bezier(.22,1,.36,1)</code> — scroll reveals</p>
@@ -849,54 +732,20 @@ td:first-child { color: var(--ink); font-weight: 500; }
     </div>
 
     <h3 style="margin-bottom:1.5rem;">Section sequence</h3>
-    <!-- FILL:s10_section_table
-         Table with columns: # | Section | Background | Purpose
-         List every homepage section in order (Nav, Hero, Problem/cost, How it works,
-         Services, Proof, Process, About, CTA closing, Footer).
-         Use token names for Background column: --base, --base-deep, --base-wash, --anchor-dark.
-         Purpose column: 1 sentence per section describing conversion role.
-         Use <thead> with column headers.
-    -->
     <table style="margin-bottom:2.5rem;">
       <thead>
         <tr><th>#</th><th>Section</th><th>Background</th><th>Purpose</th></tr>
       </thead>
-      <tbody></tbody>
+      <tbody><!-- FILL:s10_section_table — <tr> rows: #, Section name, background token, purpose sentence. --></tbody>
     </table>
 
     <h3 style="margin-bottom:1.5rem;">Mockup wireframes</h3>
 
-    <!-- FILL:s10_hero_mockup
-         Label: <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">Hero section</p>
-         A .mockup div containing:
-         1. .mockup-nav (logo, 3 nav links, CTA button)
-         2. .mockup-hero-section (2-column: left = kicker + h1 with serif fragment +
-            body copy + .btn-primary; right = .mockup-portrait-placeholder with
-            .mockup-chip floating bottom-right)
-         Use real brand copy: brand name, actual value proposition headline,
-         1-sentence body. Pull CTA label and chip text from the Business Persona.
-    -->
-    <div style="margin-bottom:1.5rem;"></div>
+    <div style="margin-bottom:1.5rem;"><!-- FILL:s10_hero_mockup — label <p> + .mockup with nav bar + hero section (full-bleed photo placeholder, gold serif tagline, dual CTAs). Real brand copy. --></div>
 
-    <!-- FILL:s10_proof_mockup
-         Label: <p ...>Proof section</p>
-         A .mockup div containing .mockup-proof-band with:
-         - Centered kicker + h3 (real client name or "First client")
-         - .mockup-before-after with 2 columns (Before / After)
-         - 4 before items (real problems from Business Persona)
-         - 4 after items (real outcomes promised)
-         - .cred-bar with 3 credential items below
-    -->
-    <div style="margin-bottom:1.5rem;"></div>
+    <div style="margin-bottom:1.5rem;"><!-- FILL:s10_proof_mockup — label <p> + .mockup proof band with guest reviews, credential bar. Real review copy from persona. --></div>
 
-    <!-- FILL:s10_cta_mockup
-         Label: <p ...>CTA closing band</p>
-         A .mockup div containing .mockup-cta-band with:
-         - .mockup-cta-h (2-line headline, urgency/loss framing)
-         - .btn-accent button (terracotta / gold — the accent CTA)
-         - Small text below button (e.g. "Free · No commitment · 2 days")
-    -->
-    <div style="margin-bottom:0;"></div>
+    <div style="margin-bottom:0;"><!-- FILL:s10_cta_mockup — label <p> + .mockup CTA band (anchor-dark bg, bold headline, primary action button). --></div>
   </div>
 </section>
 
@@ -968,28 +817,13 @@ td:first-child { color: var(--ink); font-weight: 500; }
     <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
       <div>
         <h3 style="margin-bottom:1rem;">Must preserve exactly</h3>
-        <!-- FILL:s13_preserve — 6-7 .impl-list <li> items.
-             Critical system constraints that cannot be changed:
-             token names/hex values (always via CSS var), double-shell card structure,
-             island button construction, section background sequence,
-             reduced-motion guard, heading sentence case, serif italic usage rule.
-        -->
-        <ul class="impl-list"></ul>
+        <ul class="impl-list"><!-- FILL:s13_preserve — 6-7 <li> must-preserve constraints (token names, font rules, color locks, dual CTAs). --></ul>
       </div>
       <div>
         <h3 style="margin-bottom:1rem;">Accessibility</h3>
-        <!-- FILL:s13_a11y — 6-7 .impl-list <li> items.
-             :focus-visible ring using --anchor, color never sole info carrier,
-             all images need descriptive alt text, form labels visible (not placeholder-only),
-             reduced motion required on all animations, minimum tap target 44×44px,
-             body contrast ratio (state actual approximate ratio, e.g. 13:1 passes AA).
-        -->
-        <ul class="impl-list"></ul>
+        <ul class="impl-list"><!-- FILL:s13_a11y — 6-7 <li> accessibility rules (focus-visible, contrast, alt text, reduced-motion, tap targets). --></ul>
         <h3 style="margin-top:1.5rem;margin-bottom:1rem;">Future agents must never improvise</h3>
-        <!-- FILL:s13_no_improvise — 4-5 .rule-list.dont-list <li> items.
-             Hard system locks: second accent color, new typeface, gradient/glassmorphism,
-             plural voice, hard offset shadows, colors outside locked palette. -->
-        <ul class="rule-list dont-list"></ul>
+        <ul class="rule-list dont-list"><!-- FILL:s13_no_improvise — 4-5 <li> hard locks (no third typeface, no second crimson section, no neon in UI). --></ul>
       </div>
     </div>
 
@@ -1011,10 +845,7 @@ td:first-child { color: var(--ink); font-weight: 500; }
       <div style="font-weight:700;color:var(--ink);font-size:.9375rem;margin-bottom:.25rem;">{{BRAND_NAME}}</div>
       <div style="font-size:.8125rem;color:var(--ink-faint);">Branding Visual Guide · v1.0 · {{VERSION_DATE}}</div>
     </div>
-    <!-- FILL:footer_contact — Right-aligned contact block:
-         Prepared by [name] (from Business Persona founder name)
-         [email if available]
-    -->
+    {{FOOTER_CONTACT}}
   </div>
 </footer>
 

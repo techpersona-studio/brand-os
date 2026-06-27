@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "slug": "quan-pho",
+  "brand": "Quán Phở",
+  "lang": "en",
+  "date": "2026-06-27",
+  "handoff": "outputs/quan-pho/handoff/02b-visual-strategy-handoff.md",
+  "persona": "outputs/quan-pho/handoff/01c-ba-handoff.md",
+  "scaffold": "outputs/quan-pho/deliverable/quan-pho-branding-visual-guide.scaffold.html",
+  "fillsOutput": "outputs/quan-pho/deliverable/quan-pho-branding-visual-guide.fills.json",
+  "mergeCommand": "node scripts/merge-branding-fills.js quan-pho",
+  "script_prefilled": [
+    "cover_thesis",
+    "s02_h2",
+    "s05_band_diagram",
+    "s05_band_note",
+    "s06_radius",
+    "s08_photo_table",
+    "s09_motion_table"
+  ],
+  "prefilled": {
+    "northStar": "Street-born Vietnamese energy — warm, moody, and built for a night out.",
+    "primaryDirection": "Editorial / Human",
+    "primaryPct": 70,
+    "secondaryDirection": "Cutting-edge / Innovative",
+    "secondaryPct": 30,
+    "signatureMove": "Hero tagline in **Cormorant Garamond Italic** at display scale (64px+) in warm gold `#F2B928` on dark near-black base — used once in the hero and once as a section separator. Paired with a full-width **Bar promo strip** in crimson `#C23528` as the page's single bold red moment.",
+    "readiness": "Ready — all decisions locked. No tentative assumptions. No blockers."
+  },
+  "slots": [
+    {
+      "id": "cover_title",
+      "section": "Cover",
+      "format": "html",
+      "instruction": "3–4 line headline with <br>. Last line: <span class=\"serif-accent\">word.</span>"
+    },
+    {
+      "id": "s01_feel",
+      "section": "01 — Visual north star",
+      "format": "html",
+      "instruction": "<strong>The brand should feel like:</strong> prose, then <strong>Not like:</strong> prose."
+    },
+    {
+      "id": "s01_positive_adjs",
+      "section": "01 — Visual north star",
+      "format": "html",
+      "instruction": "3 × <div class=\"adj-item\">Adjective</div>"
+    },
+    {
+      "id": "s01_negative_adjs",
+      "section": "01 — Visual north star",
+      "format": "html",
+      "instruction": "3 × <div class=\"adj-item\">Adjective</div>"
+    },
+    {
+      "id": "s02_rationale",
+      "section": "02 — Direction mix",
+      "format": "text",
+      "instruction": "2–3 sentences on primary vs secondary direction mix."
+    },
+    {
+      "id": "s02_prevents",
+      "section": "02 — Direction mix",
+      "format": "html",
+      "instruction": "3–4 × <li> only for dont-list."
+    },
+    {
+      "id": "s03_h2",
+      "section": "03 — Color system",
+      "format": "text",
+      "instruction": "Short palette headline."
+    },
+    {
+      "id": "s03_intro",
+      "section": "03 — Color system",
+      "format": "text",
+      "instruction": "2 sentences: neutrals, anchor, accent usage."
+    },
+    {
+      "id": "s03_ratio_note",
+      "section": "03 — Color system",
+      "format": "html",
+      "instruction": "1–2 sentences + flex ratio bar (var(--base-deep), var(--anchor), var(--accent))."
+    },
+    {
+      "id": "s03_never",
+      "section": "03 — Color system",
+      "format": "html",
+      "instruction": "4–5 × <li> color anti-patterns."
+    },
+    {
+      "id": "s04_h2",
+      "section": "04 — Typography system",
+      "format": "text",
+      "instruction": "Font pairing headline from handoff."
+    },
+    {
+      "id": "s04_intro",
+      "section": "04 — Typography system",
+      "format": "text",
+      "instruction": "2–3 sentences on primary/accent font roles and %."
+    },
+    {
+      "id": "s04_specimens",
+      "section": "04 — Typography system",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<div class=\"type-specimen\"><span class=\"type-label\">Primary — [PRIMARY FONT NAME]</span><p style=\"font-family:var(--font-sans);font-size:2rem;font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1.08;margin-bottom:.75rem;\">[PRIMARY HEADLINE SAMPLE]</p><p style=\"font-family:var(--font-sans);font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:.75rem;\">[PRIMARY BODY SAMPLE]</p><p class=\"small\">Google Fonts — <code>[PRIMARY FONT NAME]</code></p></div><div class=\"type-specimen\"><span class=\"type-label\">Display — [ACCENT FONT NAME]</span><p class=\"serif-accent\" style=\"font-size:2.5rem;line-height:1.08;margin-bottom:.75rem;\">[ACCENT DISPLAY SAMPLE]</p><p class=\"small\">Hero taglines only — warm gold on dark base</p><p class=\"small\">Google Fonts — <code>[ACCENT FONT NAME]</code></p></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s04_scale_table",
+      "section": "04 — Typography system",
+      "format": "html",
+      "instruction": "<tr> rows: Display, H1, H2, H3, Body, Label, Caption."
+    },
+    {
+      "id": "s05_h2",
+      "section": "05 — Layout rhythm",
+      "format": "text",
+      "instruction": "Layout mode headline."
+    },
+    {
+      "id": "s05_intro",
+      "section": "05 — Layout rhythm",
+      "format": "text",
+      "instruction": "1–2 sentences on page narrative arc."
+    },
+    {
+      "id": "s05_grid_table",
+      "section": "05 — Layout rhythm",
+      "format": "html",
+      "instruction": "<tr> rows for grid/spacing specs."
+    },
+    {
+      "id": "s05_patterns",
+      "section": "05 — Layout rhythm",
+      "format": "html",
+      "instruction": "4–5 × <li> section patterns."
+    },
+    {
+      "id": "s06_h2",
+      "section": "06 — Component language",
+      "format": "text",
+      "instruction": "Component feel headline from handoff."
+    },
+    {
+      "id": "s06_card_and_buttons",
+      "section": "06 — Component language",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<div><h3>Card — [CARD TITLE]</h3><div class=\"card-shell\"><div class=\"card-core\"><div style=\"background:var(--base-deep);border-radius:var(--r-inner);height:120px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;\"><span class=\"small\">[PHOTO LABEL]</span></div><h4>[DISH OR SERVICE NAME]</h4><p class=\"small\">[ONE-LINE DESCRIPTION]</p></div></div></div><div><h3>Button system</h3><div style=\"display:flex;flex-direction:column;gap:1.25rem;align-items:flex-start;\"><div><a class=\"btn btn-primary\">[PRIMARY CTA] <span class=\"btn-icon\">→</span></a><p class=\"small\">Primary — gold fill, uppercase</p></div><div><a class=\"btn\" style=\"background:none;color:var(--anchor);border:1.5px solid var(--anchor);border-radius:var(--r-pill);padding:.75rem 1.5rem;font-weight:700;text-transform:uppercase;\">[SECONDARY CTA]</a><p class=\"small\">Secondary — gold outline</p></div><div><a class=\"btn btn-ghost\">[GHOST CTA]</a><p class=\"small\">Ghost / text-link</p></div></div></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s06_chips_and_cred",
+      "section": "06 — Component language",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<div><h3>Proof chips</h3><div style=\"display:flex;flex-direction:column;gap:.625rem;\"><span class=\"proof-chip\"><span class=\"proof-dot\"></span>[PROOF CHIP 1]</span><span class=\"proof-chip\"><span class=\"proof-dot\"></span>[PROOF CHIP 2]</span><span class=\"proof-chip\"><span class=\"proof-dot\"></span>[PROOF CHIP 3]</span></div></div><div><h3>Credential bar</h3><div class=\"cred-bar\"><span class=\"cred-item\">[CRED 1]</span><span class=\"cred-sep\">·</span><span class=\"cred-item\">[CRED 2]</span><span class=\"cred-sep\">·</span><span class=\"cred-item\">[CRED 3]</span></div><p class=\"small\">Placed below hero and above footer.</p></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s07_h2",
+      "section": "07 — Proof presentation",
+      "format": "text",
+      "instruction": "Proof strategy headline."
+    },
+    {
+      "id": "s07_intro",
+      "section": "07 — Proof presentation",
+      "format": "text",
+      "instruction": "1–2 sentences on trust burden + strategy."
+    },
+    {
+      "id": "s07_phases",
+      "section": "07 — Proof presentation",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<div class=\"card-shell\"><div class=\"card-core\"><span class=\"kicker kicker-anchor\">Phase 1 — now</span><h3>[PHASE 1 TITLE]</h3><ul class=\"impl-list\"><li>[PHASE 1 ITEM]</li><li>[PHASE 1 ITEM]</li><li>[PHASE 1 ITEM]</li></ul></div></div><div class=\"card-shell\"><div class=\"card-core\"><span class=\"kicker\">Phase 2 — as the brand grows</span><h3>[PHASE 2 TITLE]</h3><ul class=\"impl-list\"><li>[PHASE 2 ITEM]</li><li>[PHASE 2 ITEM]</li><li>[PHASE 2 ITEM]</li></ul></div></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s07_no_fabricate",
+      "section": "07 — Proof presentation",
+      "format": "html",
+      "instruction": "4–5 × <li> fabrication prohibitions."
+    },
+    {
+      "id": "s08_h2",
+      "section": "08 — Imagery",
+      "format": "text",
+      "instruction": "Imagery headline."
+    },
+    {
+      "id": "s08_never",
+      "section": "08 — Imagery",
+      "format": "html",
+      "instruction": "6–7 × <li> imagery anti-patterns."
+    },
+    {
+      "id": "s09_no_animate",
+      "section": "09 — Motion",
+      "format": "html",
+      "instruction": "5–6 × <li> motion prohibitions."
+    },
+    {
+      "id": "s10_section_table",
+      "section": "10 — Homepage application",
+      "format": "html",
+      "instruction": "<tr> rows: #, Section, Background token, Purpose."
+    },
+    {
+      "id": "s10_hero_mockup",
+      "section": "10 — Homepage application",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<p class=\"small\" style=\"font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem;\">Hero — above the fold</p><div class=\"mockup\"><div class=\"mockup-nav\"><span class=\"mockup-nav-logo\">[BRAND MARK]</span><div class=\"mockup-nav-links\"><span class=\"mockup-nav-link\">[NAV 1]</span><span class=\"mockup-nav-link\">[NAV 2]</span><span class=\"mockup-nav-link\">[NAV 3]</span></div><a class=\"btn btn-primary\">[PRIMARY CTA] →</a></div><div class=\"mockup-hero-section\"><div><p class=\"serif-accent mockup-h1\">[HERO TAGLINE LINE 1]<br>[HERO TAGLINE LINE 2]</p><p class=\"mockup-body\">[HERO BODY — one sentence from persona]</p><div style=\"display:flex;gap:.75rem;flex-wrap:wrap;\"><a class=\"btn btn-primary\">[PRIMARY CTA] →</a><a class=\"btn\" style=\"background:none;color:var(--anchor);border:1.5px solid var(--anchor);border-radius:var(--r-pill);padding:.625rem 1.25rem;font-weight:700;text-transform:uppercase;\">[SECONDARY CTA]</a></div><p class=\"small\">[TRUST LINE IF ANY]</p></div><div class=\"mockup-portrait-placeholder\"><span class=\"mockup-portrait-label\">[PHOTO LABEL]</span></div></div></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s10_proof_mockup",
+      "section": "10 — Homepage application",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<p class=\"small\" style=\"font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem;\">Proof band — social trust</p><div class=\"mockup\"><div class=\"mockup-proof-band\"><div class=\"small\" style=\"letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;\">[PROOF KICKER]</div><div class=\"mockup-before-after\"><div><div style=\"color:var(--anchor);margin-bottom:.375rem;\">★★★★★</div><p class=\"small\" style=\"color:var(--ink);font-style:italic;line-height:1.55;\">\"[REVIEW QUOTE — from confirmed source only]\"</p><p class=\"small\">[REVIEW SOURCE]</p></div><div><div style=\"color:var(--anchor);margin-bottom:.375rem;\">★★★★</div><p class=\"small\" style=\"color:var(--ink);font-style:italic;line-height:1.55;\">\"[REVIEW QUOTE 2]\"</p><p class=\"small\">[REVIEW SOURCE 2]</p></div></div><div class=\"cred-bar\"><span class=\"cred-item\">[CRED 1]</span><span class=\"cred-sep\">·</span><span class=\"cred-item\">[CRED 2]</span><span class=\"cred-sep\">·</span><span class=\"cred-item\">[CRED 3]</span></div></div></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s10_cta_mockup",
+      "section": "10 — Homepage application",
+      "format": "html",
+      "instruction": "Use htmlPattern. Replace [PLACEHOLDER] text only.",
+      "htmlPattern": "<p class=\"small\" style=\"font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem;\">[CTA BAND LABEL]</p><div class=\"mockup\"><div class=\"mockup-cta-band\"><p class=\"small\" style=\"letter-spacing:.22em;text-transform:uppercase;margin-bottom:.625rem;\">[KICKER]</p><p class=\"mockup-cta-h\">[CTA HEADLINE]</p><p class=\"mockup-body\">[CTA SUBLINE FROM PERSONA]</p><a class=\"btn btn-primary\">[CTA BUTTON] →</a></div><div style=\"background:var(--base-deep);padding:1rem 2rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;\"><span class=\"small\">[ADDRESS OR FOOTER DETAIL]</span><span class=\"small\">[SECONDARY DETAIL]</span></div></div>",
+      "fillRule": "Copy htmlPattern exactly. Replace [PLACEHOLDER] tokens with brand copy only. Do not change tags, classes, or structure."
+    },
+    {
+      "id": "s13_preserve",
+      "section": "13 — Implementation notes",
+      "format": "html",
+      "instruction": "6–7 × <li> for .impl-list must-preserve rules."
+    },
+    {
+      "id": "s13_a11y",
+      "section": "13 — Implementation notes",
+      "format": "html",
+      "instruction": "6–7 × <li> accessibility rules."
+    },
+    {
+      "id": "s13_no_improvise",
+      "section": "13 — Implementation notes",
+      "format": "html",
+      "instruction": "4–5 × <li> hard locks for future agents."
+    }
+  ]
+}

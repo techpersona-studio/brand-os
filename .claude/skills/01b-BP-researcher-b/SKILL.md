@@ -249,71 +249,176 @@ Before saving, confirm each item. Write YES or NO.
 ---
 ---
 
-# MODE 2: COMPETITOR RESEARCH
+# MODE 2: COMPETITOR SERP SNAPSHOT
+
 (save this output to a separate competitor handoff file)
 
 Execute only after Mode 1 is complete.
 
-This output feeds the SEO layer. It is descriptive only.
-Do not use competitor insights to modify or infer client facts.
+This output feeds the SEO layer only. It is a compact SERP signal file, not a full competitor audit.
 
-SEARCH METHOD:
-Search the keywords a buyer would use to find this business.
-Examples: "plumber Austin TX", "emergency plumber near me Austin", "drain cleaning Austin"
-Pick the top 3 ranking local competitors from results. Visit each homepage only — no subpages.
+Use it to help the SEO Agent understand:
+
+* what page types competitors use
+* what keywords/modifiers appear in ranking pages
+* what CTAs and proof signals are common
+* what SERP gaps may be available
+
+Do not use competitor insights to modify or infer client facts.
 
 ---
 
-## Mode 2 output format
+## Search method
 
-# Competitor Analysis
+Search exactly 3 buyer-intent keywords a real buyer would use to find this business.
+
+Build the searches from:
+
+* client industry/category
+* client location/service area
+* known services/offers
+* buyer urgency or high-intent modifiers from the Business Persona
+
+Use this structure:
+
+1. `[primary category] [city/service area]`
+2. `[main service or offer] [city/service area]`
+3. `[high-intent modifier] [service/category] [city/service area]`
+
+High-intent modifiers may include:
+
+* best
+* near me
+* emergency
+* same day
+* consultation
+* quote
+* appointment
+* booking
+* pricing
+* specialist
+* local
+
+Choose the modifier that best matches the client’s industry and buyer intent.
+
+Pick the top 3 active local or niche competitors from the results.
+
+Rules:
+
+* Visit each competitor homepage only.
+* No subpages.
+* No deep crawls.
+* No closed businesses.
+* Do not include the client.
+* Official competitor websites are preferred.
+* Avoid directory-only competitors unless no official website exists.
+* If a competitor has no usable homepage, skip it and choose the next relevant competitor.
+* If the business is not local, use niche/category competitors instead of location competitors.
+
+---
+
+## Output format
+
+Save to:
+`outputs/{slug}/handoff/01b-competitors-handoff.md`
+
+Max 80 lines.
+
+# Competitor SERP Snapshot
 
 ## Search keywords used
 
-List every exact query used:
-- [query 1]
-- [query 2]
+* [query 1]
+* [query 2]
+* [query 3]
 
 ---
 
-## Competitor profiles
+## Competitors reviewed
 
-For each competitor:
+### [Competitor name]
 
-Competitor name:
-- URL:
-- Ranking position in search results:
-- Primary offer / headline: [exact text]
-- CTA: [exact text]
-- Proof signals: [reviews, certifications, guarantees, photos — be specific]
-- Primary keywords in titles and headlines: [list]
-- Repeated phrases across their site: [list]
-- Tone / visual impression: [observable elements only — e.g. "dark background, bold serif headlines, minimal body text, photo-heavy". No abstract adjectives without evidence.]
-- Strengths observed:
-- Weaknesses observed:
+* URL:
+* Found via:
+* Ranking position:
+* Homepage headline:
+* Primary CTA:
+* Nav/page types:
+* Proof signals:
+* SEO keywords/modifiers:
+* Gap:
+
+### [Competitor name]
+
+* URL:
+* Found via:
+* Ranking position:
+* Homepage headline:
+* Primary CTA:
+* Nav/page types:
+* Proof signals:
+* SEO keywords/modifiers:
+* Gap:
+
+### [Competitor name]
+
+* URL:
+* Found via:
+* Ranking position:
+* Homepage headline:
+* Primary CTA:
+* Nav/page types:
+* Proof signals:
+* SEO keywords/modifiers:
+* Gap:
 
 ---
 
 ## Category patterns
-(synthesized across all competitors)
 
-- Common CTAs:
-- Common proof signals:
-- Primary keywords repeated across competitors:
-- Repeated phrases or messaging patterns:
-- Common buyer objections implied by their messaging:
-- Gaps or weaknesses shared across most competitors:
+* Common page types:
+* Common CTAs:
+* Common proof signals:
+* Repeated keywords/modifiers:
+* Common buyer objections implied:
+* Common gaps or weaknesses:
+
+---
+
+## SEO opportunities for client
+
+Only list opportunities supported by competitor gaps and the Business Persona.
+
+### [Opportunity / page type]
+
+* Intent:
+* Keyword pattern:
+* Why it is open:
+* Client relevance: [Supported by Business Persona | Needs client confirmation]
+
+Repeat only for high-value opportunities. Do not list weak or speculative pages.
 
 ---
 
 ## Mode 2 completeness check
 
-- [ ] At least 3 competitors reviewed
-- [ ] Keywords extracted from each competitor's titles and headlines
-- [ ] Category patterns synthesized across all competitors
-- [ ] No competitor data referenced in Mode 1 validation output
+* [ ] Exactly 3 buyer-intent searches used
+* [ ] 3 active competitors reviewed
+* [ ] Homepage only for each competitor
+* [ ] No closed businesses included
+* [ ] No client facts inferred from competitors
+* [ ] Category patterns synthesized across competitors
+* [ ] SEO opportunities validated against Business Persona
 
 ---
+
+## Constraints for SEO Agent
+
+* Use this file as the primary SERP signal.
+* Use the Business Persona as the source of truth for audience, offer, buyer trigger, trust burden, and CTA model.
+* Do not invent additional competitors.
+* Do not infer client services from competitor services.
+* Do not recommend pages unless supported by both SERP opportunity and Business Persona.
 
 ## Handoff output
 
