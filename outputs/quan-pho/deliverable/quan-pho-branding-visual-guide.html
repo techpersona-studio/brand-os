@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quán Phở — Branding Visual Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* ── Tokens ──────────────────────────────────────────────────────────────── */
+:root {
+  /* Color */
+  --base:         #181008;
+  --base-deep:    #5C4232;
+  --base-wash:    #201408;
+  --core:         #241810;
+  --ink:          #F0E8D0;
+  --ink-soft:     #D4C8A8;
+  --ink-faint:    #C8B898;
+  --anchor:       #F2B928;
+  --anchor-hover: #E0A820;
+  --anchor-dark:  #C09318;
+  --accent:       #C23528;
+  --accent-deep:  #A82E22;
+  --accent-light: #E06050;
+  --hair:         rgba(240,232,208,0.10);
+
+  /* Shadows */
+  --lift:    0 1px 2px rgba(242,185,40,0.04), 0 18px 40px -22px rgba(242,185,40,0.30);
+  --lift-lg: 0 2px 4px rgba(242,185,40,0.05), 0 44px 80px -36px rgba(242,185,40,0.40);
+  --inner-hi: inset 0 1px 1px rgba(255,255,255,.08);
+
+  /* Radius */
+  --r-card:  1.75rem;
+  --r-inner: calc(1.75rem - 10px);
+  --r-pill:  999px;
+  --r-input: 0.625rem;
+
+  /* Motion */
+  --ease:      cubic-bezier(.32,.72,0,1);
+  --ease-soft: cubic-bezier(.22,1,.36,1);
+  --dur-fast:  150ms;
+  --dur-base:  300ms;
+  --dur-slow:  600ms;
+
+  /* Typography */
+  --font-sans:  'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  /* Layout */
+  --max-w:    1160px;
+  --text-col: 680px;
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-sans);
+  background: var(--base);
+  color: var(--ink);
+  line-height: 1.6;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .025;
+  mix-blend-mode: multiply;
+}
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+.text-col  { max-width: var(--text-col); }
+section { padding: 96px 0; }
+
+section.bg-base      { background: var(--base); }
+section.bg-base-deep { background: var(--base-deep); }
+section.bg-wash      { background: var(--base-wash); }
+section.bg-anchor    { background: var(--anchor-dark); color: var(--base); }
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.kicker-anchor { color: var(--anchor); }
+.kicker-accent { color: var(--accent); }
+.kicker-paper  { color: rgba(255,255,255,.6); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.25rem, 4vw, 3.25rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.035em; margin-bottom: 1.25rem; }
+h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .75rem; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: .5rem; }
+
+.bg-anchor h1, .bg-anchor h2, .bg-anchor h3, .bg-anchor h4 { color: var(--base); }
+
+p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+.bg-anchor p { color: rgba(0,0,0,.65); }
+
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--anchor);
+}
+.bg-anchor .serif-accent { color: var(--accent-deep); }
+
+small, .small { font-size: 0.8125rem; color: var(--ink-faint); }
+
+/* ── Cover ───────────────────────────────────────────────────────────────── */
+.cover {
+  background: var(--anchor-dark);
+  color: var(--base);
+  padding: 96px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .04;
+  pointer-events: none;
+}
+.cover-inner { position: relative; z-index: 1; }
+.cover-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.cover-logo  { font-weight: 700; font-size: .875rem; letter-spacing: -.01em; color: var(--base); opacity: .9; }
+.cover-tag   { font-size: .6875rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); }
+.cover-date  { font-size: .8125rem; color: rgba(0,0,0,.45); margin-left: auto; }
+.cover-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -.05em; line-height: 1.02; color: var(--base); max-width: 820px; margin-bottom: 2rem; }
+.cover-thesis {
+  font-size: 1.0625rem;
+  color: rgba(0,0,0,.65);
+  max-width: 560px;
+  line-height: 1.6;
+  border-left: 2px solid var(--accent-deep);
+  padding-left: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.18);
+  border-radius: var(--r-pill);
+  padding: .375rem .875rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--base);
+}
+.status-dot { width: 6px; height: 6px; background: var(--accent-deep); border-radius: 50%; }
+
+/* ── Section header ──────────────────────────────────────────────────────── */
+.section-header { margin-bottom: 3rem; }
+.section-header h2 { margin-bottom: .5rem; }
+.section-header p  { max-width: 560px; }
+
+/* ── Double-shell card ───────────────────────────────────────────────────── */
+.card-shell {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-card);
+  padding: 10px;
+  box-shadow: var(--lift);
+}
+.card-core {
+  background: var(--core);
+  border-radius: var(--r-inner);
+  box-shadow: var(--inner-hi);
+  padding: 1.75rem 2rem;
+}
+
+/* ── Grids ───────────────────────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+
+/* ── Palette swatches ────────────────────────────────────────────────────── */
+.palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+.swatch       { border-radius: 1rem; overflow: hidden; box-shadow: var(--lift); }
+.swatch-color { height: 80px; border-radius: 1rem 1rem 0 0; }
+.swatch-info  { padding: .75rem 1rem; background: var(--core); border-radius: 0 0 1rem 1rem; }
+.swatch-name  { font-size: .75rem; font-weight: 600; color: var(--ink); display: block; margin-bottom: .125rem; }
+.swatch-hex   { font-size: .6875rem; color: var(--ink-faint); font-family: 'Courier New', monospace; }
+.swatch-role  { font-size: .6875rem; color: var(--ink-faint); margin-top: .25rem; display: block; }
+
+/* ── Type specimen ───────────────────────────────────────────────────────── */
+.type-specimen {
+  padding: 2rem;
+  background: var(--core);
+  border-radius: 1rem;
+  border: 1px solid var(--hair);
+  margin-bottom: 1rem;
+}
+.type-label {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: .75rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  font-family: var(--font-sans);
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--anchor);
+  color: var(--base);
+  border-radius: var(--r-pill);
+  padding: .75rem 1rem .75rem 1.75rem;
+  box-shadow: var(--lift);
+}
+.btn-primary:hover { background: var(--anchor-hover); }
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--r-pill);
+  padding: .75rem 1rem .75rem 1.75rem;
+  box-shadow: var(--lift);
+}
+.btn-accent:hover { background: var(--accent-deep); }
+
+.btn-ghost {
+  background: none;
+  color: var(--ink);
+  border-radius: 0;
+  padding: .5rem 0;
+  border-bottom: 2px solid var(--ink);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.btn-ghost:hover { border-color: var(--anchor); transform: none; }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  background: rgba(0,0,0,.15);
+  border-radius: 50%;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Proof chip ──────────────────────────────────────────────────────────── */
+.proof-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--core);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-pill);
+  padding: .5rem 1rem .5rem .625rem;
+  box-shadow: var(--lift);
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.proof-dot { width: 8px; height: 8px; background: var(--anchor); border-radius: 50%; flex-shrink: 0; }
+
+/* ── Credential bar ──────────────────────────────────────────────────────── */
+.cred-bar {
+  background: rgba(242,185,40,0.10);
+  border-radius: var(--r-pill);
+  padding: .875rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cred-item { font-size: .875rem; font-weight: 500; color: var(--anchor); display: flex; align-items: center; gap: .5rem; }
+.cred-sep  { color: var(--anchor); opacity: .3; font-size: 1.25rem; }
+
+/* ── Code / pre ──────────────────────────────────────────────────────────── */
+pre {
+  background: var(--core);
+  color: var(--ink);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: .8125rem;
+  line-height: 1.65;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--hair);
+}
+code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: .875em;
+  background: rgba(242,185,40,0.12);
+  border-radius: .25rem;
+  padding: .125em .35em;
+  color: var(--anchor);
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th { text-align: left; font-size: .6875rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); padding: .625rem 1rem .625rem 0; border-bottom: 1px solid var(--hair); }
+td { padding: .75rem 1rem .75rem 0; border-bottom: 1px solid var(--hair); color: var(--ink-soft); vertical-align: top; }
+td:first-child { color: var(--ink); font-weight: 500; }
+
+/* ── North star ──────────────────────────────────────────────────────────── */
+.north-star-statement {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--anchor);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+}
+.adj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.adj-card { padding: 1.25rem 1.5rem; border-radius: 1rem; }
+.adj-card.positive { background: rgba(242,185,40,0.08); border: 1px solid rgba(242,185,40,0.20); }
+.adj-card.negative { background: rgba(194,53,40,0.08); border: 1px solid rgba(194,53,40,0.18); }
+.adj-label { font-size: .6875rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .75rem; }
+.adj-card.positive .adj-label { color: var(--anchor); }
+.adj-card.negative .adj-label { color: var(--accent-light); }
+.adj-item { font-size: .9375rem; font-weight: 600; color: var(--ink); padding: .375rem 0; display: flex; align-items: center; gap: .5rem; }
+.adj-item::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.adj-card.positive .adj-item::before { background: var(--anchor); }
+.adj-card.negative .adj-item::before { background: var(--accent); }
+
+/* ── Direction mix bar ───────────────────────────────────────────────────── */
+.mix-bar { height: 10px; border-radius: var(--r-pill); margin: 1.5rem 0 .5rem; }
+.mix-labels { display: flex; justify-content: space-between; font-size: .8125rem; color: var(--ink-faint); }
+.mix-labels strong { color: var(--ink); }
+
+/* ── Band diagram ────────────────────────────────────────────────────────── */
+.band-diagram { display: flex; flex-direction: column; gap: .5rem; margin: 1.5rem 0; }
+.band-row { display: flex; align-items: center; gap: 1rem; }
+.band-swatch { width: 180px; height: 36px; border-radius: .5rem; flex-shrink: 0; border: 1px solid var(--hair); }
+.band-name  { font-size: .8125rem; font-weight: 600; color: var(--ink); width: 140px; flex-shrink: 0; }
+.band-label { font-size: .8125rem; color: var(--ink-soft); }
+
+/* ── Mockup frame ────────────────────────────────────────────────────────── */
+.mockup { background: var(--core); border: 1px solid var(--hair); border-radius: 1.25rem; overflow: hidden; box-shadow: var(--lift-lg); }
+.mockup-nav { background: var(--base); padding: .75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--hair); }
+.mockup-nav-logo { font-size: .75rem; font-weight: 700; color: var(--anchor); letter-spacing: -.01em; }
+.mockup-nav-links { display: flex; gap: 1rem; }
+.mockup-nav-link  { font-size: .625rem; color: var(--ink-faint); }
+.mockup-hero-section { background: var(--base); padding: 2.5rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.mockup-h1   { font-size: 1.375rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.1; color: var(--ink); margin-bottom: .625rem; }
+.mockup-body { font-size: .75rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1rem; }
+.mockup-portrait-placeholder { background: var(--base-deep); border-radius: 1rem; height: 160px; display: flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
+.mockup-portrait-label { font-size: .6875rem; color: var(--ink-faint); font-weight: 500; }
+.mockup-chip { position: absolute; bottom: -10px; right: -10px; background: var(--core); border: 1px solid var(--hair); border-radius: var(--r-pill); padding: .375rem .75rem; font-size: .5625rem; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: .375rem; box-shadow: var(--lift); white-space: nowrap; }
+.mockup-cta-band { background: var(--anchor-dark); padding: 2rem; text-align: center; }
+.mockup-cta-h { font-size: .9375rem; font-weight: 800; color: var(--base); letter-spacing: -.03em; margin-bottom: .875rem; }
+.mockup-proof-band { background: var(--base-deep); padding: 2rem; }
+.mockup-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.mockup-col-label  { font-size: .5625rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .625rem; }
+.mockup-col-label.before { color: var(--ink-faint); }
+.mockup-col-label.after  { color: var(--anchor); }
+.mockup-col-item   { font-size: .6875rem; padding: .25rem 0; border-bottom: 1px solid var(--hair); display: flex; align-items: center; gap: .375rem; }
+.mockup-col-item.before-item { color: var(--ink-faint); }
+.mockup-col-item.after-item  { color: var(--ink); font-weight: 600; }
+.mockup-col-item.after-item::before { content: '✓'; font-size: .5625rem; color: var(--anchor); }
+
+/* ── Do / Don't ──────────────────────────────────────────────────────────── */
+.rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.rule-list { list-style: none; }
+.rule-list li { font-size: .9375rem; color: var(--ink-soft); padding: .625rem 0; border-bottom: 1px solid var(--hair); display: flex; align-items: flex-start; gap: .75rem; line-height: 1.5; }
+.bg-anchor .rule-list li { color: rgba(0,0,0,.75); border-bottom-color: rgba(0,0,0,.12); }
+.rule-list li:last-child { border-bottom: none; }
+.rule-list li::before { font-size: .875rem; font-weight: 700; flex-shrink: 0; margin-top: .125rem; }
+.do-list li::before   { content: '✓'; color: var(--anchor); }
+.dont-list li::before { content: '✗'; color: var(--accent); }
+
+/* ── Token display ───────────────────────────────────────────────────────── */
+.token-section { margin-bottom: 2.5rem; }
+.token-section h3 { margin-bottom: 1rem; }
+
+/* ── Implementation list ─────────────────────────────────────────────────── */
+.impl-list { list-style: none; }
+.impl-list li { font-size: .9375rem; color: var(--ink-soft); padding: .625rem 0; border-bottom: 1px solid var(--hair); display: flex; align-items: flex-start; gap: .75rem; line-height: 1.55; }
+.impl-list li:last-child { border-bottom: none; }
+.impl-list li::before { content: '→'; color: var(--anchor); font-weight: 700; flex-shrink: 0; margin-top: .125rem; }
+
+/* ── Radius demo ─────────────────────────────────────────────────────────── */
+.radius-demo { background: var(--base-deep); height: 80px; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 600; color: var(--ink-faint); text-align: center; line-height: 1.4; }
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 56px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .rule-grid, .adj-grid { grid-template-columns: 1fr; }
+  .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  .mockup-hero-section, .mockup-before-after { grid-template-columns: 1fr; }
+  .cred-bar { flex-direction: column; align-items: flex-start; gap: .75rem; }
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: white; }
+  section { break-inside: avoid; }
+  .cover { break-after: page; }
+  pre { white-space: pre-wrap; }
+  @page { margin: 1.5cm; }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COVER
+     ══════════════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="container cover-inner">
+    <div class="cover-meta">
+      <span class="cover-logo">Quán Phở</span>
+      <span class="cover-tag">Branding Visual Guide</span>
+      <span class="cover-date">2026-06-27 · v1.0</span>
+    </div>
+    <h1 class="cover-title">Pho, cocktails,<br>and karaoke.<br>A visual system for<br><span class="serif-accent">Quán Phở.</span></h1>
+    <p class="cover-thesis">Street-born Vietnamese energy — warm, moody, and built for a night out.</p>
+    <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+      <span class="status-chip"><span class="status-dot"></span>Ready — all decisions locked</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     01 — VISUAL NORTH STAR
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base" id="s01-north-star">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">01 — Visual north star</span>
+      <h2>What this brand must feel like</h2>
+    </div>
+
+    <div class="north-star-statement">
+      <p style="color:var(--ink-soft);margin-bottom:.75rem;"><strong style="color:var(--ink);">The brand should feel like</strong> a Vietnamese street corner bar at night — warm, atmospheric, and worth leaving the house for. Familiar enough to be welcoming, specific enough to be remembered.</p>
+      <p style="color:var(--ink-soft);margin-bottom:0;"><strong style="color:var(--ink);">Not like</strong> a family pho delivery chain, a generic pan-Asian restaurant, or a corporate dining experience dressed in Vietnamese colors.</p>
+    </div>
+
+    <div class="type-specimen" style="margin:1.5rem 0;">
+      <span class="type-label">One-line visual thesis</span>
+      <p style="font-size:1.125rem;color:var(--ink);font-weight:500;line-height:1.5;">Street-born Vietnamese energy — warm, moody, and built for a night out.</p>
+    </div>
+
+    <div class="adj-grid">
+      <div class="adj-card positive">
+        <div class="adj-label">Anchor adjectives</div>
+        <div class="adj-item">Vibrant</div>
+        <div class="adj-item">Grounded</div>
+        <div class="adj-item">Inviting</div>
+      </div>
+      <div class="adj-card negative">
+        <div class="adj-label">Anti-adjectives</div>
+        <div class="adj-item">Sterile</div>
+        <div class="adj-item">Generic</div>
+        <div class="adj-item">Formal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     02 — DIRECTION MIX
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base-deep" id="s02-direction-mix">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">02 — Direction mix</span>
+      <h2>Editorial / Human leads</h2>
+    </div>
+    <div class="grid-2" style="gap:2rem;align-items:start;">
+      <div>
+        <div class="mix-bar" style="background:linear-gradient(to right, var(--anchor) 70%, var(--base) 70%)"></div>
+        <div class="mix-labels">
+          <span><strong>Editorial / Human</strong> — 70%</span>
+          <span>Cutting-edge / Innovative — 30%</span>
+        </div>
+        <p style="margin-top:1.5rem;">Editorial / Human (70%) provides the warm, atmosphere-first visual language that moves an 18–35 crowd from browsing to "going out tonight" — it sells the feeling of being there before it sells the menu. The Cutting-edge / Innovative layer (30%) adds nightlife credibility so the bar reads as a real destination, not an afterthought. Equal balance between the two would produce a cold, trend-forward aesthetic that strips the cultural warmth this brand needs to stand apart.</p>
+      </div>
+      <div>
+        <div class="card-shell">
+          <div class="card-core">
+            <h3>What this mix prevents</h3>
+            <ul class="rule-list dont-list" style="margin-top:.75rem;">
+              <li>Bright white restaurant template with generic pho bowl photography — interchangeable with every suburban Asian restaurant</li>
+              <li>SaaS-style card grid with filter tabs and metric chips — wrong category, wrong trust signal entirely</li>
+              <li>Fine-dining editorial overhead shots on white — wrong audience, wrong price signal, wrong mood</li>
+              <li>Generic "Asian fusion neon bar" aesthetic with decorative neon as wallpaper — this brand's neon is specific (the QUÁN PHỞ sign)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     03 — COLOR SYSTEM
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base" id="s03-color">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">03 — Color system</span>
+      <h2>Dark warmth. One gold. One crimson.</h2>
+      <p>Five dark tones from near-black to warm brown build an evening atmosphere — with warm cream text throughout. Golden-yellow (<code>--anchor</code>) drives all interactivity: CTAs, active states, and callouts. Deep crimson (<code>--accent</code>) appears in exactly one location: the bar promo strip.</p>
+    </div>
+
+    <div class="palette-grid" style="margin-bottom:3rem;">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#181008"></div>
+        <div class="swatch-info" style="background:#181008">
+          <span class="swatch-name" style="color:rgba(255,255,255,.85)">--base</span>
+          <span class="swatch-hex" style="color:rgba(255,255,255,.55)">#181008</span>
+          <span class="swatch-role" style="color:rgba(255,255,255,.45)">Page background</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#241810"></div>
+        <div class="swatch-info" style="background:#241810">
+          <span class="swatch-name" style="color:rgba(255,255,255,.85)">--core</span>
+          <span class="swatch-hex" style="color:rgba(255,255,255,.55)">#241810</span>
+          <span class="swatch-role" style="color:rgba(255,255,255,.45)">Card interior / surface</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5C4232"></div>
+        <div class="swatch-info" style="background:#5C4232">
+          <span class="swatch-name" style="color:rgba(255,255,255,.85)">--base-deep</span>
+          <span class="swatch-hex" style="color:rgba(255,255,255,.55)">#5C4232</span>
+          <span class="swatch-role" style="color:rgba(255,255,255,.45)">Alt section band (warm brown)</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F0E8D0;border:1px solid rgba(0,0,0,.06) inset"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--ink</span>
+          <span class="swatch-hex">#F0E8D0</span>
+          <span class="swatch-role">Primary text (warm cream)</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C8B898;border:1px solid rgba(0,0,0,.04) inset"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--ink-faint</span>
+          <span class="swatch-hex">#C8B898</span>
+          <span class="swatch-role">Muted text / kickers</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F2B928"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--anchor</span>
+          <span class="swatch-hex">#F2B928</span>
+          <span class="swatch-role">Brand anchor — all CTAs and emphasis</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E0A820"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--anchor-hover</span>
+          <span class="swatch-hex">#E0A820</span>
+          <span class="swatch-role">Anchor hover state</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C23528"></div>
+        <div class="swatch-info" style="background:#241810">
+          <span class="swatch-name" style="color:rgba(255,255,255,.85)">--accent</span>
+          <span class="swatch-hex" style="color:rgba(255,255,255,.55)">#C23528</span>
+          <span class="swatch-role" style="color:rgba(255,255,255,.45)">Vietnamese crimson — bar promo strip only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#52E074"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--neon-signature</span>
+          <span class="swatch-hex">#52E074</span>
+          <span class="swatch-role">Logo / brand mark only — not a UI color</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;">
+      <div>
+        <h3>Usage ratio</h3>
+        <p style="margin-bottom:1rem;">Neutral dark tones carry 65% of every page — they set the evening atmosphere. Gold anchor carries 20% — every button, link, and callout. Crimson is intentionally rare at 10%, confined to the bar promo strip alone.</p>
+        <div style="display:flex;gap:.375rem;align-items:stretch;height:48px;border-radius:.75rem;overflow:hidden;margin-bottom:.75rem;">
+          <div style="flex:65;background:var(--base-deep);display:flex;align-items:center;justify-content:center;font-size:.625rem;font-weight:600;color:rgba(255,255,255,.7);">Dark tones 65%</div>
+          <div style="flex:20;background:var(--anchor);display:flex;align-items:center;justify-content:center;font-size:.625rem;font-weight:600;color:var(--base);">Gold 20%</div>
+          <div style="flex:10;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.5625rem;font-weight:600;color:#fff;">Red 10%</div>
+        </div>
+        <p style="font-size:.75rem;color:var(--ink-faint);">Neutrals 65% / Gold anchor 20% / Crimson accent 10% / Neon signature: logo only</p>
+      </div>
+      <div>
+        <h3>Never do this</h3>
+        <ul class="rule-list dont-list">
+          <li>Pure white backgrounds on any section — destroys the evening atmosphere the brand is built on</li>
+          <li>Crimson as a dominant or section background color — bar promo strip only, always controlled</li>
+          <li>Cool-toned grays or blues — wrong temperature; this palette runs entirely warm</li>
+          <li>Gradient overlays (tech-style) on food photography — weakens the authenticity of the interior shots</li>
+          <li>Neon green #52E074 outside the logo mark — it signals "Asian fusion neon bar" if used as a UI color</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     04 — TYPOGRAPHY SYSTEM
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base-deep" id="s04-typography">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">04 — Typography system</span>
+      <h2>Be Vietnam Pro leads. Cormorant Garamond accents.</h2>
+      <p>Be Vietnam Pro carries 90% of all typographic work — body, navigation, labels, and the short punchy copy that defines this brand's voice. The name itself is a direct cultural signal. Cormorant Garamond Italic appears at display scale (64px+) in gold for the hero tagline and one pull quote only — it creates a single moment of heritage warmth per page without competing with the photography.</p>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div class="type-specimen">
+        <span class="type-label">Be Vietnam Pro — Primary · 90%</span>
+        <p style="font-family:var(--font-sans);font-size:2rem;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.1;margin-bottom:.5rem;">Come in tonight.</p>
+        <p style="font-family:var(--font-sans);font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:.5rem;">Pho, cocktails, and karaoke.</p>
+        <p style="font-family:var(--font-sans);font-size:1rem;font-weight:400;color:var(--ink-soft);margin-bottom:.75rem;">Vietnamese restaurant and bar on Route 1 North in Saugus. Open tonight.</p>
+        <span class="kicker kicker-anchor">Vietnamese restaurant · Route 1 North</span>
+        <p style="margin-top:1rem;font-size:.8125rem;color:var(--ink-faint);margin-bottom:0;">Used for all body copy, headings, labels, navigation, and CTAs. The backbone of the system.</p>
+      </div>
+      <div class="type-specimen">
+        <span class="type-label">Cormorant Garamond — Display accent · 10%</span>
+        <p style="font-family:var(--font-serif);font-style:italic;font-size:2.5rem;font-weight:600;color:var(--anchor);letter-spacing:-.02em;line-height:1.05;margin-bottom:1rem;">Built for a night out.</p>
+        <p style="font-family:var(--font-sans);font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;">Vietnamese restaurant + bar — <span style="font-family:var(--font-serif);font-style:italic;color:var(--anchor);">your table is waiting.</span></p>
+        <p style="font-size:.8125rem;color:var(--ink-faint);margin-bottom:0;">Used once in the hero tagline and once as a section separator. Never in body copy, labels, or navigation. High-contrast letterforms read beautifully in gold on dark.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Type scale</h3>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Font</th><th>Weight</th><th>Size (desktop)</th><th>Tracking</th><th>Case</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Display / Hero</td><td>Cormorant Garamond Italic</td><td>600</td><td>clamp(3.5rem, 6vw, 5rem)</td><td>−0.02em</td><td>Sentence</td></tr>
+          <tr><td>H1</td><td>Be Vietnam Pro</td><td>800</td><td>clamp(2.25rem, 4vw, 3.25rem)</td><td>−0.04em</td><td>Sentence</td></tr>
+          <tr><td>H2</td><td>Be Vietnam Pro</td><td>800</td><td>clamp(1.75rem, 3vw, 2.5rem)</td><td>−0.035em</td><td>Sentence</td></tr>
+          <tr><td>H3</td><td>Be Vietnam Pro</td><td>700</td><td>1.25rem</td><td>−0.02em</td><td>Sentence</td></tr>
+          <tr><td>Body</td><td>Be Vietnam Pro</td><td>400</td><td>1.0625rem</td><td>0</td><td>Sentence</td></tr>
+          <tr><td>Kicker</td><td>Be Vietnam Pro</td><td>600</td><td>0.6875rem</td><td>0.22em</td><td>UPPER</td></tr>
+          <tr><td>Caption</td><td>Be Vietnam Pro</td><td>500</td><td>0.8125rem</td><td>0</td><td>Sentence</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     05 — LAYOUT RHYTHM
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-wash" id="s05-layout">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-anchor">05 — Layout rhythm</span>
+      <h2>Flow-based narrative scroll</h2>
+      <p>Each section builds an evening invitation — from atmosphere (hero) through the experience (bar, karaoke), to proof (reviews), and into action (order, book). It must never read as a feature list, a delivery menu, or a card-grid catalog.</p>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2.5rem;">
+      <div>
+        <h3>Section banding sequence</h3>
+        <div class="band-diagram">
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--base)"></div>
+            <span class="band-name">Navigation</span>
+            <span class="band-label">--base · sticky header</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--base)"></div>
+            <span class="band-name">Hero</span>
+            <span class="band-label">--base · full-bleed photo overlay</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--core)"></div>
+            <span class="band-name">Bar &amp; experience</span>
+            <span class="band-label">--core · bar, cocktails intro</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--base)"></div>
+            <span class="band-name">Menu highlights</span>
+            <span class="band-label">--base · 3-column food card grid</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--accent)"></div>
+            <span class="band-name">Bar promo strip</span>
+            <span class="band-label">--accent · the only crimson section</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--core)"></div>
+            <span class="band-name">Karaoke night</span>
+            <span class="band-label">--core · Saturday 8PM callout</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--base-deep)"></div>
+            <span class="band-name">Proof</span>
+            <span class="band-label">--base-deep · review strip + trust banner</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--anchor-dark)"></div>
+            <span class="band-name">Book a party</span>
+            <span class="band-label">--anchor-dark · primary conversion CTA</span>
+          </div>
+          <div class="band-row">
+            <div class="band-swatch" style="background:var(--base)"></div>
+            <span class="band-name">Footer</span>
+            <span class="band-label">--base · nav links, address, ordering</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem;font-size:.8125rem;color:var(--ink-faint);">No two adjacent sections share the same background token — alternate between base, core, and base-deep to maintain visual rhythm without breaking atmosphere.</p>
+      </div>
+      <div>
+        <h3>Grid and spacing</h3>
+        <table style="margin-bottom:1.5rem;">
+          <tbody>
+            <tr><td>Max content width</td><td>1160px</td></tr>
+            <tr><td>Column grid</td><td>12-column, 24px gutters</td></tr>
+            <tr><td>Section padding (desktop)</td><td>96px top / bottom</td></tr>
+            <tr><td>Section padding (tablet)</td><td>64px top / bottom</td></tr>
+            <tr><td>Section padding (mobile)</td><td>48px top / bottom</td></tr>
+            <tr><td>Text column max</td><td>680px (body-led sections)</td></tr>
+          </tbody>
+        </table>
+        <h3 style="margin-top:1.5rem;">Section patterns used</h3>
+        <ul class="rule-list do-list" style="margin-top:.5rem;">
+          <li>Full-width narrative — hero and atmosphere sections; photography-led, full-bleed image with text overlay</li>
+          <li>Card grid — menu highlights; 3-column desktop, 1-column mobile; food photography with dish name and kicker</li>
+          <li>Proof band — review strip; gold background band with star rating and short quoted review</li>
+          <li>CTA band — Book a Party; full-width anchor-dark background, gold primary button, above the fold</li>
+          <li>Quote section — featured 5-star review at large scale with Cormorant Garamond quote mark</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     06 — COMPONENT LANGUAGE
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base" id="s06-components">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">06 — Component language</span>
+      <h2>Soft, rounded, and warm</h2>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;">
+      <div>
+        <h3>Double-shell card</h3>
+        <div class="card-shell" style="margin-top:.75rem;">
+          <div class="card-core">
+            <span class="kicker kicker-anchor">Saturday night</span>
+            <h4>Karaoke every week — 8PM</h4>
+            <p style="font-size:.875rem;color:var(--ink-soft);margin:.5rem 0 1rem;">Book the private room for your group or join the main floor. Bring your crew, order at the bar.</p>
+            <a class="btn btn-ghost" style="font-size:.875rem;">Book a party →</a>
+          </div>
+        </div>
+        <p style="margin-top:.875rem;font-size:.8125rem;color:var(--ink-faint);">Outer shell: <code>rgba(255,255,255,.04)</code> background, <code>var(--hair)</code> border, <code>var(--r-card) 1.75rem</code> radius. Inner core: <code>var(--core) #241810</code> background, <code>var(--r-inner)</code> radius. No drop shadows — border defines the card on dark backgrounds.</p>
+      </div>
+      <div>
+        <h3>Button system</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-top:.75rem;">
+          <div>
+            <span class="type-label">Primary — used freely on every section</span>
+            <div style="margin-top:.375rem;">
+              <a class="btn btn-primary">Order online <span class="btn-icon">→</span></a>
+            </div>
+          </div>
+          <div>
+            <span class="type-label">Secondary — gold outline (one per hero)</span>
+            <div style="margin-top:.375rem;">
+              <a class="btn" style="border:2px solid var(--anchor);color:var(--anchor);border-radius:var(--r-pill);padding:.75rem 1.5rem;font-size:.9375rem;font-weight:600;">Book a party</a>
+            </div>
+          </div>
+          <div>
+            <span class="type-label">Ghost — navigation and text links</span>
+            <div style="margin-top:.375rem;">
+              <a class="btn btn-ghost">See the full menu</a>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:1rem;font-size:.8125rem;color:var(--ink-faint);">Gold fills primary CTAs. Gold outline for secondary (Book a Party). Ghost for tertiary navigation actions. No crimson buttons — crimson is the bar promo strip, never a button color.</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;">
+      <div>
+        <h3>Proof chips</h3>
+        <div style="display:flex;flex-direction:column;gap:.625rem;margin-top:.75rem;">
+          <div><span class="proof-chip"><span class="proof-dot"></span>Yelp 4.0★ · 9 reviews</span></div>
+          <div><span class="proof-chip"><span class="proof-dot"></span>Saturday karaoke · 8PM every week</span></div>
+          <div><span class="proof-chip"><span class="proof-dot"></span>Formerly Long's Noodle House · same family</span></div>
+        </div>
+        <p style="margin-top:.875rem;font-size:.8125rem;color:var(--ink-faint);">Pill shape, <code>var(--core)</code> background, <code>var(--anchor)</code> dot. Use only for earned, verifiable signals — never fabricated claims.</p>
+      </div>
+      <div>
+        <h3>Credential bar</h3>
+        <div class="cred-bar" style="margin-top:.75rem;">
+          <span class="cred-item">⭐ Yelp 4.0</span>
+          <span class="cred-sep">·</span>
+          <span class="cred-item">Karaoke every Saturday</span>
+          <span class="cred-sep">·</span>
+          <span class="cred-item">Free spring roll at the bar</span>
+        </div>
+        <p style="margin-top:.875rem;font-size:.8125rem;color:var(--ink-faint);">Gold-tinted wash background, pill shape. Three items maximum. All signals must be confirmed and honest — no fabricated reach or review counts.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Radius system</h3>
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="radius-demo" style="border-radius:1.75rem;">Card outer<br>1.75rem</div>
+      <div class="radius-demo" style="border-radius:calc(1.75rem - 10px);">Card inner<br>calc(1.75rem − 10px)</div>
+      <div class="radius-demo" style="border-radius:999px;">Buttons · pill<br>999px</div>
+      <div class="radius-demo" style="border-radius:0.625rem;">Input<br>0.625rem</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     07 — PROOF PRESENTATION
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base-deep" id="s07-proof">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">07 — Proof presentation</span>
+      <h2>Real proof. Earned signals only.</h2>
+      <p>Quán Phở launched in 2025 with 9 Yelp reviews and a medium trust burden. The strategy is to lead with what's undeniably real — the physical bar, professional food photography, family business history, and specific named experiences. Trust volume grows naturally. Nothing is manufactured.</p>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div class="card-shell">
+        <div class="card-core">
+          <span class="kicker kicker-anchor">Phase 1 — launch (now)</span>
+          <h3>Proof available immediately</h3>
+          <ul class="impl-list" style="margin-top:.75rem;">
+            <li>Bar promo strip — confirmed: "1 free spring roll with any bar drink. Sit at the bar."</li>
+            <li>Saturday karaoke — confirmed: every week at 8PM (specific, verifiable, differentiated)</li>
+            <li>13 professional food photos + 3 interior shots — high-quality existing assets</li>
+            <li>"Formerly Long's Noodle House — same family, same address" — business history as trust copy</li>
+            <li>3 × 5-star Google reviews — quote the best one verbatim on the homepage</li>
+            <li>Spicy Pho Ti-Ni signature cocktail — name it specifically; generic "cocktails" loses the proof value</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-shell">
+        <div class="card-core">
+          <span class="kicker kicker-anchor">Phase 2 — first reviews arrive</span>
+          <h3>As social proof grows</h3>
+          <ul class="impl-list" style="margin-top:.75rem;">
+            <li>Activate review strip — Yelp and Google star ratings displayed as a gold band with a real quoted review</li>
+            <li>Replace homepage placeholder with a specific 5-star quote: real name, real experience, real dish mentioned</li>
+            <li>Add credential bar with live Yelp star count once it exceeds 4.0 with meaningful volume (20+ reviews)</li>
+            <li>Group/party photos as they accumulate — real crowd energy, real bar shots, never stock</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:.75rem;">What must never be fabricated</h3>
+    <ul class="rule-list dont-list">
+      <li>Review counts or star ratings not yet earned — never round up or estimate Yelp/Google scores</li>
+      <li>Party booking flow, capacity numbers, or deposit amounts before confirmed by client</li>
+      <li>Delivery capability or delivery zone before the platform and area are confirmed</li>
+      <li>Group energy shots using stock photography — use only real bar/crowd photos from the existing library</li>
+      <li>Any pricing, reservation, or operational details that haven't been provided directly by the client</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     08 — IMAGERY AND ART DIRECTION
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-wash" id="s08-imagery">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-anchor">08 — Imagery and art direction</span>
+      <h2>Show the space. Show the food. Show the night.</h2>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Photography direction</h3>
+        <table>
+          <tbody>
+            <tr><td>Direction</td><td>Environment-led + Product-led + People-led</td></tr>
+            <tr><td>Subject priority</td><td>Place first (bar atmosphere, lanterns, mural) → Food close-ups second (named dishes) → Group energy third (people at the bar)</td></tr>
+            <tr><td>Mood</td><td>Warm · Intimate · Energetic — evening atmosphere, not daytime lunch</td></tr>
+            <tr><td>Lighting</td><td>Moody — existing dark high-quality interior shots are the reference standard. Warm overhead pendants, not studio white. No flash.</td></tr>
+            <tr><td>Composition</td><td>Close-up for food (existing 13 shots are the standard). Medium-wide for interior and bar. Candid-to-documentary for people — real moments, not posed.</td></tr>
+            <tr><td>Illustration / icons</td><td>None — photo-only. Full photo library confirmed. No icon sets, no decorative elements.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Never use these</h3>
+        <ul class="rule-list dont-list">
+          <li>Stock "happy Asian family eating pho" — directly contradicts the 18–35 bar-crowd positioning</li>
+          <li>Generic cocktail stock images — the Spicy Pho Ti-Ni is the specific proof asset; no substitutes</li>
+          <li>Bright overhead food photography on white surfaces — conflicts with the dark moody base palette</li>
+          <li>Cold studio lighting — wrong temperature and wrong mood for an evening bar brand</li>
+          <li>Fake party or group booking confirmation screenshots — fabricated proof is worse than no proof</li>
+          <li>Over-filtered warm sepia vintage treatment — the space is authentically warm; no filter needed</li>
+          <li>Phone mockups or app screenshot overlays on any section of the page</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     09 — MOTION AND INTERACTION
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base" id="s09-motion">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">09 — Motion and interaction</span>
+      <h2>Restrained. Purposeful. Never decorative.</h2>
+    </div>
+    <div class="grid-2" style="gap:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Motion rules</h3>
+        <table>
+          <tbody>
+            <tr><td>Level</td><td>Restrained — photography and color carry the atmospheric weight; motion adds nothing extra</td></tr>
+            <tr><td>Role</td><td>Reveal + Hover — scroll entry fades, interactive states respond</td></tr>
+            <tr><td>Scroll behavior</td><td>Fade-up: sections enter from 12px below at 300ms ease-soft. Not staggered. Not dramatic.</td></tr>
+            <tr><td>Button interaction</td><td>Tactile — gold dims on hover (#F2B928 → #E0A820) at 150ms ease. No scale transform. No glow effect.</td></tr>
+            <tr><td>Properties</td><td><code>opacity</code> and <code>transform</code> only — no layout-triggering properties</td></tr>
+            <tr><td>Reduced motion</td><td>Required — all animations must check <code>prefers-reduced-motion</code> and disable gracefully</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">What must never animate</h3>
+        <ul class="rule-list dont-list">
+          <li>The hero image — no parallax; it fights the dark atmospheric base and kills performance</li>
+          <li>The navigation header — sticky nav must be completely static on scroll</li>
+          <li>Background color transitions on any section band</li>
+          <li>Proof numbers or review counts — animated counters are a trust-weakening gimmick</li>
+          <li>Hover sparkle, glow, or shimmer effects on food photography</li>
+          <li>Floating persistent widgets that follow the user's scroll position</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;margin-bottom:.5rem;">Easing curves</h3>
+        <p style="font-size:.875rem;"><code>--ease: cubic-bezier(.32,.72,0,1)</code> — UI transitions</p>
+        <p style="font-size:.875rem;"><code>--ease-soft: cubic-bezier(.22,1,.36,1)</code> — scroll reveals</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     10 — HOMEPAGE APPLICATION
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base-deep" id="s10-homepage">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">10 — Homepage application</span>
+      <h2>How the visual system behaves on the main page</h2>
+    </div>
+
+    <h3 style="margin-bottom:1.5rem;">Section sequence</h3>
+    <table style="margin-bottom:2.5rem;">
+      <thead>
+        <tr><th>#</th><th>Section</th><th>Background</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Navigation</td><td>--base</td><td>Sticky dark header — logo mark, main nav links, gold "Order now" CTA always visible</td></tr>
+        <tr><td>2</td><td>Hero</td><td>--base + full-bleed photo</td><td>Atmospheric full-bleed interior image with Cormorant Garamond Italic tagline — both CTAs (Order Now + Book a Party) above the fold</td></tr>
+        <tr><td>3</td><td>Bar &amp; experience</td><td>--core</td><td>Introduce the full bar, the Spicy Pho Ti-Ni cocktail, and the bar deal (free spring roll)</td></tr>
+        <tr><td>4</td><td>Menu highlights</td><td>--base</td><td>3-column card grid of named dishes — Bun Bo Hue, Special Broken Rice, Pho — with food photography</td></tr>
+        <tr><td>5</td><td>Bar promo strip</td><td>--accent (crimson)</td><td>Single crimson section: "1 free spring roll with any bar drink. Sit at the bar." — converts bar-curious visitors</td></tr>
+        <tr><td>6</td><td>Karaoke night</td><td>--core</td><td>Saturday 8PM callout — the strongest group-booking trigger on the page</td></tr>
+        <tr><td>7</td><td>Proof</td><td>--base-deep</td><td>Review strip + trust banner "formerly Long's Noodle House — same family, same address"</td></tr>
+        <tr><td>8</td><td>Book a party</td><td>--anchor-dark</td><td>Primary party-booking CTA — full-width gold section, the main conversion close for group intent</td></tr>
+        <tr><td>9</td><td>Footer</td><td>--base</td><td>Nav links, online ordering link, address (184 Broadway, Saugus MA), social links</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:1.5rem;">Mockup wireframes</h3>
+
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">Hero section</p>
+    <div style="margin-bottom:1.5rem;">
+      <div class="mockup">
+        <div class="mockup-nav">
+          <span class="mockup-nav-logo">QUÁN PHỞ</span>
+          <div class="mockup-nav-links">
+            <span class="mockup-nav-link">Menu</span>
+            <span class="mockup-nav-link">Bar</span>
+            <span class="mockup-nav-link">Karaoke</span>
+            <span class="mockup-nav-link">About</span>
+          </div>
+          <a class="btn btn-primary" style="font-size:.625rem;padding:.375rem .875rem;">Order now</a>
+        </div>
+        <div class="mockup-hero-section">
+          <div>
+            <span class="kicker kicker-anchor">Vietnamese restaurant + bar · Route 1 North, Saugus MA</span>
+            <p class="mockup-h1">Pho, cocktails,<br>and <span style="font-family:var(--font-serif);font-style:italic;color:var(--anchor);">karaoke.</span></p>
+            <p class="mockup-body">Dine in. Drink at the bar. Book your group for Saturday karaoke night at 8PM. Vietnamese restaurant and bar at Godfried's Plaza.</p>
+            <div style="display:flex;gap:.625rem;flex-wrap:wrap;margin-top:.875rem;">
+              <a class="btn btn-primary" style="font-size:.625rem;padding:.375rem .875rem;">Order online</a>
+              <a class="btn" style="font-size:.625rem;padding:.375rem .875rem;border:1.5px solid var(--anchor);color:var(--anchor);border-radius:var(--r-pill);">Book a party</a>
+            </div>
+          </div>
+          <div class="mockup-portrait-placeholder">
+            <span class="mockup-portrait-label">Bar atmosphere photo</span>
+            <div class="mockup-chip"><span style="width:6px;height:6px;background:var(--anchor);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Yelp 4.0★ · Route 1 North</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">Proof section</p>
+    <div style="margin-bottom:1.5rem;">
+      <div class="mockup">
+        <div class="mockup-proof-band">
+          <div style="text-align:center;margin-bottom:1.25rem;">
+            <span class="kicker kicker-anchor">What guests are saying</span>
+            <h3 class="mockup-h1" style="font-size:1rem;margin-bottom:.25rem;">★★★★★ "Best pho in Massachusetts — and the bar surprised me."</h3>
+            <p style="font-size:.625rem;color:var(--ink-faint);margin-bottom:0;">— Google review, 2025</p>
+          </div>
+          <div class="mockup-before-after">
+            <div>
+              <div class="mockup-col-label before">Before visiting</div>
+              <div class="mockup-col-item before-item">Didn't know there was a full bar</div>
+              <div class="mockup-col-item before-item">Thought it was just a pho spot</div>
+              <div class="mockup-col-item before-item">No idea about Saturday karaoke</div>
+              <div class="mockup-col-item before-item">Unsure about group bookings</div>
+            </div>
+            <div>
+              <div class="mockup-col-label after">After one visit</div>
+              <div class="mockup-col-item after-item">Full bar + Spicy Pho Ti-Ni cocktail</div>
+              <div class="mockup-col-item after-item">Bun Bo Hue, Special Broken Rice + more</div>
+              <div class="mockup-col-item after-item">Karaoke every Saturday night at 8PM</div>
+              <div class="mockup-col-item after-item">Group parties welcome — book ahead</div>
+            </div>
+          </div>
+          <div class="cred-bar" style="margin-top:1.25rem;background:rgba(242,185,40,0.08);">
+            <span class="cred-item">⭐ Yelp 4.0</span>
+            <span class="cred-sep">·</span>
+            <span class="cred-item">Karaoke every Saturday</span>
+            <span class="cred-sep">·</span>
+            <span class="cred-item">Formerly Long's Noodle House</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">CTA closing band</p>
+    <div style="margin-bottom:0;">
+      <div class="mockup">
+        <div class="mockup-cta-band">
+          <p class="mockup-cta-h">Ready for tonight?<br>Order online or bring your crew.</p>
+          <a class="btn btn-primary" style="font-size:.75rem;padding:.5rem 1.25rem;">Order now on MealKeyway</a>
+          <p style="font-size:.625rem;color:rgba(0,0,0,.5);margin-top:.625rem;margin-bottom:0;">Dine in · Online ordering via MealKeyway · 184 Broadway #10, Saugus MA 01906</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     11 — DO / DON'T RULES
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-anchor" id="s11-rules">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-paper">11 — Do / Don't rules</span>
+      <h2>Blunt. Visual. Operational.</h2>
+    </div>
+    <div class="rule-grid">
+      <div>
+        <h3 style="margin-bottom:1rem;color:var(--base);opacity:.6;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;">Do</h3>
+        <ul class="rule-list do-list">
+          <li>Use existing dark moody interior photography as the visual anchor for every atmospheric section</li>
+          <li>Name the cocktail and dishes specifically in callouts — "Spicy Pho Ti-Ni," not "signature cocktail"</li>
+          <li>Put the gold CTA button above the fold on every major section</li>
+          <li>Show both CTAs (Order Now + Book a Party) in the hero — both are live</li>
+          <li>Use Be Vietnam Pro Bold for all short-sentence copy</li>
+          <li>Keep the bar promo strip (free spring roll) visible early in the page flow</li>
+          <li>Signal Saturday karaoke night with its own dedicated section or callout</li>
+          <li>Use warm gold #F2B928 for all interactive emphasis — one accent color, consistently applied</li>
+          <li>Allow photography to breathe — generous padding on the dark base</li>
+          <li>Use "formerly Long's Noodle House" lineage as trust copy</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;color:var(--base);opacity:.6;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;">Don't</h3>
+        <ul class="rule-list dont-list">
+          <li>Don't use red as the dominant color on any page — crimson belongs to accent and bar promo strip only</li>
+          <li>Don't add delivery copy until confirmed by client</li>
+          <li>Don't use any stock photography — the existing photo library is the asset</li>
+          <li>Don't use a light or white background on any full-page section</li>
+          <li>Don't introduce a third typeface — Be Vietnam Pro + Cormorant Garamond is the complete system</li>
+          <li>Don't use emojis, fire icons, or "hot items" callouts in the UI</li>
+          <li>Don't use the neon green #52E074 outside the logo mark</li>
+          <li>Don't use "authentic" as a standalone descriptor — replace with the specific dish or tradition</li>
+          <li>Don't apply parallax effects to the hero image</li>
+          <li>Don't add a language switcher without confirmed bilingual content need</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     12 — DESIGN TOKENS
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base-deep" id="s12-tokens">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">12 — Design tokens</span>
+      <h2>Copy-paste ready</h2>
+      <p>Use these in every implementation. Token names are canonical — use them exactly as written across all files.</p>
+    </div>
+
+    <div class="token-section">
+      <h3>CSS custom properties</h3>
+      <pre>:root {
+  /* Color — Base */
+  --base:            #181008;   /* page background */
+  --base-deep:       #5C4232;   /* alt section band (warm brown) */
+  --base-wash:       #201408;   /* subtle third band */
+  --core:            #241810;   /* card interior / surface */
+
+  /* Color — Text */
+  --ink:             #F0E8D0;   /* primary text (warm cream) */
+  --ink-soft:        #D4C8A8;   /* body text */
+  --ink-faint:       #C8B898;   /* muted text / kickers */
+  --hair:            rgba(240,232,208,0.10); /* borders */
+
+  /* Color — Brand */
+  --anchor:          #F2B928;   /* primary brand color — all CTAs */
+  --anchor-hover:    #E0A820;   /* anchor hover state */
+  --anchor-dark:     #C09318;   /* cover / CTA section background */
+  --accent:          #C23528;   /* Vietnamese crimson — bar promo only */
+  --accent-deep:     #A82E22;   /* accent hover */
+  --accent-light:    #E06050;   /* accent on dark backgrounds */
+  --neon-signature:  #52E074;   /* logo / brand mark ONLY — not a UI color */
+
+  /* Shadows (anchor-tinted) */
+  --lift:    0 1px 2px rgba(242,185,40,0.04), 0 18px 40px -22px rgba(242,185,40,0.30);
+  --lift-lg: 0 2px 4px rgba(242,185,40,0.05), 0 44px 80px -36px rgba(242,185,40,0.40);
+  --inner-hi: inset 0 1px 1px rgba(255,255,255,.08);
+
+  /* Radius */
+  --r-card:  1.75rem;
+  --r-inner: calc(1.75rem - 10px);
+  --r-pill:  999px;
+  --r-input: 0.625rem;
+
+  /* Motion */
+  --ease:      cubic-bezier(.32,.72,0,1);
+  --ease-soft: cubic-bezier(.22,1,.36,1);
+  --dur-fast:  150ms;
+  --dur-base:  300ms;
+  --dur-slow:  600ms;
+
+  /* Typography */
+  --font-sans:  'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  /* Layout */
+  --max-w:    1160px;
+  --text-col: 680px;
+}</pre>
+    </div>
+
+    <div class="token-section">
+      <h3>Font import</h3>
+      <pre>&lt;link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&amp;display=swap" rel="stylesheet"&gt;</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     13 — IMPLEMENTATION NOTES
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="bg-base" id="s13-implementation">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">13 — Implementation notes</span>
+      <h2>What must be preserved. What can flex.</h2>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Must preserve exactly</h3>
+        <ul class="impl-list">
+          <li>All colors must reference token variables — never hardcode hex values outside the <code>:root</code> block</li>
+          <li>Double-shell card structure: outer <code>rgba(255,255,255,.04)</code> shell + inner <code>var(--core)</code> — do not collapse to a single layer</li>
+          <li>Section background sequence (base → core → base-deep → anchor-dark) — alternating bands define the page rhythm</li>
+          <li>Cormorant Garamond Italic confined to display/hero scale only — never appears in body copy, labels, or navigation</li>
+          <li>Sentence case on all headings — never title case, never all-caps headings</li>
+          <li>Reduced-motion guard on every CSS animation and scroll reveal — <code>@media (prefers-reduced-motion: reduce)</code></li>
+          <li>Crimson (<code>--accent</code>) used for the bar promo strip only — not for buttons, links, or any other section background</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Accessibility</h3>
+        <ul class="impl-list">
+          <li>Focus-visible ring uses <code>var(--anchor)</code> at 2px offset — visible on both dark and warm-brown backgrounds</li>
+          <li>Color is never the sole information carrier — always pair with shape, label, or icon</li>
+          <li>All food and interior photos require descriptive alt text (e.g. "red lanterns and wooden tables inside Quán Phở")</li>
+          <li>Form labels must be visible — no placeholder-only labeling on any input field</li>
+          <li>Minimum tap target 44×44px on all interactive elements including nav links on mobile</li>
+          <li>Primary text (<code>--ink #F0E8D0</code>) on base (<code>#181008</code>) achieves ~13:1 contrast ratio — passes WCAG AA and AAA</li>
+          <li>All scroll reveals and animations must disable under <code>prefers-reduced-motion: reduce</code></li>
+        </ul>
+        <h3 style="margin-top:1.5rem;margin-bottom:1rem;">Future agents must never improvise</h3>
+        <ul class="rule-list dont-list">
+          <li>No second accent color — gold and crimson are the complete brand color set; no third introduction</li>
+          <li>No gradient overlays or glassmorphism effects on any section or card</li>
+          <li>No light or white section backgrounds — this is a dark-base system by design, not by accident</li>
+          <li>No Cormorant Garamond in body copy, UI labels, or navigation — display/hero only, max two uses per page</li>
+          <li>No stock photography of any kind — the existing photo library is the only asset approved for use</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-shell" style="margin-top:1.5rem;">
+      <div class="card-core">
+        <h3 style="margin-bottom:1rem;">Tentative decisions</h3>
+        <p style="margin-bottom:0;font-size:.9375rem;color:var(--ink-soft);">None. All decisions are fully locked. No open items remain from the Visual Strategist review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer style="background:var(--base-deep);padding:2.5rem 0;border-top:1px solid var(--hair);">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <div style="font-weight:700;color:var(--ink);font-size:.9375rem;margin-bottom:.25rem;">Quán Phở</div>
+      <div style="font-size:.8125rem;color:var(--ink-faint);">Branding Visual Guide · v1.0 · 2026-06-27</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;">Prepared by TechPersona Studio</div>
+      <div style="font-size:.8125rem;color:var(--ink-faint);">Thao Phuong</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

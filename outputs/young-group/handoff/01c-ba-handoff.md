@@ -1,3 +1,15 @@
+## Executive summary
+Young Group is a founder-led online weight loss program built for Vietnamese diaspora women who have tried losing weight and failed. The brand's core strength is specificity: personalized meal plans prepared in about 15 minutes, exact client results, and a double money-back guarantee. A confirmed 226,000-follower Facebook audience and a referral-driven client base underpin the social proof. The website's job is to convert a skeptical, time-pressured buyer by surfacing proof fast and making the program feel straightforward to start. Three items need client confirmation before copy is finalized: credentials, book publication status, and client count / founding year.
+
+## Key points
+- The primary audience is Vietnamese women aged 30–60, concentrated in the USA, who have a history of failed weight loss attempts.
+- The business holds a clear niche: Vietnamese-language coaching delivered across six confirmed countries, with personalized pre-prepped meals, no-hunger assurance, and a money-back guarantee as the main trust levers.
+- Buyers arrive with high skepticism and past failure. The website must lead with specific proof (named clients, real numbers, 226,000 Facebook followers) and reduce friction to the first step.
+- Pricing is approximately $699, revealed after the first consultation call. The site should build enough trust to earn that call, not to close on price directly.
+- Three items need client confirmation before copy is finalized: credentials, book publication status, and client count / founding year.
+
+---
+
 # Business Persona
 
 **Client:** Young Group

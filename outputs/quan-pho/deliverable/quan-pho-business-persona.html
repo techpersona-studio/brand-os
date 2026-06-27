@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Persona Brief — Quán Phở</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F3EE;
+    --paper-deep: #EFEAE1;
+    --pine-wash: #E8EFEC;
+    --core: #FBFAF7;
+    --ink: #171717;
+    --ink-soft: #4E4E4E;
+    --ink-faint: #857F75;
+    --pine: #1E3A34;
+    --pine-soft: #2E5148;
+    --terra: #C06A45;
+    --terra-deep: #9F4F33;
+    --terra-light: #E7A282;
+    --hair: rgba(23,23,23,.10);
+    --lift: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+    --lift-lg: 0 2px 4px rgba(30,58,52,.05), 0 44px 80px -36px rgba(30,58,52,.40);
+    --inner-hi: inset 0 1px 1px rgba(255,255,255,.7);
+    --r-outer: 1.75rem;
+    --r-inner: calc(1.75rem - 10px);
+    --r-sm: .75rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===========================
+     GRAIN OVERLAY
+  =========================== */
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: .04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+  }
+
+  /* ===========================
+     TYPOGRAPHY
+  =========================== */
+  h1, h2, h3, h4 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+  }
+
+  .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--terra-light);
+  }
+
+  .kicker {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .kicker-pine {
+    color: rgba(232,239,236,.65);
+  }
+
+  .kicker-terra {
+    color: var(--terra-light);
+  }
+
+  .sh {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+
+  .sh-light {
+    color: rgba(255,255,255,.9);
+  }
+
+  /* ===========================
+     SECTION BACKGROUNDS
+  =========================== */
+  .bg-paper      { background: var(--paper); }
+  .bg-deep       { background: var(--paper-deep); }
+  .bg-pine-wash  { background: var(--pine-wash); }
+  .bg-pine       { background: var(--pine); }
+
+  /* ===========================
+     SECTIONS
+  =========================== */
+  section {
+    padding: 4rem 3rem;
+  }
+
+  .section-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ===========================
+     COVER
+  =========================== */
+  header.cover {
+    background: var(--pine);
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 3rem;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cover-client {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -.05em;
+    margin-bottom: .75rem;
+  }
+
+  .cover-descriptor {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+
+  .cover-title {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .45rem .9rem;
+    border-radius: 2rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+
+  .badge-review {
+    background: rgba(192,106,69,.18);
+    color: var(--terra-light);
+    border: 1px solid rgba(192,106,69,.35);
+  }
+
+  .badge-ready {
+    background: rgba(46,81,72,.5);
+    color: rgba(232,239,236,.9);
+    border: 1px solid rgba(232,239,236,.2);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .cover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    border-top: 1px solid rgba(255,255,255,.08);
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cover-meta {
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.6;
+  }
+
+  .cover-meta strong {
+    color: rgba(255,255,255,.7);
+    font-weight: 600;
+  }
+
+  /* ===========================
+     CHIPS
+  =========================== */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: .2rem .6rem;
+    border-radius: 2rem;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+
+  .chip-confirmed {
+    background: rgba(30,58,52,.1);
+    color: var(--pine-soft);
+    border: 1px solid rgba(30,58,52,.18);
+  }
+
+  .chip-recommended {
+    background: rgba(133,127,117,.1);
+    color: var(--ink-faint);
+    border: 1px solid rgba(133,127,117,.22);
+  }
+
+  .chip-unknown {
+    background: rgba(133,127,117,.06);
+    color: #b0a89e;
+    border: 1px solid rgba(133,127,117,.15);
+  }
+
+  .chip-toconfirm {
+    background: rgba(192,106,69,.1);
+    color: var(--terra-deep);
+    border: 1px solid rgba(192,106,69,.25);
+  }
+
+  /* trait chips */
+  .chip-trait {
+    background: var(--pine-wash);
+    color: var(--pine-soft);
+    border: 1px solid rgba(30,58,52,.12);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+  }
+
+  .chip-anti {
+    background: rgba(133,127,117,.08);
+    color: var(--ink-faint);
+    border: 1px solid var(--hair);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+    text-decoration: line-through;
+    text-decoration-color: rgba(133,127,117,.5);
+  }
+
+  .chip-avoid {
+    background: rgba(192,106,69,.08);
+    color: var(--terra-deep);
+    border: 1px solid rgba(192,106,69,.18);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+  }
+
+  .chip-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: .75rem;
+  }
+
+  /* ===========================
+     CARDS
+  =========================== */
+
+  /* double-bezel */
+  .card {
+    background: rgba(30,58,52,.045);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-outer);
+    padding: 10px;
+    box-shadow: var(--lift);
+  }
+
+  .card-inner {
+    background: var(--core);
+    border-radius: var(--r-inner);
+    box-shadow: var(--inner-hi);
+    padding: 1.5rem 1.75rem;
+    overflow: hidden;
+  }
+
+  /* flat card */
+  .card-flat {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--lift);
+  }
+
+  /* dark card — on dark backgrounds */
+  .dark-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+  }
+
+  /* pine-wash card */
+  .pine-card {
+    background: var(--pine-wash);
+    border: 1px solid rgba(30,58,52,.12);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--lift);
+  }
+
+  /* ===========================
+     GRID
+  =========================== */
+  .g2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .g2-aside {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 1.25rem;
+  }
+
+  /* ===========================
+     FIELD TABLE
+  =========================== */
+  .ft {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ft tr {
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .ft tr:last-child {
+    border-bottom: none;
+  }
+
+  .ft td {
+    padding: .9rem 0;
+    vertical-align: top;
+    font-size: .9rem;
+  }
+
+  .ft-label {
+    font-weight: 700;
+    color: var(--ink-faint);
+    font-size: .75rem;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    width: 38%;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    white-space: nowrap;
+  }
+
+  .ft-value {
+    color: var(--ink-soft);
+    line-height: 1.55;
+    width: auto;
+  }
+
+  .ft-value ul {
+    padding-left: 1.1rem;
+    margin-top: .25rem;
+  }
+
+  .ft-value li {
+    margin-bottom: .2rem;
+    line-height: 1.5;
+  }
+
+  .ft-chip {
+    width: 1%;
+    padding-left: 1rem;
+    white-space: nowrap;
+    padding-top: 1rem;
+  }
+
+  /* ===========================
+     POSITIONING BAND
+  =========================== */
+  .pos-band {
+    background: var(--pine);
+    border-radius: var(--r-outer);
+    padding: 2.5rem 2.75rem;
+    box-shadow: var(--lift-lg);
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pos-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(46,81,72,.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pos-statement {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    font-weight: 700;
+    color: rgba(255,255,255,.92);
+    line-height: 1.4;
+    letter-spacing: -.02em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pos-statement .accent {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terra-light);
+    font-weight: 500;
+  }
+
+  .pos-chip-row {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===========================
+     CONVERSION CONTEXT
+  =========================== */
+  .conv-field {
+    margin-bottom: 2.5rem;
+  }
+
+  .conv-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .conv-heading {
+    font-size: 1rem;
+    font-weight: 800;
+    color: rgba(255,255,255,.55);
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    font-size: .65rem;
+    letter-spacing: .16em;
+    margin-bottom: .3rem;
+  }
+
+  .conv-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.92);
+    letter-spacing: -.025em;
+    line-height: 1.3;
+    margin-bottom: .5rem;
+  }
+
+  .conv-value-terra {
+    color: var(--terra-light);
+  }
+
+  .conv-note {
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+    line-height: 1.6;
+  }
+
+  .conv-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.55;
+    border-left: 2px solid rgba(192,106,69,.5);
+    padding-left: 1.1rem;
+    margin-top: .35rem;
+  }
+
+  .conv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 3rem;
+  }
+
+  /* ===========================
+     VOICE RULES LIST
+  =========================== */
+  .rule-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rule-list li {
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--hair);
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+  }
+
+  .rule-list li:last-child {
+    border-bottom: none;
+  }
+
+  .rule-num {
+    font-size: .65rem;
+    font-weight: 700;
+    color: var(--terra);
+    letter-spacing: .08em;
+    flex-shrink: 0;
+    padding-top: .1rem;
+  }
+
+  /* ===========================
+     QUESTION CARDS
+  =========================== */
+  .qcard {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-left: 3px solid var(--terra);
+    border-radius: var(--r-sm);
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .qcard:last-child {
+    margin-bottom: 0;
+  }
+
+  .qcard-num {
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: .35rem;
+  }
+
+  .qcard-topic {
+    display: inline;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-left: .5rem;
+  }
+
+  .qcard-q {
+    font-size: .95rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    line-height: 1.4;
+    letter-spacing: -.015em;
+    margin-bottom: .4rem;
+  }
+
+  .qcard-note {
+    font-size: .8rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.55;
+  }
+
+  /* ===========================
+     ARCHETYPE BAND
+  =========================== */
+  .arch-label {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--pine);
+    letter-spacing: -.04em;
+    line-height: 1.1;
+  }
+
+  /* ===========================
+     MESSAGING PATTERNS
+  =========================== */
+  .pattern-block {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .pattern-block code {
+    display: block;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--pine);
+    padding: .45rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .pattern-block code:last-child {
+    border-bottom: none;
+  }
+
+  /* ===========================
+     BULLETS
+  =========================== */
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bullet-list li {
+    padding: .5rem 0;
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--hair);
+    display: flex;
+    gap: .7rem;
+    align-items: baseline;
+  }
+
+  .bullet-list li:last-child {
+    border-bottom: none;
+  }
+
+  .bullet-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--pine);
+    flex-shrink: 0;
+    margin-top: .45rem;
+  }
+
+  .bullet-list-light li {
+    color: rgba(255,255,255,.65);
+    border-bottom-color: rgba(255,255,255,.08);
+  }
+
+  .bullet-list-light li::before {
+    background: var(--terra-light);
+  }
+
+  /* ===========================
+     EXECUTIVE SUMMARY
+  =========================== */
+  .summary-para {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .summary-list li {
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--hair);
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+  }
+
+  .summary-list li:last-child {
+    border-bottom: none;
+  }
+
+  .summary-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--pine);
+    flex-shrink: 0;
+    margin-top: .45rem;
+  }
+
+  /* ===========================
+     SOURCES LIST
+  =========================== */
+  .sources-list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+  }
+  .sources-list li {
+    font-size: .85rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .sources-list li em {
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  /* ===========================
+     SECTION LABEL BAND
+  =========================== */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--hair);
+  }
+
+  .section-label-dark::after {
+    background: rgba(255,255,255,.1);
+  }
+
+  /* ===========================
+     LABEL
+  =========================== */
+  .field-label {
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: .4rem;
+  }
+
+  .field-label-light {
+    color: rgba(255,255,255,.4);
+  }
+
+  .field-value {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ===========================
+     FOOTER
+  =========================== */
+  footer {
+    background: var(--pine);
+    padding: 1.75rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-size: .75rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .04em;
+  }
+
+  .footer-page {
+    font-size: .7rem;
+    color: rgba(255,255,255,.3);
+  }
+
+  /* ===========================
+     SPACER UTILITIES
+  =========================== */
+  .mt-sm { margin-top: .75rem; }
+  .mt-md { margin-top: 1.25rem; }
+  .mt-lg { margin-top: 2rem; }
+  .mb-sm { margin-bottom: .75rem; }
+  .mb-md { margin-bottom: 1.25rem; }
+  .mb-lg { margin-bottom: 2rem; }
+
+  /* ===========================
+     MOBILE RESPONSIVE
+  =========================== */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+
+    section { padding: 2.5rem 1.25rem; }
+
+    .cover-body { padding: 3rem 1.5rem 2rem; }
+    .cover-footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: .75rem; }
+    .cover-client { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+
+    .g2 { grid-template-columns: 1fr; }
+    .g2-aside { grid-template-columns: 1fr; }
+    .conv-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Strip outer bezel on snapshot */
+    .card { background: transparent; border: none; padding: 0; box-shadow: none; }
+    .card-inner { border-radius: var(--r-sm); }
+
+    /* Tighten inner cards */
+    .card-inner, .card-flat, .dark-card, .pos-band, .qcard {
+      padding: 1.1rem 1.1rem;
+    }
+
+    /* Field table mobile stack */
+    .ft thead { display: none; }
+    .ft, .ft tbody, .ft tr, .ft td { display: block; width: 100%; }
+    .ft tr { border-bottom: 1px solid var(--hair); padding: .75rem 0; }
+    .ft tr:last-child { border-bottom: none; }
+    .ft td { padding: 0; border: none; padding-right: 0; }
+    .ft-label { padding-bottom: .2rem; padding-top: 0; }
+    .ft-chip { padding-left: 0; padding-top: .35rem; }
+
+    footer { padding: 1.25rem 1.5rem; }
+  }
+
+  /* ===========================
+     PRINT
+  =========================== */
+  @media print {
+    @page { size: letter; margin: 0; }
+
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    footer { display: none !important; }
+    .grain { display: none; }
+
+    header.cover { break-after: page; min-height: 100vh; }
+
+    section { break-before: page; min-height: 11in; }
+
+    .sh { break-after: avoid; }
+
+    .card {
+      background: transparent;
+      border: none;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .card-inner, .card-flat, .dark-card, .pos-band, .qcard {
+      border-radius: 4px;
+      box-shadow: none;
+    }
+
+    .ft tr { break-inside: avoid; }
+
+    ol li { font-size: .75rem; line-height: 1.5; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===========================
+     COVER
+=========================== -->
+<header class="cover">
+  <div class="cover-body">
+    <div class="cover-title">Business Persona Brief</div>
+    <h1 class="cover-client">Quán Phở</h1>
+    <p class="cover-descriptor">Vietnamese restaurant & bar</p>
+    <div></div>
+    
+  </div>
+  <div class="cover-footer">
+    <div class="cover-meta">
+      <strong>Prepared by</strong><br>TechPersona Studio / Thao Phuong
+    </div>
+    <div class="cover-meta" style="text-align:right;">
+      <strong>Date</strong><br>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===========================
+     EXECUTIVE SUMMARY
+=========================== -->
+<section class="bg-paper">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Executive summary</span>
+    </div>
+    <p class="summary-para">Quán Phở is a Vietnamese restaurant and bar in Saugus, MA on Route 1 North, incorporated in March 2025 and operating since November 2025 as a rebrand of the family's prior concept, Long's Noodle House. Its clearest differentiator is a combination that's rare in the Vietnamese restaurant category: a physical bar, a named signature cocktail (Spicy Pho Ti-Ni), weekly Saturday karaoke at 8PM, and late hours every night of the week. The target audience is adults 18–35 who want a real night out with their crew — not just a meal — and the website must lead with bar and entertainment proof, then convert that crowd with a clear party booking path and online ordering flow. Party booking and delivery are the client's two stated top priorities but have zero website presence today; both require client confirmation before conversion flows or copy can be built.</p>
+    <div class="card">
+      <div class="card-inner">
+        <ul class="summary-list">
+          <li>The &quot;Vietnamese restaurant &amp; bar&quot; label is externally confirmed by Roadtrippers, Yahoo Local, and Yelp — this dual identity is the strategic anchor, not just a category tag</li>
+          <li>Saturday karaoke and the bar promo (free spring roll with bar drink) are the highest-leverage social hooks for the 18–35 crowd and are currently invisible on the website</li>
+          <li>Party booking is the client's stated #1 priority with no infrastructure anywhere — resolving this is the single most important pre-build confirmation</li>
+          <li>Yelp shows 4.0/5 across 9 reviews with concerns about wait times and price sensitivity — proactive objection handling in copy is recommended from launch</li>
+          <li>Pricing, seating capacity, delivery status, and founder story are all unknown and must be confirmed before the website blueprint can be finalized</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BUSINESS SNAPSHOT
+=========================== -->
+<section class="bg-deep">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Business snapshot</span>
+    </div>
+    <h2 class="sh">What the business is</h2>
+    <div class="card">
+      <div class="card-inner" style="padding:0 1.75rem;">
+        <table class="ft">
+          <tbody>
+                        <tr>
+              <td class="ft-label">Business name</td>
+              <td class="ft-value">Quán Phở / Quan Pho (legal entity: Quan Pho Inc.)</td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Confirmed (strong)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Industry/category</td>
+              <td class="ft-value">Vietnamese restaurant &amp; bar</td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Confirmed (strong)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Service area</td>
+              <td class="ft-value">Saugus, MA — 184 Broadway #10, Godfried's Plaza, Route 1 North (MA 01906)</td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Confirmed (strong)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Primary offer</td>
+              <td class="ft-value"><ul><li>Vietnamese pho and traditional dishes, dine-in</li><li>Full physical bar with signature cocktails (incl. &quot;Spicy Pho Ti-Ni&quot;)</li><li>Weekly Saturday karaoke night at 8PM</li><li>Bar promo: 1 free spring roll order per bill when ordering any alcoholic drink at the bar</li><li>Online ordering via MealKeyway only (no third-party delivery platform confirmed)</li></ul></td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Confirmed (strong)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Primary audience</td>
+              <td class="ft-value">Adults 18–35; bar/party/drinking crowd; high-tip preference; no-kids preference</td>
+              <td class="ft-chip"><span class="chip chip-confirmed" style="background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Confirmed (partial)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Buyer trigger</td>
+              <td class="ft-value">Evening out or group occasion; karaoke night; late-night bar visit; after-work dinner<ul><li>Signal 1: Hours until 11PM daily position the restaurant for after-work and late-night plans (Yelp)</li><li>Signal 2: Saturday karaoke and bar promo target group/social occasions (FindGlocal)</li><li>Signal 3: Client notes: &quot;Want to focus on delivery + party booking&quot; confirms group/occasion as the primary frame</li></ul></td>
+              <td class="ft-chip"><span class="chip chip-recommended">Recommended</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Sales / traffic context</td>
+              <td class="ft-value">Unknown — no inbound lead data, referral patterns, or ad spend confirmed.</td>
+              <td class="ft-chip"><span class="chip chip-unknown">Unknown</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BRAND STRATEGY
+=========================== -->
+<section class="bg-pine-wash">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Brand strategy</span>
+    </div>
+    <h2 class="sh">How the brand is positioned</h2>
+    
+    <div class="pos-band mb-md">
+      <div class="kicker kicker-terra mb-sm">Positioning statement</div>
+      <p class="pos-statement">For adults 18–35 in Saugus and Route 1 North who want Vietnamese food and a real night out, Quán Phở is the Vietnamese restaurant and bar that delivers bold flavors and social energy because it's the only venue in the area with a full bar, signature cocktails, and Saturday karaoke nights.</p>
+      <div class="pos-chip-row">
+        <span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Recommended</span>
+      </div>
+    </div>
+    <div class="g2 mb-md">
+      <div class="card-flat">
+        <div class="field-label mb-sm">Core problem</div>
+        <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;">Adults 18–35 in the Route 1 North corridor who want both authentic Vietnamese food and a real bar/entertainment experience have no venue that combines both. Vietnamese restaurants in Boston suburbs are typically daytime-casual, without bar service or after-dark programming.</p>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+      <div class="card-flat">
+        <div class="field-label mb-sm">Desired feeling</div>
+        <div class="chip-cluster">Electric. Welcoming. Bold. Late-night.</div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+    </div>
+    <div class="card-flat mb-md">
+      <div class="field-label mb-sm">Market position</div>
+      <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;margin-bottom:.75rem;">Quán Phở is the only Vietnamese restaurant-bar on Route 1 North with a physical bar, signature cocktails, late-night hours (until 11PM daily), and weekly karaoke programming. It holds a dual position most restaurants in its category don't attempt: authentic Vietnamese food and an active social destination for an 18–35 crowd.</p>
+      <span class="chip chip-confirmed">Confirmed (strong)</span>
+    </div>
+    <div class="card-flat">
+      <div class="field-label mb-sm">Differentiators</div>
+      <ul class="bullet-list">
+          <li>Full physical bar on premises with a named signature cocktail (&quot;Spicy Pho Ti-Ni&quot;) — rare for the Vietnamese restaurant category</li>
+          <li>Weekly Saturday karaoke at 8PM — entertainment programming that drives repeat visits and group bookings</li>
+          <li>Active bar promotion (1 free spring roll per bill with any bar drink) — incentivizes bar seating and social energy</li>
+          <li>Late hours every day (Mon–Thu 4PM–11PM; Fri–Sun 12PM–11PM) — captures the after-work and late-night crowd</li>
+          <li>Direct-only online ordering via MealKeyway — no third-party delivery platform, preserving margin and brand control</li>
+        </ul>
+      <div style="margin-top:1rem;"><span class="chip chip-confirmed">Confirmed (strong)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     CONVERSION CONTEXT
+=========================== -->
+<section class="bg-pine">
+  <div class="section-inner">
+    <div class="section-label section-label-dark">
+      <span class="kicker kicker-pine">Conversion context</span>
+    </div>
+    <h2 class="sh sh-light" style="margin-bottom:2.5rem;">What the website is optimizing for</h2>
+    <div class="conv-grid">
+      <div class="conv-field">
+        <div class="conv-heading">Buyer urgency</div>
+        <div class="conv-value conv-value-terra">Medium</div>
+        <p class="conv-note">near-now impulse for tonight's dinner plans or group event; not a high-urgency emergency but not low-consideration either - Signal 1: &quot;Online Order&quot; is the homepage's only prominent CTA — purchase flow is immediate, not inquiry-based - Signal 2: Late hours signal spontaneous evening decisions rather than advance-planned bookings - Signal 3: Karaoke night creates a recurring weekly urgency hook (every Saturday)</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12)">Recommended</span></div>
+      </div>
+      <div class="conv-field">
+        <div class="conv-heading">Trust burden</div>
+        <div class="conv-value conv-value-terra">Medium</div>
+        <p class="conv-note">atmosphere and vibe credibility matter as much as food quality for this audience - Signal 1: Homepage already deploys a Google Reviews section — the restaurant recognizes social proof is a conversion factor - Signal 2: The 18–35 bar/party crowd makes venue decisions based on &quot;scene&quot; credibility, energy, and atmosphere — interior and karaoke content are trust signals, not just decoration</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12)">Recommended</span></div>
+      </div>
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">Main objection</div>
+        <p class="conv-quote">&quot;Is this place actually worth going out to, or is it just a restaurant?&quot; — and for groups: &quot;Can I actually book this for my crew?&quot;</p>
+        <p class="conv-note" style="margin-top:.75rem;">- Signal 1: No party booking form, calendar, or contact path exists on the current website — client's #1 priority is unaddressed - Signal 2: Yelp reviews raise wait time and value concerns — common objections for a newer restaurant with limited review volume</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Recommended</span></div>
+      </div>
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">Proof needed</div>
+        <ul style="margin:.5rem 0 0 1rem;padding:0;list-style:disc;"><li style="font-size:.85rem;color:rgba(232,239,236,.75);line-height:1.6;">Interior atmosphere photos showing the bar section, karaoke setup, and social energy — not only food shots</li>
+          <li style="font-size:.85rem;color:rgba(232,239,236,.75);line-height:1.6;">Bar/cocktail menu with a visual of the &quot;Spicy Pho Ti-Ni&quot;</li>
+          <li style="font-size:.85rem;color:rgba(232,239,236,.75);line-height:1.6;">Karaoke night promotion prominently featured with day and time</li>
+          <li style="font-size:.85rem;color:rgba(232,239,236,.75);line-height:1.6;">Positive review quotes addressing both food quality and vibe</li>
+          <li style="font-size:.85rem;color:rgba(232,239,236,.75);line-height:1.6;">Clear party booking path with capacity and process details</li></ul>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Recommended</span></div>
+      </div>
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">Primary action / CTA</div>
+        <div class="conv-value">Online Order (MealKeyway) — active; Book a Party — to be built, pending client confirmation on booking process and capacity</div>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12)">Recommended</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BRAND PERSONALITY & VOICE
+=========================== -->
+<section class="bg-paper">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Brand personality &amp; voice</span>
+    </div>
+    <h2 class="sh">How the brand speaks and behaves</h2>
+    
+    <div class="g2 mb-md">
+      <div class="card-flat">
+        <div class="field-label mb-sm">Core traits</div>
+        <div class="chip-cluster"><span class="chip chip-trait">Warm and social</span>
+          <span class="chip chip-trait">Bold and flavor-forward</span>
+          <span class="chip chip-trait">Bar-and-entertainment energy</span>
+          <span class="chip chip-trait">Vietnamese cultural identity</span>
+          <span class="chip chip-trait">New and intentional</span></div>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Confirmed (partial)</span></div>
+      </div>
+      <div class="card-flat">
+        <div class="field-label mb-sm">Anti-traits</div>
+        <div class="chip-cluster"><span class="chip chip-anti">family-casual or kid-friendly</span>
+          <span class="chip chip-anti">upscale fine dining</span>
+          <span class="chip chip-anti">delivery-first</span>
+          <span class="chip chip-anti">a generic &quot;fusion&quot; or pan-Asian concept</span>
+          <span class="chip chip-anti">corporate or formal</span></div>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Confirmed (partial)</span></div>
+      </div>
+    </div>
+    <div class="pine-card mb-md">
+      <div class="field-label mb-sm">Brand archetype</div>
+      <div class="arch-label mb-sm">The Entertainer</div>
+      <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;">hospitality through warmth, social energy, and memorable experiences; food and drinks as the occasion, not just sustenance</p>
+      <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+    </div>
+    <div class="card mb-md">
+      <div class="card-inner">
+        <div class="field-label mb-sm">Voice rules</div>
+        <ol class="rule-list">
+            <li><span class="rule-num">01</span>Write as if inviting friends to a night out — not selling to customers</li>
+            <li><span class="rule-num">02</span>Lead with the experience (bar, karaoke, late-night energy) then the food</li>
+            <li><span class="rule-num">03</span>Use specific names: &quot;Spicy Pho Ti-Ni,&quot; &quot;Bun Bo Hue,&quot; &quot;Special Broken Rice,&quot; &quot;Saturday karaoke, 8PM&quot; — specificity beats adjectives</li>
+            <li><span class="rule-num">04</span>Short sentences, present tense, energy-forward: &quot;Come in tonight.&quot; &quot;Bring your crew.&quot;</li>
+            <li><span class="rule-num">05</span>Drop &quot;authentic&quot; as a standalone claim — replace with the specific dish, cocktail, or tradition it refers to</li>
+        </ol>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card-flat">
+        <div class="field-label mb-sm">Messaging patterns</div>
+        <div class="pattern-block"><code>&quot;Vietnamese restaurant + bar on Route 1 North&quot;</code>
+          <code>&quot;Pho, cocktails, and karaoke — come out tonight&quot;</code>
+          <code>&quot;Saturday karaoke nights start at 8PM&quot;</code>
+          <code>&quot;1 free spring roll with any bar drink — sit at the bar&quot;</code>
+          <code>&quot;Dine in. Order online. Book your party.&quot;</code></div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+      <div class="card-flat">
+        <div class="field-label mb-sm">Words to avoid</div>
+        <div class="chip-cluster"><span class="chip chip-avoid">Authentic</span>
+          <span class="chip chip-avoid">Family friendly</span>
+          <span class="chip chip-avoid">Fine dining</span>
+          <span class="chip chip-avoid">Best pho in Boston</span>
+          <span class="chip chip-avoid">Innovative</span></div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-pine">
+  <div class="section-inner">
+    <div class="section-label section-label-dark">
+      <span class="kicker kicker-pine">A few questions</span>
+    </div>
+    <h2 class="sh sh-light" style="margin-bottom:.5rem;">Let's confirm a few things together</h2>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:2.5rem;line-height:1.6;">These items remain open. Nothing blocks planning, but they should be resolved before copy is finalized.</p>
+    
+    <div class="qcard">
+      <div class="qcard-num">01</div>
+      <p class="qcard-q">Do you take party reservations today — even informally by phone?</p>
+      <p class="qcard-note">What does a typical group booking look like (size, process, deposit)?</p>
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">02</div>
+      <p class="qcard-q">Do you offer delivery?</p>
+      <p class="qcard-note">If yes, which platform(s) and what zone? If not yet, is it planned?</p>
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">03</div>
+      <p class="qcard-q">What's your price range?</p>
+      <p class="qcard-note">Is $40 for two soups an accurate reflection of your menu?</p>
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">04</div>
+      <p class="qcard-q">How many seats do you have total?</p>
+      <p class="qcard-note">Is there a section that can be reserved privately for groups?</p>
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">05</div>
+      <p class="qcard-q">Is there an owner story or background you'd like on the website — including any connection to Long's Noodle House?</p>
+      
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">06</div>
+      <p class="qcard-q">Has the bar always been part of Quán Phở, or was it added after opening?</p>
+      <p class="qcard-note">(One early Yelp review mentions only Thai tea — want to tell the right story.)</p>
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">07</div>
+      <p class="qcard-q">Are you happy with &quot;Quán Phở&quot; as the only brand name, or do you want to feature &quot;Quán Phở Vietnamese Restaurant &amp; Bar&quot; anywhere?</p>
+      
+    </div>
+    <div class="qcard">
+      <div class="qcard-num">08</div>
+      <p class="qcard-q">Are there upcoming events, specials, or menu changes you want featured at launch?</p>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     SOURCES APPENDIX
+=========================== -->
+<section class="bg-deep" style="padding-bottom:5rem;">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Sources appendix</span>
+    </div>
+    <h2 class="sh" style="margin-bottom:1.5rem;">Evidence on file</h2>
+    <p style="font-size:.8rem;color:var(--ink-faint);margin-bottom:1.25rem;line-height:1.6;">All research conducted by TechPersona Studio. Sources are listed as found; all facts carry the status noted in the report.</p>
+    <ol class="sources-list">
+      <li>Business name: Quán Phở / Quan Pho <em>Yelp, Yahoo Local, Roadtrippers</em></li>
+      <li>Legal entity: Quan Pho Inc., incorporated March 10, 2025 <em>MA Secretary of State, file #001873907</em></li>
+      <li>Address: 184 Broadway #10, Saugus, MA 01906 <em>Yelp</em></li>
+      <li>Phone: 781-520-4018 <em>Yelp</em></li>
+      <li>Hours: Mon–Thu 4PM–11PM; Fri–Sun 12PM–11PM <em>Yelp</em></li>
+      <li>Venue type: Vietnamese restaurant &amp; bar <em>Roadtrippers, Yahoo Local, Yelp</em></li>
+      <li>Physical bar on premises <em>FindGlocal, Roadtrippers, Yahoo Local</em></li>
+      <li>Signature cocktail: Spicy Pho Ti-Ni <em>FindGlocal</em></li>
+      <li>Bar promo: free spring roll with any bar drink <em>FindGlocal</em></li>
+      <li>Saturday karaoke night, 8PM <em>FindGlocal</em></li>
+      <li>Menu item: Special Broken Rice (grilled pork chop + crispy shredded pork skin) <em>FindGlocal</em></li>
+      <li>Yelp rating: 4.0/5 (9 reviews) <em>https://www.yelp.com/biz/quan-pho-saugus-2</em></li>
+      <li>Former business: Long's Noodle House, same family/address, late 2023–mid 2025 <em>Researcher B external validation</em></li>
+      <li>First Quan Pho reviews appeared: November 2025 <em>Researcher B external validation</em></li>
+      <li>Online ordering via MealKeyway only <em>Homepage CTA + contact page</em></li>
+      <li>Primary CTA: &quot;Online Order&quot; <em>Homepage nav and hero</em></li>
+      <li>Visual palette: yellow-gold, crimson-red, dark wood, near-black <em>/assets/interior-*.png</em></li>
+      <li>Logo: green neon &quot;QUÁN PHỞ&quot; signage <em>interior-wide.png</em></li>
+      <li>3 x 5-star Google reviews on homepage <em>Homepage Reviews section</em></li>
+      <li>No TripAdvisor listing found <em>Researcher B external validation</em></li>
+      <li>No party booking on current website <em>Researcher A + B (absence confirmed)</em></li>
+      <li>No delivery info on current website <em>Researcher A + B (absence confirmed)</em></li>
+      <li>Buyer trigger: evening out / group occasion / karaoke night <em>Late hours (Yelp); Saturday karaoke (FindGlocal); client notes on party priority</em></li>
+      <li>Buyer urgency: medium / near-now impulse <em>Online Order as primary CTA (homepage); late hours until 11PM (Yelp); weekly karaoke hook (FindGlocal)</em></li>
+      <li>Trust burden: medium — atmosphere/vibe credibility <em>Google Reviews section on homepage (Researcher A); 18–35 bar crowd makes venue decisions on scene credibility</em></li>
+      <li>Main objection: &quot;Is this worth going out to?&quot; / &quot;Can I book a group?&quot; <em>No party booking flow on site (Researcher A + B); Yelp wait time and value reviews</em></li>
+      <li>Core problem: no Vietnamese restaurant-bar in Route 1 North suburb market <em>Confirmed &quot;Vietnamese restaurant &amp; bar&quot; positioning (Roadtrippers/Yahoo Local); karaoke (FindGlocal); cocktails (FindGlocal)</em></li>
+      <li>Brand archetype: The Entertainer <em>Bar + karaoke + late-night + social promo all align with Entertainer archetype</em></li>
+      <li>Delivery platform and zone (MapQuest conflict unresolved) <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Party booking process, capacity, and deposit requirements <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Pricing / price range <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Seating capacity and private event space <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Founder / owner story and background <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Website typography / font stack <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Competitor visual patterns (no competitor audit performed) <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Client-stated visual preferences <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+      <li>Sales/traffic context (inbound vs. referral vs. walk-in) <span class="chip chip-unknown" style="font-size:.65rem;margin-left:.4rem;">Unknown</span></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">TechPersona Studio / Thao Phuong</span>
+    <span class="footer-page">Quán Phở — Business Persona Brief — </span>
+  </div>
+</footer>
+
+</body>
+</html>

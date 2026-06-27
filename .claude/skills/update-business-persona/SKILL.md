@@ -1,55 +1,36 @@
 ---
 name: update-business-persona
-description: HITL follow-up skill — reads open questions from the synthesized Business Persona, asks them one at a time, collects answers, then updates the handoff md and HTML report.
+description: HITL follow-up skill — reads open questions from the synthesized Business Persona brief, asks them one at a time, collects answers, then updates the brief, slim handoff, and HTML report.
 ---
 
 # Update Business Persona
 
-HITL follow-up after a Business Persona run. Surfaces unanswered questions from the synthesized handoff, collects client answers conversationally, then rewrites both the handoff and the HTML report.
+HITL follow-up after a Business Persona run. Surfaces unanswered questions from the full brief, collects client answers conversationally, then updates both markdown files and re-runs the report script.
 
 ## On trigger
 
-1. Get the client slug from `$ARGUMENTS` if provided (e.g. `/update-business-persona techpersona-studio`). If not provided, list the folders under `outputs/` and ask the user to pick one.
-2. Read `outputs/{slug}/handoff/01c-ba-handoff.md`.
-3. Extract the numbered questions from the `## Client questions` section.
-4. Ask them one at a time in plain language. Wait for each answer before moving to the next. Keep the phrasing natural — do not paste the question verbatim if it reads too formal.
-5. After all questions are answered (or the user says "skip" / "don't know" for any), confirm: "Got all your answers — updating the report now."
+1. Get the client slug from `$ARGUMENTS` if provided (e.g. `/update-business-persona quan-pho`). If not provided, list the folders under `outputs/` and ask the user to pick one.
+2. Read `outputs/{slug}/handoff/01c-ba-brief.md` (full brief — source of truth for questions and field detail).
+3. Read `outputs/{slug}/handoff/01c-ba-handoff.md` (slim key-value — update blocking fields here too).
+4. Extract numbered questions from `## Client questions` in the **brief**.
+5. Ask them one at a time in plain language. Wait for each answer before moving to the next.
+6. After all questions are answered (or the user says "skip" / "don't know"), confirm: "Got all your answers — updating the report now."
 
 ## After collecting answers
 
-Spawn a single agent with this instruction:
+Update both files, then re-run the report script:
 
-```
-You are updating a Business Persona report with new client answers.
+1. **`01c-ba-brief.md`** — promote fields where answers provide evidence; update `## Readiness`; remove answered questions from `## Client questions`; refresh `## Executive summary` if readiness changed materially.
+2. **`01c-ba-handoff.md`** — sync key-value fields (`blocking`, `price`, `cta`, etc.) with brief changes. Keep key-value format only — no Executive summary here.
+3. **Re-render HTML:**
+   `node script/generate-bp-report.js {slug} "{clientName}"`
 
-Read the current handoff at: outputs/{slug}/handoff/01c-ba-handoff.md
-Read the current HTML report at: outputs/{slug}/deliverble/{slug}-business-persona.html
-Read the report generator prompt at: prompts/01d-BP-report-generator.md
-
-Client answers:
-{answers collected above, formatted as Q: / A: pairs}
-
-Steps:
-1. Update the handoff md:
-   - Promote any Recommended or Unknown fields to Confirmed where the answers provide evidence.
-   - Add the answer as a new Source line under the relevant field.
-   - Remove answered questions from the ## Client questions section. If all questions are answered, remove the section entirely.
-   - Update the ## Readiness status if the gaps are now resolved.
-   - Save the updated handoff back to outputs/{slug}/handoff/01c-ba-handoff.md using the Write tool.
-
-2. Re-render the HTML report:
-   - Follow the report generator prompt exactly.
-   - Use the updated handoff as the source of truth.
-   - Keep all existing metadata (client_name, prepared_by, date, report_mode).
-   - Apply the same branding guide already embedded in the existing HTML.
-   - Save the updated HTML to outputs/{slug}/deliverble/{slug}-business-persona.html using the Write tool.
-
-Return: a one-sentence summary of what changed (e.g. "Promoted 3 fields to Confirmed, removed 5 client questions, re-rendered HTML.").
-```
+Do not re-run Researcher A, B, or Synthesizer unless the user explicitly asks.
 
 ## Rules
 
-- Never skip the HITL loop — always ask questions before running the agent
+- Never skip the HITL loop — always ask questions before updating files
 - If the user skips a question, record it as "No answer — leave as-is"
-- Do not re-run Researcher A or B — this skill only touches the handoff and the HTML
-- If the handoff has no `## Client questions` section, tell the user there are no open questions and stop
+- Client questions live in the **brief**, not the slim handoff
+- Executive summary and Key points stay in the **brief** only
+- If the brief has no `## Client questions` section, tell the user there are no open questions and stop
