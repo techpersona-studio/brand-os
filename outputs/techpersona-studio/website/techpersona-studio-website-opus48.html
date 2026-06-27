@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Redesign for Service Businesses in Worcester, MA | TechPersona Studio</title>
+<meta name="description" content="Solo web and automation studio in Worcester, MA. I redesign websites for service businesses so they get found and stop losing leads. Free audit back in 2 days.">
+<link rel="canonical" href="https://www.techpersonastudio.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Redesign for Service Businesses in Worcester, MA | TechPersona Studio">
+<meta property="og:description" content="I redesign websites for service businesses so they get found and stop losing leads. One person on your project, start to finish. Free audit in 2 days.">
+<meta property="og:url" content="https://www.techpersonastudio.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "TechPersona Studio",
+  "url": "https://www.techpersonastudio.com/",
+  "email": "info@techpersonastudio.com",
+  "telephone": "+1-857-800-2667",
+  "description": "Solo web design and automation studio for service businesses. Website redesign and lead-catching systems.",
+  "foundingDate": "2026-06",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Worcester",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Worcester" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Thao Phuong"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Thao Phuong",
+  "jobTitle": "Founder",
+  "worksFor": { "@type": "Organization", "name": "TechPersona Studio" },
+  "url": "https://www.techpersonastudio.com/#about",
+  "image": "https://www.techpersonastudio.com/assets/profile-pic.JPG"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I have to rebuild everything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Most of the time the right move is fixing what you already have. If a piece works, we keep it. If it leaks, we replace it. You won't pay for a teardown you don't need." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can't I just use a free website builder myself?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can. A free template puts a page on the internet, but it rarely earns a stranger's trust, ranks on Google and AI assistants, or catches the leads you're quietly losing. You're paying for results, not a page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to learn or manage anything technical?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The systems run in the background and you don't touch them. You just notice more booked customers and fewer dropped calls." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this just a free audit so you can sell me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The audit is useful on its own and yours to keep. You get the leaks and the fixes in writing. Take them to anyone you like, including yourself. If you want me to build the fixes, good. If not, you still walk away ahead." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost if I want you to build it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We scope it together after the audit, so you see the full price before you commit to anything. Most first projects are one-time, not a monthly retainer. You get a number on the call, no surprises." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A website audit comes back in about 2 business days. A site build or systems setup gets scoped on the call, and most first projects are live within a few weeks, not months." }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  /* Color */
+  --paper:#F6F3EE; --paper-deep:#EFEAE1; --pine-wash:#E8EFEC; --core:#FBFAF7;
+  --ink:#171717; --ink-soft:#4E4E4E; --ink-faint:#857F75;
+  --pine:#1E3A34; --pine-soft:#2E5148;
+  --terra:#C06A45; --terra-deep:#9F4F33; --terra-light:#E7A282;
+  --hair:rgba(23,23,23,.10); --hair-light:rgba(246,243,238,.16);
+  /* Shadows */
+  --lift:0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+  --lift-lg:0 2px 4px rgba(30,58,52,.05), 0 44px 80px -36px rgba(30,58,52,.40);
+  --inner-hi:inset 0 1px 1px rgba(255,255,255,.70);
+  /* Radius */
+  --r-card:1.75rem; --r-inner:calc(1.75rem - 10px); --r-pill:999px; --r-input:.625rem; --r-portrait:1.25rem;
+  /* Motion */
+  --ease:cubic-bezier(.32,.72,0,1); --ease-soft:cubic-bezier(.22,1,.36,1);
+  --dur-fast:150ms; --dur-base:300ms; --dur-slow:600ms;
+  /* Type */
+  --font-sans:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  /* Layout */
+  --max-w:1200px; --section-py:clamp(64px,9vw,120px); --text-col:680px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-sans); background:var(--paper); color:var(--ink);
+  font-size:clamp(1rem,1.05vw,1.0625rem); line-height:1.75; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--terra-light);color:var(--pine)}
+
+h1,h2,h3{letter-spacing:-.03em;line-height:1.06;font-weight:800}
+h1{font-size:clamp(2.4rem,5.4vw,3.5rem);letter-spacing:-.04em;line-height:1.04}
+h2{font-size:clamp(1.9rem,3.6vw,2.5rem)}
+h3{font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:600;letter-spacing:-.015em;line-height:1.2}
+.serif-i{font-family:var(--font-serif);font-style:italic;font-weight:500;color:var(--terra);letter-spacing:0}
+
+/* ---- Layout ---- */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,40px);width:100%}
+.sec{padding:var(--section-py) 0;background:var(--paper)}
+.band-deep{background:var(--paper-deep)}
+.band-wash{background:var(--pine-wash)}
+.band-pine{background:var(--pine);color:var(--paper)}
+.band-pine h2,.band-pine h3{color:var(--paper)}
+.text-col{max-width:var(--text-col)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.75rem;font-weight:600;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--pine);background:var(--pine-wash);
+  padding:.45rem .85rem;border-radius:var(--r-pill);
+}
+.band-pine .eyebrow{color:var(--terra-light);background:rgba(246,243,238,.06);border:1px solid var(--hair-light)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
+.band-pine .eyebrow .dot{background:var(--terra-light)}
+
+.sec-head{max-width:780px}
+.sec-head h2{margin-top:1.1rem}
+.sec-head .lead{margin-top:1.2rem;font-size:1.125rem;color:var(--ink-soft);max-width:60ch}
+.band-pine .sec-head .lead{color:rgba(246,243,238,.78)}
+
+/* ---- Buttons: island (signature) ---- */
+.island{
+  display:inline-flex;align-items:center;gap:.85rem;
+  font-family:var(--font-sans);font-weight:600;font-size:1rem;line-height:1;
+  color:var(--paper);background:var(--pine);
+  padding:.75rem 1.25rem .75rem 1.75rem;border-radius:var(--r-pill);border:none;cursor:pointer;
+  box-shadow:var(--lift); will-change:transform;
+  transition:transform var(--dur-fast) var(--ease),background var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease);
+}
+.island .ic{
+  display:flex;align-items:center;justify-content:center;
+  width:1.9rem;height:1.9rem;border-radius:var(--r-pill);
+  background:rgba(255,255,255,.15);font-size:1.05rem;
+  transition:transform 200ms var(--ease-soft);
+}
+.island:hover{background:var(--pine-soft);transform:translateY(-1px);box-shadow:var(--lift-lg)}
+.island:hover .ic{transform:translate(2px,-2px)}
+.island:active{transform:translateY(0) scale(.985)}
+.island.sm{font-size:.9rem;padding:.55rem .7rem .55rem 1.15rem}
+.island.sm .ic{width:1.6rem;height:1.6rem;font-size:.95rem}
+.island.terra{background:var(--terra)}
+.island.terra:hover{background:var(--terra-deep)}
+.island.lg{font-size:1.0625rem;padding:.95rem 1.4rem .95rem 1.9rem}
+.band-pine .island:not(.terra){background:var(--pine-soft);border:1px solid var(--hair-light);box-shadow:var(--lift),var(--inner-hi)}
+.band-pine .island:not(.terra):hover{background:#365e54}
+
+/* ghost link */
+.ghost{
+  display:inline-flex;align-items:center;gap:.4rem;font-weight:600;color:var(--ink);
+  padding-bottom:2px;border-bottom:2px solid var(--ink);width:fit-content;
+  transition:border-color var(--dur-base) var(--ease),color var(--dur-base) var(--ease);
+}
+.ghost:hover{border-color:var(--terra);color:var(--terra-deep)}
+.ghost .a{transition:transform var(--dur-base) var(--ease-soft)}
+.ghost:hover .a{transform:translateX(3px)}
+.band-pine .ghost{color:var(--paper);border-color:rgba(246,243,238,.5)}
+.band-pine .ghost:hover{color:var(--terra-light);border-color:var(--terra-light)}
+
+:focus-visible{outline:2px solid var(--pine);outline-offset:2px;border-radius:4px}
+.band-pine :focus-visible{outline-color:var(--terra-light)}
+
+/* ---- Grain ---- */
+.grain{
+  position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.4;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+
+/* ---- Reveal ---- */
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity 600ms var(--ease-soft),transform 600ms var(--ease-soft)}
+[data-reveal].visible{opacity:1;transform:none}
+[data-d="1"]{transition-delay:80ms}[data-d="2"]{transition-delay:160ms}
+[data-d="3"]{transition-delay:240ms}[data-d="4"]{transition-delay:320ms}
+
+/* ===========================================================
+   NAV
+   =========================================================== */
+.nav-shell{position:sticky;top:0;z-index:200;transition:background var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease)}
+.nav-shell.stuck{background:rgba(246,243,238,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav{display:flex;align-items:center;gap:1.5rem;max-width:var(--max-w);margin:0 auto;padding:.9rem clamp(20px,5vw,40px)}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.03em;color:var(--ink)}
+.logo .mark{color:var(--pine)}
+.nav-links{display:flex;gap:1.7rem;margin-left:auto}
+.nav-links a{font-weight:500;color:var(--ink-soft);font-size:.95rem;transition:color var(--dur-base) var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{margin-left:.4rem}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
+.nav-burger .bl{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform var(--dur-base) var(--ease),opacity var(--dur-base) var(--ease)}
+.nav-overlay{position:fixed;inset:0;z-index:190;background:var(--paper);display:flex;flex-direction:column;justify-content:center;gap:2rem;padding:2rem clamp(24px,7vw,48px);transform:translateX(100%);transition:transform var(--dur-base) var(--ease);visibility:hidden}
+.nav-overlay.open{transform:translateX(0);visibility:visible}
+.nav-overlay a.ov-link{font-size:1.9rem;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.nav-overlay .ov-foot{margin-top:1rem;display:flex;flex-direction:column;gap:1rem}
+.ov-tel{color:var(--ink-soft);font-weight:600}
+
+/* ===========================================================
+   HERO
+   =========================================================== */
+.hero{padding:clamp(40px,7vw,84px) 0 var(--section-py)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero h1{margin:1.3rem 0}
+.hero .sub{font-size:1.18rem;color:var(--ink-soft);max-width:38ch;line-height:1.6}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:2rem}
+.trust-line{display:flex;align-items:center;gap:.55rem;margin-top:1.4rem;color:var(--ink-faint);font-size:.9rem;font-weight:500}
+.trust-line .tick{color:var(--pine);font-weight:700}
+
+.hero-visual{position:relative}
+.portrait-shell{background:rgba(30,58,52,.04);border:1px solid rgba(30,58,52,.08);border-radius:var(--r-card);padding:10px;box-shadow:var(--lift-lg)}
+.portrait-inner{border-radius:var(--r-inner);overflow:hidden;box-shadow:var(--inner-hi);background:var(--core)}
+.portrait-inner img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4}
+.proof-chip{
+  position:absolute;left:-14px;bottom:34px;
+  background:var(--core);border:1px solid var(--hair);border-radius:1.1rem;
+  padding:.8rem 1rem;box-shadow:var(--lift-lg);max-width:215px;
+}
+.proof-chip .pc-row{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.9rem}
+.proof-chip .pc-ico{width:1.7rem;height:1.7rem;border-radius:50%;background:var(--pine-wash);display:flex;align-items:center;justify-content:center;color:var(--pine);flex-shrink:0}
+.proof-chip .pc-reply{margin-top:.5rem;display:flex;align-items:center;gap:.4rem;color:var(--pine);font-weight:700;font-size:.92rem}
+.proof-chip .pc-label{margin-top:.45rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* ===========================================================
+   PROBLEM (narrative column)
+   =========================================================== */
+.problem .text-col{margin:0 auto;text-align:left}
+.problem h2{font-size:clamp(1.9rem,4vw,3rem);max-width:18ch}
+.problem .p-body{margin-top:1.3rem;font-size:1.18rem;color:var(--ink-soft);line-height:1.65}
+.scenarios{margin:2.4rem 0;display:flex;flex-direction:column;gap:.1rem;border-left:2px solid var(--hair);padding-left:1.4rem}
+.scenarios li{list-style:none;padding:.55rem 0;color:var(--ink-soft);font-size:1.02rem;line-height:1.5}
+.scenarios li b{color:var(--ink);font-weight:600}
+.stat-call{display:flex;align-items:flex-start;gap:1.4rem;margin-top:2.6rem;padding-top:2.2rem;border-top:1px solid var(--hair)}
+.stat-call .big{font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:clamp(3.4rem,8vw,5rem);color:var(--terra);line-height:.85;flex-shrink:0}
+.stat-call .txt{font-size:1.1rem;color:var(--ink);font-weight:500;max-width:34ch;line-height:1.45}
+.stat-call .src{margin-top:.6rem;font-size:.8rem;color:var(--ink-faint)}
+
+/* ===========================================================
+   JOURNEY (horizontal flow)
+   =========================================================== */
+.journey .jhead{max-width:640px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.journey h2{margin-top:1rem;font-size:clamp(1.7rem,3.2vw,2.3rem)}
+.jflow{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.jline{position:absolute;top:26px;left:8%;right:8%;height:2px;background:rgba(30,58,52,.16);overflow:hidden}
+.jline .fill{position:absolute;inset:0;background:var(--pine);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease-soft)}
+.jflow.visible .jline .fill{transform:scaleX(1)}
+.jnode{position:relative;text-align:center;padding:0 .3rem}
+.jdot{width:54px;height:54px;border-radius:50%;background:var(--core);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;font-size:1.3rem;box-shadow:var(--lift);position:relative;z-index:1}
+.jstep{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+.jlbl{display:block;font-weight:600;font-size:1.08rem;margin:.35rem 0 .4rem;color:var(--ink)}
+.jsub{display:block;font-size:.9rem;color:var(--ink-soft);line-height:1.5;max-width:24ch;margin:0 auto}
+
+/* ===========================================================
+   SERVICES (2-col double-shell)
+   =========================================================== */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.shell{background:rgba(30,58,52,.04);border:1px solid rgba(30,58,52,.08);border-radius:var(--r-card);padding:10px;box-shadow:var(--lift)}
+.core-card{background:var(--core);border-radius:var(--r-inner);box-shadow:var(--inner-hi);padding:clamp(1.6rem,3vw,2.4rem);height:100%;display:flex;flex-direction:column}
+.core-card .num{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pine);font-weight:600}
+.core-card h3{margin:.9rem 0 .8rem}
+.core-card>p{color:var(--ink-soft);font-size:1.02rem;line-height:1.6}
+.scenario-box{margin:1.3rem 0;background:var(--pine-wash);border-radius:.9rem;padding:1rem 1.2rem;font-size:.96rem;color:var(--ink);line-height:1.55}
+.scenario-box b{color:var(--pine);font-weight:700}
+.flist{list-style:none;margin:1.3rem 0;display:flex;flex-direction:column;gap:.7rem}
+.flist li{display:flex;gap:.7rem;font-size:.97rem;color:var(--ink-soft);line-height:1.45}
+.flist .ck{color:var(--pine);font-weight:800;flex-shrink:0}
+.core-card .tag{display:inline-block;font-size:.8rem;color:var(--ink-faint);margin-bottom:1.3rem}
+.core-card .ghost{margin-top:auto}
+
+/* ===========================================================
+   PROOF
+   =========================================================== */
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:clamp(2rem,4vw,3rem)}
+.media-frame{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--core);border:1px solid var(--hair);box-shadow:var(--lift)}
+.media-frame .scroll-shot{height:340px;overflow:hidden}
+.media-frame .scroll-shot img{width:100%;height:auto}
+.media-frame video{width:100%;height:340px;object-fit:cover}
+.media-label{position:absolute;top:14px;left:14px;z-index:2;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:.4rem .8rem;border-radius:var(--r-pill);background:rgba(23,23,23,.55);color:var(--paper);backdrop-filter:blur(4px)}
+.media-label.after{background:var(--pine);color:var(--paper)}
+.frame-cap{margin-top:1.3rem}
+.frame-cap .ttl{font-weight:600;font-size:1.05rem;margin-bottom:.7rem}
+.frame-cap ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.frame-cap.before .ttl{color:var(--ink-faint)}
+.frame-cap.before li{color:var(--ink-faint);font-weight:400;font-size:.95rem;display:flex;gap:.6rem}
+.frame-cap.before .x{flex-shrink:0}
+.frame-cap.after li{color:var(--ink);font-weight:600;font-size:.95rem;display:flex;gap:.6rem}
+.frame-cap.after .ck{color:var(--pine);flex-shrink:0}
+.honest-note{margin-top:1.1rem;font-size:.88rem;color:var(--ink-faint);font-style:italic}
+
+.cred-bar{margin-top:clamp(2.5rem,5vw,3.5rem);background:var(--pine-wash);border-radius:1.2rem;padding:1.1rem 1.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;font-weight:500;color:var(--pine);text-align:center}
+.cred-bar span{white-space:nowrap}
+.cred-bar .sep{color:var(--terra)}
+
+.proof-lower{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;margin-top:1.8rem;align-items:stretch}
+.founder-note{padding:1.6rem 1.8rem;border-left:3px solid var(--pine);background:var(--core);border-radius:0 1.2rem 1.2rem 0;display:flex;flex-direction:column;gap:1rem}
+.fn-top{display:flex;align-items:center;gap:.9rem}
+.fn-thumb{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.fn-name{font-weight:600;line-height:1.2}
+.fn-role{font-size:.85rem;color:var(--ink-faint)}
+.founder-note .fn-quote{font-size:1.05rem;color:var(--ink);line-height:1.6}
+.placeholder-card{background:rgba(30,58,52,.04);border:1px dashed rgba(30,58,52,.22);border-radius:var(--r-card);padding:10px}
+.placeholder-card .pc-in{background:var(--core);border-radius:var(--r-inner);padding:1.6rem 1.8rem;height:100%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:.7rem}
+.placeholder-card .pc-tag{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+.placeholder-card p{color:var(--ink-soft);font-size:.98rem;line-height:1.55}
+.samples-head{margin:clamp(2.5rem,5vw,3.5rem) 0 1.2rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.sample-frame{position:relative;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--hair);box-shadow:var(--lift)}
+.sample-frame video{width:100%;height:240px;object-fit:cover}
+.sample-frame .s-lbl{position:absolute;bottom:12px;left:12px;font-size:.78rem;font-weight:600;color:var(--paper);background:rgba(23,23,23,.55);padding:.35rem .75rem;border-radius:var(--r-pill);backdrop-filter:blur(4px)}
+.proof-cta{margin-top:clamp(2.2rem,4vw,3rem);text-align:center}
+
+/* ===========================================================
+   PROCESS (dark pine, numbered)
+   =========================================================== */
+.proc-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.proc{padding:1.8rem 1.6rem;background:var(--pine-soft);border:1px solid var(--hair-light);border-radius:var(--r-card);box-shadow:var(--inner-hi);display:flex;flex-direction:column;gap:.7rem}
+.proc .n{font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:2.6rem;color:var(--terra-light);line-height:.9}
+.proc h3{color:var(--paper);font-size:1.2rem}
+.proc p{color:rgba(246,243,238,.78);font-size:.96rem;line-height:1.55}
+.proc .free-tag{margin-top:.3rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--terra-light)}
+.proc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem;margin-top:2.2rem}
+.proc-free{color:rgba(246,243,238,.82);font-size:1rem;max-width:52ch}
+.proc-free b{color:var(--paper);font-weight:600}
+
+/* ===========================================================
+   ABOUT (mirror split)
+   =========================================================== */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.about-photo{position:relative}
+.about-photo .portrait-shell{padding:8px}
+.about-photo .portrait-inner img{aspect-ratio:4/4.6}
+.about-id{margin-top:1.2rem;display:flex;flex-direction:column;gap:.2rem}
+.about-id .fn{font-weight:700;font-size:1.05rem}
+.about-id .fr{color:var(--ink-faint);font-size:.92rem}
+.about-copy h2{margin:1rem 0 1.3rem}
+.about-copy .a-quote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--ink);line-height:1.35;margin-bottom:1.3rem}
+.about-copy p{color:var(--ink-soft);margin-bottom:1.1rem;line-height:1.65}
+.about-copy .ghost{margin-top:.6rem}
+
+/* ===========================================================
+   FAQ
+   =========================================================== */
+.faq-wrap{max-width:840px;margin:0 auto}
+.faq-list{margin-top:clamp(2rem,4vw,3rem);border-top:1px solid var(--hair)}
+.faq-item{border-bottom:1px solid var(--hair)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;text-align:left;background:none;border:none;cursor:pointer;padding:1.4rem 0;font-family:var(--font-sans);font-size:1.12rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.faq-q .pm{flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--pine-wash);color:var(--pine);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform var(--dur-base) var(--ease),background var(--dur-base) var(--ease)}
+.faq-item.open .faq-q .pm{transform:rotate(45deg);background:var(--pine);color:var(--paper)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height var(--dur-base) var(--ease)}
+.faq-a p{padding:0 0 1.5rem;color:var(--ink-soft);font-size:1.02rem;line-height:1.7;max-width:64ch}
+.faq-end{margin-top:2.4rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;background:var(--core);border:1px solid var(--hair);border-radius:1.2rem;padding:1.3rem 1.6rem}
+.faq-end p{font-weight:500;color:var(--ink)}
+
+/* ===========================================================
+   CLOSING CTA (dark pine band)
+   =========================================================== */
+.closing{background:var(--pine);color:var(--paper);text-align:center;padding:clamp(72px,11vw,140px) 0}
+.closing h2{color:var(--paper);font-size:clamp(2rem,5vw,3.4rem);max-width:18ch;margin:0 auto 2rem}
+.closing .micro{margin-top:1.6rem;color:var(--terra-light);font-size:.92rem;font-weight:500}
+
+/* ===========================================================
+   AUDIT FORM
+   =========================================================== */
+.audit{background:var(--core)}
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.offer-copy h2{margin:1rem 0 1.2rem}
+.offer-copy .o-sub{font-size:1.1rem;color:var(--ink-soft);line-height:1.6;max-width:46ch}
+.offer-list{list-style:none;margin:1.8rem 0;display:flex;flex-direction:column;gap:1rem}
+.offer-list li{display:flex;gap:.8rem;font-size:1.02rem;color:var(--ink);line-height:1.5}
+.offer-list .ck{color:var(--pine);font-weight:800;flex-shrink:0;font-size:1.1rem}
+.after-line{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--hair);color:var(--ink-soft);font-size:.98rem;line-height:1.6}
+.after-line b{color:var(--ink)}
+.contact-inline{margin-top:1.2rem;font-size:.95rem;color:var(--ink-soft)}
+.contact-inline a{color:var(--terra-deep);font-weight:600;border-bottom:1px solid rgba(159,79,51,.3)}
+
+.form-shell{background:rgba(30,58,52,.05);border:1px solid rgba(30,58,52,.10);border-radius:var(--r-card);padding:10px;box-shadow:var(--lift-lg)}
+.form-card{background:var(--paper);border-radius:var(--r-inner);box-shadow:var(--inner-hi);padding:clamp(1.6rem,3vw,2.4rem)}
+.form-card h3{margin-bottom:.4rem}
+.form-card .f-sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.6rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-weight:500;font-size:.875rem;margin-bottom:.45rem;color:var(--ink)}
+.field label .opt{color:var(--ink-faint);font-weight:400}
+.field input,.field textarea{
+  width:100%;font-family:var(--font-sans);font-size:1rem;color:var(--ink);
+  background:var(--core);border:1px solid var(--hair);border-radius:var(--r-input);
+  padding:.8rem .95rem;transition:border-color var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease);
+}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--pine);box-shadow:0 0 0 2px rgba(30,58,52,.15)}
+.field.err input,.field.err textarea{border-color:var(--terra)}
+.err-msg{display:none;margin-top:.4rem;font-size:.78rem;color:var(--terra-deep)}
+.field.err .err-msg{display:block}
+.consent{display:flex;gap:.7rem;align-items:flex-start;margin:1.1rem 0 1.4rem}
+.consent input{flex-shrink:0;width:16px;height:16px;margin-top:4px;accent-color:var(--terra);cursor:pointer}
+.consent label{font-size:.78rem;line-height:1.55;color:var(--ink-soft);font-weight:400}
+.consent label a{color:var(--terra-deep);text-decoration:underline;text-underline-offset:2px}
+.form-card .island{width:100%;justify-content:center}
+.form-fine{margin-top:1rem;font-size:.82rem;color:var(--ink-faint);text-align:center}
+.form-error{display:none;margin-top:1rem;padding:.8rem 1rem;border-radius:.6rem;background:rgba(192,106,69,.1);border:1px solid rgba(192,106,69,.25);font-size:.85rem;line-height:1.5;color:var(--terra-deep)}
+.form-error a{color:var(--terra-deep);text-decoration:underline}
+.form-success{display:none;text-align:center;padding:2rem 1rem}
+.form-success.show{display:block}
+.form-card.sent .form-body{display:none}
+.success-ico{width:64px;height:64px;border-radius:50%;background:var(--pine);display:flex;align-items:center;justify-content:center;margin:0 auto 1.4rem}
+.success-ico svg{width:32px;height:32px;fill:none;stroke:var(--paper);stroke-width:2.5}
+.form-success .big{font-size:1.4rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.6rem}
+.form-success .msg{color:var(--ink-soft);font-size:1rem;line-height:1.6;max-width:34ch;margin:0 auto}
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+.site-footer{background:var(--paper-deep);padding:clamp(48px,7vw,80px) 0 2.5rem}
+.foot-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;padding-bottom:2.5rem;border-bottom:1px solid var(--hair)}
+.foot-tagline{margin-top:.8rem;color:var(--ink-soft);max-width:34ch}
+.foot-meta{margin-top:.6rem;font-size:.85rem;color:var(--ink-faint)}
+.foot-links{display:flex;gap:3rem;flex-wrap:wrap}
+.foot-col{display:flex;flex-direction:column;gap:.6rem}
+.foot-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:.3rem}
+.foot-col a{color:var(--ink-soft);font-weight:500;transition:color var(--dur-base) var(--ease)}
+.foot-col a:hover{color:var(--terra-deep)}
+.foot-bottom{margin-top:2rem;font-size:.85rem;color:var(--ink-faint)}
+
+/* ===========================================================
+   COOKIE
+   =========================================================== */
+.cookie{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:300;max-width:560px;margin:0 auto;background:var(--pine);color:var(--paper);border-radius:1.1rem;padding:1rem 1.3rem;display:flex;align-items:center;gap:1rem;box-shadow:var(--lift-lg);transform:translateY(140%);transition:transform var(--dur-base) var(--ease)}
+.cookie.show{transform:translateY(0)}
+.cookie p{font-size:.85rem;line-height:1.5;color:rgba(246,243,238,.88)}
+.cookie a{color:var(--terra-light);text-decoration:underline}
+.cookie button{flex-shrink:0;background:var(--paper);color:var(--pine);border:none;border-radius:var(--r-pill);padding:.55rem 1.1rem;font-weight:600;font-family:var(--font-sans);cursor:pointer;font-size:.85rem}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-visual{max-width:440px;margin:0 auto;width:100%}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-photo{max-width:380px}
+  .proof-lower{grid-template-columns:1fr}
+  .offer-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .bento{grid-template-columns:1fr}
+  .proc-steps{grid-template-columns:1fr}
+  .jflow{grid-template-columns:1fr 1fr;gap:2.5rem 1.5rem}
+  .jline{display:none}
+}
+@media(max-width:600px){
+  .before-after,.sample-grid{grid-template-columns:1fr}
+  .jflow{grid-template-columns:1fr}
+  .stat-call{flex-direction:column;gap:.8rem}
+  .faq-end{flex-direction:column;align-items:flex-start}
+  .proof-chip{left:8px}
+  .cookie{flex-direction:column;align-items:flex-start}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  [data-reveal]{opacity:1;transform:none}
+  .jline .fill{transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<div class="nav-shell" id="navShell">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#top" class="logo">TechPersona <span class="mark">Studio</span></a>
+    <div class="nav-links">
+      <a href="#services">What I build</a>
+      <a href="#work">Real work</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#audit" class="island sm nav-cta">Get my free website audit <span class="ic" aria-hidden="true">&#8594;</span></a>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+      <span class="bl"></span><span class="bl"></span>
+    </button>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <a href="#services" class="ov-link">What I build</a>
+  <a href="#work" class="ov-link">Real work</a>
+  <a href="#about" class="ov-link">About</a>
+  <a href="#faq" class="ov-link">FAQ</a>
+  <div class="ov-foot">
+    <a href="#audit" class="island">Get my free website audit <span class="ic" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:+18578002667" class="ov-tel">+1 857 800 2667</a>
+  </div>
+</div>
+
+<!-- 1. HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-reveal><span class="dot"></span> Website redesign &middot; Worcester, MA</span>
+      <h1 data-reveal data-d="1">I build the website that wins the customer <span class="serif-i">before</span> they call the next name.</h1>
+      <p class="sub" data-reveal data-d="2">Website redesign for service businesses in Worcester, MA, and beyond. I'm Thao, one person on your project, start to finish.</p>
+      <div class="hero-actions" data-reveal data-d="3">
+        <a href="#audit" class="island lg">Get my free website audit <span class="ic" aria-hidden="true">&#8594;</span></a>
+        <a href="#services" class="ghost">See what I build <span class="a" aria-hidden="true">&#8594;</span></a>
+      </div>
+      <div class="trust-line" data-reveal data-d="4"><span class="tick">&#10003;</span> Free &middot; no commitment &middot; yours to keep</div>
+    </div>
+    <div class="hero-visual" data-reveal data-d="2">
+      <div class="portrait-shell">
+        <div class="portrait-inner">
+          <img src="assets/profile-pic.JPG" alt="Thao Phuong, founder of TechPersona Studio, Worcester MA" width="520" height="572" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+      <div class="proof-chip" aria-hidden="true">
+        <div class="pc-row"><span class="pc-ico">&#9993;</span> New inquiry &middot; 9:48 pm</div>
+        <div class="pc-reply"><span>&#10003;</span> Replied in 2 min</div>
+        <div class="pc-label">Illustrative example</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLEM / THE LEAK -->
+<section class="sec band-deep problem" id="problem">
+  <div class="wrap">
+    <div class="text-col" data-reveal>
+      <h2>Most owners lose the customer before anyone ever talks to them.</h2>
+      <p class="p-body">A lead finds you, reaches out, then hears nothing fast enough. So they call the next name on the list. You never even knew they were there.</p>
+      <ul class="scenarios">
+        <li><b>A call comes in while you're slammed,</b> and nobody picks up.</li>
+        <li><b>An inquiry lands after hours</b> and sits there until morning.</li>
+        <li><b>Follow-up depends on someone remembering,</b> and someone forgets.</li>
+      </ul>
+      <div class="stat-call">
+        <div class="big">21&#215;</div>
+        <div class="copy">
+          <div class="txt">more likely to win a lead when you answer within 5 minutes instead of 30.</div>
+          <div class="src">Source: InsideSales Lead Response Management Study (15,000+ leads)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. HOW IT WORKS / JOURNEY -->
+<section class="sec band-wash journey" id="how">
+  <div class="wrap">
+    <div class="jhead" data-reveal>
+      <h2>One stranger, carried all the way to a loyal customer.</h2>
+    </div>
+    <div class="jflow" id="jflow" data-reveal>
+      <div class="jline" aria-hidden="true"><div class="fill"></div></div>
+      <div class="jnode">
+        <div class="jdot" aria-hidden="true">&#128269;</div>
+        <span class="jstep">Step one</span>
+        <span class="jlbl">They find you</span>
+        <span class="jsub">A Google search or AI answer points to you, not a competitor.</span>
+      </div>
+      <div class="jnode">
+        <div class="jdot" aria-hidden="true">&#9993;</div>
+        <span class="jstep">Step two</span>
+        <span class="jlbl">They reach out</span>
+        <span class="jsub">At 8pm, on their phone, between two other tabs.</span>
+      </div>
+      <div class="jnode">
+        <div class="jdot" aria-hidden="true">&#9889;</div>
+        <span class="jstep">Step three</span>
+        <span class="jlbl">They hear back fast</span>
+        <span class="jsub">An answer lands right away, day, night, or mid-rush.</span>
+      </div>
+      <div class="jnode">
+        <div class="jdot" aria-hidden="true">&#128197;</div>
+        <span class="jstep">The payoff</span>
+        <span class="jlbl">They book and show up</span>
+        <span class="jsub">Before they call the next name on the list.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="dot"></span> What I build</span>
+      <h2>Two halves of one path. <span class="serif-i">Take the one you need.</span></h2>
+      <p class="lead">One gets you found and trusted. The other makes sure no one slips through once they reach out. Start with whichever your biggest leak calls for, or do both.</p>
+    </div>
+    <div class="bento">
+      <article class="shell" data-reveal data-d="1">
+        <div class="core-card">
+          <span class="num">Service 01</span>
+          <h3>Website redesign</h3>
+          <p>A site that gets found and actually converts. Built to your brand, not a template every other shop in town is running, and written for real people first.</p>
+          <ul class="flist">
+            <li><span class="ck">&#10003;</span> Looks like you, earns trust in the first five seconds</li>
+            <li><span class="ck">&#10003;</span> Ranks where people search now, including AI answers</li>
+            <li><span class="ck">&#10003;</span> Every page nudges toward one next step: book, call, or order</li>
+          </ul>
+          <span class="tag">One-time build, scoped before you commit</span>
+          <a href="#audit" class="ghost">See what's included <span class="a" aria-hidden="true">&#8594;</span></a>
+        </div>
+      </article>
+      <article class="shell" data-reveal data-d="2">
+        <div class="core-card">
+          <span class="num">Service 02</span>
+          <h3>Quiet systems</h3>
+          <p>The lead-catching that runs while you work. Missed calls and after-hours messages get an instant, friendly reply and reach the right person.</p>
+          <div class="scenario-box">A new inquiry comes in at 11pm. <b>Your system texts back in under 2 minutes</b> with a booking link. You wake up to a scheduled call.</div>
+          <ul class="flist">
+            <li><span class="ck">&#10003;</span> Nothing for you to learn or log into</li>
+            <li><span class="ck">&#10003;</span> Runs quietly in the background</li>
+            <li><span class="ck">&#10003;</span> Add it to any site, mine or yours</li>
+          </ul>
+          <span class="tag">Add-on or standalone</span>
+          <a href="#audit" class="ghost">See what's included <span class="a" aria-hidden="true">&#8594;</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROOF -->
+<section class="sec band-deep" id="work">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>Qu&#225;n Ph&#7903;, rebuilt.</h2>
+      <p class="lead">Before and after. Same restaurant, completely different first impression.</p>
+    </div>
+
+    <div class="before-after" data-reveal data-d="1">
+      <div>
+        <div class="media-frame">
+          <span class="media-label">Before</span>
+          <div class="scroll-shot" data-scroll>
+            <img src="assets/old-quanphoinsaugus.com_.png" alt="Qu&#225;n Ph&#7903; original website, before the redesign" loading="lazy">
+          </div>
+        </div>
+        <div class="frame-cap before">
+          <p class="ttl">Qu&#225;n Ph&#7903; &middot; before</p>
+          <ul>
+            <li><span class="x">&#10005;</span> Generic template</li>
+            <li><span class="x">&#10005;</span> Walls of text</li>
+            <li><span class="x">&#10005;</span> Could be anyone's restaurant</li>
+            <li><span class="x">&#10005;</span> No clear next step</li>
+            <li><span class="x">&#10005;</span> Broken on mobile</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="media-frame">
+          <span class="media-label after">After</span>
+          <video autoplay muted loop playsinline preload="metadata" aria-label="Qu&#225;n Ph&#7903; new website walkthrough">
+            <source src="assets/new-quanpho.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="frame-cap after">
+          <p class="ttl">Qu&#225;n Ph&#7903; &middot; after</p>
+          <ul>
+            <li><span class="ck">&#10003;</span> Walks a stranger straight to booking</li>
+            <li><span class="ck">&#10003;</span> Food and atmosphere speak for themselves</li>
+            <li><span class="ck">&#10003;</span> One obvious next step on every screen</li>
+            <li><span class="ck">&#10003;</span> Looks right on every device</li>
+          </ul>
+          <p class="honest-note">Rebuilt with permission. New site going live soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-bar" data-reveal data-d="1">
+      <span>6 years of software engineering</span><span class="sep">&middot;</span>
+      <span>One person on your project</span><span class="sep">&middot;</span>
+      <span>Audit delivered in 2 days</span>
+    </div>
+
+    <div class="proof-lower" data-reveal data-d="2">
+      <div class="founder-note">
+        <div class="fn-top">
+          <img class="fn-thumb" src="assets/profile-pic.JPG" alt="Thao Phuong, founder of TechPersona Studio">
+          <div>
+            <div class="fn-name">Thao Phuong</div>
+            <div class="fn-role">Founder, TechPersona Studio</div>
+          </div>
+        </div>
+        <p class="fn-quote">I rebuilt Qu&#225;n Ph&#7903; myself, from the first audit to launch. I'll show you real work, tell you exactly what I'd fix first, and build only what earns its keep.</p>
+      </div>
+      <div class="placeholder-card">
+        <div class="pc-in">
+          <span class="pc-tag">Reviews in progress</span>
+          <p>First client reviews are on the way. See the before and after above, and I'll add named reviews here the moment they land.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="samples-head" data-reveal>Sample builds</p>
+    <div class="sample-grid" data-reveal data-d="1">
+      <div class="sample-frame">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Real estate website sample build">
+          <source src="assets/demo-realestate-wordpress.mp4" type="video/mp4">
+        </video>
+        <span class="s-lbl">Real estate</span>
+      </div>
+      <div class="sample-frame">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="E-commerce website sample build">
+          <source src="assets/demo-ecommerce-wordpress.mp4" type="video/mp4">
+        </video>
+        <span class="s-lbl">E-commerce</span>
+      </div>
+    </div>
+
+    <div class="proof-cta" data-reveal>
+      <a href="#audit" class="ghost">Want this for your business? <span class="a" aria-hidden="true">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PROCESS -->
+<section class="sec band-pine" id="process">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>You'll barely lift a finger.</h2>
+      <p class="lead">Most of the work is mine. Your part fits in a few short conversations, and the first two steps are free.</p>
+    </div>
+    <div class="proc-steps">
+      <div class="proc" data-reveal data-d="1">
+        <span class="n">1</span>
+        <h3>Free audit</h3>
+        <p>Send me your URL. I send back a short walkthrough and the top things costing you customers.</p>
+        <span class="free-tag">Free</span>
+      </div>
+      <div class="proc" data-reveal data-d="2">
+        <span class="n">2</span>
+        <h3>Scope and price</h3>
+        <p>On a short call we find your single biggest leak and the one fix that pays back fastest. You see the full scope and price before you commit.</p>
+        <span class="free-tag">Free</span>
+      </div>
+      <div class="proc" data-reveal data-d="3">
+        <span class="n">3</span>
+        <h3>I build it</h3>
+        <p>Whichever piece your leak calls for, site, systems, or both, built to your brand. I prove every piece works, then refine it for 30 days.</p>
+        <span class="free-tag">Scoped, no surprises</span>
+      </div>
+    </div>
+    <div class="proc-foot">
+      <p class="proc-free"><b>Steps 1 and 2 are free.</b> If you don't see the value, walk away. Nothing owed, nothing to cancel.</p>
+      <a href="#audit" class="ghost">See what the audit covers <span class="a" aria-hidden="true">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo" data-reveal>
+      <div class="portrait-shell">
+        <div class="portrait-inner">
+          <img src="assets/profile-pic.JPG" alt="Thao Phuong, founder of TechPersona Studio, Worcester MA" loading="lazy">
+        </div>
+      </div>
+      <div class="about-id">
+        <span class="fn">Thao Phuong</span>
+        <span class="fr">Founder, TechPersona Studio &middot; Worcester, MA</span>
+      </div>
+    </div>
+    <div class="about-copy" data-reveal data-d="1">
+      <span class="eyebrow"><span class="dot"></span> Who you're hiring</span>
+      <h2>I'm Thao Phuong. You talk to me, every time.</h2>
+      <p class="a-quote">One person on your project, start to finish. You reach me directly, every time.</p>
+      <p>Six years of software engineering sit behind every build, so you get more than a template. You get someone who understands how the whole thing works and stands behind it.</p>
+      <p>I work with service businesses in Worcester, MA, and online across the country. No account managers, no handoffs. Just me, your site, and the systems that catch what the site doesn't.</p>
+      <a href="#services" class="ghost">See what I build <span class="a" aria-hidden="true">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section class="sec band-deep" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head" data-reveal style="margin-bottom:.5rem">
+      <h2>The questions you're already thinking.</h2>
+    </div>
+    <div class="faq-list" data-reveal data-d="1">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">Do I have to rebuild everything? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>No. Most of the time the right move is fixing what you already have. If a piece works, we keep it. If it leaks, we replace it. You won't pay for a teardown you don't need.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can't I just use a free website builder myself? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>You can. A free template puts a page on the internet, but it rarely earns a stranger's trust, ranks on Google and AI assistants, or catches the leads you're quietly losing. You're paying for results, not a page.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I have to learn or manage anything technical? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>No. The systems run in the background and you don't touch them. You just notice more booked customers and fewer dropped calls.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is this just a free audit so you can sell me? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>The audit is useful on its own and yours to keep. You get the leaks and the fixes in writing. Take them to anyone you like, including yourself. If you want me to build the fixes, good. If not, you still walk away ahead.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does it cost if I want you to build it? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>We scope it together after the audit, so you see the full price before you commit to anything. Most first projects are one-time, not a monthly retainer. You get a number on the call, no surprises.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does it take? <span class="pm" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>A website audit comes back in about 2 business days. A site build or systems setup gets scoped on the call, and most first projects are live within a few weeks, not months.</p></div>
+      </div>
+    </div>
+    <div class="faq-end" data-reveal data-d="1">
+      <p>Still unsure? Send me your URL. The audit is free and there's no commitment.</p>
+      <a href="#audit" class="ghost">Send me your URL <span class="a" aria-hidden="true">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CLOSING CTA -->
+<section class="closing" id="cta">
+  <div class="wrap" data-reveal>
+    <h2>Stop losing customers <span class="serif-i">you'll never know you lost.</span></h2>
+    <a href="#audit" class="island terra lg" id="closingCta">Send me your URL <span class="ic" aria-hidden="true">&#8594;</span></a>
+    <p class="micro">Free &middot; No commitment &middot; Audit in 2 days</p>
+  </div>
+</section>
+
+<!-- 10. AUDIT FORM -->
+<section class="sec audit" id="audit">
+  <div class="wrap offer-grid">
+    <div class="offer-copy" data-reveal>
+      <span class="eyebrow"><span class="dot"></span> The free audit</span>
+      <h2>See exactly where you're losing customers.</h2>
+      <p class="o-sub">Send me your website. I'll find at least 3 specific things costing you customers, each with a concrete fix. Back within about 2 business days.</p>
+      <ul class="offer-list">
+        <li><span class="ck">&#10003;</span> Where your biggest customer leak is, on your site and beyond</li>
+        <li><span class="ck">&#10003;</span> What to fix first and why it pays back fastest</li>
+        <li><span class="ck">&#10003;</span> A recorded walkthrough you can watch any time, no call required</li>
+      </ul>
+      <p class="after-line"><b>What happens next:</b> your audit lands in your inbox within 2 days. If you want, a short discovery call finds your single biggest fix. No charge, no pressure.</p>
+      <p class="contact-inline">Prefer to reach out directly? <a href="mailto:info@techpersonastudio.com">info@techpersonastudio.com</a> or <a href="tel:+18578002667">+1 857 800 2667</a>.</p>
+    </div>
+
+    <div class="form-shell" data-reveal data-d="1">
+      <div class="form-card" id="formCard">
+        <div class="form-body">
+          <h3>Get your free website audit</h3>
+          <p class="f-sub">Just your website. No call required to get started.</p>
+          <form id="auditForm" novalidate>
+            <div class="field" id="f-name">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" placeholder="Jordan Avery" required>
+              <span class="err-msg">Please enter your name.</span>
+            </div>
+            <div class="field" id="f-email">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="jordan@yourbusiness.com" required>
+              <span class="err-msg">Please enter a valid email address.</span>
+            </div>
+            <div class="field" id="f-site">
+              <label for="site">Your website</label>
+              <input id="site" name="site" type="url" placeholder="https://yourbusiness.com" required>
+              <span class="err-msg">Please enter a valid URL, like https://yourbusiness.com</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="field">
+              <label for="problems">Tell me about your problems <span class="opt">(optional)</span></label>
+              <textarea id="problems" name="problems" placeholder="What's not working? What are you trying to fix? Even a messy first thought is fine."></textarea>
+            </div>
+            <div class="consent">
+              <input type="hidden" id="smsOptInValue" name="smsOptIn" value="no">
+              <input type="checkbox" id="smsOptIn" value="yes">
+              <label for="smsOptIn">I agree to receive conversational text messages from TechPersona Studio related to my inquiry, project updates, scheduling, reminders, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</label>
+            </div>
+            <button type="submit" class="island">Send my free audit <span class="ic" aria-hidden="true">&#8594;</span></button>
+            <div class="form-error" id="formError">Something went wrong. Please try again or email <a href="mailto:info@techpersonastudio.com">info@techpersonastudio.com</a> directly.</div>
+            <p class="form-fine">No spam. No sales call unless you want one.</p>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="success-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p class="big">Sent. I've got it.</p>
+          <p class="msg">Watch for an email from Thao with your audit: what's working and what's costing you new customers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a href="#top" class="logo">TechPersona <span class="mark">Studio</span></a>
+        <p class="foot-tagline">Websites and quiet systems for service businesses.</p>
+        <p class="foot-meta">Worcester, MA &middot; serving clients online everywhere</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <span class="foot-label">Contact</span>
+          <a href="tel:+18578002667">+1 857 800 2667</a>
+          <a href="mailto:info@techpersonastudio.com">info@techpersonastudio.com</a>
+        </div>
+        <div class="foot-col">
+          <span class="foot-label">Legal</span>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">&#169; 2026 TechPersona Studio &middot; Built by Thao Phuong</div>
+  </div>
+</footer>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie" role="region" aria-label="Cookie notice">
+  <p>This site uses cookies for basic analytics. No personal data is sold or shared. <a href="/privacy-policy.html">Privacy Policy</a></p>
+  <button id="cookieOk">Got it</button>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sticky nav state */
+  var navShell = document.getElementById('navShell');
+  var onScroll = function(){ navShell.classList.toggle('stuck', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* Mobile menu */
+  var burger = document.getElementById('burger');
+  var overlay = document.getElementById('navOverlay');
+  function closeMenu(){ overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  burger.addEventListener('click', function(){
+    var open = overlay.classList.toggle('open');
+    overlay.setAttribute('aria-hidden', String(!open));
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  /* Scroll reveal */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+
+  /* Journey line trigger */
+  var jflow = document.getElementById('jflow');
+  if(jflow){
+    var jio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ jflow.classList.add('visible'); jio.unobserve(e.target);} }); }, {threshold:0.4});
+    jio.observe(jflow);
+  }
+
+  /* Magnetic island buttons */
+  if(!reduce){
+    document.querySelectorAll('.island').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var x = (e.clientX - r.left - r.width/2) * 0.15;
+        var y = (e.clientY - r.top - r.height/2) * 0.22;
+        btn.style.transform = 'translate(' + x + 'px,' + (y-1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
+    });
+  }
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    function setH(){ a.style.maxHeight = item.classList.contains('open') ? a.scrollHeight + 'px' : '0px'; }
+    if(item.classList.contains('open')) requestAnimationFrame(setH);
+    q.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', String(open));
+      setH();
+    });
+    window.addEventListener('resize', function(){ if(item.classList.contains('open')) setH(); });
+  });
+
+  /* Closing CTA: scroll to form, focus URL */
+  var closingCta = document.getElementById('closingCta');
+  if(closingCta){
+    closingCta.addEventListener('click', function(){
+      setTimeout(function(){ var s = document.getElementById('site'); if(s) s.focus({preventScroll:true}); }, 600);
+    });
+  }
+
+  /* SMS consent sync */
+  var cbx = document.getElementById('smsOptIn');
+  var hidden = document.getElementById('smsOptInValue');
+  if(cbx && hidden) cbx.addEventListener('change', function(){ hidden.value = cbx.checked ? 'yes' : 'no'; });
+
+  /* Audit form */
+  var form = document.getElementById('auditForm');
+  if(form){
+    function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function isUrl(v){ try{ var u = new URL(v); return u.protocol==='http:'||u.protocol==='https:'; }catch(e){ return false; } }
+    function setErr(id, show){ document.getElementById(id).classList.toggle('err', show); }
+    ['name','email','site'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.addEventListener('input', function(){ setErr('f-'+id, false); });
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nm = form.name.value.trim(), em = form.email.value.trim(), st = form.site.value.trim();
+      var bad = false;
+      if(!nm){ setErr('f-name', true); bad = true; }
+      if(!isEmail(em)){ setErr('f-email', true); bad = true; }
+      if(!isUrl(st)){ setErr('f-site', true); bad = true; }
+      if(bad) return;
+      document.getElementById('formError').style.display = 'none';
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.innerHTML = 'Sending&hellip;';
+      fetch('https://formspree.io/f/mojoqgyj', {
+        method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}
+      }).then(function(res){
+        if(res.ok){
+          document.getElementById('formCard').classList.add('sent');
+          document.getElementById('formSuccess').classList.add('show');
+        } else {
+          btn.disabled = false; btn.innerHTML = 'Send my free audit <span class="ic" aria-hidden="true">&#8594;</span>';
+          document.getElementById('formError').style.display = 'block';
+        }
+      }).catch(function(){
+        btn.disabled = false; btn.innerHTML = 'Send my free audit <span class="ic" aria-hidden="true">&#8594;</span>';
+        document.getElementById('formError').style.display = 'block';
+      });
+    });
+  }
+
+  /* Cookie notice */
+  var cookie = document.getElementById('cookie');
+  try{
+    if(!localStorage.getItem('tp_cookie_ok')){ setTimeout(function(){ cookie.classList.add('show'); }, 1200); }
+  }catch(e){ setTimeout(function(){ cookie.classList.add('show'); }, 1200); }
+  document.getElementById('cookieOk').addEventListener('click', function(){
+    cookie.classList.remove('show');
+    try{ localStorage.setItem('tp_cookie_ok','1'); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

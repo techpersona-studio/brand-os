@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Analysis Report — Young Group / Trần Thủy Tiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F3EE;
+    --paper-deep: #EFEAE1;
+    --pine-wash: #E8EFEC;
+    --core: #FBFAF7;
+    --ink: #171717;
+    --ink-soft: #4E4E4E;
+    --ink-faint: #857F75;
+    --pine: #1E3A34;
+    --pine-soft: #2E5148;
+    --terra: #C06A45;
+    --terra-deep: #9F4F33;
+    --terra-light: #E7A282;
+    --hair: rgba(23,23,23,.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Typography ── */
+  h1, h2, h3, h4 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; line-height: 1.2; }
+  .italic-accent { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+  /* ── Cards ── */
+  .card {
+    background: rgba(30,58,52,.04);
+    border: 1px solid rgba(30,58,52,.08);
+    border-radius: 1.75rem;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+  }
+  .card-inner {
+    background: var(--core);
+    border-radius: calc(1.75rem - 10px);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,.7);
+    padding: 2rem;
+  }
+  .card-flat {
+    background: var(--core);
+    border: 1px solid rgba(30,58,52,.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 8px 20px -10px rgba(30,58,52,.15);
+  }
+
+  /* ── Priority chips ── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: .25rem .7rem;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .chip-high { background: rgba(192,106,69,.12); color: var(--terra-deep); border: 1px solid rgba(192,106,69,.25); }
+  .chip-medium { background: rgba(133,127,117,.12); color: #5a5349; border: 1px solid rgba(133,127,117,.22); }
+  .chip-low { background: rgba(30,58,52,.06); color: var(--ink-faint); border: 1px solid rgba(30,58,52,.10); }
+  .chip-strength { background: rgba(30,58,52,.10); color: var(--pine); border: 1px solid rgba(30,58,52,.20); }
+
+  /* ── Rating chips ── */
+  .rating-chip {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .3rem .9rem;
+    border-radius: 99px;
+  }
+  .rating-needs { background: rgba(192,106,69,.13); color: var(--terra-deep); border: 1px solid rgba(192,106,69,.25); }
+  .rating-some { background: rgba(133,127,117,.12); color: #5a5349; border: 1px solid rgba(133,127,117,.22); }
+  .rating-strong { background: rgba(30,58,52,.10); color: var(--pine); border: 1px solid rgba(30,58,52,.20); }
+
+  /* ── Layout utilities ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+
+  /* ── Sections ── */
+  section { padding: 5rem 2rem; }
+  section + section { border-top: 1px solid var(--hair); }
+
+  .wrap { max-width: 820px; margin: 0 auto; }
+  .wrap-wide { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Cover ── */
+  header.cover {
+    background: var(--pine);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 90% 20%, rgba(46,81,72,.45) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 5% 90%, rgba(192,106,69,.12) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .cover-top { position: relative; z-index: 1; }
+  .cover-body { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 3rem 0; }
+  .cover-bottom { position: relative; z-index: 1; }
+  .cover-brand {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .cover-eyebrow {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: 1.25rem;
+    opacity: .9;
+  }
+  .cover-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .cover-descriptor {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  .verdict-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(192,106,69,.18);
+    border: 1px solid rgba(231,162,130,.35);
+    color: var(--terra-light);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: .45rem 1rem;
+    border-radius: 99px;
+  }
+  .verdict-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--terra-light);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 3rem;
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+  }
+  .cover-meta-item strong { display: block; color: rgba(255,255,255,.7); font-weight: 600; margin-bottom: .15rem; }
+
+  /* ── Summary section ── */
+  .summary-section { background: var(--paper); }
+
+  .ratings-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .rating-block {
+    flex: 1;
+    min-width: 180px;
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: .875rem;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+  .rating-block-label {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--ink-faint);
+    margin-bottom: .6rem;
+    letter-spacing: .02em;
+  }
+
+  /* ── Strengths / issues list ── */
+  .item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .item-row:last-child { border-bottom: none; }
+  .item-text { flex: 1; font-size: .93rem; color: var(--ink-soft); line-height: 1.5; }
+  .item-text strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Deep analysis ── */
+  .analysis-section { background: var(--paper-deep); }
+
+  .analysis-tab-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--pine);
+    margin-bottom: .5rem;
+    opacity: .7;
+  }
+  .analysis-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: .35rem;
+  }
+  .analysis-card-sub {
+    font-size: .85rem;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .finding-row {
+    display: flex;
+    gap: .85rem;
+    padding: .75rem 0;
+    border-top: 1px solid var(--hair);
+    align-items: flex-start;
+  }
+  .finding-content { flex: 1; }
+  .finding-what {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: .2rem;
+  }
+  .finding-why {
+    font-size: .83rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ── Fix table ── */
+  .ft {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+  }
+  .ft th {
+    text-align: left;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: .5rem .75rem .75rem;
+    border-bottom: 1px solid var(--hair);
+  }
+  .ft td {
+    padding: .8rem .75rem;
+    border-bottom: 1px solid var(--hair);
+    vertical-align: top;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .ft td:first-child { color: var(--ink); font-weight: 500; }
+  .ft tr:last-child td { border-bottom: none; }
+
+  /* ── Recommendations ── */
+  .recs-section { background: var(--pine-wash); }
+
+  .qcard {
+    background: var(--core);
+    border: 1px solid rgba(30,58,52,.10);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 8px 24px -12px rgba(30,58,52,.18);
+  }
+  .qcard-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .85rem;
+  }
+  .qcard-letter {
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--pine);
+    opacity: .45;
+    margin-bottom: .3rem;
+  }
+  .qcard-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .qcard-body {
+    font-size: .87rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .qcard-action {
+    margin-top: .85rem;
+    padding-top: .85rem;
+    border-top: 1px solid var(--hair);
+    font-size: .83rem;
+    color: var(--pine-soft);
+    font-weight: 600;
+  }
+  .qcard-action span { opacity: .5; margin-right: .4rem; }
+
+  .recs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .recs-grid .qcard:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* ── Final recommendation ── */
+  .final-section { background: var(--paper); }
+
+  .verdict-band {
+    background: var(--pine);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.50);
+  }
+  .verdict-band-eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: .75rem;
+    opacity: .85;
+  }
+  .verdict-band-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: .75rem;
+    line-height: 1.2;
+  }
+  .verdict-band-body {
+    font-size: .9rem;
+    color: rgba(255,255,255,.72);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  .callout-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(192,106,69,.07);
+    border: 1px solid rgba(192,106,69,.18);
+    border-radius: .875rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .callout-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(192,106,69,.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    color: var(--terra-deep);
+    font-weight: 800;
+  }
+  .callout-text {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .callout-text strong { color: var(--ink); font-weight: 600; }
+
+  .direction-block {
+    background: var(--pine-wash);
+    border: 1px solid rgba(30,58,52,.10);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  .direction-block p {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .direction-block p + p { margin-top: .85rem; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--pine);
+    color: rgba(255,255,255,.5);
+    padding: 2rem 2rem;
+    font-size: .78rem;
+    text-align: center;
+  }
+  footer strong { color: rgba(255,255,255,.75); }
+
+  /* ── Divider ── */
+  .section-divider {
+    width: 2.5rem;
+    height: 2px;
+    background: var(--terra);
+    border-radius: 2px;
+    margin: 1.25rem 0;
+    opacity: .5;
+  }
+
+  /* ── Print ── */
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    header.cover { break-after: page; min-height: 100vh; }
+    section { break-before: page; min-height: 11in; }
+    .card { background: transparent; border: none; padding: 0; box-shadow: none; border-radius: 0; }
+    .card-inner, .card-flat, .verdict-band, .qcard { border-radius: 4px; box-shadow: none; }
+    .ft tr { break-inside: avoid; }
+    footer { display: none !important; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    section { padding: 2.5rem 1.25rem; }
+    header.cover { padding: 2rem 1.5rem; }
+    .g2, .g3, .recs-grid { grid-template-columns: 1fr; }
+    .recs-grid .qcard:first-child { grid-column: auto; }
+    .cover-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+    .cover-meta { flex-direction: column; gap: 1rem; }
+    .ratings-row { flex-direction: column; }
+    .ft { display: block; }
+    .ft thead { display: none; }
+    .ft tbody, .ft tr, .ft td { display: block; }
+    .ft tr { padding: .75rem 0; border-bottom: 1px solid var(--hair); }
+    .ft td { border-bottom: none; padding: .2rem .5rem; }
+    .ft td::before { content: attr(data-label); font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: .2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════ -->
+<header class="cover">
+  <div class="cover-texture"></div>
+
+  <div class="cover-top">
+    <div class="cover-brand">TechPersona Studio / Thao Phuong</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Website Analysis Report</div>
+    <h1 class="cover-title">Young Group<br>Trần Thủy Tiên</h1>
+    <p class="cover-descriptor">The offer is strong. The trust system needs rebuilding.</p>
+    <div style="margin-top: 1.5rem;">
+      <span class="verdict-badge"><span class="verdict-badge-dot"></span>Recommended next step: Partial redesign</span>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Website</strong>tranthuytien.net</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 25, 2026</div>
+      <div class="cover-meta-item"><strong>Prepared by</strong>TechPersona Studio</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     SUMMARY
+═══════════════════════════════════════════ -->
+<section class="summary-section">
+  <div class="wrap">
+    <div class="section-label">Summary</div>
+
+    <div class="g2" style="gap: 2.5rem; align-items: start;">
+
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: .4rem;">What's working</h2>
+        <p class="italic-accent" style="color: var(--ink-faint); font-size: 1.05rem; margin-bottom: 1.25rem;">Keep these. Build around them.</p>
+        <div class="section-divider"></div>
+
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>Six named testimonials</strong> with exact weight numbers, US state locations, and specific health outcomes. Rare proof quality.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>Double money-back guarantee</strong> in two distinct forms of language. Strong commitment-anxiety reducer.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>Pre-sale qualifier</strong> ("survey first, program only if results are achievable") frames the offer as selective, not desperate.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>226,000 Facebook followers</strong> confirmed on canonical fanpage. Significant social proof asset, not yet shown on site.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>Program specifics</strong>: 42-meal combo, daily scale photo monitoring, personalized weekly menu, lifetime formula after goal. Clear differentiators.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Strength</span>
+          <div class="item-text"><strong>"TƯ VẤN CHO TÔI" CTA pattern</strong> is direct, low-friction, and culturally right. Keep it.</div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: .4rem;">What's holding it back</h2>
+        <p class="italic-accent" style="color: var(--ink-faint); font-size: 1.05rem; margin-bottom: 1.25rem;">Four problems costing bookings.</p>
+        <div class="section-divider"></div>
+
+        <div class="item-row">
+          <span class="chip chip-high">High</span>
+          <div class="item-text"><strong>Countdown timer reads 00:00:00:00</strong> on load. Signals to every visitor that urgency is fabricated. No trust system below it recovers from this.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">High</span>
+          <div class="item-text"><strong>226K followers not visible.</strong> Social bar links to a personal profile, not the fanpage. The site's strongest proof point is hidden.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">High</span>
+          <div class="item-text"><strong>Hero leads with aspiration</strong> ("Lấy lại vóc dáng") instead of the buyer's frustration history. Emotional hook lands in the wrong order.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">High</span>
+          <div class="item-text"><strong>"Hàng nghìn khách hàng"</strong> reads as a placeholder, not a proof claim. Buyers notice vague numbers.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-medium">Medium</span>
+          <div class="item-text"><strong>No CTA context.</strong> Visitors don't know what the consultation looks like before they click.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-medium">Medium</span>
+          <div class="item-text"><strong>TX address + NJ area code</strong> creates a location mismatch that blocks Google Business Profile setup.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ratings -->
+    <div style="margin-top: 3rem;">
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: .35rem;">Overall ratings</h3>
+      <p style="font-size: .85rem; color: var(--ink-faint); margin-bottom: 1.25rem;">Three dimensions that drive booking decisions.</p>
+      <div class="ratings-row">
+        <div class="rating-block">
+          <div class="rating-block-label">How the site comes across</div>
+          <span class="rating-chip rating-needs">Needs work</span>
+        </div>
+        <div class="rating-block">
+          <div class="rating-block-label">Will they click and book?</div>
+          <span class="rating-chip rating-some">Some, not enough</span>
+        </div>
+        <div class="rating-block">
+          <div class="rating-block-label">Will it turn into paying clients?</div>
+          <span class="rating-chip rating-needs">Not yet</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DEEP ANALYSIS
+═══════════════════════════════════════════ -->
+<section class="analysis-section">
+  <div class="wrap-wide">
+    <div class="section-label">Deep analysis</div>
+    <h2 style="font-size: 1.75rem; margin-bottom: .5rem;">Four areas under the surface</h2>
+    <p style="font-size: .95rem; color: var(--ink-faint); margin-bottom: 3rem; max-width: 540px;">Each area shows what is observable on the site and what it is costing in buyer decisions.</p>
+
+    <!-- Row 1: 2 cards -->
+    <div class="g2" style="margin-bottom: 1.25rem;">
+
+      <!-- Card 1: Conversion materials and trust -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Conversion materials and trust</div>
+          <h3 class="analysis-card-title">Trust is present but misfired</h3>
+          <p class="analysis-card-sub">The raw proof assets exist. Where they sit on the page, and whether they appear at all, is the problem.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">Countdown timer at 00:00:00:00</div>
+              <div class="finding-why">Every visitor sees a zeroed timer on load. This signals the urgency is fabricated. A buyer who registers a broken trust signal this early is unlikely to keep reading.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">226K followers not shown as proof</div>
+              <div class="finding-why">The site's most credible third-party signal is invisible. For a coaching offer sold to strangers online, follower count functions like a review count on a product page.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">"Hàng nghìn" client claim</div>
+              <div class="finding-why">Vague numbers reduce buyer confidence more than no number at all. Replacing with a specific figure ("500+ clients" or actual) converts the same claim into credible proof.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Strength</span>
+            <div class="finding-content">
+              <div class="finding-what">Six named testimonials with exact data</div>
+              <div class="finding-why">Weight numbers, state locations, and specific outcomes are rare. These should stay verbatim and be formatted as scannable proof chips, not paragraphs.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Strength</span>
+            <div class="finding-content">
+              <div class="finding-what">Double money-back guarantee</div>
+              <div class="finding-why">Two distinct guarantee statements at different points in the page reduce commitment anxiety for two different buyer objection states. Keep both; move one above the fold.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: CTA and next actions -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">CTA and next actions</div>
+          <h3 class="analysis-card-title">The button exists. The context does not.</h3>
+          <p class="analysis-card-sub">Visitors who reach the CTA don't know what they're saying yes to. That uncertainty costs bookings.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">No description of what the consultation looks like</div>
+              <div class="finding-why">A buyer asking themselves "what happens when I click?" and finding no answer will not click. One sentence ("10 phút với Tiên, không cần thanh toán trừ khi bạn đủ điều kiện") removes this block.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Strength</span>
+            <div class="finding-content">
+              <div class="finding-what">"TƯ VẤN CHO TÔI" CTA</div>
+              <div class="finding-why">Direct, low-friction, culturally natural. Appears multiple times. This pattern is right; it needs context added, not replaced.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Strength</span>
+            <div class="finding-content">
+              <div class="finding-what">Pre-sale qualifier framing</div>
+              <div class="finding-why">Telling buyers the program is only offered if results are achievable for them reduces fear of being sold something unsuitable. This is a trust accelerator.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">No dedicated booking or contact page</div>
+              <div class="finding-why">All CTAs drop visitors into a single-page scroll with no confirmation. Buyers who search for the "contact" page have no landing point. This is leaving bookings on the table.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: 2 cards -->
+    <div class="g2">
+
+      <!-- Card 3: Style and brand -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Style and brand</div>
+          <h3 class="analysis-card-title">The hook arrives in the wrong order</h3>
+          <p class="analysis-card-sub">The program promise appears before the buyer's problem is named. That sequence misses the emotional entry point.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">Hero opens with aspiration, not frustration</div>
+              <div class="finding-why">"Lấy lại vóc dáng" describes the destination. Buyers who have tried and failed multiple times need to hear their experience named first ("Đã thử mọi cách mà vẫn chưa giảm được?") before they trust a program promise.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Medium</span>
+            <div class="finding-content">
+              <div class="finding-what">Generic tagline</div>
+              <div class="finding-why">"Đồng hành cùng bạn xây dựng phiên bản đẹp nhất" applies to any wellness brand. It doesn't carry any claim that separates this program from alternatives.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Medium</span>
+            <div class="finding-content">
+              <div class="finding-what">YouTube section with lifestyle content</div>
+              <div class="finding-why">Videos on relationship and lifestyle topics on the homepage dilute the conversion focus. A visitor in weight-loss consideration mode gets pulled off-topic.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Strength</span>
+            <div class="finding-content">
+              <div class="finding-what">Value pills (time, rate, variety)</div>
+              <div class="finding-why">"Chỉ với 5-15 phút," "Giảm tới 0.5–1 pound mỗi ngày," "Thực đơn đa dạng, cá nhân hóa" are specific and visual. Move to hero. Keep verbatim.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Structure, SEO, mobile -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Structure, SEO, and mobile</div>
+          <h3 class="analysis-card-title">Single-page architecture blocks all organic growth</h3>
+          <p class="analysis-card-sub">Every visitor today arrives through social or referral. Search traffic is not possible with the current structure.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">No real pages, only scroll anchors</div>
+              <div class="finding-why">A single-page site cannot rank for search queries. All six required pages (program, about, results, FAQ, contact, homepage) are absent as indexable URLs.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Medium</span>
+            <div class="finding-content">
+              <div class="finding-what">NAP inconsistency: TX address + NJ area code</div>
+              <div class="finding-why">Google Business Profile requires consistent Name, Address, Phone across the web. This mismatch must be resolved before the profile can be set up or verified.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">High</span>
+            <div class="finding-content">
+              <div class="finding-what">Social bar links to personal profile</div>
+              <div class="finding-why">Clicking the Facebook icon takes visitors to CandyTran1903 (personal), not the 226K fanpage. Visitors looking to verify credibility land somewhere that reduces, not builds, buyer confidence.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-low" style="flex-shrink:0;">Low</span>
+            <div class="finding-content">
+              <div class="finding-what">No internal links possible</div>
+              <div class="finding-why">Single-page structure prevents internal linking, which supports both SEO equity and reader navigation. This resolves automatically with multi-page expansion.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fix table -->
+    <div style="margin-top: 2.5rem;">
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem;">What to remove before the next version</h3>
+      <div class="card-flat">
+        <table class="ft">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Current state</th>
+              <th>What to do instead</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Element">Countdown timer</td>
+              <td data-label="Current state">Shows 00:00:00:00 on load</td>
+              <td data-label="What to do instead">Replace with date-anchored timer or honest scarcity copy ("limited slots this month")</td>
+            </tr>
+            <tr>
+              <td data-label="Element">Facebook social link</td>
+              <td data-label="Current state">Points to CandyTran1903 (personal profile)</td>
+              <td data-label="What to do instead">Update to canonical fanpage URL</td>
+            </tr>
+            <tr>
+              <td data-label="Element">Generic tagline</td>
+              <td data-label="Current state">"Đồng hành cùng bạn xây dựng phiên bản đẹp nhất"</td>
+              <td data-label="What to do instead">Replace with a claim that names the program's specific outcome</td>
+            </tr>
+            <tr>
+              <td data-label="Element">8-item benefits list</td>
+              <td data-label="Current state">Mixes weight loss with anti-aging and family health</td>
+              <td data-label="What to do instead">Trim to 3-4 weight-specific outcomes in hero; move secondary benefits to program detail page</td>
+            </tr>
+            <tr>
+              <td data-label="Element">"50% / 50% / 50%" banner</td>
+              <td data-label="Current state">Triple repetition</td>
+              <td data-label="What to do instead">Consolidate into one clean offer section</td>
+            </tr>
+            <tr>
+              <td data-label="Element">YouTube section</td>
+              <td data-label="Current state">Lifestyle and relationship content</td>
+              <td data-label="What to do instead">Replace with weight loss authority content or remove from homepage entirely</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     RECOMMENDATIONS
+═══════════════════════════════════════════ -->
+<section class="recs-section">
+  <div class="wrap-wide">
+    <div class="section-label">Recommendations</div>
+    <h2 style="font-size: 1.75rem; margin-bottom: .5rem;">Six specific fixes</h2>
+    <p style="font-size: .95rem; color: var(--ink-faint); margin-bottom: 3rem; max-width: 500px; line-height: 1.6;">Ordered by the impact on buyer trust and booking rate. Start with A. Everything else builds on it.</p>
+
+    <div class="recs-grid">
+
+      <!-- A: Full width - most critical -->
+      <div class="qcard" style="border-left: 3px solid var(--terra);">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">A</div>
+            <div class="qcard-title">Fix the urgency mechanism</div>
+          </div>
+          <span class="chip chip-high">High</span>
+        </div>
+        <p class="qcard-body">The countdown timer reads 00:00:00:00 when the page loads. Every visitor sees this. A zeroed timer is a visible signal that the urgency is staged, and it lands in the first viewport, before any testimonial or guarantee has a chance to build trust. No trust element below it fully recovers the first impression.</p>
+        <div class="qcard-action"><span>&#8594;</span>Replace with a date-anchored timer (real end date) or remove entirely. Substitute with honest scarcity copy: "Tiên hiện chỉ nhận thêm X tư vấn trong tháng này." A true constraint, plainly stated, works harder than a fabricated clock.</div>
+      </div>
+
+      <!-- B -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">B</div>
+            <div class="qcard-title">Surface the follower count and fix the social link</div>
+          </div>
+          <span class="chip chip-high">High</span>
+        </div>
+        <p class="qcard-body">226,000 Facebook followers is a credible third-party signal. It appears nowhere on the site. The social icon links to a personal profile (CandyTran1903), not the fanpage. A skeptical buyer who clicks to verify the coach's reach lands somewhere that reduces, not confirms, confidence.</p>
+        <div class="qcard-action"><span>&#8594;</span>Place "226,000+ người theo dõi" as a visible number in the hero trust band, alongside the guarantee. Fix the social link to the canonical fanpage URL before launch.</div>
+      </div>
+
+      <!-- C -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">C</div>
+            <div class="qcard-title">Rewrite the hero emotional hook</div>
+          </div>
+          <span class="chip chip-high">High</span>
+        </div>
+        <p class="qcard-body">The hero currently opens with aspirational framing: the destination the buyer wants. Buyers who have tried and failed multiple times are not moved by destination promises. They are moved when their experience is named first. The hook arrives in the wrong order.</p>
+        <div class="qcard-action"><span>&#8594;</span>Open with the buyer's frustration history ("Đã thử mọi cách mà vẫn chưa giảm được?"), then deliver the promise. Move value pills ("Chỉ với 5-15 phút," "Giảm tới 0.5–1 pound mỗi ngày") into the hero rather than further down the page.</div>
+      </div>
+
+      <!-- D -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">D</div>
+            <div class="qcard-title">Confirm and add a specific client count</div>
+          </div>
+          <span class="chip chip-high">High</span>
+        </div>
+        <p class="qcard-body">"Hàng nghìn khách hàng" functions as a placeholder, not a proof claim. Buyers reading this alongside specific testimonials notice the vagueness. A specific number ("500+ khách hàng" or actual) converts the same claim from filler to evidence.</p>
+        <div class="qcard-action"><span>&#8594;</span>Confirm the actual client count with Tiên. Replace "hàng nghìn" across the full site with the confirmed number. Do not publish until confirmed. This is also a launch blocker.</div>
+      </div>
+
+      <!-- E -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">E</div>
+            <div class="qcard-title">Add consultation context to the CTA</div>
+          </div>
+          <span class="chip chip-medium">Medium</span>
+        </div>
+        <p class="qcard-body">The CTA ("TƯ VẤN CHO TÔI") is direct and well-placed. What is not yet in place is one sentence explaining what clicking actually means. Buyers who don't know if they're booking a paid session, a phone call, or a form fill will hesitate.</p>
+        <div class="qcard-action"><span>&#8594;</span>Add below each CTA: "10 phút với Tiên. Không cần thanh toán trừ khi bạn đủ điều kiện." This removes the unknown and makes the low-friction claim explicit.</div>
+      </div>
+
+      <!-- F -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">F</div>
+            <div class="qcard-title">Fix the NAP inconsistency</div>
+          </div>
+          <span class="chip chip-medium">Medium</span>
+        </div>
+        <p class="qcard-body">The site shows a Midlothian, TX address alongside a NJ area code (609). This mismatch prevents Google Business Profile setup or verification. It also signals disorganization to buyers who notice it, which reduces buyer confidence in a remote coaching offer.</p>
+        <div class="qcard-action"><span>&#8594;</span>Verify the correct address and phone number with Tiên. Align both across the site, social profiles, and any directory listings before Google Business Profile is set up.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FINAL RECOMMENDATION
+═══════════════════════════════════════════ -->
+<section class="final-section">
+  <div class="wrap">
+    <div class="section-label">Final recommendation</div>
+
+    <div class="verdict-band">
+      <div class="verdict-band-eyebrow">Verdict</div>
+      <h2 class="verdict-band-title">Partial redesign</h2>
+      <p class="verdict-band-body">The offer is strong. The testimonials are specific and rare. The guarantee is well-constructed. The CTA pattern is right. These do not need to be rebuilt, and rebuilding them would risk losing what is working.</p>
+      <p class="verdict-band-body" style="margin-top: .85rem;">What cannot be fixed with copy edits alone: the single-page architecture blocks all organic search; the trust signals are misfired or missing from first view; and the countdown timer actively reduces credibility before any proof element is seen.</p>
+    </div>
+
+    <div class="callout-row">
+      <div class="callout-icon">!</div>
+      <div class="callout-text"><strong>The single biggest trust issue:</strong> the zeroed countdown timer. It lands in the first viewport, before testimonials, before the guarantee, before the follower count. A buyer who registers a broken trust signal this early will not scroll far enough for the strong proof below it to matter. This is the first thing to replace, before anything else goes live.</div>
+    </div>
+
+    <div class="direction-block">
+      <p><strong>Why a copy-only refresh is not enough.</strong> A lighter path, editing headlines and repositioning proof elements inside the current single-page shell, would fix the hero hook and surface the follower count. It would not fix the architecture. The site would still have no organic search surface, no dedicated booking page, no FAQ page, and no way to build authority through content. The conversion rate on paid or social traffic may improve, but the long-term growth ceiling stays the same.</p>
+      <p><strong>What the partial redesign scope means in practice:</strong> preserve testimonials, guarantee language, offer specifics, and the CTA pattern exactly as they are. Rebuild the hero section with the emotional hook in the right order. Reset the urgency mechanism. Expand to six pages per the SEO brief. Fix the social link and surface the follower count in the first viewport. Resolve NAP before any Google presence work begins.</p>
+      <p><em class="italic-accent" style="font-size: 1.05rem; color: var(--ink-faint);">Start with the countdown timer. Everything else is built on whether buyers trust what they see first.</em></p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Prepared by <strong>TechPersona Studio / Thao Phuong</strong> &nbsp;&middot;&nbsp; June 25, 2026 &nbsp;&middot;&nbsp; Website Analysis Report for Young Group / Trần Thủy Tiên</p>
+</footer>
+
+</body>
+</html>

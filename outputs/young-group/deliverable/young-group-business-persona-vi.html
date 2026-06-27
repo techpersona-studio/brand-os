@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ Sơ Thương Hiệu — Young Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F3EE;
+    --paper-deep: #EFEAE1;
+    --pine-wash: #E8EFEC;
+    --core: #FBFAF7;
+    --ink: #171717;
+    --ink-soft: #4E4E4E;
+    --ink-faint: #857F75;
+    --pine: #1E3A34;
+    --pine-soft: #2E5148;
+    --terra: #C06A45;
+    --terra-deep: #9F4F33;
+    --terra-light: #E7A282;
+    --hair: rgba(23,23,23,.10);
+    --lift: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+    --lift-lg: 0 2px 4px rgba(30,58,52,.05), 0 44px 80px -36px rgba(30,58,52,.40);
+    --inner-hi: inset 0 1px 1px rgba(255,255,255,.7);
+    --r-outer: 1.75rem;
+    --r-inner: calc(1.75rem - 10px);
+    --r-sm: .75rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===========================
+     GRAIN OVERLAY
+  =========================== */
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: .04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+  }
+
+  /* ===========================
+     TYPOGRAPHY
+  =========================== */
+  h1, h2, h3, h4 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+  }
+
+  .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--terra-light);
+  }
+
+  .kicker {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .kicker-pine {
+    color: rgba(232,239,236,.65);
+  }
+
+  .kicker-terra {
+    color: var(--terra-light);
+  }
+
+  .sh {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+
+  .sh-light {
+    color: rgba(255,255,255,.9);
+  }
+
+  /* ===========================
+     SECTION BACKGROUNDS
+  =========================== */
+  .bg-paper      { background: var(--paper); }
+  .bg-deep       { background: var(--paper-deep); }
+  .bg-pine-wash  { background: var(--pine-wash); }
+  .bg-pine       { background: var(--pine); }
+
+  /* ===========================
+     SECTIONS
+  =========================== */
+  section {
+    padding: 4rem 3rem;
+  }
+
+  .section-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ===========================
+     COVER
+  =========================== */
+  header.cover {
+    background: var(--pine);
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 3rem;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cover-client {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -.05em;
+    margin-bottom: .75rem;
+  }
+
+  .cover-descriptor {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+
+  .cover-title {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .45rem .9rem;
+    border-radius: 2rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+
+  .badge-review {
+    background: rgba(192,106,69,.18);
+    color: var(--terra-light);
+    border: 1px solid rgba(192,106,69,.35);
+  }
+
+  .badge-ready {
+    background: rgba(46,81,72,.5);
+    color: rgba(232,239,236,.9);
+    border: 1px solid rgba(232,239,236,.2);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .cover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    border-top: 1px solid rgba(255,255,255,.08);
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cover-meta {
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.6;
+  }
+
+  .cover-meta strong {
+    color: rgba(255,255,255,.7);
+    font-weight: 600;
+  }
+
+  /* ===========================
+     CHIPS
+  =========================== */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: .2rem .6rem;
+    border-radius: 2rem;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+
+  .chip-confirmed {
+    background: rgba(30,58,52,.1);
+    color: var(--pine-soft);
+    border: 1px solid rgba(30,58,52,.18);
+  }
+
+  .chip-recommended {
+    background: rgba(133,127,117,.1);
+    color: var(--ink-faint);
+    border: 1px solid rgba(133,127,117,.22);
+  }
+
+  .chip-unknown {
+    background: rgba(133,127,117,.06);
+    color: #b0a89e;
+    border: 1px solid rgba(133,127,117,.15);
+  }
+
+  .chip-toconfirm {
+    background: rgba(192,106,69,.1);
+    color: var(--terra-deep);
+    border: 1px solid rgba(192,106,69,.25);
+  }
+
+  /* trait chips */
+  .chip-trait {
+    background: var(--pine-wash);
+    color: var(--pine-soft);
+    border: 1px solid rgba(30,58,52,.12);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+  }
+
+  .chip-anti {
+    background: rgba(133,127,117,.08);
+    color: var(--ink-faint);
+    border: 1px solid var(--hair);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+    text-decoration: line-through;
+    text-decoration-color: rgba(133,127,117,.5);
+  }
+
+  .chip-avoid {
+    background: rgba(192,106,69,.08);
+    color: var(--terra-deep);
+    border: 1px solid rgba(192,106,69,.18);
+    font-size: .75rem;
+    padding: .3rem .75rem;
+  }
+
+  .chip-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: .75rem;
+  }
+
+  /* ===========================
+     CARDS
+  =========================== */
+
+  /* double-bezel */
+  .card {
+    background: rgba(30,58,52,.045);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-outer);
+    padding: 10px;
+    box-shadow: var(--lift);
+  }
+
+  .card-inner {
+    background: var(--core);
+    border-radius: var(--r-inner);
+    box-shadow: var(--inner-hi);
+    padding: 1.5rem 1.75rem;
+    overflow: hidden;
+  }
+
+  /* flat card */
+  .card-flat {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--lift);
+  }
+
+  /* dark card — on dark backgrounds */
+  .dark-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+  }
+
+  /* pine-wash card */
+  .pine-card {
+    background: var(--pine-wash);
+    border: 1px solid rgba(30,58,52,.12);
+    border-radius: var(--r-sm);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--lift);
+  }
+
+  /* ===========================
+     GRID
+  =========================== */
+  .g2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .g2-aside {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 1.25rem;
+  }
+
+  /* ===========================
+     FIELD TABLE
+  =========================== */
+  .ft {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ft tr {
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .ft tr:last-child {
+    border-bottom: none;
+  }
+
+  .ft td {
+    padding: .9rem 0;
+    vertical-align: top;
+    font-size: .9rem;
+  }
+
+  .ft-label {
+    font-weight: 700;
+    color: var(--ink-faint);
+    font-size: .75rem;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    width: 38%;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    white-space: nowrap;
+  }
+
+  .ft-value {
+    color: var(--ink-soft);
+    line-height: 1.55;
+    width: auto;
+  }
+
+  .ft-value ul {
+    padding-left: 1.1rem;
+    margin-top: .25rem;
+  }
+
+  .ft-value li {
+    margin-bottom: .2rem;
+    line-height: 1.5;
+  }
+
+  .ft-chip {
+    width: 1%;
+    padding-left: 1rem;
+    white-space: nowrap;
+    padding-top: 1rem;
+  }
+
+  /* ===========================
+     POSITIONING BAND
+  =========================== */
+  .pos-band {
+    background: var(--pine);
+    border-radius: var(--r-outer);
+    padding: 2.5rem 2.75rem;
+    box-shadow: var(--lift-lg);
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pos-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(46,81,72,.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pos-statement {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    font-weight: 700;
+    color: rgba(255,255,255,.92);
+    line-height: 1.4;
+    letter-spacing: -.02em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pos-statement .accent {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terra-light);
+    font-weight: 500;
+  }
+
+  .pos-chip-row {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===========================
+     CONVERSION CONTEXT
+  =========================== */
+  .conv-field {
+    margin-bottom: 2.5rem;
+  }
+
+  .conv-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .conv-heading {
+    font-size: 1rem;
+    font-weight: 800;
+    color: rgba(255,255,255,.55);
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    font-size: .65rem;
+    letter-spacing: .16em;
+    margin-bottom: .3rem;
+  }
+
+  .conv-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.92);
+    letter-spacing: -.025em;
+    line-height: 1.3;
+    margin-bottom: .5rem;
+  }
+
+  .conv-value-terra {
+    color: var(--terra-light);
+  }
+
+  .conv-note {
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+    line-height: 1.6;
+  }
+
+  .conv-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.55;
+    border-left: 2px solid rgba(192,106,69,.5);
+    padding-left: 1.1rem;
+    margin-top: .35rem;
+  }
+
+  .conv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 3rem;
+  }
+
+  /* ===========================
+     VOICE RULES LIST
+  =========================== */
+  .rule-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rule-list li {
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--hair);
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+  }
+
+  .rule-list li:last-child {
+    border-bottom: none;
+  }
+
+  .rule-num {
+    font-size: .65rem;
+    font-weight: 700;
+    color: var(--terra);
+    letter-spacing: .08em;
+    flex-shrink: 0;
+    padding-top: .1rem;
+  }
+
+  /* ===========================
+     QUESTION CARDS
+  =========================== */
+  .qcard {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-left: 3px solid var(--terra);
+    border-radius: var(--r-sm);
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .qcard:last-child {
+    margin-bottom: 0;
+  }
+
+  .qcard-num {
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: .35rem;
+  }
+
+  .qcard-topic {
+    display: inline;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-left: .5rem;
+  }
+
+  .qcard-q {
+    font-size: .95rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    line-height: 1.4;
+    letter-spacing: -.015em;
+    margin-bottom: .4rem;
+  }
+
+  .qcard-note {
+    font-size: .8rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.55;
+  }
+
+  /* ===========================
+     EXECUTIVE SUMMARY
+  =========================== */
+  .summary-para {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .summary-list li {
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--hair);
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+  }
+
+  .summary-list li:last-child {
+    border-bottom: none;
+  }
+
+  .summary-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--pine);
+    flex-shrink: 0;
+    margin-top: .45rem;
+  }
+
+  /* ===========================
+     SOURCES
+  =========================== */
+  .sources-list {
+    list-style: decimal;
+    padding-left: 1.4rem;
+  }
+
+  .sources-list li {
+    font-size: .82rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: .6rem;
+  }
+
+  .sources-list li em {
+    color: var(--ink-faint);
+  }
+
+  /* ===========================
+     ARCHETYPE BAND
+  =========================== */
+  .arch-label {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--pine);
+    letter-spacing: -.04em;
+    line-height: 1.1;
+  }
+
+  /* ===========================
+     MESSAGING PATTERNS
+  =========================== */
+  .pattern-block {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .pattern-block code {
+    display: block;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--pine);
+    padding: .45rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .pattern-block code:last-child {
+    border-bottom: none;
+  }
+
+  /* ===========================
+     BULLETS
+  =========================== */
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bullet-list li {
+    padding: .5rem 0;
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--hair);
+    display: flex;
+    gap: .7rem;
+    align-items: baseline;
+  }
+
+  .bullet-list li:last-child {
+    border-bottom: none;
+  }
+
+  .bullet-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--pine);
+    flex-shrink: 0;
+    margin-top: .45rem;
+  }
+
+  .bullet-list-light li {
+    color: rgba(255,255,255,.65);
+    border-bottom-color: rgba(255,255,255,.08);
+  }
+
+  .bullet-list-light li::before {
+    background: var(--terra-light);
+  }
+
+  /* ===========================
+     SECTION LABEL BAND
+  =========================== */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--hair);
+  }
+
+  .section-label-dark::after {
+    background: rgba(255,255,255,.1);
+  }
+
+  /* ===========================
+     LABEL
+  =========================== */
+  .field-label {
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: .4rem;
+  }
+
+  .field-label-light {
+    color: rgba(255,255,255,.4);
+  }
+
+  .field-value {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ===========================
+     FOOTER
+  =========================== */
+  footer {
+    background: var(--pine);
+    padding: 1.75rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-size: .75rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .04em;
+  }
+
+  .footer-page {
+    font-size: .7rem;
+    color: rgba(255,255,255,.3);
+  }
+
+  /* ===========================
+     SPACER UTILITIES
+  =========================== */
+  .mt-sm { margin-top: .75rem; }
+  .mt-md { margin-top: 1.25rem; }
+  .mt-lg { margin-top: 2rem; }
+  .mb-sm { margin-bottom: .75rem; }
+  .mb-md { margin-bottom: 1.25rem; }
+  .mb-lg { margin-bottom: 2rem; }
+
+  /* ===========================
+     MOBILE RESPONSIVE
+  =========================== */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+
+    section { padding: 2.5rem 1.25rem; }
+
+    .cover-body { padding: 3rem 1.5rem 2rem; }
+    .cover-footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: .75rem; }
+    .cover-client { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+
+    .g2 { grid-template-columns: 1fr; }
+    .g2-aside { grid-template-columns: 1fr; }
+    .conv-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Strip outer bezel on snapshot */
+    .card { background: transparent; border: none; padding: 0; box-shadow: none; }
+    .card-inner { border-radius: var(--r-sm); }
+
+    /* Tighten inner cards */
+    .card-inner, .card-flat, .dark-card, .pos-band, .qcard {
+      padding: 1.1rem 1.1rem;
+    }
+
+    /* Field table mobile stack */
+    .ft thead { display: none; }
+    .ft, .ft tbody, .ft tr, .ft td { display: block; width: 100%; }
+    .ft tr { border-bottom: 1px solid var(--hair); padding: .75rem 0; }
+    .ft tr:last-child { border-bottom: none; }
+    .ft td { padding: 0; border: none; padding-right: 0; }
+    .ft-label { padding-bottom: .2rem; padding-top: 0; }
+    .ft-chip { padding-left: 0; padding-top: .35rem; }
+
+    footer { padding: 1.25rem 1.5rem; }
+  }
+
+  /* ===========================
+     PRINT
+  =========================== */
+  @media print {
+    @page { size: letter; margin: 0; }
+
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    footer { display: none !important; }
+    .grain { display: none; }
+
+    header.cover { break-after: page; min-height: 100vh; }
+
+    section { break-before: page; min-height: 11in; }
+
+    .sh { break-after: avoid; }
+
+    .card {
+      background: transparent;
+      border: none;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .card-inner, .card-flat, .dark-card, .pos-band, .qcard {
+      border-radius: 4px;
+      box-shadow: none;
+    }
+
+    .ft tr { break-inside: avoid; }
+
+    ol li { font-size: .75rem; line-height: 1.5; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===========================
+     COVER
+=========================== -->
+<header class="cover">
+  <div class="cover-body">
+    <div class="cover-title">Hồ Sơ Thương Hiệu</div>
+    <h1 class="cover-client">Young Group<br><span class="display" style="font-size:clamp(1.4rem,4vw,2.2rem);color:var(--terra-light);">Trần Thủy Tiên</span></h1>
+    <p class="cover-descriptor">Lộ trình giảm cân trực tuyến cho người Việt ở nước ngoài</p>
+    <div>
+      <span class="badge badge-review">
+        <span class="badge-dot"></span>
+        Bản nháp — một số thông tin cần xác nhận
+      </span>
+    </div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-meta">
+      <strong>Chuẩn bị bởi</strong><br>TechPersona Studio / Thao Phuong
+    </div>
+    <div class="cover-meta" style="text-align:right;">
+      <strong>Ngày</strong><br>2026-06-25
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===========================
+     EXECUTIVE SUMMARY
+=========================== -->
+<section class="bg-paper">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Tổng quan</span>
+    </div>
+    <p class="summary-para">
+      Young Group là lộ trình giảm cân trực tuyến do người sáng lập trực tiếp dẫn dắt — được xây dựng riêng cho phụ nữ Việt ở nước ngoài đã thử nhiều cách mà vẫn không giảm được. Thế mạnh cốt lõi của thương hiệu là sự cụ thể: thực đơn cá nhân hóa theo thể trạng, nấu trong 15 phút, kết quả thực tế từ khách hàng, và cam kết hoàn tiền 100%. Với 226,000 người theo dõi trên Facebook (đã xác nhận) và lượng khách hàng đến từ giới thiệu, cơ sở bằng chứng xã hội đã vững. Mục tiêu của website là chuyển đổi người mua đang hoài nghi — bằng cách đưa bằng chứng lên trước và giúp lộ trình dễ bắt đầu hơn.
+    </p>
+    <div class="card">
+      <div class="card-inner">
+        <ul class="summary-list">
+          <li>Đối tượng chính là phụ nữ Việt từ 30–60 tuổi, tập trung tại Mỹ, có tiền sử thất bại với nhiều phương pháp giảm cân. (Đề xuất, bằng chứng mạnh.)</li>
+          <li>Doanh nghiệp nắm giữ một ngách rõ ràng: huấn luyện giảm cân bằng tiếng Việt tại sáu quốc gia đã xác nhận, với thực đơn cá nhân hóa, bữa ăn chuẩn bị sẵn, cam kết ăn đủ không đói, và cam kết hoàn tiền là các đòn bẩy xây dựng niềm tin chính.</li>
+          <li>Người mua đến với mức độ hoài nghi cao và lịch sử thất bại. Website cần đưa bằng chứng cụ thể lên đầu (tên khách hàng, con số thực tế, 226,000 người theo dõi trên Facebook) và giảm rào cản để bắt đầu bước đầu tiên.</li>
+          <li>Mức giá khoảng $699 — chỉ tiết lộ sau buổi tư vấn đầu tiên. Website cần xây dựng đủ niềm tin để người dùng đăng ký tư vấn, không phải chốt giá ngay từ đầu.</li>
+          <li>Ba thông tin cần xác nhận trước khi hoàn thiện nội dung: chứng chỉ, trạng thái xuất bản sách, và số lượng khách hàng / năm thành lập. Chi tiết ở phần cuối.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BUSINESS SNAPSHOT
+=========================== -->
+<section class="bg-deep">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Thông tin doanh nghiệp</span>
+    </div>
+    <h2 class="sh">Doanh nghiệp là gì</h2>
+    <div class="card">
+      <div class="card-inner" style="padding:0 1.75rem;">
+        <table class="ft">
+          <tbody>
+            <tr>
+              <td class="ft-label">Tên doanh nghiệp</td>
+              <td class="ft-value">Young Group<br><span style="color:var(--ink-faint);font-size:.85rem;">Vận hành dưới tên người sáng lập Trần Thủy Tiên</span></td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Đã xác nhận</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Ngành</td>
+              <td class="ft-value">Huấn luyện giảm cân trực tuyến<br><span style="color:var(--ink-faint);font-size:.85rem;">Sức khỏe và wellness — thị trường người Việt ở nước ngoài</span></td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Đã xác nhận</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Khu vực phục vụ</td>
+              <td class="ft-value">
+                <ul>
+                  <li>Việt Nam, Mỹ, Úc, Canada</li>
+                  <li>Đức và Anh — thị trường đang hoạt động, đã xác nhận có khách hàng hiện tại</li>
+                </ul>
+              </td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Đã xác nhận</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Dịch vụ chính</td>
+              <td class="ft-value">
+                Lộ trình giảm cân trực tuyến<br>
+                <ul>
+                  <li>Hoàn toàn trực tuyến</li>
+                  <li>Kèm bộ thực phẩm hỗ trợ 42 bữa (buổi sáng dùng ngay; bữa trưa và tối đã chuẩn bị sẵn, nấu trong khoảng 15 phút)</li>
+                  <li>Thực đơn cá nhân hóa hoàn toàn theo thể trạng</li>
+                  <li>Ăn đủ, không đói</li>
+                  <li>Cam kết hoàn tiền 100% (nếu không hiệu quả)</li>
+                </ul>
+              </td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Đã xác nhận</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Giá lộ trình</td>
+              <td class="ft-value">Khoảng $699<br><span style="color:var(--ink-faint);font-size:.85rem;">Không công bố công khai. Tiết lộ sau buổi tư vấn đầu tiên.</span></td>
+              <td class="ft-chip"><span class="chip chip-confirmed" style="background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Đã xác nhận (một phần)</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Đối tượng chính</td>
+              <td class="ft-value">Phụ nữ Việt từ 30–60 tuổi<br><span style="color:var(--ink-faint);font-size:.85rem;">Chính: Mỹ. Phụ: Việt Nam, Úc, Canada, Đức, Anh</span></td>
+              <td class="ft-chip"><span class="chip chip-recommended">Đề xuất</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Điểm kích hoạt mua</td>
+              <td class="ft-value">Đã thất bại nhiều lần sau nhiều năm thử. Thất vọng với các phương pháp phức tạp hoặc khắt khe mà không đem lại kết quả lâu dài.</td>
+              <td class="ft-chip"><span class="chip chip-recommended">Đề xuất</span></td>
+            </tr>
+            <tr>
+              <td class="ft-label">Kênh bán hàng</td>
+              <td class="ft-value">
+                <ul>
+                  <li>Chủ yếu qua mạng xã hội (Facebook, YouTube, TikTok)</li>
+                  <li>Chương trình giới thiệu: $50 tín dụng cho mỗi lần giới thiệu thành công</li>
+                </ul>
+              </td>
+              <td class="ft-chip"><span class="chip chip-confirmed">Đã xác nhận</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BRAND STRATEGY
+=========================== -->
+<section class="bg-pine-wash">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Chiến lược thương hiệu</span>
+    </div>
+    <h2 class="sh">Thương hiệu được định vị như thế nào</h2>
+
+    <!-- Positioning statement band -->
+    <div class="pos-band mb-md">
+      <div class="kicker kicker-terra mb-sm">Tuyên ngôn định vị</div>
+      <p class="pos-statement">
+        Dành cho phụ nữ Việt đã thử đủ mọi cách mà vẫn không giảm được — Young Group là lộ trình giảm cân trực tuyến giúp bạn đạt <span class="accent">kết quả thực tế, đơn giản và dễ dàng</span> — bằng tiếng Việt của bạn, với thực đơn riêng theo thể trạng, nấu trong 15 phút — cam kết hoàn tiền 100% nếu không hiệu quả.
+      </p>
+      <div class="pos-chip-row">
+        <span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Đề xuất</span>
+        <span style="font-size:.75rem;color:rgba(255,255,255,.3);">Bằng chứng mạnh. Chờ xác nhận đối tượng chính.</span>
+      </div>
+    </div>
+
+    <!-- Core problem + Desired feeling side by side -->
+    <div class="g2 mb-md">
+      <div class="card-flat">
+        <div class="field-label mb-sm">Vấn đề cốt lõi</div>
+        <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;">
+          Ngành giảm cân khiến người mua choáng ngợp với các quy trình phức tạp và chế độ ăn khắt khe. Điều này dẫn đến thất bại liên tiếp — đặc biệt với phụ nữ Việt ở nước ngoài đã thử nhiều cách mà vẫn chưa giảm được.
+        </p>
+        <div style="margin-top:1rem;">
+          <span class="chip chip-recommended">Đề xuất</span>
+        </div>
+      </div>
+      <div class="card-flat">
+        <div class="field-label mb-sm">Cảm giác mong muốn</div>
+        <div class="chip-cluster">
+          <span class="chip chip-trait" style="font-size:.8rem;">Tin tưởng</span>
+          <span class="chip chip-trait" style="font-size:.8rem;">Đơn giản</span>
+          <span class="chip chip-trait" style="font-size:.8rem;">Khả thi</span>
+          <span class="chip chip-trait" style="font-size:.8rem;">Được thấu hiểu</span>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="chip chip-recommended">Đề xuất</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Market position -->
+    <div class="card-flat mb-md">
+      <div class="field-label mb-sm">Vị trí thị trường</div>
+      <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;margin-bottom:.75rem;">
+        Young Group nắm giữ một ngách cụ thể: huấn luyện giảm cân bằng tiếng Việt cho cộng đồng người Việt ở nước ngoài, hoàn toàn trực tuyến tại sáu quốc gia đang hoạt động. Cách tiếp cận đơn giản — thực đơn cá nhân hóa theo thể trạng, bữa ăn chuẩn bị sẵn với khoảng 15 phút nấu, ăn đủ không đói — và cam kết hoàn tiền 100% tạo ra sự khác biệt so với các chương trình wellness tiếng Anh không phù hợp với ngôn ngữ, văn hóa, hay lịch sử thất bại của nhóm đối tượng này.
+      </p>
+      <span class="chip chip-recommended">Đề xuất</span>
+    </div>
+
+    <!-- Differentiators -->
+    <div class="card-flat">
+      <div class="field-label mb-sm">Điểm khác biệt</div>
+      <ul class="bullet-list">
+        <li>Thực đơn cá nhân hóa hoàn toàn theo thể trạng — mỗi kế hoạch được xây dựng riêng cho từng khách hàng</li>
+        <li>Bữa ăn chuẩn bị sẵn — bữa trưa và tối chỉ cần nấu khoảng 15 phút; không cần thay đổi hoàn toàn chế độ ăn</li>
+        <li>Ăn đủ, không đói trong suốt lộ trình — ăn uống đầy đủ và thoải mái (đã xác nhận)</li>
+        <li>Khách hàng phản hồi chi phí mua thực phẩm thấp hơn và ít thời gian nấu ăn hơn so với trước</li>
+        <li>Cam kết hoàn tiền 100% — được nêu hai lần bằng ngôn ngữ khác nhau trên cùng một trang</li>
+        <li>Hoàn toàn bằng tiếng Việt — toàn bộ lộ trình và nội dung đều bằng tiếng Việt</li>
+        <li>Phạm vi đa quốc gia — hoạt động tại sáu quốc gia: Việt Nam, Mỹ, Úc, Canada, Đức, Anh</li>
+        <li>226,000 người theo dõi trên Facebook (đã xác nhận, con số chính xác) — trang chính thức: TranThuyTienGiamCanTaiMy</li>
+      </ul>
+      <div style="margin-top:1rem;">
+        <span class="chip chip-confirmed">Đã xác nhận (mạnh)</span>
+        <span class="chip chip-confirmed" style="margin-left:.4rem;background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Đã xác nhận (một phần) — chi tiết bữa ăn</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     CONVERSION CONTEXT
+=========================== -->
+<section class="bg-pine">
+  <div class="section-inner">
+    <div class="section-label section-label-dark">
+      <span class="kicker kicker-pine">Bối cảnh chuyển đổi</span>
+    </div>
+    <h2 class="sh sh-light" style="margin-bottom:2.5rem;">Website đang tối ưu điều gì</h2>
+
+    <div class="conv-grid">
+
+      <div class="conv-field">
+        <div class="conv-heading">Mức độ khẩn cấp</div>
+        <div class="conv-value conv-value-terra">Cao</div>
+        <p class="conv-note">Đồng hồ đếm ngược cho ưu đãi giảm 50% tạo áp lực thời gian. Các phản hồi về kết quả sức khỏe (tiểu đường, huyết áp, mỡ máu được cải thiện) cho thấy sự cấp bách về sức khỏe, không chỉ là mục tiêu ngoại hình.</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Đề xuất</span></div>
+      </div>
+
+      <div class="conv-field">
+        <div class="conv-heading">Rào cản niềm tin</div>
+        <div class="conv-value conv-value-terra">Cao</div>
+        <p class="conv-note">Thương hiệu đã được thiết kế để chống lại sự hoài nghi sâu của người mua: ngôn ngữ bảo hành kép, số liệu phản hồi cực kỳ cụ thể kèm tên và địa điểm. Không có mặt trên nền tảng đánh giá bên thứ ba làm tăng thêm khoảng cách niềm tin trên trang mới.</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Đề xuất</span></div>
+      </div>
+
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">Phản đối chính</div>
+        <p class="conv-quote">"Lộ trình này có phức tạp không? Tôi có phải mất nhiều thời gian nấu ăn, hay phải nhịn đói không?"</p>
+        <p class="conv-note" style="margin-top:.75rem;">Giải đáp: bữa ăn đã được chuẩn bị sẵn, chỉ cần khoảng 15 phút nấu. Ăn đủ, không đói — đã xác nhận. Phản đối này có thực; lộ trình được thiết kế để trả lời trực tiếp.</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Đề xuất</span></div>
+      </div>
+
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">Bằng chứng cần có</div>
+        <div class="chip-cluster mt-sm">
+          <span class="chip" style="background:rgba(255,255,255,.08);color:rgba(232,239,236,.7);border:1px solid rgba(255,255,255,.12);font-size:.75rem;padding:.3rem .75rem;">Số lượng khách hàng cụ thể + tỷ lệ thành công</span>
+          <span class="chip" style="background:rgba(255,255,255,.08);color:rgba(232,239,236,.7);border:1px solid rgba(255,255,255,.12);font-size:.75rem;padding:.3rem .75rem;">Kết quả thực tế từ khách hàng có tên kèm con số (đã có trên website)</span>
+          <span class="chip" style="background:rgba(46,81,72,.5);color:rgba(232,239,236,.85);border:1px solid rgba(232,239,236,.2);font-size:.75rem;padding:.3rem .75rem;">226,000 người theo dõi trên Facebook — đã xác nhận, dùng con số chính xác</span>
+          <span class="chip" style="background:rgba(255,255,255,.08);color:rgba(232,239,236,.7);border:1px solid rgba(255,255,255,.12);font-size:.75rem;padding:.3rem .75rem;">Cam kết hoàn tiền (đưa lên sớm hơn trong luồng trang)</span>
+        </div>
+        <div style="margin-top:.75rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.07);color:rgba(232,239,236,.55);border-color:rgba(255,255,255,.12);">Đề xuất</span></div>
+      </div>
+
+      <div class="conv-field" style="grid-column:1/-1;">
+        <div class="conv-heading">CTA chính</div>
+        <div class="conv-value">Đăng ký lộ trình / đặt lịch tư vấn</div>
+        <p class="conv-note">CTA đã có trên website hiện tại. Cần xác nhận nhãn chính xác với khách hàng trước khi viết trang mới. Giá (~$699) được tiết lộ trong hoặc sau buổi tư vấn, không hiển thị trên landing page.</p>
+        <div style="margin-top:.75rem;"><span class="chip chip-toconfirm" style="background:rgba(192,106,69,.15);color:var(--terra-light);border-color:rgba(192,106,69,.3);">Cần xác nhận</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BRAND PERSONALITY & VOICE
+=========================== -->
+<section class="bg-paper">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Cá tính &amp; giọng điệu thương hiệu</span>
+    </div>
+    <h2 class="sh">Thương hiệu nói và hành xử như thế nào</h2>
+
+    <!-- Core traits + Anti-traits -->
+    <div class="g2 mb-md">
+      <div class="card-flat">
+        <div class="field-label mb-sm">Tính cách cốt lõi</div>
+        <div class="chip-cluster">
+          <span class="chip chip-trait">Thẳng thắn và cụ thể</span>
+          <span class="chip chip-trait">Ấm áp và gần gũi văn hóa</span>
+          <span class="chip chip-trait">Tự tin vào kết quả</span>
+          <span class="chip chip-trait">Đơn giản là ưu tiên</span>
+          <span class="chip chip-trait">Đồng cảm với lịch sử thất bại</span>
+        </div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Đề xuất</span></div>
+      </div>
+      <div class="card-flat">
+        <div class="field-label mb-sm">Tính cách cần tránh</div>
+        <div class="chip-cluster">
+          <span class="chip chip-anti">Mơ hồ hoặc nhiều tính từ</span>
+          <span class="chip chip-anti">Giọng lâm sàng hay y tế</span>
+          <span class="chip chip-anti">Ưu tiên tiếng Anh</span>
+          <span class="chip chip-anti">Truyền cảm hứng không có bằng chứng</span>
+          <span class="chip chip-anti">Nhấn mạnh sự vất vả</span>
+        </div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Đề xuất</span></div>
+      </div>
+    </div>
+
+    <!-- Brand archetype -->
+    <div class="pine-card mb-md">
+      <div class="field-label mb-sm">Archetype thương hiệu</div>
+      <div class="arch-label mb-sm">Người Chăm Sóc kết hợp yếu tố Người Thầy</div>
+      <p style="font-size:.9rem;color:var(--ink-soft);line-height:1.65;">Huấn luyện đồng cảm kết hợp với truyền đạt kiến thức tự tin. Tên và gương mặt người sáng lập là trung tâm của thương hiệu. Đây là thương hiệu dựa trên quyền uy cá nhân, không phải thể chế.</p>
+      <div style="margin-top:1rem;"><span class="chip chip-recommended">Đề xuất</span></div>
+    </div>
+
+    <!-- Voice rules -->
+    <div class="card mb-md">
+      <div class="card-inner">
+        <div class="field-label mb-sm">Quy tắc giọng điệu</div>
+        <ol class="rule-list">
+          <li><span class="rule-num">01</span>Dẫn đầu bằng kết quả, sau đó mới là phương pháp. Không bao giờ dẫn đầu bằng tính năng của lộ trình.</li>
+          <li><span class="rule-num">02</span>Dùng số liệu chính xác khi có thể. Số liệu làm tròn trông như bịa đặt.</li>
+          <li><span class="rule-num">03</span>Mỗi khẳng định phải đi kèm tên người, con số, hoặc cam kết.</li>
+          <li><span class="rule-num">04</span>Giữ câu ngắn. Đối tượng này lướt nội dung; nhiều người đọc bằng ngôn ngữ thứ hai.</li>
+          <li><span class="rule-num">05</span>Dùng cách xưng hô "bạn". Nói chuyện trực tiếp, không dùng ngôi thứ ba.</li>
+        </ol>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Đề xuất</span></div>
+      </div>
+    </div>
+
+    <div class="g2">
+      <!-- Messaging patterns -->
+      <div class="card-flat">
+        <div class="field-label mb-sm">Mẫu thông điệp</div>
+        <div class="pattern-block">
+          <code>"[X kg] trong [thời gian] — [tên khách hàng], [tiểu bang tại Mỹ]"</code>
+          <code>"Không cần nhịn ăn. Không cần đói."</code>
+          <code>"Đơn giản - Dễ dàng - Hiệu quả"</code>
+          <code>"Nếu không hiệu quả, hoàn tiền 100%"</code>
+          <code>"Hàng nghìn khách hàng tại [thị trường]"</code>
+        </div>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(30,58,52,.07);color:var(--pine-soft);border-color:rgba(30,58,52,.15);">Đã xác nhận (một phần)</span></div>
+      </div>
+
+      <!-- Words to avoid -->
+      <div class="card-flat">
+        <div class="field-label mb-sm">Từ cần tránh</div>
+        <div class="chip-cluster">
+          <span class="chip chip-avoid">"Hành trình lột xác"</span>
+          <span class="chip chip-avoid">"Đánh thức phiên bản tốt nhất"</span>
+          <span class="chip chip-avoid">"Thay đổi lối sống"</span>
+          <span class="chip chip-avoid">"Giảm cân đẳng cấp"</span>
+          <span class="chip chip-avoid">"Chương trình giảm cân"</span>
+        </div>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended">Đề xuất</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     LET'S CONFIRM A FEW THINGS
+=========================== -->
+<section class="bg-pine">
+  <div class="section-inner">
+    <div class="section-label section-label-dark">
+      <span class="kicker kicker-pine">Một số câu hỏi</span>
+    </div>
+    <h2 class="sh sh-light" style="margin-bottom:.5rem;">Cùng xác nhận một vài thông tin</h2>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:2.5rem;line-height:1.6;">Ba thông tin còn cần xác nhận trước khi hoàn thiện nội dung. Không có gì cản trở việc lên kế hoạch hay blueprint website.</p>
+
+    <div class="qcard">
+      <div class="qcard-num">01 <span class="qcard-topic">Chứng chỉ</span></div>
+      <p class="qcard-q">Trần Thủy Tiên có những chứng chỉ hay bằng cấp nào ngoài việc là tác giả sách?</p>
+      <p class="qcard-note">Dù là chứng chỉ dinh dưỡng, giấy phép huấn luyện sức khỏe, hay đào tạo lâm sàng — đây đều là nền tảng cho toàn bộ phần xây dựng niềm tin trên website. Chúng tôi chưa tìm thấy bằng chứng nào bên ngoài ngoài quyển sách — cần xác nhận để không bỏ sót những gì bạn có.</p>
+    </div>
+
+    <div class="qcard">
+      <div class="qcard-num">02 <span class="qcard-topic">Chứng chỉ sách</span></div>
+      <p class="qcard-q">Sách "Béo ơi vĩnh biệt" được xuất bản thương mại (có nhà xuất bản và ISBN) hay tự xuất bản?</p>
+      <p class="qcard-note">Sách đã được nêu trên website của bạn và là một chứng chỉ thực sự. Câu trả lời quyết định cách chúng tôi trình bày — sách xuất bản truyền thống có trọng lượng khác so với tự xuất bản, và chúng tôi muốn thể hiện đúng thực tế.</p>
+    </div>
+
+    <div class="qcard">
+      <div class="qcard-num">03 <span class="qcard-topic">Quy mô bằng chứng xã hội</span></div>
+      <p class="qcard-q">Đã có bao nhiêu khách hàng hoàn thành lộ trình, và Young Group được thành lập năm nào?</p>
+      <p class="qcard-note">Số lượng khách hàng cụ thể (ví dụ: "500+ khách hàng") là yếu tố bằng chứng có tác động lớn nhất hiện đang thiếu trên website. Năm thành lập là neo điểm uy tín. Cả hai đều cần xuất hiện nổi bật trên website mới sau khi được xác nhận.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     SOURCES APPENDIX
+=========================== -->
+<section class="bg-deep" style="padding-bottom:5rem;">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="kicker">Phụ lục nguồn</span>
+    </div>
+    <h2 class="sh" style="margin-bottom:1.5rem;">Bằng chứng hiện có</h2>
+    <p style="font-size:.8rem;color:var(--ink-faint);margin-bottom:1.25rem;line-height:1.6;">Toàn bộ nghiên cứu được thực hiện bởi TechPersona Studio. Nguồn được liệt kê theo thực tế tìm thấy; tất cả dữ kiện mang trạng thái được ghi chú trong báo cáo.</p>
+    <ol class="sources-list">
+      <li>Tên doanh nghiệp, ngành, dịch vụ chính, tính năng lộ trình, cam kết hoàn tiền, tiêu đề hero, phản hồi khách hàng, đồng hồ đếm ngược, kênh mạng xã hội, chứng chỉ sách, thông tin liên hệ. <em>tranthuytien.net (trang chính, thu thập toàn bộ nội dung)</em></li>
+      <li>Khu vực phục vụ: Việt Nam, Mỹ, Úc, Canada. <em>Ghi chú từ khách hàng cung cấp lúc bắt đầu dự án</em></li>
+      <li>Khu vực phục vụ: Đức và Anh được xác nhận là thị trường đang hoạt động với khách hàng hiện tại. <em>Xác nhận từ khách hàng</em></li>
+      <li>Chi tiết lộ trình: bộ thực phẩm 42 bữa, nguyên liệu chuẩn bị sẵn, khoảng 15 phút nấu cho bữa trưa và tối, thực đơn cá nhân hóa theo thể trạng, ăn đủ không đói, khách hàng phản hồi chi phí thực phẩm thấp hơn và ít thời gian nấu hơn. <em>Ghi chú và xác nhận từ khách hàng</em></li>
+      <li>Giá lộ trình: khoảng $699, không công bố công khai cho đến sau buổi tư vấn. <em>Xác nhận từ khách hàng</em></li>
+      <li>Trang Facebook TranThuyTienGiamCanTaiMy được xác nhận là trang chính thức (tương đương tranthuytienmainpage); 226,000 người theo dõi (con số chính xác). <em>Xác nhận từ khách hàng</em></li>
+      <li>Loại nội dung YouTube: chủ yếu là truyền động lực và giáo dục. <em>Xác nhận từ khách hàng</em></li>
+      <li>Kênh bán hàng và traffic: chủ yếu mạng xã hội và chương trình giới thiệu ($50 tín dụng cho mỗi lần giới thiệu thành công). <em>Xác nhận từ khách hàng</em></li>
+      <li>Ăn đủ, không đói trong suốt lộ trình. <em>Xác nhận từ khách hàng</em></li>
+      <li>Tên kênh YouTube đã xác nhận: "Trần Thủy Tiên - Young Group." <em>tranthuytien.net — footer / đường dẫn mạng xã hội</em></li>
+      <li>Sách "Béo ơi vĩnh biệt" — tự công bố trên website; không tìm thấy hồ sơ nhà xuất bản, ISBN, hay danh sách nhà bán lẻ trên Vinabook, Google Books, Fahasa, hay Bing. <em>tranthuytien.net; Vinabook; Google Books; Fahasa; Bing</em> <span class="chip chip-toconfirm" style="margin-left:.4rem;font-size:.65rem;">Cần xác nhận</span></li>
+      <li>Điểm kích hoạt mua hàng được suy ra từ mẫu phản hồi ("12 năm, mọi cách không giảm") và định vị ngược trong tiêu đề hero ("Đơn giản - Dễ dàng - Hiệu quả"). <em>tranthuytien.net — phần phản hồi và phần hero</em></li>
+      <li>Đối tượng chính được suy ra từ sáu phản hồi dùng kính ngữ phụ nữ kèm địa điểm tiểu bang tại Mỹ, và tên trang Facebook nhắm đến người Việt tại Mỹ. <em>tranthuytien.net; xác nhận từ khách hàng (226,000 người theo dõi)</em></li>
+      <li>Mức độ khẩn cấp của người mua được suy ra từ đồng hồ đếm ngược trên ưu đãi giảm 50% và các phản hồi đề cập đến cải thiện tình trạng sức khỏe (tiểu đường, huyết áp cao, mỡ máu cao). <em>tranthuytien.net — phần ưu đãi và phần phản hồi</em></li>
+      <li>Rào cản niềm tin được suy ra từ ngôn ngữ bảo hành kép trên một trang và số liệu phản hồi cực kỳ cụ thể kèm tên và địa điểm. <em>tranthuytien.net — phần cam kết và phần phản hồi</em></li>
+      <li>Phản đối chính được suy ra từ hệ thống bữa ăn chuẩn bị sẵn và phản hồi "ăn uống đầy đủ, không đói"; cam kết không đói đã được xác nhận bởi khách hàng. <em>tranthuytien.net — mô tả lộ trình và phần phản hồi; xác nhận từ khách hàng</em></li>
+      <li>Archetype thương hiệu được suy ra từ thương hiệu cá nhân mang tên người sáng lập, ngôn ngữ huấn luyện, và khung đồng cảm với thất bại xuyên suốt website. <em>tranthuytien.net — toàn bộ nội dung website</em></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">TechPersona Studio / Thao Phuong</span>
+    <span class="footer-page">Young Group — Hồ Sơ Thương Hiệu — 2026-06-25</span>
+  </div>
+</footer>
+
+</body>
+</html>

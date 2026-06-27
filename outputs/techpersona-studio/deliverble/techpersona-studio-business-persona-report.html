@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Persona Brief — TechPersona Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F6F3EE;
+  --paper-deep: #EFEAE1;
+  --pine-wash: #E8EFEC;
+  --core: #FBFAF7;
+  --ink: #171717;
+  --ink-soft: #4E4E4E;
+  --ink-faint: #857F75;
+  --pine: #1E3A34;
+  --pine-soft: #2E5148;
+  --terra: #C06A45;
+  --terra-deep: #9F4F33;
+  --terra-light: #E7A282;
+  --hair: rgba(23,23,23,.10);
+  --lift: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+  --lift-lg: 0 2px 4px rgba(30,58,52,.05), 0 44px 80px -36px rgba(30,58,52,.40);
+  --inner-hi: inset 0 1px 1px rgba(255,255,255,.7);
+  --r: 2rem;
+  --r-inner: calc(2rem - 10px);
+  --r-sm: .75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 17px; }
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   GRAIN OVERLAY
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: .04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 800; line-height: 1.1; letter-spacing: -.025em; }
+.display { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.02; letter-spacing: -.045em; }
+.display-italic { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; color: var(--terra-light); }
+.kicker {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: .70rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Section headings */
+.sh {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: inherit;
+  margin-bottom: 2rem;
+  break-after: avoid;
+}
+
+/* ============================================================
+   STATUS CHIPS
+   ============================================================ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .22em .65em;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.chip-confirmed {
+  background: rgba(30,58,52,.12);
+  color: var(--pine-soft);
+}
+.chip-recommended {
+  background: rgba(239,234,225,.9);
+  color: var(--ink-soft);
+  border: 1px solid var(--hair);
+}
+.chip-unknown {
+  background: rgba(23,23,23,.06);
+  color: var(--ink-faint);
+  border: 1px solid var(--hair);
+}
+.chip-toconfirm {
+  background: rgba(192,106,69,.12);
+  color: var(--terra-deep);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+section {
+  padding: 5rem 0;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* Two-column grid */
+.g2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+/* Double-bezel outer shell */
+.card {
+  background: rgba(30,58,52,.045);
+  border: 1px solid var(--hair);
+  border-radius: var(--r);
+  padding: 10px;
+  box-shadow: var(--lift);
+}
+/* Inner core */
+.card-inner {
+  background: var(--core);
+  border-radius: var(--r-inner);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--inner-hi);
+}
+
+/* Flat single-layer card */
+.card-flat {
+  background: var(--core);
+  border: 1px solid var(--hair);
+  border-radius: var(--r);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--lift);
+}
+
+/* Dark card for conversion section */
+.dark-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r);
+  padding: 1.75rem 2rem;
+}
+
+/* Pine-wash card */
+.pine-card {
+  background: var(--pine-wash);
+  border: 1px solid rgba(30,58,52,.10);
+  border-radius: var(--r);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--lift);
+}
+
+/* ============================================================
+   FIELD TABLE
+   ============================================================ */
+.ft {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ft tr {
+  border-bottom: 1px solid var(--hair);
+}
+.ft tr:last-child { border-bottom: none; }
+.ft td {
+  padding: .9rem 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.ft td:first-child {
+  width: 30%;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-right: 1.5rem;
+  white-space: nowrap;
+}
+.ft td:nth-child(2) {
+  color: var(--ink-soft);
+  font-size: .93rem;
+  padding-right: 1.5rem;
+}
+.ft td:last-child {
+  width: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+.ft ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ft ul li {
+  padding: .15rem 0;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+.ft ul li::before {
+  content: "-";
+  margin-right: .5rem;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
+   COVER
+   ============================================================ */
+header.cover {
+  background: var(--pine);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+header.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 80% 20%, rgba(46,81,72,.5) 0%, transparent 60%);
+}
+.cover-body {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 8rem);
+}
+.cover-top { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cover-kicker {
+  font-size: .70rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--terra-light);
+  margin-bottom: 1.5rem;
+}
+.cover-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  color: var(--paper);
+  margin-bottom: 1rem;
+}
+.cover-title em {
+  font-style: italic;
+  color: var(--terra-light);
+}
+.cover-descriptor {
+  font-size: 1.05rem;
+  color: rgba(246,243,238,.60);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  line-height: 1.5;
+}
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(30,58,52,.35);
+  border: 1px solid rgba(30,58,52,.5);
+  color: rgba(246,243,238,.80);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  padding: .45em 1em;
+  border-radius: 100px;
+}
+.cover-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(246,243,238,.60);
+}
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(246,243,238,.12);
+}
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.cover-meta-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(246,243,238,.40);
+}
+.cover-meta-value {
+  font-size: .88rem;
+  font-weight: 500;
+  color: rgba(246,243,238,.75);
+}
+
+/* ============================================================
+   EXECUTIVE SUMMARY
+   ============================================================ */
+.exec-summary-section {
+  background: var(--paper);
+}
+.exec-lead {
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.exec-bullets {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.exec-bullets li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: .95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.exec-bullets li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  background: var(--terra);
+  border-radius: 50%;
+  margin-top: .55rem;
+}
+.exec-note {
+  font-size: .8rem;
+  color: var(--ink-faint);
+  border-left: 2px solid var(--hair);
+  padding-left: .85rem;
+  margin-top: 1.75rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   BUSINESS SNAPSHOT
+   ============================================================ */
+.snapshot-section {
+  background: var(--paper-deep);
+}
+
+/* ============================================================
+   BRAND STRATEGY
+   ============================================================ */
+.strategy-section {
+  background: var(--pine-wash);
+}
+
+/* Positioning statement band */
+.pos-band {
+  background: var(--pine);
+  border-radius: var(--r);
+  padding: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.pos-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(46,81,72,.6) 0%, transparent 65%);
+  pointer-events: none;
+}
+.pos-band-kicker {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--terra-light);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.pos-band-text {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  color: var(--paper);
+  position: relative;
+  z-index: 1;
+}
+.pos-band-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Differentiator bullets */
+.diff-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.diff-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: .95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.diff-list li .diff-dot {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(30,58,52,.10);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  font-weight: 800;
+  color: var(--pine);
+  margin-top: .1rem;
+}
+
+/* Desired feeling chips */
+.chip-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.feeling-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .4em 1em;
+  border-radius: 100px;
+  background: rgba(30,58,52,.08);
+  color: var(--pine);
+  border: 1px solid rgba(30,58,52,.15);
+}
+.antitrait-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .4em 1em;
+  border-radius: 100px;
+  background: rgba(23,23,23,.05);
+  color: var(--ink-faint);
+  text-decoration: line-through;
+  border: 1px solid var(--hair);
+}
+
+/* ============================================================
+   CONVERSION CONTEXT
+   ============================================================ */
+.conversion-section {
+  background: var(--pine);
+  color: var(--paper);
+}
+.conversion-section .sh {
+  color: var(--paper);
+  opacity: .9;
+}
+.conv-field-heading {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: rgba(246,243,238,.45);
+  margin-bottom: .5rem;
+}
+.conv-field-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--paper);
+  margin-bottom: .4rem;
+  line-height: 1.2;
+}
+.conv-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+.conv-subtitle-neutral { color: var(--terra-light); }
+.conv-subtitle-high { color: var(--terra-light); }
+.conv-body {
+  font-size: .90rem;
+  color: rgba(246,243,238,.70);
+  line-height: 1.6;
+}
+.conv-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(246,243,238,.85);
+  line-height: 1.55;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--terra);
+  margin-top: .4rem;
+}
+.proof-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: .35em .9em;
+  border-radius: 100px;
+  background: rgba(255,255,255,.08);
+  color: rgba(246,243,238,.85);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.cta-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--terra-light);
+  margin-bottom: .4rem;
+}
+
+/* ============================================================
+   BRAND PERSONALITY
+   ============================================================ */
+.personality-section {
+  background: var(--paper);
+}
+
+/* Voice rules list */
+.voice-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.voice-list li {
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: .92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+}
+.voice-list li:last-child { border-bottom: none; }
+.voice-list li::before {
+  content: '-';
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+/* Messaging patterns */
+.msg-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.msg-list li {
+  font-size: .90rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-style: italic;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--pine-wash);
+}
+
+/* Avoid chips */
+.avoid-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: .80rem;
+  font-weight: 600;
+  padding: .35em .9em;
+  border-radius: 100px;
+  background: rgba(192,106,69,.10);
+  color: var(--terra-deep);
+  border: 1px solid rgba(192,106,69,.20);
+}
+
+/* ============================================================
+   SOURCES APPENDIX
+   ============================================================ */
+.sources-section {
+  background: var(--paper-deep);
+}
+.sources-section .sh {
+  font-size: 1.1rem;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+.sources-list {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+.sources-list li {
+  font-size: .78rem;
+  color: var(--ink-faint);
+  line-height: 1.55;
+}
+.sources-list li em {
+  font-style: italic;
+}
+
+/* ============================================================
+   SCREEN FOOTER
+   ============================================================ */
+footer.screen-footer {
+  background: var(--pine);
+  padding: 2rem 3rem;
+  text-align: center;
+}
+footer.screen-footer p {
+  font-size: .75rem;
+  color: rgba(246,243,238,.40);
+  letter-spacing: .05em;
+}
+
+/* ============================================================
+   CARD LABEL / VALUE PAIRS (non-table)
+   ============================================================ */
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+.field-row:last-child { border-bottom: none; }
+.field-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.field-value {
+  font-size: .93rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+  section { padding: 2.5rem 0; }
+  .container { padding: 0 1.25rem; }
+  .g2 { grid-template-columns: 1fr; }
+  header.cover { padding: 2.5rem 1.25rem; }
+  .cover-body { min-height: calc(100vh - 5rem); }
+  .cover-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .cover-title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+
+  /* Flatten snapshot card on mobile */
+  .snapshot-section .card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  .snapshot-section .card-inner {
+    background: transparent;
+    box-shadow: none;
+    padding: .5rem 0;
+    border-radius: 0;
+  }
+
+  /* Field table stacked */
+  .ft, .ft tbody, .ft tr, .ft td { display: block; width: 100%; }
+  .ft tr { border-bottom: 1px solid var(--hair); padding: .75rem 0; }
+  .ft tr:last-child { border-bottom: none; }
+  .ft td { border: none; padding: .15rem 0; white-space: normal; }
+  .ft td:first-child { width: 100%; padding-right: 0; margin-bottom: .1rem; }
+  .ft td:last-child { text-align: left; margin-top: .35rem; }
+
+  .pos-band { padding: 2rem 1.5rem; }
+  .pos-band-text { font-size: 1.1rem; }
+  .dark-card { padding: 1.25rem; }
+  .card-flat { padding: 1.25rem; }
+}
+
+/* ============================================================
+   PRINT / PDF
+   ============================================================ */
+@media print {
+  @page { size: letter; margin: 0; }
+  *, *::before, *::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  footer.screen-footer { display: none !important; }
+
+  header.cover { break-after: page; min-height: 100vh; }
+
+  section { break-before: page; min-height: 11in; }
+
+  .sh { break-after: avoid; }
+
+  .card {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .card-inner, .card-flat, .dark-card, .pos-band, .qcard {
+    border-radius: 4px !important;
+    box-shadow: none !important;
+  }
+
+  .ft tr { break-inside: avoid; }
+
+  .sources-list li { font-size: .75rem; line-height: 1.5; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     1. COVER
+     ============================================================ -->
+<header class="cover">
+  <div class="cover-body">
+    <div class="cover-top">
+      <div class="cover-kicker">Business Persona Brief</div>
+      <h1 class="cover-title">TechPersona<br><em>Studio</em></h1>
+      <p class="cover-descriptor">Website design and automation consulting for service businesses. A strategy brief to guide the website build.</p>
+      <div style="margin-top:2rem;">
+        <span class="cover-badge">Ready for website blueprint</span>
+      </div>
+    </div>
+    <div class="cover-footer">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Prepared by</span>
+        <span class="cover-meta-value">TechPersona Studio / Thao Phuong</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Client</span>
+        <span class="cover-meta-value">TechPersona Studio</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Date</span>
+        <span class="cover-meta-value">June 24, 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     2. EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="exec-summary-section">
+  <div class="container">
+    <div class="kicker" style="margin-bottom:.75rem;">Overview</div>
+    <h2 class="sh">Executive summary</h2>
+    <p class="exec-lead">TechPersona Studio is a solo web and automation studio that opened in June 2026, serving small service business owners who are significantly behind on technology. The studio builds websites that get found and lead-catching systems that run without the owner's attention, sold as one project with one-time pricing and no retainer. Thao Phuong stays on every project from audit to launch.</p>
+    <ul class="exec-bullets">
+      <li>The audience is small service businesses that are notably behind on tech, not growth-stage companies. First targets: restaurants, nail salons, realtors, and plumbers, reached via warm outreach.</li>
+      <li>The website should optimize for one action: a free website audit. The CTA goes to a form. The audit report comes back within 2 days. A discovery call follows to discuss website redesign, automation, or both.</li>
+      <li>The biggest conversion challenge is trust. The studio opened in June 2026 with no external reviews yet. Proof is actively being built: free redesigns in exchange for reviews, 2 case studies in progress, 2-3 reviews expected within 1 month, and Google Business Profile plus social pages launching this week.</li>
+      <li>The brand voice is direct, calm, and founder-present. First-person singular throughout. No hype, no agency framing, no jargon.</li>
+      <li>All client questions are answered and this brief is ready for the website blueprint. Fields marked "Recommended" are inferred from strong signals in site copy and are labeled accordingly.</li>
+    </ul>
+    <p class="exec-note">Fields marked "Recommended" are inferred from strong signals in the site copy and research. They are not yet client-confirmed and are labeled accordingly throughout.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. BUSINESS SNAPSHOT
+     ============================================================ -->
+<section class="snapshot-section">
+  <div class="container">
+    <div class="kicker" style="margin-bottom:.75rem;">The business</div>
+    <h2 class="sh">Business snapshot</h2>
+    <div class="card">
+      <div class="card-inner">
+        <table class="ft">
+          <tbody>
+            <tr>
+              <td>Business name</td>
+              <td>TechPersona Studio</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Founded</td>
+              <td>June 2026</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Industry</td>
+              <td>Website design and automation consulting for service businesses</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Service area</td>
+              <td>Online, nationwide. No geographic restriction stated on website.<br>Worcester, MA as physical base is client-stated; not verified externally.</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Primary offer</td>
+              <td>Website redesign for service businesses</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Secondary offer</td>
+              <td>Quiet Systems: lead-catching automation that runs without the owner's attention</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Primary audience</td>
+              <td>Small service businesses that are significantly behind on technology</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Industry targeting</td>
+              <td>
+                <ul>
+                  <li>Restaurants (first priority, warm outreach)</li>
+                  <li>Nail salons</li>
+                  <li>Realtors</li>
+                  <li>Plumbers</li>
+                </ul>
+              </td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Contact email</td>
+              <td>info@techpersonastudio.com</td>
+              <td><span class="chip chip-confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Buyer trigger</td>
+              <td>
+                <ul>
+                  <li>Inquiries arriving after hours, sitting until morning</li>
+                  <li>Calls coming in while the owner is mid-job, going unanswered</li>
+                  <li>Leads lost before anyone speaks to them</li>
+                </ul>
+              </td>
+              <td><span class="chip chip-recommended">Recommended</span></td>
+            </tr>
+            <tr>
+              <td>Sales context</td>
+              <td>No inbound traffic data, referral source, or paid ad spend found.</td>
+              <td><span class="chip chip-unknown">Unknown</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. BRAND STRATEGY
+     ============================================================ -->
+<section class="strategy-section">
+  <div class="container">
+    <div class="kicker" style="margin-bottom:.75rem;">Positioning</div>
+    <h2 class="sh">Brand strategy</h2>
+
+    <!-- Positioning statement band -->
+    <div class="pos-band">
+      <div class="pos-band-kicker">Positioning statement</div>
+      <p class="pos-band-text">For service business owners who lose leads because no one responds fast enough, TechPersona Studio is the solo web and automation studio that builds a site and a follow-up system in one project, because Thao stays on the project from audit to launch, with full price disclosed before you commit.</p>
+      <div class="pos-band-footer">
+        <span class="chip chip-recommended" style="background:rgba(192,106,69,.18);color:var(--terra-light);border-color:rgba(192,106,69,.30);">Recommended</span>
+      </div>
+    </div>
+
+    <!-- Core problem + Desired feeling side by side -->
+    <div class="g2" style="margin-bottom:1.5rem;">
+      <div class="card-flat">
+        <div class="kicker" style="margin-bottom:.75rem;">Core problem</div>
+        <p style="font-size:.95rem;color:var(--ink-soft);line-height:1.65;margin-bottom:1rem;">Service business owners lose qualified leads not because they offer a bad service, but because no one responds fast enough. The lead disappears before anyone even knows it existed.</p>
+        <span class="chip chip-confirmed">Confirmed</span>
+      </div>
+      <div class="card-flat">
+        <div class="kicker" style="margin-bottom:.75rem;">Desired feeling</div>
+        <div class="chip-cluster" style="margin-bottom:1rem;">
+          <span class="feeling-chip">Calm</span>
+          <span class="feeling-chip">Reliable</span>
+          <span class="feeling-chip">Direct</span>
+          <span class="feeling-chip">No-nonsense</span>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-faint);line-height:1.5;">Drawn from a full tone audit of homepage copy. The word "quiet" appears as a recurring product metaphor. Short declarative sentences throughout, no hype.</p>
+        <div style="margin-top:.85rem;"><span class="chip chip-recommended">Recommended</span></div>
+      </div>
+    </div>
+
+    <!-- Market position full width -->
+    <div class="card-flat" style="margin-bottom:1.5rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;">
+        <div class="kicker">Market position</div>
+        <span class="chip chip-confirmed">Confirmed (partial)</span>
+      </div>
+      <p style="font-size:.95rem;color:var(--ink-soft);line-height:1.65;margin-bottom:.75rem;">TechPersona Studio is a solo studio that builds for service businesses already earning revenue, not startups looking for their first site. The offer combines a fast-response website with a lead-catching automation layer sold as one project.</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+        <li style="font-size:.9rem;color:var(--ink-soft);display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--ink-faint);flex-shrink:0;">-</span>One-time pricing, scoped after a free audit. Full cost disclosed before any commitment.</li>
+        <li style="font-size:.9rem;color:var(--ink-soft);display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--ink-faint);flex-shrink:0;">-</span>Positioned below agency rates without requiring a monthly retainer.</li>
+        <li style="font-size:.9rem;color:var(--ink-soft);display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--ink-faint);flex-shrink:0;">-</span>Solo operator: one person on every project. Not an agency with an account manager layer.</li>
+      </ul>
+    </div>
+
+    <!-- Differentiators full width -->
+    <div class="card-flat">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;">
+        <div class="kicker">Differentiators</div>
+        <span class="chip chip-confirmed">Confirmed</span>
+      </div>
+      <ul class="diff-list">
+        <li>
+          <div class="diff-dot">1</div>
+          <span>Single-person ownership from first call to final build. "One person on your project, start to finish. You reach me directly, every time." No hand-offs, no account managers.</span>
+        </li>
+        <li>
+          <div class="diff-dot">2</div>
+          <span>Free audit delivered first, before any payment. The audit is the buyer's to keep regardless. Nothing owed, nothing to cancel.</span>
+        </li>
+        <li>
+          <div class="diff-dot">3</div>
+          <span>Website and automation sold as a combined system, not separate products. Two services framed as "two halves of one path." One project, one scope, one price.</span>
+        </li>
+        <li>
+          <div class="diff-dot">4</div>
+          <span>One-time project pricing (not a retainer). Full cost disclosed post-audit so the buyer knows the number before committing.</span>
+        </li>
+        <li>
+          <div class="diff-dot">5</div>
+          <span>Founder has 6 years of software engineering background. The build is custom, not a template-builder product.</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     5. CONVERSION CONTEXT
+     ============================================================ -->
+<section class="conversion-section">
+  <div class="container">
+    <div class="kicker" style="color:rgba(246,243,238,.40);margin-bottom:.75rem;">Website strategy</div>
+    <h2 class="sh">Conversion context</h2>
+
+    <div class="g2" style="margin-bottom:1.5rem;">
+      <div class="dark-card">
+        <div class="conv-field-heading">Buyer urgency</div>
+        <div class="conv-field-title">Low to moderate</div>
+        <div class="conv-subtitle conv-subtitle-neutral">Owner may not feel urgency until the revenue impact is visible</div>
+        <p class="conv-body">The homepage frames the cost of inaction as invisible and ongoing, not acute. "Stop losing customers you'll never know you lost." The website needs to surface the invisible cost before making the offer.</p>
+        <div style="margin-top:1rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.08);color:rgba(246,243,238,.6);border-color:rgba(255,255,255,.12);">Recommended</span></div>
+      </div>
+      <div class="dark-card">
+        <div class="conv-field-heading">Trust burden</div>
+        <div class="conv-field-title">High — actively building</div>
+        <div class="conv-subtitle conv-subtitle-high">New studio, no external reviews yet. Proof plan in motion.</div>
+        <p class="conv-body">Opened June 2026. No GBP, no directory listings, no reviews on any platform yet. Proof is actively building: free redesigns in exchange for reviews, 2 case studies in progress, 2-3 reviews expected within 1 month, GBP and social pages launching this week.</p>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(255,255,255,.08);color:rgba(246,243,238,.6);border-color:rgba(255,255,255,.12);">Confirmed (partial)</span></div>
+      </div>
+    </div>
+
+    <div class="dark-card" style="margin-bottom:1.5rem;">
+      <div class="conv-field-heading">Main objection</div>
+      <div class="conv-field-title" style="margin-bottom:.75rem;">The trust question</div>
+      <p class="conv-quote">"Can I trust a solo operator I've never heard of to actually deliver?"</p>
+      <p class="conv-body" style="margin-top:.85rem;">The existing site anticipates this with the pricing transparency FAQ and the repeated direct-access promise. Both are strong. The gap is that copy alone is carrying all the weight — no external source confirms the work yet.</p>
+      <div style="margin-top:1rem;"><span class="chip chip-recommended" style="background:rgba(255,255,255,.08);color:rgba(246,243,238,.6);border-color:rgba(255,255,255,.12);">Recommended</span></div>
+    </div>
+
+    <div class="g2" style="margin-bottom:1.5rem;">
+      <div class="dark-card">
+        <div class="conv-field-heading">Proof needed</div>
+        <div class="conv-field-title" style="margin-bottom:1rem;">Priority assets</div>
+        <div class="chip-cluster">
+          <span class="proof-chip">Named testimonials</span>
+          <span class="proof-chip">Case study outcomes</span>
+          <span class="proof-chip">GBP listing</span>
+        </div>
+        <p class="conv-body" style="margin-top:.9rem;">Founder photo is already on the website. Reviews and case studies are in progress. Even one real result with a name attached shifts the trust calculus significantly.</p>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(255,255,255,.08);color:rgba(246,243,238,.6);border-color:rgba(255,255,255,.12);">Confirmed (partial)</span></div>
+      </div>
+      <div class="dark-card">
+        <div class="conv-field-heading">Primary CTA</div>
+        <div class="conv-field-title" style="margin-bottom:.5rem;">The free audit</div>
+        <div class="cta-name">Get my free website audit</div>
+        <p class="conv-body">Goes to a form. Audit report delivered back within 2 days. Client then schedules a discovery call to discuss website redesign, automation, or both. Present in the hero, the offer section, the process section, and the closing CTA.</p>
+        <div style="margin-top:1rem;"><span class="chip chip-confirmed" style="background:rgba(255,255,255,.08);color:rgba(246,243,238,.6);border-color:rgba(255,255,255,.12);">Confirmed</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     6. BRAND PERSONALITY AND VOICE
+     ============================================================ -->
+<section class="personality-section">
+  <div class="container">
+    <div class="kicker" style="margin-bottom:.75rem;">Copy direction</div>
+    <h2 class="sh">Brand personality and voice</h2>
+
+    <!-- Core traits + Anti-traits -->
+    <div class="g2" style="margin-bottom:1.5rem;">
+      <div class="card-flat">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div class="kicker">Core traits</div>
+          <span class="chip chip-confirmed">Confirmed</span>
+        </div>
+        <div class="chip-cluster">
+          <span class="feeling-chip">Direct</span>
+          <span class="feeling-chip">Calm</span>
+          <span class="feeling-chip">Founder-present</span>
+          <span class="feeling-chip">Honest</span>
+          <span class="feeling-chip">Technically grounded</span>
+        </div>
+      </div>
+      <div class="card-flat">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div class="kicker">Anti-traits</div>
+          <span class="chip chip-confirmed">Confirmed</span>
+        </div>
+        <div class="chip-cluster">
+          <span class="antitrait-chip">Hype-driven</span>
+          <span class="antitrait-chip">Corporate/agency</span>
+          <span class="antitrait-chip">Jargon-heavy</span>
+          <span class="antitrait-chip">Commitment-heavy</span>
+          <span class="antitrait-chip">Broad/unfocused</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand archetype -->
+    <div class="pine-card" style="margin-bottom:1.5rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.75rem;">
+        <div class="kicker">Brand archetype</div>
+        <span class="chip chip-recommended">Recommended</span>
+      </div>
+      <p style="font-size:1.1rem;font-weight:700;color:var(--pine);margin-bottom:.5rem;">The Craftsperson / Maker</p>
+      <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.6;">Solo practitioner who builds with precision and stands behind the work personally. Signals: "one person on your project," audit-first model, direct access promise, first-person singular throughout. Not client-confirmed yet.</p>
+    </div>
+
+    <!-- Voice rules -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-inner">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;">
+          <div class="kicker">Voice rules</div>
+          <span class="chip chip-confirmed">Confirmed</span>
+        </div>
+        <ul class="voice-list">
+          <li>Write in first-person singular. Never "we."</li>
+          <li>Keep sentences short. One idea per sentence.</li>
+          <li>Name the problem before the solution. Lead with the cost of inaction.</li>
+          <li>Use "quiet," "runs in the background," "before they call the next name" as recurring vocabulary anchors.</li>
+          <li>Offer proof or specifics before stating a claim. Do not lead with adjectives.</li>
+          <li>Avoid: "agency," "solution," "innovative," "seamless," "leverage," "utilize."</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Messaging patterns + Words to avoid -->
+    <div class="g2">
+      <div class="card-flat">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div class="kicker">Messaging patterns</div>
+          <span class="chip chip-confirmed">Confirmed</span>
+        </div>
+        <ul class="msg-list">
+          <li>"[Problem that happens while owner is working] — [consequence they don't see] — [Quiet Systems fixes it]"</li>
+          <li>"One person. [Direct access promise]. [Trust anchor]."</li>
+          <li>"Free audit first — no commitment, yours to keep."</li>
+          <li>"Before they call the next name on the list."</li>
+          <li>"The site gets found. The system catches what the site doesn't."</li>
+        </ul>
+      </div>
+      <div class="card-flat">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div class="kicker">Words to avoid in copy</div>
+          <span class="chip chip-recommended">Recommended</span>
+        </div>
+        <div class="chip-cluster">
+          <span class="avoid-chip">Agency</span>
+          <span class="avoid-chip">Solution</span>
+          <span class="avoid-chip">Seamless</span>
+          <span class="avoid-chip">Full-service</span>
+          <span class="avoid-chip">Digital</span>
+        </div>
+        <p style="font-size:.8rem;color:var(--ink-faint);margin-top:.85rem;line-height:1.55;">Keep "solution" out of copy entirely. The studio name and voice are built on precision, not category language.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     8. SOURCES APPENDIX
+     ============================================================ -->
+<section class="sources-section">
+  <div class="container">
+    <h2 class="sh">Sources</h2>
+    <p style="font-size:.80rem;color:var(--ink-faint);margin-bottom:1.25rem;line-height:1.5;">All research conducted by TechPersona Studio. Sources accessed June 2026. Client answers collected June 24, 2026.</p>
+    <ol class="sources-list">
+      <li>Business name, industry, primary offer, secondary offer, primary audience, brand tone, CTA, pricing model, voice rules, differentiators, and messaging patterns. <em>Source: techpersonastudio.com — homepage, hero, services, about, FAQ, offer, process, and closing CTA sections.</em></li>
+      <li>Solo operator confirmation (1 employee), LinkedIn industry category (IT Services and IT Consulting), LinkedIn description ("Conversion-focused website redesign and lead automation for growing service businesses"). <em>Source: linkedin.com/company/techpersona-studio.</em></li>
+      <li>No Google Business Profile listing found. No star rating, business panel, or address on Google Maps or Google Search. Client confirms GBP setup planned this week. <em>Source: GBP and Google Maps search, conducted by Researcher B; client answer June 2026.</em></li>
+      <li>No listings or reviews found on BBB, Angi, Yelp, or Thumbtack. <em>Source: Direct search on each platform, conducted by Researcher B.</em></li>
+      <li>External data citation: "21 times more likely to win a lead when you answer within 5 minutes." Cited on site as InsideSales Lead Response Management Study. <em>Source: techpersonastudio.com — hero/problem section.</em></li>
+      <li>Case study: "Quan Pho, rebuilt" — before/after visual comparison present on site. No client attribution, outcome data, or date. Two case studies currently in progress. <em>Source: techpersonastudio.com — before/after section; client answer June 2026.</em></li>
+      <li>Brand colors (stone neutrals, pine #1E3A34, terracotta #C06A45), typography (Hanken Grotesk, Fraunces italic). <em>Source: Client notes — Pine Editorial brand guide. Partial confirmation only; not independently verifiable from external sources.</em></li>
+      <li>Contact email corrected to info@techpersonastudio.com. Footer typo (info@techpersonasolution.com) confirmed by client as a typo; domain techpersonasolution.com is inactive. <em>Source: Client answer June 2026; DNS lookup documented by Researcher B.</em></li>
+      <li>Founder: Thao Phuong, software engineer, 6 years experience. Founder photo present on website. Phone: +1 857 800 2667. <em>Source: techpersonastudio.com — hero, about, and footer sections; client answer June 2026.</em></li>
+      <li>Service area: online, nationwide. No geographic copy on website or LinkedIn. Worcester, MA is client-stated only. <em>Source: techpersonastudio.com, linkedin.com/company/techpersona-studio, and client notes.</em></li>
+      <li>Founding date: June 2026. Industry targeting: restaurants first, then nail salons, realtors, plumbers via warm outreach. CTA destination: form submission, audit report within 2 days, discovery call to follow. Proof-building plan: free redesigns in exchange for reviews, 2-3 reviews expected within 1 month, social/GBP setup this week. <em>Source: Client answers June 24, 2026.</em></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- Screen footer -->
+<footer class="screen-footer">
+  <p>Business Persona Brief &nbsp;·&nbsp; TechPersona Studio &nbsp;·&nbsp; Prepared by TechPersona Studio / Thao Phuong &nbsp;·&nbsp; June 24, 2026</p>
+</footer>
+
+</body>
+</html>

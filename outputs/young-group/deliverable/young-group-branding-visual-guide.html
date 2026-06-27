@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Group — Branding Visual Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* ── Tokens ──────────────────────────────────────────────────────── */
+:root {
+  --paper:       #F5EFE4;
+  --paper-deep:  #EAE0CF;
+  --stone:       #D9CDBF;
+  --core:        #FDFAF5;
+  --ink:         #2C1A0E;
+  --ink-soft:    #8A7060;
+  --ink-faint:   #A89080;
+  --anchor:      #3B2314;
+  --anchor-dark: #2A1A0A;
+  --section-dark: #2A2520;
+  --gold:        #B8903A;
+  --gold-deep:   #9A7428;
+  --gold-light:  #D4B070;
+  --blush:       #C5A8A0;
+  --hair:        rgba(44,34,26,.10);
+
+  --lift:    0 1px 2px rgba(44,34,26,.04), 0 18px 40px -22px rgba(44,34,26,.28);
+  --lift-lg: 0 2px 4px rgba(44,34,26,.05), 0 44px 80px -36px rgba(44,34,26,.38);
+  --inner-hi: inset 0 1px 1px rgba(255,255,255,.72);
+
+  --r-card:  1.75rem;
+  --r-inner: calc(1.75rem - 10px);
+  --r-pill:  999px;
+  --r-input: 0.625rem;
+
+  --ease:      cubic-bezier(.32,.72,0,1);
+  --ease-soft: cubic-bezier(.22,1,.36,1);
+
+  --font-sans:   'Be Vietnam Pro', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:  'Lora', Georgia, 'Times New Roman', serif;
+  --font-script: 'Great Vibes', 'Dancing Script', cursive;
+
+  --max-w:    1160px;
+  --text-col: 680px;
+}
+
+/* ── Reset ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* film grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .025;
+  mix-blend-mode: multiply;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Layout ──────────────────────────────────────────────────────── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+.text-col  { max-width: var(--text-col); }
+
+section { padding: 96px 0; }
+section.bg-paper      { background: var(--paper); }
+section.bg-paper-deep { background: var(--paper-deep); }
+section.bg-stone      { background: var(--stone); }
+section.bg-anchor     { background: var(--section-dark); color: var(--paper); }
+
+/* ── Typography ──────────────────────────────────────────────────── */
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.kicker-anchor { color: var(--anchor); }
+.kicker-paper  { color: rgba(245,239,228,.6); }
+.kicker-gold   { color: var(--gold); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.25rem, 4vw, 3.25rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.035em; margin-bottom: 1.25rem; }
+h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .75rem; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: .5rem; }
+
+.bg-anchor h1, .bg-anchor h2, .bg-anchor h3, .bg-anchor h4 { color: var(--paper); }
+
+p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+.bg-anchor p { color: rgba(245,239,228,.75); }
+
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold);
+}
+.bg-anchor .serif-accent { color: var(--gold-light); }
+
+.script-text {
+  font-family: var(--font-script);
+  font-weight: normal;
+  font-size: 2.5rem;
+  color: var(--anchor);
+  display: block;
+}
+
+small, .small { font-size: 0.8125rem; color: var(--ink-faint); }
+
+/* ── Cover ───────────────────────────────────────────────────────── */
+.cover {
+  background: var(--section-dark);
+  color: var(--paper);
+  padding: 96px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .04;
+  pointer-events: none;
+}
+.cover-inner { position: relative; z-index: 1; }
+.cover-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(245,239,228,.12);
+}
+.cover-logo {
+  font-weight: 700;
+  font-size: .875rem;
+  letter-spacing: -.01em;
+  color: var(--paper);
+  opacity: .9;
+}
+.cover-tag {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.cover-date {
+  font-size: .8125rem;
+  color: rgba(245,239,228,.45);
+  margin-left: auto;
+}
+.cover-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: 1.02;
+  color: var(--paper);
+  max-width: 820px;
+  margin-bottom: 2rem;
+}
+.cover-thesis {
+  font-size: 1.0625rem;
+  color: rgba(245,239,228,.7);
+  max-width: 560px;
+  line-height: 1.6;
+  border-left: 2px solid var(--gold-light);
+  padding-left: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(184,144,58,.15);
+  border: 1px solid rgba(184,144,58,.25);
+  border-radius: var(--r-pill);
+  padding: .375rem .875rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--gold-light);
+}
+.status-dot {
+  width: 6px; height: 6px;
+  background: var(--gold-light);
+  border-radius: 50%;
+}
+
+/* ── Section header ──────────────────────────────────────────────── */
+.section-header { margin-bottom: 3rem; }
+.section-header h2 { margin-bottom: .5rem; }
+.section-header p { max-width: 560px; }
+
+/* ── Double-shell cards ──────────────────────────────────────────── */
+.card-shell {
+  background: rgba(59,35,20,.04);
+  border: 1px solid rgba(59,35,20,.08);
+  border-radius: var(--r-card);
+  padding: 10px;
+  box-shadow: var(--lift);
+}
+.card-core {
+  background: var(--core);
+  border-radius: var(--r-inner);
+  box-shadow: var(--inner-hi);
+  padding: 1.75rem 2rem;
+}
+
+/* ── Grid helpers ────────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+
+/* ── Palette swatches ────────────────────────────────────────────── */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.swatch { border-radius: 1rem; overflow: hidden; box-shadow: var(--lift); }
+.swatch-color { height: 80px; border-radius: 1rem 1rem 0 0; }
+.swatch-info { padding: .75rem 1rem; background: var(--core); border-radius: 0 0 1rem 1rem; }
+.swatch-name { font-size: .75rem; font-weight: 600; color: var(--ink); display: block; margin-bottom: .125rem; }
+.swatch-hex  { font-size: .6875rem; color: var(--ink-faint); font-family: 'Courier New', monospace; }
+.swatch-role { font-size: .6875rem; color: var(--ink-faint); margin-top: .25rem; display: block; }
+
+/* ── Type specimens ──────────────────────────────────────────────── */
+.type-specimen {
+  padding: 2rem;
+  background: var(--core);
+  border-radius: 1rem;
+  border: 1px solid var(--hair);
+  margin-bottom: 1rem;
+}
+.type-label {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: .75rem;
+}
+
+/* ── Buttons (island style) ──────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  font-family: var(--font-sans);
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 150ms var(--ease), box-shadow 150ms var(--ease);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-island {
+  background: var(--anchor);
+  color: var(--paper);
+  border-radius: var(--r-pill);
+  padding: .75rem 1rem .75rem 1.75rem;
+  box-shadow: var(--lift);
+}
+.btn-island:hover { background: var(--anchor-dark); }
+
+.btn-island-gold {
+  background: var(--gold);
+  color: #fff;
+  border-radius: var(--r-pill);
+  padding: .75rem 1rem .75rem 1.75rem;
+  box-shadow: var(--lift);
+}
+.btn-island-gold:hover { background: var(--gold-deep); }
+
+.btn-ghost {
+  background: none;
+  color: var(--ink);
+  border-radius: 0;
+  padding: .5rem 0;
+  border-bottom: 2px solid var(--ink);
+  transition: border-color 150ms var(--ease);
+}
+.btn-ghost:hover { border-color: var(--gold); transform: none; }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,.15);
+  border-radius: 50%;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.btn:hover .btn-icon { transform: translate(2px,-2px); }
+
+/* ── Proof chips (pill) ──────────────────────────────────────────── */
+.proof-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--core);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-pill);
+  padding: .5rem 1rem .5rem .625rem;
+  box-shadow: var(--lift);
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.proof-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Result chips ────────────────────────────────────────────────── */
+.result-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: var(--paper);
+  border: 1px solid var(--stone);
+  border-radius: var(--r-pill);
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ── Testimonial cards (double-bezel) ────────────────────────────── */
+.testimonial-card {
+  background: rgba(255,255,255,.4);
+  border: 1px solid rgba(59,35,20,.06);
+  border-radius: var(--r-card);
+  box-shadow: var(--lift);
+  padding: 3px;
+  transition: transform 500ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 500ms var(--ease);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--core);
+  border-radius: calc(var(--r-card) - 3px);
+  box-shadow: var(--inner-hi);
+  pointer-events: none;
+  z-index: 0;
+}
+.testimonial-card > * { position: relative; z-index: 1; }
+.testimonial-card { padding: 28px; }
+.testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--lift-lg); }
+.testimonial-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: .9375rem;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.testimonial-result { color: var(--gold); font-weight: 700; font-size: .875rem; display: block; margin-bottom: .25rem; }
+.testimonial-name { font-weight: 700; color: var(--ink); font-size: .875rem; margin-bottom: .125rem; }
+.testimonial-attr { font-size: .8125rem; color: var(--ink-soft); }
+
+/* ── Founder quote slab ──────────────────────────────────────────── */
+.founder-slab {
+  background: rgba(197,168,160,.18);
+  border: 1px solid rgba(197,168,160,.35);
+  border-radius: calc(var(--r-card) + 4px);
+  padding: 4px;
+}
+.founder-slab-inner {
+  background: var(--blush);
+  border-radius: var(--r-card);
+  padding: 4rem;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.45);
+}
+.founder-slab blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.375rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--anchor);
+  line-height: 1.4;
+  letter-spacing: -.01em;
+  margin-bottom: 1.5rem;
+}
+.founder-slab .slab-attr {
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+/* ── Trust banner ────────────────────────────────────────────────── */
+.trust-banner {
+  background: var(--section-dark);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.trust-item { text-align: center; }
+.trust-item__value {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--paper);
+  display: block;
+}
+.trust-item__label { font-size: .8125rem; color: rgba(245,239,228,.65); margin-top: .25rem; }
+.trust-divider { width: 1px; height: 48px; background: rgba(245,239,228,.2); }
+
+/* ── Credential bar ──────────────────────────────────────────────── */
+.cred-bar {
+  background: rgba(59,35,20,.05);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-pill);
+  padding: .875rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cred-item {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--anchor);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.cred-sep { color: var(--anchor); opacity: .3; font-size: 1.25rem; }
+
+/* ── North star ──────────────────────────────────────────────────── */
+.north-star-statement {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+}
+.adj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.adj-card { padding: 1.25rem 1.5rem; border-radius: 1rem; }
+.adj-card.positive { background: rgba(59,35,20,.04); border: 1px solid rgba(59,35,20,.10); }
+.adj-card.negative { background: rgba(184,144,58,.06); border: 1px solid rgba(184,144,58,.15); }
+.adj-card .adj-label {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.adj-card.positive .adj-label { color: var(--anchor); }
+.adj-card.negative .adj-label { color: var(--gold-deep); }
+.adj-item {
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: .375rem 0;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.adj-item::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.adj-card.positive .adj-item::before { background: var(--anchor); }
+.adj-card.negative .adj-item::before { background: var(--gold); }
+
+/* ── Direction mix ───────────────────────────────────────────────── */
+.mix-bar {
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(to right, var(--anchor) 65%, var(--stone) 65%);
+  margin: 1.5rem 0 .5rem;
+}
+.mix-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8125rem;
+  color: var(--ink-faint);
+}
+.mix-labels strong { color: var(--ink); }
+
+/* ── Band diagram ────────────────────────────────────────────────── */
+.band-diagram { display: flex; flex-direction: column; gap: .5rem; margin: 1.5rem 0; }
+.band-row { display: flex; align-items: center; gap: 1rem; }
+.band-swatch { width: 180px; height: 36px; border-radius: .5rem; flex-shrink: 0; border: 1px solid var(--hair); }
+.band-row .band-name { font-size: .8125rem; font-weight: 600; color: var(--ink); width: 140px; flex-shrink: 0; }
+.band-row .band-label { font-size: .8125rem; color: var(--ink-soft); }
+
+/* ── Rhythm rows ─────────────────────────────────────────────────── */
+.rhythm-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: .875rem;
+}
+.rhythm-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.rhythm-label { flex: 1; color: var(--ink); font-weight: 600; }
+.rhythm-mode {
+  font-size: .6875rem;
+  color: var(--ink-soft);
+  background: var(--core);
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hair);
+}
+.rhythm-bg { font-size: .6875rem; font-family: monospace; color: var(--ink-faint); min-width: 90px; text-align: right; }
+
+/* ── Mockup wires ────────────────────────────────────────────────── */
+.mockup {
+  background: var(--core);
+  border: 1px solid var(--hair);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--lift-lg);
+}
+.mockup-browser-bar {
+  background: var(--paper-deep);
+  padding: .625rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: 1px solid var(--hair);
+}
+.browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+.mockup-label {
+  background: var(--section-dark);
+  color: rgba(245,239,228,.75);
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+/* ── Do / Don't ──────────────────────────────────────────────────── */
+.rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.rule-list { list-style: none; }
+.rule-list li {
+  font-size: .9375rem;
+  color: var(--ink-soft);
+  padding: .625rem 0;
+  border-bottom: 1px solid var(--hair);
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  line-height: 1.5;
+}
+.bg-anchor .rule-list li {
+  color: var(--paper);
+  border-bottom-color: rgba(245,239,228,.15);
+}
+.rule-list li:last-child { border-bottom: none; }
+.rule-list li::before { font-size: .875rem; font-weight: 700; flex-shrink: 0; margin-top: .125rem; }
+.do-list li::before   { content: '✓'; color: var(--anchor); }
+.dont-list li::before { content: '✗'; color: var(--gold); }
+
+/* ── Callouts ────────────────────────────────────────────────────── */
+.callout {
+  padding: 1.25rem 1.5rem;
+  border-radius: .75rem;
+  margin: 1.5rem 0;
+  font-size: .9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.callout-info    { background: var(--core); border: 1px solid var(--hair); border-left: 3px solid var(--anchor); }
+.callout-warning { background: rgba(184,144,58,.08); border: 1px solid rgba(184,144,58,.25); border-left: 3px solid var(--gold); }
+.callout strong  { color: var(--ink); }
+.callout-title   { font-size: .6875rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: .5rem; }
+
+/* ── Code ────────────────────────────────────────────────────────── */
+pre {
+  background: var(--section-dark);
+  color: #E8D4C0;
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  font-family: 'Courier New', monospace;
+  font-size: .8125rem;
+  line-height: 1.65;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+code {
+  font-family: 'Courier New', monospace;
+  font-size: .875em;
+  background: rgba(59,35,20,.07);
+  border-radius: .25rem;
+  padding: .125em .35em;
+  color: var(--anchor);
+}
+pre .cm  { color: rgba(232,212,192,.45); }
+pre .cp  { color: var(--gold-light); }
+pre .cv  { color: rgba(232,212,192,.85); }
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th {
+  text-align: left;
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: .625rem 1rem .625rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+td {
+  padding: .75rem 1rem .75rem 0;
+  border-bottom: 1px solid var(--hair);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+td:first-child { color: var(--ink); font-weight: 500; }
+
+/* ── Impl list ───────────────────────────────────────────────────── */
+.impl-list { list-style: none; }
+.impl-list li {
+  font-size: .9375rem;
+  color: var(--ink-soft);
+  padding: .625rem 0;
+  border-bottom: 1px solid var(--hair);
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  line-height: 1.55;
+}
+.impl-list li:last-child { border-bottom: none; }
+.impl-list li::before { content: '→'; color: var(--anchor); font-weight: 700; flex-shrink: 0; margin-top: .125rem; }
+
+/* ── Form preview ────────────────────────────────────────────────── */
+.form-preview {
+  background: var(--core);
+  border: 1px solid var(--hair);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: var(--lift);
+  max-width: 420px;
+}
+.form-label {
+  display: block;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: .5rem;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  background: var(--core);
+  border: 1px solid var(--stone);
+  border-radius: var(--r-input);
+  font-family: var(--font-sans);
+  font-size: .9375rem;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  transition: border-color 150ms var(--ease);
+}
+.form-input:focus { outline: none; border-color: var(--anchor); border-width: 2px; }
+.form-input::placeholder { color: var(--ink-faint); }
+
+/* ── Print ───────────────────────────────────────────────────────── */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: white; font-size: 11pt; }
+  section { break-inside: avoid; padding: 40pt 0; }
+  .cover { break-after: page; }
+  pre { white-space: pre-wrap; font-size: 8pt; }
+  @page { size: A4; margin: 20mm; }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 56px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .rule-grid { grid-template-columns: 1fr; }
+  .adj-grid { grid-template-columns: 1fr; }
+  .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  .cred-bar { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .trust-banner { flex-direction: column; gap: 1.5rem; }
+  .trust-divider { display: none; }
+  .cover { padding: 56px 0 48px; }
+  .founder-slab-inner { padding: 2.5rem 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Cover ──────────────────────────────────────────────────────── -->
+<div class="cover">
+  <div class="container cover-inner">
+    <div class="cover-meta">
+      <span class="cover-logo">Young Group · Trần Thủy Tiên</span>
+      <span class="cover-tag">Branding Visual Guide</span>
+      <span class="cover-date">June 25, 2026 · v1.0</span>
+    </div>
+    <h1 class="cover-title">Warm espresso<br>and ivory authority.<br><span class="serif-accent">Proof is the system.</span></h1>
+    <p class="cover-thesis">A trusted Vietnamese coaching authority — warm, specific, and nothing like a wellness ad. The visual system earns trust through named, exact results.</p>
+    <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+      <span class="status-chip"><span class="status-dot"></span>Two tentative items · All other decisions locked</span>
+      <span style="font-size:.8125rem;color:rgba(245,239,228,.4);">Prepared by TechPersona Studio / Thao Phuong</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── 01 Visual north star ───────────────────────────────────────── -->
+<section class="bg-paper">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">01 — Visual north star</span>
+      <h2>What this brand must feel like</h2>
+    </div>
+
+    <div class="north-star-statement">
+      <strong style="color:var(--ink);">The brand should feel like:</strong> A trusted Vietnamese nutrition coach you'd believe enough to spend money on — warm, specific, and present from the first scroll to the first result.<br><br>
+      <strong style="color:var(--ink);">Not like:</strong> A generic wellness brand, a clinical weight-loss program, or an aspirational lifestyle ad.
+    </div>
+
+    <div class="type-specimen" style="margin:1.5rem 0;">
+      <span class="type-label">One-line visual thesis</span>
+      <p style="font-size:1.125rem;color:var(--ink);font-style:normal;font-weight:500;line-height:1.5;">"Warm espresso and ivory authority — proof-first, founder-led, and nothing like a wellness ad."</p>
+    </div>
+
+    <div class="adj-grid">
+      <div class="adj-card positive">
+        <div class="adj-label">Anchor adjectives</div>
+        <div class="adj-item">Trusted</div>
+        <div class="adj-item">Specific</div>
+        <div class="adj-item">Warm</div>
+      </div>
+      <div class="adj-card negative">
+        <div class="adj-label">Anti-adjectives</div>
+        <div class="adj-item">Generic</div>
+        <div class="adj-item">Clinical</div>
+        <div class="adj-item">Aspirational</div>
+      </div>
+    </div>
+
+    <h3 style="margin:2.5rem 0 1rem;">Desired emotional response</h3>
+    <div style="display:flex;flex-direction:column;gap:.75rem;max-width:var(--text-col);">
+      <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:var(--core);border-radius:.75rem;border:1px solid var(--hair);border-left:3px solid var(--anchor);">
+        <div><p style="font-weight:700;color:var(--ink);margin-bottom:.25rem;">Understood</p><p style="font-size:.9375rem;">"This person knows what Vietnamese women actually go through."</p></div>
+      </div>
+      <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:var(--core);border-radius:.75rem;border:1px solid var(--hair);border-left:3px solid var(--anchor);">
+        <div><p style="font-weight:700;color:var(--ink);margin-bottom:.25rem;">Convinced</p><p style="font-size:.9375rem;">"These results are real. That number and that name match what I want."</p></div>
+      </div>
+      <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:var(--core);border-radius:.75rem;border:1px solid var(--hair);border-left:3px solid var(--anchor);">
+        <div><p style="font-weight:700;color:var(--ink);margin-bottom:.25rem;">Protected</p><p style="font-size:.9375rem;">"If it doesn't work, I won't lose my money. There's a guarantee."</p></div>
+      </div>
+    </div>
+
+    <div class="callout callout-info" style="margin-top:2rem;max-width:var(--text-col);">
+      <span class="callout-title">Why this direction fits</span>
+      Young Group's trust burden is high. The primary audience has tried and failed at multiple weight loss programs. Every visual choice must signal: this is real, this is specific, this is for you. The warm espresso-and-ivory system reads as established, human, and credible — without expensive visual complexity. It creates immediate tonal distance from blue-and-white clinical wellness and from aspirational green lifestyle brands.
+    </div>
+  </div>
+</section>
+
+<!-- ── 02 Direction mix ───────────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">02 — Direction mix</span>
+      <h2>Enterprise / Stable leads</h2>
+    </div>
+    <div class="grid-2" style="gap:2rem;align-items:start;">
+      <div>
+        <div class="mix-bar"></div>
+        <div class="mix-labels">
+          <span><strong>Enterprise / Stable</strong> — 65%</span>
+          <span>Editorial / Human — 35%</span>
+        </div>
+        <p style="margin-top:1.5rem;">The visual system leads with structure and proof: espresso-on-ivory hierarchy, clean grid, trust-first components. The Editorial layer provides warmth: founder portrait, Lora italic voice moments, named proof chips that feel personal. Structure earns trust. Warmth makes it human.</p>
+      </div>
+      <div>
+        <div class="card-shell">
+          <div class="card-core">
+            <h3>What this mix prevents</h3>
+            <ul class="rule-list dont-list" style="margin-top:.75rem;">
+              <li>Aspirational lifestyle imagery that distances from real results</li>
+              <li>50/50 balance — hedging produces visual blandness</li>
+              <li>MLM-adjacent visual language (before/after collages, gradient CTAs)</li>
+              <li>Clinical wellness language (blue/white, medical iconography)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 Color system ────────────────────────────────────────────── -->
+<section class="bg-paper">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">03 — Color system</span>
+      <h2>Seven colors. One accent.</h2>
+      <p>Warm neutrals carry 65–70% of every view. Espresso anchors authority. Near-black handles text. Bronze-gold earns its punch by appearing rarely — never above 5%.</p>
+    </div>
+
+    <div class="callout callout-warning" style="margin-bottom:2rem;">
+      <span class="callout-title">Tentative</span>
+      Hex values approximated from visual asset inspection. Confirm from original brand kit before final delivery. These values are directionally accurate and sufficient for design generation.
+    </div>
+
+    <div class="palette-grid" style="margin-bottom:3rem;">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F5EFE4;border:1px solid rgba(0,0,0,.06) inset;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--paper</span>
+          <span class="swatch-hex">#F5EFE4</span>
+          <span class="swatch-role">Page background</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FDFAF5;border:1px solid rgba(0,0,0,.05) inset;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--core</span>
+          <span class="swatch-hex">#FDFAF5</span>
+          <span class="swatch-role">Card interior, inputs</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D9CDBF;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--stone</span>
+          <span class="swatch-hex">#D9CDBF</span>
+          <span class="swatch-role">Alternate section band, borders</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#3B2314;"></div>
+        <div class="swatch-info" style="background:#3B2314;">
+          <span class="swatch-name" style="color:var(--paper);">--anchor</span>
+          <span class="swatch-hex" style="color:rgba(245,239,228,.5);">#3B2314</span>
+          <span class="swatch-role" style="color:rgba(245,239,228,.4);">Brand anchor, CTA, dark sections</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2C1A0E;"></div>
+        <div class="swatch-info" style="background:#2C1A0E;">
+          <span class="swatch-name" style="color:var(--paper);">--ink</span>
+          <span class="swatch-hex" style="color:rgba(245,239,228,.5);">#2C1A0E</span>
+          <span class="swatch-role" style="color:rgba(245,239,228,.4);">Body copy — never pure black</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8A7060;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">--ink-soft</span>
+          <span class="swatch-hex">#8A7060</span>
+          <span class="swatch-role">Secondary info, metadata</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#B8903A;"></div>
+        <div class="swatch-info" style="background:#B8903A;">
+          <span class="swatch-name" style="color:#fff;">--gold</span>
+          <span class="swatch-hex" style="color:rgba(255,255,255,.65);">#B8903A</span>
+          <span class="swatch-role" style="color:rgba(255,255,255,.5);">Accent — logo, proof kickers, CTA emphasis. 5% max.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;">
+      <div>
+        <h3>Usage ratio</h3>
+        <p style="margin-bottom:1rem;">Every view should approximate this proportion. If bronze-gold is creeping above 5%, something is wrong.</p>
+        <div style="display:flex;gap:.5rem;align-items:stretch;height:48px;border-radius:.75rem;overflow:hidden;margin-bottom:.75rem;">
+          <div style="flex:67;background:var(--paper-deep);display:flex;align-items:center;justify-content:center;font-size:.6875rem;font-weight:600;color:var(--ink-faint);">Neutrals 65–70%</div>
+          <div style="flex:23;background:var(--anchor);display:flex;align-items:center;justify-content:center;font-size:.6875rem;font-weight:600;color:var(--paper);">Espresso</div>
+          <div style="flex:5;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.6875rem;font-weight:600;color:#fff;">5%</div>
+        </div>
+        <small>Warm ivory / stone · Deep espresso · Bronze-gold</small>
+      </div>
+      <div>
+        <h3>Never do this</h3>
+        <ul class="rule-list dont-list">
+          <li>Pure <code>#FFF</code> as any background — cold and clinical</li>
+          <li>Blue, green, or teal as any brand color</li>
+          <li>Bronze-gold as a large section background</li>
+          <li>A second accent color alongside bronze-gold</li>
+          <li>Pure black <code>#000</code> as body text color</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 04 Typography system ───────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">04 — Typography system</span>
+      <h2>Lora anchors authority. Be Vietnam Pro works.</h2>
+      <p>Two typefaces. Lora is the brand's editorial soul — used for headlines and one founder-voice italic moment per section. Be Vietnam Pro handles everything else, including all Vietnamese text.</p>
+    </div>
+
+    <div class="callout callout-warning" style="margin-bottom:2rem;">
+      <span class="callout-title">Tentative</span>
+      Script font: Great Vibes vs. Dancing Script — confirm on Vietnamese diacritic rendering at founder signature scale. Either is acceptable for generation purposes.
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div class="type-specimen">
+        <span class="type-label">Lora — display / accent (headlines + italic voice)</span>
+        <div style="font-family:var(--font-serif);font-size:2rem;font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--ink);">Heading 600</div>
+        <div style="font-family:var(--font-serif);font-style:italic;font-size:1.5rem;font-weight:400;line-height:1.3;color:var(--anchor);margin-top:.75rem;">"Italic founder voice — one per section"</div>
+        <div style="font-size:.8125rem;color:var(--ink-faint);margin-top:.75rem;">Headlines · guarantees · founder-voice callouts</div>
+      </div>
+      <div class="type-specimen">
+        <span class="type-label">Be Vietnam Pro — primary UI (90% of all text)</span>
+        <div style="font-family:var(--font-sans);font-size:1.5rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);">Subheading 800</div>
+        <div style="font-family:var(--font-sans);font-size:1rem;font-weight:400;line-height:1.7;color:var(--ink-soft);margin-top:.5rem;">Body copy, weight 400. Vietnamese diacritics first-class. Thực đơn cá nhân hóa cho bạn.</div>
+        <div style="font-family:var(--font-sans);font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-top:.75rem;">KICKER LABEL · ALL CAPS · TRACKED</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Type scale</h3>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th>Level</th><th>Font</th><th>Weight</th><th>Size (desktop)</th><th>Case</th></tr></thead>
+        <tbody>
+          <tr><td>Display / Hero</td><td>Lora</td><td>600</td><td>56–64px</td><td>Sentence</td></tr>
+          <tr><td>H2 / Section</td><td>Lora</td><td>500</td><td>36px</td><td>Sentence</td></tr>
+          <tr><td>H3 / Subhead</td><td>Lora</td><td>500</td><td>24px</td><td>Sentence</td></tr>
+          <tr><td>Founder-voice italic</td><td>Lora italic</td><td>400</td><td>22–24px</td><td>Normal</td></tr>
+          <tr><td>Body</td><td>Be Vietnam Pro</td><td>400</td><td>17px</td><td>Normal</td></tr>
+          <tr><td>Kicker</td><td>Be Vietnam Pro</td><td>600</td><td>11–13px</td><td>ALL CAPS</td></tr>
+          <tr><td>Founder signature</td><td>Great Vibes</td><td>400</td><td>36–40px</td><td>Normal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info" style="margin-top:2rem;">
+      <span class="callout-title">Signature typographic move</span>
+      Lora italic for founder-voice moments — quote leads, guarantee callouts, one personal kicker per section maximum. This is the brand's primary personality signal in type. Overuse destroys the effect.
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 Layout rhythm ───────────────────────────────────────────── -->
+<section class="bg-stone">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-anchor">05 — Layout rhythm</span>
+      <h2>Proof-first narrative scroll</h2>
+      <p>The page reads like evidence: promise → authority → proof → method → invitation. Alternate backgrounds so no two adjacent bands share a shade. The espresso band appears at high-trust moments only.</p>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2.5rem;">
+      <div>
+        <h3>Section banding sequence</h3>
+        <p style="margin-bottom:1rem;">Each section alternates between warm ivory, deeper ivory, and stone. One espresso section anchors the CTA band; the trust anchor band after the hero.</p>
+        <div class="band-diagram">
+          <div class="band-row"><div class="band-swatch" style="background:#F5EFE4;"></div><span class="band-name">Hero</span><span class="band-label">--paper</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#2A2520;"></div><span class="band-name" style="color:var(--paper);">Trust anchor</span><span class="band-label" style="color:var(--paper);opacity:.6;">--section-dark</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#D9CDBF;"></div><span class="band-name">Proof band</span><span class="band-label">--stone</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#F5EFE4;"></div><span class="band-name">Method</span><span class="band-label">--paper</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#D9CDBF;"></div><span class="band-name">Founder block</span><span class="band-label">--stone</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#2A2520;"></div><span class="band-name" style="color:var(--paper);">CTA band</span><span class="band-label" style="color:var(--paper);opacity:.6;">--section-dark</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#F5EFE4;"></div><span class="band-name">FAQ / Objection</span><span class="band-label">--paper</span></div>
+          <div class="band-row"><div class="band-swatch" style="background:#D9CDBF;"></div><span class="band-name">Final CTA</span><span class="band-label">--stone</span></div>
+        </div>
+      </div>
+      <div>
+        <h3>Grid and spacing</h3>
+        <table style="margin-bottom:1.5rem;">
+          <tbody>
+            <tr><td>Max content width</td><td>1120px</td></tr>
+            <tr><td>Section padding</td><td>80px top/bottom (desktop)</td></tr>
+            <tr><td>Section padding</td><td>48px (mobile)</td></tr>
+            <tr><td>Text column max</td><td>720px (body-led sections)</td></tr>
+          </tbody>
+        </table>
+        <h3 style="margin-top:1.5rem;">Section patterns used</h3>
+        <ul class="rule-list do-list" style="margin-top:.5rem;">
+          <li>Full-width proof cluster — 3-column testimonial grid</li>
+          <li>2-column split — benefit left, evidence right</li>
+          <li>Founder block — 2-col portrait + voice quote</li>
+          <li>Trust anchor band — full-width espresso, 3 metrics</li>
+          <li>CTA band — espresso dark, single heading, single button</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Homepage section rhythm</h3>
+    <div>
+      <div class="rhythm-row"><div class="rhythm-num">1</div><div class="rhythm-label">Hero — Outcome promise + founder face + CTA</div><div class="rhythm-mode">Editorial</div><div class="rhythm-bg">--paper</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">2</div><div class="rhythm-label">Trust anchor band — Guarantee + 226K + 6 countries</div><div class="rhythm-mode">Enterprise</div><div class="rhythm-bg">--anchor</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">3</div><div class="rhythm-label">Proof band — Named testimonial cluster</div><div class="rhythm-mode">Enterprise</div><div class="rhythm-bg">--stone</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">4</div><div class="rhythm-label">Method / Benefits — 2-col benefit + evidence</div><div class="rhythm-mode">Mixed</div><div class="rhythm-bg">--paper</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">5</div><div class="rhythm-label">Founder block — Personal quote + guarantee</div><div class="rhythm-mode">Editorial</div><div class="rhythm-bg">--stone</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">6</div><div class="rhythm-label">CTA band — Consultation booking</div><div class="rhythm-mode">Enterprise</div><div class="rhythm-bg">--anchor</div></div>
+      <div class="rhythm-row"><div class="rhythm-num">7</div><div class="rhythm-label">FAQ / Objection handling</div><div class="rhythm-mode">Editorial</div><div class="rhythm-bg">--paper</div></div>
+      <div class="rhythm-row" style="border-bottom:none;"><div class="rhythm-num">8</div><div class="rhythm-label">Final CTA — Guarantee repeated</div><div class="rhythm-mode">Enterprise</div><div class="rhythm-bg">--stone</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 06 Component language ──────────────────────────────────────── -->
+<section class="bg-paper">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">06 — Component language</span>
+      <h2>Warm, rounded, and trust-first</h2>
+    </div>
+
+    <!-- Founder quote slab — SIGNATURE COMPONENT -->
+    <h3 style="margin-bottom:1rem;">Founder quote slab — signature component</h3>
+    <p style="max-width:var(--text-col);margin-bottom:1.5rem;font-size:.9375rem;">The highest-trust element on the page. Appears once per layout in the founder block section. Dusty rose background signals intimacy. Lora italic at display scale. Never use for anything other than a direct founder statement.</p>
+    <div class="founder-slab" style="margin-bottom:.75rem;max-width:860px;">
+      <div class="founder-slab-inner">
+        <blockquote>"Tôi không chỉ dạy bạn giảm cân — tôi cam kết đồng hành cùng bạn cho đến khi cơ thể bạn thực sự thay đổi. Và nếu không có kết quả, tôi hoàn lại toàn bộ tiền."</blockquote>
+        <p class="slab-attr">— Trần Thủy Tiên, Young Group</p>
+        <p style="font-size:.75rem;color:var(--gold-deep);margin-top:.75rem;">[Founder signature asset — SVG or PNG, ~140px wide]</p>
+      </div>
+    </div>
+    <p style="font-size:.8125rem;color:var(--ink-faint);margin-bottom:3rem;">background var(--blush) #C5A8A0 · Double-bezel outer shell · border-radius 28+24px · padding 4rem · quote: Lora italic 600 · attr: 13px uppercase gold-deep</p>
+
+    <!-- Testimonial cards -->
+    <h3 style="margin-bottom:1rem;">Testimonial cards — proof cluster</h3>
+    <p style="max-width:var(--text-col);margin-bottom:1.5rem;font-size:.9375rem;">Groups of 3. Named, located, specific result. Double-bezel treatment signals premium. Lora italic for quote. Result line in bronze-gold.</p>
+    <div class="grid-3" style="margin-bottom:.75rem;">
+      <div class="testimonial-card">
+        <span class="testimonial-result">−18 lbs trong 6 tuần</span>
+        <p class="testimonial-quote">"Làm đủ mọi cách 12 năm không giảm — chương trình này thay đổi hoàn toàn cách tôi ăn uống."</p>
+        <div class="testimonial-name">Chị Ngọc Anh</div>
+        <div class="testimonial-attr">California, USA</div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-result">−22 lbs trong 8 tuần</span>
+        <p class="testimonial-quote">"Ăn uống đầy đủ, không đói. Con cái vẫn ăn cùng được. Không ngờ đơn giản thế này."</p>
+        <div class="testimonial-name">Chị Minh Thu</div>
+        <div class="testimonial-attr">Texas, USA</div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-result">−15 lbs trong 5 tuần</span>
+        <p class="testimonial-quote">"Tiết kiệm cả tiền chợ lẫn thời gian nấu ăn. Kết quả thực sự — không phải lời hứa."</p>
+        <div class="testimonial-name">Chị Lan Phương</div>
+        <div class="testimonial-attr">Sydney, Australia</div>
+      </div>
+    </div>
+    <p style="font-size:.8125rem;color:var(--ink-faint);margin-bottom:3rem;">Double-bezel: outer glass shell + inner --core · padding 28px · Lora italic quote · result line --gold 700 · border-radius 1.75rem</p>
+
+    <!-- Buttons -->
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Island button — the signature control</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <span class="type-label">Primary — anchor (all CTAs)</span>
+            <a class="btn btn-island" href="#">Đặt lịch tư vấn miễn phí <span class="btn-icon">→</span></a>
+          </div>
+          <div>
+            <span class="type-label">Accent — gold (one per page maximum)</span>
+            <a class="btn btn-island-gold" href="#">Tìm hiểu chương trình <span class="btn-icon" style="background:rgba(255,255,255,.2);">→</span></a>
+          </div>
+          <div>
+            <span class="type-label">Ghost — secondary actions</span>
+            <a class="btn btn-ghost" href="#">Xem thêm kết quả thực tế →</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Trust banner</h3>
+        <div class="trust-banner" style="border-radius:1rem;">
+          <div class="trust-item">
+            <span class="trust-item__value">226.000</span>
+            <span class="trust-item__label">Người theo dõi Facebook</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-item__value">Bảo đảm</span>
+            <span class="trust-item__label">Hoàn tiền 100% nếu không hiệu quả</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-item__value">6 quốc gia</span>
+            <span class="trust-item__label">Vietnam · USA · Australia · Canada · Germany · UK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof chips + result chips + credential bar -->
+    <div class="grid-2" style="gap:2rem;margin-bottom:3rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Proof chips</h3>
+        <div style="display:flex;flex-direction:column;gap:.625rem;">
+          <div><span class="proof-chip"><span class="proof-dot"></span>226.000 người theo dõi · Facebook</span></div>
+          <div><span class="proof-chip"><span class="proof-dot"></span>Bảo đảm hoàn tiền 100%</span></div>
+          <div><span class="proof-chip"><span class="proof-dot"></span>6 quốc gia · khách hàng toàn cầu</span></div>
+        </div>
+        <p style="margin-top:.75rem;font-size:.8125rem;color:var(--ink-faint);">Pill shape · --core background · gold dot · soft shadow. Use in hero trust row.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Result chips</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+          <span class="result-chip">−18 lbs · 6 tuần</span>
+          <span class="result-chip">−22 lbs · 8 tuần</span>
+          <span class="result-chip">−15 lbs · 5 tuần</span>
+          <span class="result-chip">Không tái tăng sau 2 năm</span>
+        </div>
+        <p style="font-size:.8125rem;color:var(--ink-faint);">Use inline near testimonials to reinforce specificity.</p>
+
+        <h3 style="margin:1.5rem 0 1rem;">Credential bar</h3>
+        <div class="cred-bar">
+          <div class="cred-item">226.000 người theo dõi</div>
+          <div class="cred-sep">·</div>
+          <div class="cred-item">6 quốc gia</div>
+          <div class="cred-sep">·</div>
+          <div class="cred-item">Bảo đảm hoàn tiền</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form preview -->
+    <h3 style="margin-bottom:1rem;">Form — consultation booking</h3>
+    <div class="form-preview">
+      <h4 style="font-family:var(--font-serif);font-size:1.375rem;font-weight:600;color:var(--anchor);margin-bottom:1.5rem;">Đặt lịch tư vấn miễn phí</h4>
+      <label class="form-label">Họ và tên <span style="color:var(--gold);">*</span></label>
+      <input class="form-input" type="text" placeholder="Tên của bạn">
+      <label class="form-label">Số điện thoại / Zalo <span style="color:var(--gold);">*</span></label>
+      <input class="form-input" type="tel" placeholder="+1 (000) 000-0000">
+      <a class="btn btn-island" href="#" style="width:100%;justify-content:center;margin-top:.25rem;">Đăng ký tư vấn ngay <span class="btn-icon">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 07 Proof presentation ──────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">07 — Proof presentation</span>
+      <h2>Honest, specific, structured for trust</h2>
+      <p>High trust burden. The buyer has tried and failed before. Vague testimonials don't move her. Specific, named, attributed results do.</p>
+    </div>
+
+    <div style="overflow-x:auto;margin-bottom:2rem;">
+      <table>
+        <thead><tr><th>Proof type</th><th>Format rule</th></tr></thead>
+        <tbody>
+          <tr><td>Testimonials</td><td>Named · located (US state or country) · exact weight numbers · testimonial-card format</td></tr>
+          <tr><td>Credentials</td><td>Book authorship · 226K followers (exact) · 6-country reach (listed)</td></tr>
+          <tr><td>Guarantee</td><td>Two distinct locations: hero area + founder block · Lora italic · bronze-gold accent</td></tr>
+          <tr><td>Founder proof</td><td>Portrait + direct voice quote + guarantee restatement · founder-slab component</td></tr>
+          <tr><td>Before/after</td><td>Never in before/after collage format — use named testimonial cards only</td></tr>
+          <tr><td>Fabricated proof</td><td>Never · no invented client count, certifications, or rounded testimonial numbers</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2" style="gap:1.5rem;">
+      <div class="card-shell">
+        <div class="card-core">
+          <h3>Above-the-fold rule</h3>
+          <p>At least one trust element must be visible without scrolling on both desktop and mobile: guarantee badge, follower count, or one proof line. The trust anchor band (espresso background) appears immediately after the hero.</p>
+        </div>
+      </div>
+      <div class="card-shell">
+        <div class="card-core">
+          <h3>What must never be fabricated</h3>
+          <ul class="rule-list dont-list" style="margin-top:.75rem;">
+            <li>Review counts or star ratings without a verified source</li>
+            <li>Named client results without explicit written permission</li>
+            <li>Any testimonial without a real name and real location</li>
+            <li>Rounded numbers ("hundreds of clients" without confirmation)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 08 Imagery ─────────────────────────────────────────────────── -->
+<section class="bg-stone">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-anchor">08 — Imagery and art direction</span>
+      <h2>Show the founder. Show the results.</h2>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Subject priority</h3>
+        <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem;">
+          <div style="display:flex;gap:1rem;align-items:center;padding:12px 16px;background:rgba(197,168,160,.3);border-radius:.75rem;">
+            <span style="background:var(--gold);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;">1</span>
+            <div><p style="font-weight:700;color:var(--ink);margin:0;font-size:.9375rem;">Founder (Trần Thủy Tiên)</p><p style="font-size:.8125rem;margin:0;">Hero, about section, CTA — her face on every primary entry</p></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:center;padding:12px 16px;background:var(--core);border-radius:.75rem;border:1px solid var(--hair);">
+            <span style="background:var(--anchor);color:var(--paper);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;">2</span>
+            <div><p style="font-weight:700;color:var(--ink);margin:0;font-size:.9375rem;">Approved client proof</p><p style="font-size:.8125rem;margin:0;">Real photos with full written consent only. No gym-culture framing.</p></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:center;padding:12px 16px;background:var(--core);border-radius:.75rem;border:1px solid var(--hair);">
+            <span style="background:var(--ink-soft);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;">3</span>
+            <div><p style="font-weight:700;color:var(--ink);margin:0;font-size:.9375rem;">Supporting detail</p><p style="font-size:.8125rem;margin:0;">Food close-ups, lifestyle warmth — supporting only, never lead.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Photography direction</h3>
+        <table>
+          <tbody>
+            <tr><td>Subject</td><td>Founder first</td></tr>
+            <tr><td>Mood</td><td>Warm · Intimate · Clean</td></tr>
+            <tr><td>Lighting</td><td>Natural, soft · Never harsh flash or cold studio</td></tr>
+            <tr><td>Composition</td><td>Medium framing · Polished candid</td></tr>
+            <tr><td>Color</td><td>Warm tone only — no blue-cast or cool images</td></tr>
+            <tr><td>Icons</td><td>Minimal outline · 1.5px stroke · --anchor · functional only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Never use these</h3>
+    <ul class="rule-list dont-list">
+      <li>Women on scales, measuring tape, or workout gear</li>
+      <li>Green smoothies, kale, or generic "healthy food" stock</li>
+      <li>Before/after transformation collages in MLM format</li>
+      <li>Generic smiling-at-screen or handshake stock photography</li>
+      <li>Cool-toned, blue-cast, or over-polished K-beauty photography</li>
+      <li>Any person shown without real attribution and consent</li>
+      <li>Cliché wellness icons: lightbulb, magnifying glass, gears</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── 09 Motion ──────────────────────────────────────────────────── -->
+<section class="bg-paper">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">09 — Motion and interaction</span>
+      <h2>Restrained. Purposeful. Never decorative.</h2>
+    </div>
+    <div class="grid-2" style="gap:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Motion rules</h3>
+        <table>
+          <tbody>
+            <tr><td>Card hover</td><td>translateY(−4px) + shadow deepen · 500ms spring</td></tr>
+            <tr><td>CTA button hover</td><td>translateY(−1px) · 150ms ease · background darkens</td></tr>
+            <tr><td>Scroll reveal</td><td>opacity 0→1 + translateY(16px→0) · 400ms ease-soft</td></tr>
+            <tr><td>Button icon</td><td>translate(2px,−2px) on hover · diagonal signal</td></tr>
+            <tr><td>Properties</td><td>transform + opacity only — never layout properties</td></tr>
+            <tr><td>Reduced motion</td><td>Required guard on every animation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">What must never animate</h3>
+        <ul class="rule-list dont-list">
+          <li>Proof numbers, weight-loss metrics, or timeframes</li>
+          <li>Guarantee amounts or follower counts</li>
+          <li>Background color transitions on scroll</li>
+          <li>Looping or ambient animations</li>
+          <li>Parallax on any image</li>
+          <li>Floating persistent widgets</li>
+        </ul>
+        <div class="callout callout-info" style="margin-top:1.5rem;">
+          <span class="callout-title">Why proof must never animate</span>
+          Animating proof numbers signals the numbers are fabricated. The buyer has been burned before. Static specificity reads as honest.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 10 Homepage application ────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">10 — Homepage application</span>
+      <h2>How the visual system behaves on the main page</h2>
+    </div>
+
+    <h3 style="margin-bottom:1.5rem;">Section sequence</h3>
+    <table style="margin-bottom:3rem;">
+      <thead><tr><th>#</th><th>Section</th><th>Background</th><th>Purpose / buyer justification</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Hero</td><td>--paper</td><td>Outcome promise + founder face + CTA. Counters "will it work?" immediately.</td></tr>
+        <tr><td>2</td><td>Trust anchor band</td><td>--anchor</td><td>226K + guarantee + 6 countries. Addresses high trust burden on first scroll.</td></tr>
+        <tr><td>3</td><td>Proof band</td><td>--stone</td><td>Named testimonial cards — counters skepticism from prior failure history.</td></tr>
+        <tr><td>4</td><td>Method / Benefits</td><td>--paper</td><td>2-column: counters the complexity + hunger objection directly.</td></tr>
+        <tr><td>5</td><td>Founder block</td><td>--stone</td><td>Personal authority brand — founder-slab component, guarantee in personal register.</td></tr>
+        <tr><td>6</td><td>CTA band</td><td>--anchor</td><td>Captures high-urgency buyers at peak evidence moment.</td></tr>
+        <tr><td>7</td><td>FAQ / Objection</td><td>--paper</td><td>Plain-language objection handling: complexity + hunger.</td></tr>
+        <tr><td>8</td><td>Final CTA</td><td>--stone</td><td>Captures remaining buyers. Guarantee repeated.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Hero mockup -->
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">Hero section</p>
+    <div class="mockup" style="margin-bottom:1.5rem;">
+      <div class="mockup-browser-bar">
+        <div class="browser-dot" style="background:#FF5F57;"></div>
+        <div class="browser-dot" style="background:#FEBC2E;"></div>
+        <div class="browser-dot" style="background:#28C840;"></div>
+        <div style="flex:1;background:var(--core);border-radius:.25rem;height:20px;margin-left:.5rem;"></div>
+      </div>
+      <div style="background:var(--paper);padding:2.5rem 2rem;display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:center;">
+        <div>
+          <div style="font-family:var(--font-sans);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:rgba(184,144,58,.1);display:inline-block;padding:.25rem .625rem;border-radius:999px;margin-bottom:.625rem;">KẾT QUẢ THỰC TẾ</div>
+          <div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:600;letter-spacing:-.02em;line-height:1.15;color:var(--anchor);margin-bottom:.5rem;">Giảm cân Đơn giản.<br>Dễ dàng. Hiệu quả.</div>
+          <div style="font-size:.75rem;color:var(--ink-soft);line-height:1.6;margin-bottom:1rem;">Hàng nghìn phụ nữ Việt đã đạt kết quả thực sự — không nhịn ăn, không phức tạp. Thực đơn cá nhân hóa, chỉ 15 phút mỗi bữa.</div>
+          <a class="btn btn-island" href="#" style="font-size:.75rem;padding:.5rem .625rem .5rem 1.125rem;">Đặt lịch tư vấn miễn phí <span class="btn-icon" style="width:26px;height:26px;font-size:.75rem;">→</span></a>
+          <div style="margin-top:.625rem;font-size:.625rem;color:var(--ink-faint);">Miễn phí · Không ràng buộc · Bảo đảm hoàn tiền 100%</div>
+        </div>
+        <div style="background:var(--stone);border-radius:1rem;height:180px;display:flex;align-items:center;justify-content:center;position:relative;">
+          <div style="text-align:center;">
+            <p style="font-family:var(--font-script);font-size:1.75rem;color:var(--anchor);margin:0;">Trần Thủy Tiên</p>
+            <p style="font-size:.6875rem;color:var(--ink-faint);margin:0;">Founder portrait — warm natural light</p>
+          </div>
+          <div style="position:absolute;bottom:-8px;right:-8px;background:var(--core);border:1px solid var(--hair);border-radius:999px;padding:.375rem .75rem;font-size:.5625rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:.375rem;box-shadow:var(--lift);white-space:nowrap;">
+            <span style="width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;"></span>226K người theo dõi
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust anchor band mockup -->
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">Trust anchor band</p>
+    <div class="mockup" style="margin-bottom:1.5rem;">
+      <div style="background:var(--section-dark);padding:2rem;text-align:center;">
+        <div class="trust-banner" style="background:transparent;border-radius:0;border:none;padding:0;">
+          <div class="trust-item">
+            <span class="trust-item__value" style="font-size:1.5rem;">226.000</span>
+            <span class="trust-item__label">Người theo dõi Facebook</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-item__value" style="font-size:1.5rem;">Bảo đảm</span>
+            <span class="trust-item__label">Hoàn tiền 100% nếu không hiệu quả</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-item__value" style="font-size:1.5rem;">6 quốc gia</span>
+            <span class="trust-item__label">Vietnam · USA · Australia · Canada · Germany · UK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA band mockup -->
+    <p style="margin-bottom:.75rem;font-size:.875rem;font-weight:600;color:var(--ink-faint);">CTA closing band</p>
+    <div class="mockup" style="margin-bottom:1.5rem;">
+      <div style="background:var(--section-dark);padding:3rem 2rem;text-align:center;">
+        <div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,228,.6);margin-bottom:.75rem;">ĐẶT LỊCH HÔM NAY</div>
+        <div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:600;color:var(--paper);letter-spacing:-.02em;margin-bottom:.875rem;">Buổi tư vấn miễn phí — không ràng buộc.</div>
+        <div style="font-size:.875rem;color:rgba(245,239,228,.7);margin-bottom:1.5rem;">Đã có hơn 226.000 người tin tưởng. Tìm hiểu xem chương trình phù hợp với bạn như thế nào.</div>
+        <a class="btn btn-island-gold" href="#" style="margin:0 auto;">Đặt lịch tư vấn ngay <span class="btn-icon" style="background:rgba(255,255,255,.2);">→</span></a>
+        <div style="font-size:.75rem;color:var(--gold-light);margin-top:1rem;">✓ Bảo đảm hoàn tiền 100% nếu không hiệu quả</div>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <span class="callout-title">Mobile note</span>
+      Founder portrait full-width above headline in hero. Trust anchor row stacked single column — all three items remain visible. Testimonial cards single column. Sticky bottom CTA bar recommended: pill button + guarantee micro-copy. Guarantee visible without scrolling on any viewport.
+    </div>
+  </div>
+</section>
+
+<!-- ── 11 Do / Don't ──────────────────────────────────────────────── -->
+<section class="bg-anchor">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker kicker-paper">11 — Do / Don't rules</span>
+      <h2>Blunt. Visual. Operational.</h2>
+    </div>
+    <div class="rule-grid">
+      <div>
+        <h3 style="margin-bottom:1rem;color:var(--gold-light);">Do</h3>
+        <ul class="rule-list do-list">
+          <li style="border-color:rgba(245,239,228,.15);">Lead every section with an outcome or proof element — never a feature list</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use the founder's face prominently in hero and personal-voice sections</li>
+          <li style="border-color:rgba(245,239,228,.15);">Show exact numbers — weight lost, timeframe, follower count; rounds read as invented</li>
+          <li style="border-color:rgba(245,239,228,.15);">Repeat the guarantee in at least two distinct page locations</li>
+          <li style="border-color:rgba(245,239,228,.15);">Render testimonials as named cards: name · location · X lbs in Y weeks</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use warm ivory and deep espresso as the primary visual system; bronze-gold at 5% max</li>
+          <li style="border-color:rgba(245,239,228,.15);">Keep one primary CTA action per viewport section — never stack two</li>
+          <li style="border-color:rgba(245,239,228,.15);">Render Vietnamese text at Be Vietnam Pro 400 minimum at all sizes</li>
+          <li style="border-color:rgba(245,239,228,.15);">Treat 226K Facebook followers as a trust anchor — prominent placement, never footer</li>
+          <li style="border-color:rgba(245,239,228,.15);">Ensure CTA, guarantee, and one proof element are visible above the fold on mobile</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use Lora italic for founder-voice moments — the brand's signature typographic move</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use the double-bezel testimonial-card for all proof modules — no flat cards</li>
+          <li style="border-color:rgba(245,239,228,.15);">Alternate warm ivory and warm stone sections to guide scroll rhythm</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;color:var(--gold-light);">Don't</h3>
+        <ul class="rule-list dont-list">
+          <li style="border-color:rgba(245,239,228,.15);">Use generic wellness stock photography — women on scales, green smoothies, measuring tape</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use blue-and-white or green-and-white as anchor palette</li>
+          <li style="border-color:rgba(245,239,228,.15);">Show before/after collages in transformation or MLM format</li>
+          <li style="border-color:rgba(245,239,228,.15);">Lead with program features before proof and outcomes</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use condensed or aggressive headings — Lora is the authority signal</li>
+          <li style="border-color:rgba(245,239,228,.15);">Animate proof numbers, testimonial metrics, or guarantee amounts</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use the script font for anything other than the founder name signature</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use English-first layout conventions, imagery, or cultural cues</li>
+          <li style="border-color:rgba(245,239,228,.15);">Add any second accent color — bronze-gold is the only accent</li>
+          <li style="border-color:rgba(245,239,228,.15);">Introduce more than one Lora italic gesture per section</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use Be Vietnam Pro below 400 weight for Vietnamese text</li>
+          <li style="border-color:rgba(245,239,228,.15);">Put the guarantee in fine print or footer — it is a headline-level trust element</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use pure white #FFF as page background or pure black #000 as body text</li>
+          <li style="border-color:rgba(245,239,228,.15);">Use bronze-gold as a large section background or introduce a second accent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 12 Design tokens ────────────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">12 — Design tokens</span>
+      <h2>Copy-paste ready</h2>
+      <p>Use these in every implementation. Token names are canonical — use them exactly as written across all files.</p>
+    </div>
+
+    <pre><span class="cm">/* ── Color tokens ── */</span>
+:root {
+  <span class="cp">--paper</span>:       <span class="cv">#F5EFE4</span>;   <span class="cm">/* Page background */</span>
+  <span class="cp">--paper-deep</span>:  <span class="cv">#EAE0CF</span>;   <span class="cm">/* Alternate section band */</span>
+  <span class="cp">--stone</span>:       <span class="cv">#D9CDBF</span>;   <span class="cm">/* Stone band, borders, dividers */</span>
+  <span class="cp">--core</span>:        <span class="cv">#FDFAF5</span>;   <span class="cm">/* Card interior, form fields */</span>
+  <span class="cp">--ink</span>:         <span class="cv">#2C1A0E</span>;   <span class="cm">/* Body copy — never pure black */</span>
+  <span class="cp">--ink-soft</span>:    <span class="cv">#8A7060</span>;   <span class="cm">/* Secondary info, metadata */</span>
+  <span class="cp">--ink-faint</span>:   <span class="cv">#A89080</span>;   <span class="cm">/* Labels, captions */</span>
+  <span class="cp">--anchor</span>:      <span class="cv">#3B2314</span>;   <span class="cm">/* Buttons, headings, borders */</span>
+  <span class="cp">--anchor-dark</span>: <span class="cv">#2A1A0A</span>;   <span class="cm">/* Button hover */</span>
+  <span class="cp">--section-dark</span>:<span class="cv">#2A2520</span>;   <span class="cm">/* Dark section backgrounds */</span>
+  <span class="cp">--gold</span>:        <span class="cv">#B8903A</span>;   <span class="cm">/* Bronze-gold accent — 5% max */</span>
+  <span class="cp">--gold-deep</span>:   <span class="cv">#9A7428</span>;   <span class="cm">/* Gold hover/pressed */</span>
+  <span class="cp">--gold-light</span>:  <span class="cv">#D4B070</span>;   <span class="cm">/* Gold on dark backgrounds */</span>
+  <span class="cp">--blush</span>:       <span class="cv">#C5A8A0</span>;   <span class="cm">/* Dusty rose — founder slab only */</span>
+  <span class="cp">--hair</span>:        <span class="cv">rgba(59,35,20,.10)</span>;  <span class="cm">/* Default border */</span>
+}
+
+<span class="cm">/* ── Shadows ── */</span>
+:root {
+  <span class="cp">--lift</span>:    <span class="cv">0 1px 2px rgba(59,35,20,.04), 0 18px 40px -22px rgba(59,35,20,.28)</span>;
+  <span class="cp">--lift-lg</span>: <span class="cv">0 2px 4px rgba(59,35,20,.05), 0 44px 80px -36px rgba(59,35,20,.38)</span>;
+  <span class="cp">--inner-hi</span>: <span class="cv">inset 0 1px 1px rgba(255,255,255,.72)</span>;
+}
+
+<span class="cm">/* ── Radius ── */</span>
+:root {
+  <span class="cp">--r-card</span>:  <span class="cv">1.75rem</span>;   <span class="cm">/* Card outer shell */</span>
+  <span class="cp">--r-inner</span>: <span class="cv">calc(1.75rem - 10px)</span>;  <span class="cm">/* Card inner core */</span>
+  <span class="cp">--r-pill</span>:  <span class="cv">999px</span>;    <span class="cm">/* Buttons, chips */</span>
+  <span class="cp">--r-input</span>: <span class="cv">0.625rem</span>; <span class="cm">/* Form inputs */</span>
+}
+
+<span class="cm">/* ── Typography ── */</span>
+:root {
+  <span class="cp">--font-sans</span>:   <span class="cv">'Be Vietnam Pro', 'Helvetica Neue', Arial, sans-serif</span>;
+  <span class="cp">--font-serif</span>:  <span class="cv">'Lora', Georgia, 'Times New Roman', serif</span>;
+  <span class="cp">--font-script</span>: <span class="cv">'Great Vibes', 'Dancing Script', cursive</span>;
+}
+
+<span class="cm">/* ── Motion ── */</span>
+:root {
+  <span class="cp">--ease</span>:      <span class="cv">cubic-bezier(.32,.72,0,1)</span>;
+  <span class="cp">--ease-soft</span>: <span class="cv">cubic-bezier(.22,1,.36,1)</span>;
+  <span class="cp">--dur-fast</span>:  <span class="cv">150ms</span>;
+  <span class="cp">--dur-base</span>:  <span class="cv">300ms</span>;
+  <span class="cp">--dur-slow</span>:  <span class="cv">600ms</span>;
+}
+
+<span class="cm">/* ── Layout ── */</span>
+:root {
+  <span class="cp">--max-w</span>:    <span class="cv">1160px</span>;
+  <span class="cp">--text-col</span>: <span class="cv">680px</span>;
+}
+
+<span class="cm">/* ── Font import ── */</span>
+&lt;link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet"&gt;</pre>
+  </div>
+</section>
+
+<!-- ── 13 Implementation notes ────────────────────────────────────── -->
+<section class="bg-paper">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">13 — Implementation notes</span>
+      <h2>What must be preserved. What can flex.</h2>
+    </div>
+
+    <div class="grid-2" style="gap:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem;">Must preserve exactly</h3>
+        <ul class="impl-list">
+          <li>All color token hex values — reference via CSS custom property, never hardcoded hex</li>
+          <li>Double-bezel testimonial-card structure — outer shell + inner core + inset highlight</li>
+          <li>Founder-slab in dusty rose — the highest-trust element, never recolor</li>
+          <li>Island button — pill shape, inner icon wrapper, hover magnetic drift</li>
+          <li>Section background sequence — never two adjacent sections the same shade</li>
+          <li>Be Vietnam Pro 400 minimum for all Vietnamese text — no exceptions</li>
+          <li>Bronze-gold at 5% maximum — audit before adding new uses</li>
+          <li>Reduced-motion guard on every animation</li>
+          <li>Warm ivory <code>--paper</code> as page background — not pure white #FFF</li>
+          <li>Lora italic for founder-voice moments — one per section maximum</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem;">Accessibility</h3>
+        <ul class="impl-list">
+          <li>All interactive elements: <code>:focus-visible</code> ring using <code>--anchor</code></li>
+          <li>Color never the only information carrier — pair with shape, weight, or label</li>
+          <li>All images: descriptive alt text. Portrait: "Trần Thủy Tiên, Young Group founder"</li>
+          <li>Form labels: visible, never placeholder-only</li>
+          <li>Reduced motion: required on all animations</li>
+          <li>Minimum tap target: 44×44px on all buttons</li>
+          <li>Vietnamese diacritics: test Be Vietnam Pro at 16px on ivory before shipping</li>
+          <li>Bronze-gold not used for small body copy on ivory — insufficient contrast</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;margin-bottom:1rem;">Future agents must never</h3>
+        <ul class="rule-list dont-list">
+          <li>Introduce colors outside the locked palette</li>
+          <li>Add a second accent color for any reason</li>
+          <li>Replace Lora with another serif display font</li>
+          <li>Use Be Vietnam Pro below weight 400 for Vietnamese text</li>
+          <li>Use gradient or glassmorphism on any primary surface</li>
+          <li>Apply hard offset block shadows — soft warm-tinted depth only</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 14 Appendix ────────────────────────────────────────────────── -->
+<section class="bg-paper-deep">
+  <div class="container">
+    <div class="section-header">
+      <span class="kicker">14 — Appendix</span>
+      <h2>Tentative decisions and open items</h2>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Tentative decisions</h3>
+    <div style="overflow-x:auto;margin-bottom:3rem;">
+      <table>
+        <thead><tr><th>Item</th><th>Status</th><th>Resolution</th></tr></thead>
+        <tbody>
+          <tr><td>Exact hex values</td><td><span style="color:var(--gold-deep);font-weight:600;">Tentative</span></td><td>Confirm from original brand kit. Directional values sufficient for generation.</td></tr>
+          <tr><td>Script font: Great Vibes vs. Dancing Script</td><td><span style="color:var(--gold-deep);font-weight:600;">Tentative</span></td><td>Confirm on Vietnamese diacritic rendering at signature scale.</td></tr>
+          <tr><td>Book credential type</td><td><span style="color:var(--gold-deep);font-weight:600;">Pending client</span></td><td>Commercially published or self-published? Determines credential bar display.</td></tr>
+          <tr><td>Exact client count</td><td><span style="color:var(--gold-deep);font-weight:600;">Pending client</span></td><td>Use "hàng nghìn khách hàng" until confirmed. Do not fabricate.</td></tr>
+          <tr><td>Primary CTA label</td><td><span style="color:var(--gold-deep);font-weight:600;">Pending client</span></td><td>Placeholder: "Đặt lịch tư vấn miễn phí"</td></tr>
+          <tr><td>Certifications / credentials</td><td><span style="color:var(--gold-deep);font-weight:600;">Pending client</span></td><td>What formal credentials does Trần Thủy Tiên hold beyond book authorship?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Swappable modules</h3>
+    <div style="border:1px solid var(--hair);border-radius:1rem;overflow:hidden;margin-bottom:3rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--core);padding:12px 20px;font-size:.6875rem;font-weight:600;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--hair);">
+        <span>Module</span><span>Status</span><span>Activation condition</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 20px;border-bottom:1px solid var(--hair);font-size:.9rem;">
+        <span style="font-weight:500;color:var(--ink);">Credential strip</span>
+        <span style="color:var(--gold-deep);font-weight:600;">Deactivated</span>
+        <span style="color:var(--ink-soft);">Formal credentials confirmed at client meeting</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 20px;border-bottom:1px solid var(--hair);font-size:.9rem;">
+        <span style="font-weight:500;color:var(--ink);">Before/after gallery</span>
+        <span style="color:var(--gold-deep);font-weight:600;">Deactivated</span>
+        <span style="color:var(--ink-soft);">Approved client photos with written consent</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 20px;border-bottom:1px solid var(--hair);font-size:.9rem;">
+        <span style="font-weight:500;color:var(--ink);">Client count badge</span>
+        <span style="color:var(--gold-deep);font-weight:600;">Deactivated</span>
+        <span style="color:var(--ink-soft);">Confirmed total from client</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 20px;font-size:.9rem;">
+        <span style="font-weight:500;color:var(--ink);">Book credential</span>
+        <span style="color:var(--gold-deep);font-weight:600;">Deactivated</span>
+        <span style="color:var(--ink-soft);">Publish status (commercial vs. self) confirmed</span>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Version log</h3>
+    <div style="border:1px solid var(--hair);border-radius:1rem;overflow:hidden;margin-bottom:3rem;">
+      <div style="display:grid;grid-template-columns:80px 100px 1fr;background:var(--core);padding:12px 20px;font-size:.6875rem;font-weight:600;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--hair);">
+        <span>Version</span><span>Date</span><span>Summary</span>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 100px 1fr;padding:14px 20px;font-size:.875rem;">
+        <span style="font-weight:600;color:var(--ink);">1.0</span>
+        <span style="color:var(--ink-soft);">Jun 25, 2026</span>
+        <span style="color:var(--ink-soft);">Initial release. All decisions locked. Credential strip deactivated. TechPersona format applied with double-bezel cards, island buttons, founder-slab signature component, and testimonial-card cluster.</span>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <span class="callout-title">PDF export note</span>
+      This HTML file is print-ready with <code>@page</code> and print CSS. To export: open in Chrome or Safari → File → Print → Save as PDF. Background colors are preserved via <code>-webkit-print-color-adjust: exact</code>. For automated export, use Puppeteer with <code>printBackground: true</code>, format: <code>'A4'</code>, margin: all sides 20mm.
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────── -->
+<footer style="background:var(--paper-deep);padding:2.5rem 0;border-top:1px solid var(--hair);">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <div style="font-weight:700;color:var(--ink);font-size:.9375rem;margin-bottom:.25rem;">Young Group · Trần Thủy Tiên</div>
+      <div style="font-size:.8125rem;color:var(--ink-faint);">Branding Visual Guide · v1.0 · June 25, 2026</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:var(--font-script);font-size:1.5rem;color:var(--anchor);">Trần Thủy Tiên</div>
+      <div style="font-size:.8125rem;color:var(--ink-faint);margin-top:.25rem;">Prepared by TechPersona Studio / Thao Phuong</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

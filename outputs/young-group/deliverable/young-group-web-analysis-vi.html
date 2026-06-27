@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Phân Tích Website — Young Group / Trần Thủy Tiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F3EE;
+    --paper-deep: #EFEAE1;
+    --pine-wash: #E8EFEC;
+    --core: #FBFAF7;
+    --ink: #171717;
+    --ink-soft: #4E4E4E;
+    --ink-faint: #857F75;
+    --pine: #1E3A34;
+    --pine-soft: #2E5148;
+    --terra: #C06A45;
+    --terra-deep: #9F4F33;
+    --terra-light: #E7A282;
+    --hair: rgba(23,23,23,.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Typography ── */
+  h1, h2, h3, h4 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; line-height: 1.2; }
+  .italic-accent { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+  /* ── Cards ── */
+  .card {
+    background: rgba(30,58,52,.04);
+    border: 1px solid rgba(30,58,52,.08);
+    border-radius: 1.75rem;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.30);
+  }
+  .card-inner {
+    background: var(--core);
+    border-radius: calc(1.75rem - 10px);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,.7);
+    padding: 2rem;
+  }
+  .card-flat {
+    background: var(--core);
+    border: 1px solid rgba(30,58,52,.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 8px 20px -10px rgba(30,58,52,.15);
+  }
+
+  /* ── Priority chips ── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: .25rem .7rem;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .chip-high { background: rgba(192,106,69,.12); color: var(--terra-deep); border: 1px solid rgba(192,106,69,.25); }
+  .chip-medium { background: rgba(133,127,117,.12); color: #5a5349; border: 1px solid rgba(133,127,117,.22); }
+  .chip-low { background: rgba(30,58,52,.06); color: var(--ink-faint); border: 1px solid rgba(30,58,52,.10); }
+  .chip-strength { background: rgba(30,58,52,.10); color: var(--pine); border: 1px solid rgba(30,58,52,.20); }
+
+  /* ── Rating chips ── */
+  .rating-chip {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .3rem .9rem;
+    border-radius: 99px;
+  }
+  .rating-needs { background: rgba(192,106,69,.13); color: var(--terra-deep); border: 1px solid rgba(192,106,69,.25); }
+  .rating-some { background: rgba(133,127,117,.12); color: #5a5349; border: 1px solid rgba(133,127,117,.22); }
+  .rating-strong { background: rgba(30,58,52,.10); color: var(--pine); border: 1px solid rgba(30,58,52,.20); }
+
+  /* ── Layout utilities ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+
+  /* ── Sections ── */
+  section { padding: 5rem 2rem; }
+  section + section { border-top: 1px solid var(--hair); }
+
+  .wrap { max-width: 820px; margin: 0 auto; }
+  .wrap-wide { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Cover ── */
+  header.cover {
+    background: var(--pine);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 90% 20%, rgba(46,81,72,.45) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 5% 90%, rgba(192,106,69,.12) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .cover-top { position: relative; z-index: 1; }
+  .cover-body { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 3rem 0; }
+  .cover-bottom { position: relative; z-index: 1; }
+  .cover-brand {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .cover-eyebrow {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: 1.25rem;
+    opacity: .9;
+  }
+  .cover-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .cover-descriptor {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  .verdict-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(192,106,69,.18);
+    border: 1px solid rgba(231,162,130,.35);
+    color: var(--terra-light);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: .45rem 1rem;
+    border-radius: 99px;
+  }
+  .verdict-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--terra-light);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 3rem;
+    font-size: .78rem;
+    color: rgba(255,255,255,.45);
+  }
+  .cover-meta-item strong { display: block; color: rgba(255,255,255,.7); font-weight: 600; margin-bottom: .15rem; }
+
+  /* ── Summary section ── */
+  .summary-section { background: var(--paper); }
+
+  .ratings-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .rating-block {
+    flex: 1;
+    min-width: 180px;
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: .875rem;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+  .rating-block-label {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--ink-faint);
+    margin-bottom: .6rem;
+    letter-spacing: .02em;
+  }
+
+  /* ── Strengths / issues list ── */
+  .item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .item-row:last-child { border-bottom: none; }
+  .item-text { flex: 1; font-size: .93rem; color: var(--ink-soft); line-height: 1.5; }
+  .item-text strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Deep analysis ── */
+  .analysis-section { background: var(--paper-deep); }
+
+  .analysis-tab-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--pine);
+    margin-bottom: .5rem;
+    opacity: .7;
+  }
+  .analysis-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: .35rem;
+  }
+  .analysis-card-sub {
+    font-size: .85rem;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .finding-row {
+    display: flex;
+    gap: .85rem;
+    padding: .75rem 0;
+    border-top: 1px solid var(--hair);
+    align-items: flex-start;
+  }
+  .finding-content { flex: 1; }
+  .finding-what {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: .2rem;
+  }
+  .finding-why {
+    font-size: .83rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ── Fix table ── */
+  .ft {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+  }
+  .ft th {
+    text-align: left;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: .5rem .75rem .75rem;
+    border-bottom: 1px solid var(--hair);
+  }
+  .ft td {
+    padding: .8rem .75rem;
+    border-bottom: 1px solid var(--hair);
+    vertical-align: top;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .ft td:first-child { color: var(--ink); font-weight: 500; }
+  .ft tr:last-child td { border-bottom: none; }
+
+  /* ── Recommendations ── */
+  .recs-section { background: var(--pine-wash); }
+
+  .qcard {
+    background: var(--core);
+    border: 1px solid rgba(30,58,52,.10);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 8px 24px -12px rgba(30,58,52,.18);
+  }
+  .qcard-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .85rem;
+  }
+  .qcard-letter {
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--pine);
+    opacity: .45;
+    margin-bottom: .3rem;
+  }
+  .qcard-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .qcard-body {
+    font-size: .87rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .qcard-action {
+    margin-top: .85rem;
+    padding-top: .85rem;
+    border-top: 1px solid var(--hair);
+    font-size: .83rem;
+    color: var(--pine-soft);
+    font-weight: 600;
+  }
+  .qcard-action span { opacity: .5; margin-right: .4rem; }
+
+  .recs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .recs-grid .qcard:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* ── Final recommendation ── */
+  .final-section { background: var(--paper); }
+
+  .verdict-band {
+    background: var(--pine);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 2px rgba(30,58,52,.04), 0 18px 40px -22px rgba(30,58,52,.50);
+  }
+  .verdict-band-eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--terra-light);
+    margin-bottom: .75rem;
+    opacity: .85;
+  }
+  .verdict-band-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: .75rem;
+    line-height: 1.2;
+  }
+  .verdict-band-body {
+    font-size: .9rem;
+    color: rgba(255,255,255,.72);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  .callout-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(192,106,69,.07);
+    border: 1px solid rgba(192,106,69,.18);
+    border-radius: .875rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .callout-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(192,106,69,.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    color: var(--terra-deep);
+    font-weight: 800;
+  }
+  .callout-text {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .callout-text strong { color: var(--ink); font-weight: 600; }
+
+  .direction-block {
+    background: var(--pine-wash);
+    border: 1px solid rgba(30,58,52,.10);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  .direction-block p {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .direction-block p + p { margin-top: .85rem; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--pine);
+    color: rgba(255,255,255,.5);
+    padding: 2rem 2rem;
+    font-size: .78rem;
+    text-align: center;
+  }
+  footer strong { color: rgba(255,255,255,.75); }
+
+  /* ── Divider ── */
+  .section-divider {
+    width: 2.5rem;
+    height: 2px;
+    background: var(--terra);
+    border-radius: 2px;
+    margin: 1.25rem 0;
+    opacity: .5;
+  }
+
+  /* ── Print ── */
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    header.cover { break-after: page; min-height: 100vh; }
+    section { break-before: page; min-height: 11in; }
+    .card { background: transparent; border: none; padding: 0; box-shadow: none; border-radius: 0; }
+    .card-inner, .card-flat, .verdict-band, .qcard { border-radius: 4px; box-shadow: none; }
+    .ft tr { break-inside: avoid; }
+    footer { display: none !important; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    section { padding: 2.5rem 1.25rem; }
+    header.cover { padding: 2rem 1.5rem; }
+    .g2, .g3, .recs-grid { grid-template-columns: 1fr; }
+    .recs-grid .qcard:first-child { grid-column: auto; }
+    .cover-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+    .cover-meta { flex-direction: column; gap: 1rem; }
+    .ratings-row { flex-direction: column; }
+    .ft { display: block; }
+    .ft thead { display: none; }
+    .ft tbody, .ft tr, .ft td { display: block; }
+    .ft tr { padding: .75rem 0; border-bottom: 1px solid var(--hair); }
+    .ft td { border-bottom: none; padding: .2rem .5rem; }
+    .ft td::before { content: attr(data-label); font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: .2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════ -->
+<header class="cover">
+  <div class="cover-texture"></div>
+
+  <div class="cover-top">
+    <div class="cover-brand">TechPersona Studio / Thao Phuong</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Báo Cáo Phân Tích Website</div>
+    <h1 class="cover-title">Young Group<br>Trần Thủy Tiên</h1>
+    <p class="cover-descriptor">Lộ trình giảm cân đã có. Hệ thống tạo niềm tin cần được xây dựng lại.</p>
+    <div style="margin-top: 1.5rem;">
+      <span class="verdict-badge"><span class="verdict-badge-dot"></span>Đề xuất tiếp theo: Thiết kế lại một phần</span>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Website</strong>tranthuytien.net</div>
+      <div class="cover-meta-item"><strong>Ngày</strong>25 tháng 6, 2026</div>
+      <div class="cover-meta-item"><strong>Thực hiện bởi</strong>TechPersona Studio</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     SUMMARY
+═══════════════════════════════════════════ -->
+<section class="summary-section">
+  <div class="wrap">
+    <div class="section-label">Tổng quan</div>
+
+    <div class="g2" style="gap: 2.5rem; align-items: start;">
+
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: .4rem;">Điểm đang hoạt động tốt</h2>
+        <p class="italic-accent" style="color: var(--ink-faint); font-size: 1.05rem; margin-bottom: 1.25rem;">Giữ nguyên. Xây dựng xung quanh những điểm này.</p>
+        <div class="section-divider"></div>
+
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>Sáu kết quả thực tế từ khách hàng</strong> có tên cụ thể, số kg giảm chính xác, tiểu bang tại Mỹ, và kết quả sức khỏe rõ ràng. Mức độ tin cậy hiếm có.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>Cam kết hoàn tiền 100%</strong> được trình bày theo hai cách khác nhau. Giảm hiệu quả nỗi lo khi đăng ký.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>Bộ lọc trước khi tư vấn</strong> ("khảo sát trước, chỉ nhận nếu có thể đạt kết quả") định vị lộ trình giảm cân như một lựa chọn có chọn lọc, không phải bán đại trà.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>226,000 người theo dõi</strong> trên fanpage Facebook chính thức. Bằng chứng xã hội quan trọng, nhưng chưa được hiển thị trên website.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>Chi tiết lộ trình</strong>: combo 42 bữa ăn, theo dõi ảnh cân hàng ngày, thực đơn cá nhân hóa theo thể trạng mỗi tuần, công thức duy trì dài hạn sau khi đạt mục tiêu. Điểm khác biệt rõ ràng.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-strength">Điểm mạnh</span>
+          <div class="item-text"><strong>CTA "TƯ VẤN CHO TÔI"</strong> trực tiếp, ít rào cản, phù hợp với người Việt. Giữ nguyên.</div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: .4rem;">Điểm đang cản trở</h2>
+        <p class="italic-accent" style="color: var(--ink-faint); font-size: 1.05rem; margin-bottom: 1.25rem;">Bốn vấn đề đang làm mất khách đăng ký.</p>
+        <div class="section-divider"></div>
+
+        <div class="item-row">
+          <span class="chip chip-high">Cao</span>
+          <div class="item-text"><strong>Đồng hồ đếm ngược hiển thị 00:00:00:00</strong> khi tải trang. Mọi khách truy cập đều thấy rằng sự khan hiếm là giả tạo. Không có yếu tố tin cậy nào phía dưới có thể khắc phục điều này.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">Cao</span>
+          <div class="item-text"><strong>226,000 người theo dõi không xuất hiện trên site.</strong> Thanh mạng xã hội dẫn đến trang cá nhân, không phải fanpage. Bằng chứng mạnh nhất của website đang bị ẩn đi.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">Cao</span>
+          <div class="item-text"><strong>Hero mở đầu bằng khát vọng</strong> ("Lấy lại vóc dáng") thay vì nói đúng nỗi thất vọng của khách hàng. Móc cảm xúc xuất hiện sai thứ tự.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-high">Cao</span>
+          <div class="item-text"><strong>"Hàng nghìn khách hàng"</strong> nghe như nội dung tạm thời, không phải bằng chứng thực tế. Khách hàng nhận ra ngay con số mơ hồ.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-medium">Trung bình</span>
+          <div class="item-text"><strong>Không có bối cảnh cho CTA.</strong> Khách truy cập không biết buổi tư vấn diễn ra như thế nào trước khi bấm vào.</div>
+        </div>
+        <div class="item-row">
+          <span class="chip chip-medium">Trung bình</span>
+          <div class="item-text"><strong>Địa chỉ TX + mã vùng NJ</strong> không khớp nhau, cản trở việc thiết lập Google Business Profile.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ratings -->
+    <div style="margin-top: 3rem;">
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: .35rem;">Đánh giá tổng thể</h3>
+      <p style="font-size: .85rem; color: var(--ink-faint); margin-bottom: 1.25rem;">Ba khía cạnh ảnh hưởng trực tiếp đến quyết định đăng ký tư vấn.</p>
+      <div class="ratings-row">
+        <div class="rating-block">
+          <div class="rating-block-label">Website tạo ấn tượng như thế nào</div>
+          <span class="rating-chip rating-needs">Cần cải thiện</span>
+        </div>
+        <div class="rating-block">
+          <div class="rating-block-label">Họ có bấm vào và đặt lịch không?</div>
+          <span class="rating-chip rating-some">Một phần, chưa đủ</span>
+        </div>
+        <div class="rating-block">
+          <div class="rating-block-label">Có chuyển thành khách hàng trả tiền không?</div>
+          <span class="rating-chip rating-needs">Chưa đạt</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DEEP ANALYSIS
+═══════════════════════════════════════════ -->
+<section class="analysis-section">
+  <div class="wrap-wide">
+    <div class="section-label">Phân tích chuyên sâu</div>
+    <h2 style="font-size: 1.75rem; margin-bottom: .5rem;">Bốn khu vực cần xem xét kỹ</h2>
+    <p style="font-size: .95rem; color: var(--ink-faint); margin-bottom: 3rem; max-width: 540px;">Mỗi khu vực cho thấy những gì đang hiển thị trên site và chi phí thực tế với quyết định của khách hàng tiềm năng.</p>
+
+    <!-- Row 1: 2 cards -->
+    <div class="g2" style="margin-bottom: 1.25rem;">
+
+      <!-- Card 1: Conversion materials and trust -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Nội dung chuyển đổi và niềm tin</div>
+          <h3 class="analysis-card-title">Niềm tin có mặt nhưng đang đặt sai chỗ</h3>
+          <p class="analysis-card-sub">Các bằng chứng thực tế đã có. Vấn đề nằm ở vị trí chúng xuất hiện trên trang và liệu chúng có được hiển thị hay không.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Đồng hồ đếm ngược hiển thị 00:00:00:00</div>
+              <div class="finding-why">Mọi khách truy cập đều thấy đồng hồ về không khi tải trang. Điều này báo hiệu sự khan hiếm là dàn dựng. Khách hàng nhận ra tín hiệu giả sớm như vậy sẽ không tiếp tục đọc.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">226,000 người theo dõi không được dùng làm bằng chứng</div>
+              <div class="finding-why">Tín hiệu bên thứ ba đáng tin cậy nhất của site đang vô hình. Với một dịch vụ coaching bán cho người lạ qua mạng, số người theo dõi hoạt động như số lượng đánh giá trên trang sản phẩm.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Tuyên bố "Hàng nghìn khách hàng"</div>
+              <div class="finding-why">Con số mơ hồ làm giảm niềm tin còn hơn không có số. Thay bằng con số cụ thể ("500+ khách hàng" hoặc con số thực tế) biến cùng một tuyên bố thành bằng chứng đáng tin.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Điểm mạnh</span>
+            <div class="finding-content">
+              <div class="finding-what">Sáu kết quả thực tế từ khách hàng có dữ liệu cụ thể</div>
+              <div class="finding-why">Số kg giảm, tiểu bang, và kết quả sức khỏe cụ thể là hiếm có. Giữ nguyên từng chữ và định dạng thành các ô bằng chứng dễ đọc lướt, không phải đoạn văn dài.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Điểm mạnh</span>
+            <div class="finding-content">
+              <div class="finding-what">Cam kết hoàn tiền 100%</div>
+              <div class="finding-why">Hai tuyên bố bảo đảm khác nhau ở các điểm khác nhau trên trang giải tỏa lo lắng khi đăng ký ở hai trạng thái phản đối khác nhau của khách mua. Giữ cả hai; đưa một tuyên bố lên trên màn hình đầu tiên.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: CTA and next actions -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">CTA và hành động tiếp theo</div>
+          <h3 class="analysis-card-title">Nút đã có. Bối cảnh thì chưa.</h3>
+          <p class="analysis-card-sub">Khách truy cập đến CTA không biết mình đang đồng ý với điều gì. Sự không chắc chắn đó làm mất khách đăng ký.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Không có mô tả về buổi tư vấn diễn ra như thế nào</div>
+              <div class="finding-why">Khách hàng tự hỏi "điều gì xảy ra khi tôi bấm vào?" mà không tìm được câu trả lời sẽ không bấm. Một câu ngắn ("10 phút với Tiên, không cần thanh toán trừ khi bạn đủ điều kiện") gỡ bỏ rào cản này.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Điểm mạnh</span>
+            <div class="finding-content">
+              <div class="finding-what">CTA "TƯ VẤN CHO TÔI"</div>
+              <div class="finding-why">Trực tiếp, ít rào cản, tự nhiên với người Việt. Xuất hiện nhiều lần. Cách trình bày này đúng; cần thêm bối cảnh, không cần thay thế.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Điểm mạnh</span>
+            <div class="finding-content">
+              <div class="finding-what">Bộ lọc trước khi tư vấn</div>
+              <div class="finding-why">Nói với khách hàng rằng lộ trình chỉ được nhận nếu có thể đạt kết quả giảm thiểu nỗi sợ bị bán thứ không phù hợp. Đây là yếu tố tăng tốc niềm tin.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Không có trang đặt lịch hoặc liên hệ riêng</div>
+              <div class="finding-why">Tất cả CTA đều đưa khách vào một trang cuộn duy nhất không có xác nhận. Khách hàng tìm trang "liên hệ" không có điểm đến. Điều này đang làm mất khách đăng ký.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: 2 cards -->
+    <div class="g2">
+
+      <!-- Card 3: Style and brand -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Phong cách và thương hiệu</div>
+          <h3 class="analysis-card-title">Móc cảm xúc xuất hiện sai thứ tự</h3>
+          <p class="analysis-card-sub">Lời hứa về lộ trình xuất hiện trước khi vấn đề của khách hàng được nêu ra. Trình tự đó bỏ lỡ điểm chạm cảm xúc đúng chỗ.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Hero mở đầu bằng khát vọng, không phải nỗi thất vọng</div>
+              <div class="finding-why">"Lấy lại vóc dáng" mô tả đích đến khách hàng muốn. Những người đã thử nhiều cách mà không thành công cần được nghe trải nghiệm của họ được gọi tên trước ("Đã thử mọi cách mà vẫn chưa giảm được?") trước khi tin vào bất kỳ lời hứa nào.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Trung bình</span>
+            <div class="finding-content">
+              <div class="finding-what">Tagline chung chung</div>
+              <div class="finding-why">"Đồng hành cùng bạn xây dựng phiên bản đẹp nhất" áp dụng được cho bất kỳ thương hiệu sức khỏe nào. Nó không mang tuyên bố nào phân biệt lộ trình này với các lựa chọn khác.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Trung bình</span>
+            <div class="finding-content">
+              <div class="finding-what">Phần YouTube với nội dung lối sống</div>
+              <div class="finding-why">Video về chủ đề tình cảm và lối sống trên homepage làm loãng trọng tâm chuyển đổi. Khách đang cân nhắc giảm cân bị kéo ra khỏi chủ đề chính.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-strength" style="flex-shrink:0;">Điểm mạnh</span>
+            <div class="finding-content">
+              <div class="finding-what">Các viên giá trị (thời gian, tốc độ, đa dạng)</div>
+              <div class="finding-why">"Nấu trong 15 phút," "Giảm tới 0.5–1 pound mỗi ngày," "Thực đơn đa dạng, cá nhân hóa theo thể trạng" cụ thể và dễ hình dung. Đưa lên hero. Giữ nguyên từng chữ.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Structure, SEO, mobile -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="analysis-tab-label">Cấu trúc, SEO, và mobile</div>
+          <h3 class="analysis-card-title">Kiến trúc một trang chặn toàn bộ tăng trưởng tự nhiên</h3>
+          <p class="analysis-card-sub">Mọi khách truy cập hiện tại đến qua mạng xã hội hoặc giới thiệu. Với cấu trúc hiện tại, traffic tìm kiếm tự nhiên là không thể.</p>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Không có trang thật, chỉ có neo cuộn</div>
+              <div class="finding-why">Một trang duy nhất không thể xếp hạng cho các từ khóa tìm kiếm. Cả sáu trang cần thiết (lộ trình, giới thiệu, kết quả, FAQ, liên hệ, trang chủ) đều không tồn tại dưới dạng URL có thể lập chỉ mục.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-medium" style="flex-shrink:0;">Trung bình</span>
+            <div class="finding-content">
+              <div class="finding-what">NAP không nhất quán: địa chỉ TX + mã vùng NJ</div>
+              <div class="finding-why">Google Business Profile yêu cầu Tên, Địa chỉ, Số điện thoại nhất quán trên toàn web. Sự không khớp này phải được giải quyết trước khi thiết lập hoặc xác minh hồ sơ.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-high" style="flex-shrink:0;">Cao</span>
+            <div class="finding-content">
+              <div class="finding-what">Thanh mạng xã hội dẫn đến trang cá nhân</div>
+              <div class="finding-why">Bấm vào icon Facebook đưa khách đến CandyTran1903 (cá nhân), không phải fanpage 226,000 người theo dõi. Khách muốn xác minh độ uy tín lại đến chỗ làm giảm, không tăng, niềm tin.</div>
+            </div>
+          </div>
+
+          <div class="finding-row">
+            <span class="chip chip-low" style="flex-shrink:0;">Thấp</span>
+            <div class="finding-content">
+              <div class="finding-what">Không thể tạo liên kết nội bộ</div>
+              <div class="finding-why">Cấu trúc một trang không cho phép liên kết nội bộ, vốn hỗ trợ cả SEO lẫn điều hướng người đọc. Vấn đề này tự giải quyết khi mở rộng sang nhiều trang.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fix table -->
+    <div style="margin-top: 2.5rem;">
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem;">Những gì cần bỏ trước phiên bản tiếp theo</h3>
+      <div class="card-flat">
+        <table class="ft">
+          <thead>
+            <tr>
+              <th>Yếu tố</th>
+              <th>Tình trạng hiện tại</th>
+              <th>Nên thay bằng gì</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Yếu tố">Đồng hồ đếm ngược</td>
+              <td data-label="Tình trạng hiện tại">Hiển thị 00:00:00:00 khi tải trang</td>
+              <td data-label="Nên thay bằng gì">Thay bằng đồng hồ có ngày kết thúc thật hoặc dùng copy khan hiếm trung thực ("số suất tư vấn còn lại trong tháng")</td>
+            </tr>
+            <tr>
+              <td data-label="Yếu tố">Link mạng xã hội Facebook</td>
+              <td data-label="Tình trạng hiện tại">Dẫn đến CandyTran1903 (trang cá nhân)</td>
+              <td data-label="Nên thay bằng gì">Cập nhật về URL fanpage chính thức</td>
+            </tr>
+            <tr>
+              <td data-label="Yếu tố">Tagline chung chung</td>
+              <td data-label="Tình trạng hiện tại">"Đồng hành cùng bạn xây dựng phiên bản đẹp nhất"</td>
+              <td data-label="Nên thay bằng gì">Thay bằng tuyên bố nêu rõ kết quả cụ thể của lộ trình</td>
+            </tr>
+            <tr>
+              <td data-label="Yếu tố">Danh sách 8 lợi ích</td>
+              <td data-label="Tình trạng hiện tại">Trộn lẫn giảm cân với chống lão hóa và sức khỏe gia đình</td>
+              <td data-label="Nên thay bằng gì">Rút gọn còn 3-4 kết quả cụ thể về giảm cân trong hero; chuyển lợi ích phụ sang trang chi tiết lộ trình</td>
+            </tr>
+            <tr>
+              <td data-label="Yếu tố">Banner "50% / 50% / 50%"</td>
+              <td data-label="Tình trạng hiện tại">Lặp lại ba lần</td>
+              <td data-label="Nên thay bằng gì">Gộp thành một phần ưu đãi gọn gàng duy nhất</td>
+            </tr>
+            <tr>
+              <td data-label="Yếu tố">Phần YouTube</td>
+              <td data-label="Tình trạng hiện tại">Nội dung lối sống và tình cảm</td>
+              <td data-label="Nên thay bằng gì">Thay bằng nội dung uy tín về giảm cân hoặc bỏ hoàn toàn khỏi homepage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     RECOMMENDATIONS
+═══════════════════════════════════════════ -->
+<section class="recs-section">
+  <div class="wrap-wide">
+    <div class="section-label">Đề xuất</div>
+    <h2 style="font-size: 1.75rem; margin-bottom: .5rem;">Sáu điều chỉnh cụ thể</h2>
+    <p style="font-size: .95rem; color: var(--ink-faint); margin-bottom: 3rem; max-width: 500px; line-height: 1.6;">Sắp xếp theo mức độ ảnh hưởng đến niềm tin khách hàng và tỷ lệ đặt lịch. Bắt đầu với A. Mọi thứ còn lại được xây dựng dựa trên đó.</p>
+
+    <div class="recs-grid">
+
+      <!-- A: Full width - most critical -->
+      <div class="qcard" style="border-left: 3px solid var(--terra);">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">A</div>
+            <div class="qcard-title">Sửa cơ chế tạo khan hiếm</div>
+          </div>
+          <span class="chip chip-high">Cao</span>
+        </div>
+        <p class="qcard-body">Đồng hồ đếm ngược hiển thị 00:00:00:00 khi tải trang. Mọi khách truy cập đều thấy điều này. Đồng hồ về không là tín hiệu rõ ràng rằng sự khan hiếm được dàn dựng, và nó xuất hiện ngay màn hình đầu tiên, trước khi bất kỳ kết quả thực tế hay cam kết hoàn tiền nào có cơ hội tạo niềm tin. Không có yếu tố tin cậy nào phía dưới có thể khắc phục ấn tượng ban đầu này.</p>
+        <div class="qcard-action"><span>&#8594;</span>Thay bằng đồng hồ có ngày kết thúc thật hoặc bỏ hoàn toàn. Thay bằng copy khan hiếm trung thực: "Tiên hiện chỉ nhận thêm X tư vấn trong tháng này." Một giới hạn thật, nói thẳng, hiệu quả hơn nhiều so với đồng hồ giả.</div>
+      </div>
+
+      <!-- B -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">B</div>
+            <div class="qcard-title">Hiển thị số người theo dõi và sửa link mạng xã hội</div>
+          </div>
+          <span class="chip chip-high">Cao</span>
+        </div>
+        <p class="qcard-body">226,000 người theo dõi trên Facebook là tín hiệu bên thứ ba đáng tin cậy. Nó không xuất hiện ở đâu trên site. Icon mạng xã hội dẫn đến trang cá nhân (CandyTran1903), không phải fanpage. Khách hàng nghi ngờ bấm vào để xác minh uy tín của Tiên lại đến chỗ làm giảm, không tăng, niềm tin.</p>
+        <div class="qcard-action"><span>&#8594;</span>Đặt "226,000 người theo dõi" là con số hiển thị rõ trong dải niềm tin của hero, cạnh cam kết hoàn tiền. Sửa link mạng xã hội về URL fanpage chính thức trước khi ra mắt.</div>
+      </div>
+
+      <!-- C -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">C</div>
+            <div class="qcard-title">Viết lại móc cảm xúc của hero</div>
+          </div>
+          <span class="chip chip-high">Cao</span>
+        </div>
+        <p class="qcard-body">Hero hiện tại mở đầu bằng khung khát vọng: đích đến mà khách hàng muốn đạt. Những người đã thử và thất bại nhiều lần không bị thuyết phục bởi lời hứa về đích đến. Họ bị thuyết phục khi trải nghiệm của họ được gọi tên trước. Móc cảm xúc đang xuất hiện sai thứ tự.</p>
+        <div class="qcard-action"><span>&#8594;</span>Mở đầu bằng nỗi thất vọng của khách hàng ("Đã thử mọi cách mà vẫn chưa giảm được?"), rồi mới đưa ra lời hứa. Đưa các viên giá trị ("Nấu trong 15 phút," "Giảm tới 0.5–1 pound mỗi ngày") vào hero thay vì để ở phía dưới trang.</div>
+      </div>
+
+      <!-- D -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">D</div>
+            <div class="qcard-title">Xác nhận và thêm số khách hàng cụ thể</div>
+          </div>
+          <span class="chip chip-high">Cao</span>
+        </div>
+        <p class="qcard-body">"Hàng nghìn khách hàng" hoạt động như nội dung tạm thời, không phải bằng chứng thực tế. Khách hàng đọc điều này cùng với các kết quả thực tế cụ thể sẽ nhận ra sự mơ hồ. Con số cụ thể ("500+ khách hàng" hoặc con số thực) biến cùng một tuyên bố từ nội dung lấp đầy thành bằng chứng đáng tin.</p>
+        <div class="qcard-action"><span>&#8594;</span>Xác nhận số khách hàng thực tế với Tiên. Thay "hàng nghìn" trên toàn bộ site bằng con số đã xác nhận. Không đăng trước khi có con số thật. Đây cũng là điều kiện bắt buộc trước khi ra mắt.</div>
+      </div>
+
+      <!-- E -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">E</div>
+            <div class="qcard-title">Thêm bối cảnh tư vấn vào CTA</div>
+          </div>
+          <span class="chip chip-medium">Trung bình</span>
+        </div>
+        <p class="qcard-body">CTA ("TƯ VẤN CHO TÔI") trực tiếp và đặt đúng chỗ. Điều còn thiếu là một câu giải thích việc bấm vào thực sự có nghĩa là gì. Khách hàng không biết đang đặt lịch buổi tư vấn có phí, cuộc gọi điện thoại, hay điền form sẽ do dự.</p>
+        <div class="qcard-action"><span>&#8594;</span>Thêm bên dưới mỗi CTA: "10 phút với Tiên. Không cần thanh toán trừ khi bạn đủ điều kiện." Điều này xóa bỏ sự mơ hồ và làm rõ lời hứa ít rào cản.</div>
+      </div>
+
+      <!-- F -->
+      <div class="qcard">
+        <div class="qcard-header">
+          <div>
+            <div class="qcard-letter">F</div>
+            <div class="qcard-title">Sửa thông tin NAP không nhất quán</div>
+          </div>
+          <span class="chip chip-medium">Trung bình</span>
+        </div>
+        <p class="qcard-body">Site hiển thị địa chỉ Midlothian, TX cùng với mã vùng NJ (609). Sự không khớp này cản trở việc thiết lập hoặc xác minh Google Business Profile. Nó cũng tạo ấn tượng thiếu chuyên nghiệp với khách hàng chú ý đến chi tiết, điều này làm giảm niềm tin vào dịch vụ coaching từ xa.</p>
+        <div class="qcard-action"><span>&#8594;</span>Xác nhận địa chỉ và số điện thoại đúng với Tiên. Đồng bộ cả hai trên site, các hồ sơ mạng xã hội, và mọi danh mục trực tuyến trước khi thiết lập Google Business Profile.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FINAL RECOMMENDATION
+═══════════════════════════════════════════ -->
+<section class="final-section">
+  <div class="wrap">
+    <div class="section-label">Kết luận</div>
+
+    <div class="verdict-band">
+      <div class="verdict-band-eyebrow">Phán quyết</div>
+      <h2 class="verdict-band-title">Thiết kế lại một phần</h2>
+      <p class="verdict-band-body">Lộ trình giảm cân đã mạnh. Kết quả thực tế từ khách hàng cụ thể và hiếm có. Cam kết hoàn tiền được xây dựng tốt. Cách trình bày CTA đúng hướng. Những yếu tố này không cần xây dựng lại, và việc làm lại sẽ có nguy cơ mất đi những gì đang hoạt động hiệu quả.</p>
+      <p class="verdict-band-body" style="margin-top: .85rem;">Những gì không thể sửa chỉ bằng chỉnh sửa copy: kiến trúc một trang chặn toàn bộ tìm kiếm tự nhiên; các tín hiệu niềm tin đang đặt sai chỗ hoặc vắng mặt ngay từ màn hình đầu; và đồng hồ đếm ngược đang chủ động làm giảm uy tín trước khi bất kỳ bằng chứng nào được nhìn thấy.</p>
+    </div>
+
+    <div class="callout-row">
+      <div class="callout-icon">!</div>
+      <div class="callout-text"><strong>Vấn đề niềm tin lớn nhất:</strong> đồng hồ đếm ngược về không. Nó xuất hiện ngay màn hình đầu tiên, trước kết quả thực tế từ khách hàng, trước cam kết hoàn tiền, trước số người theo dõi. Khách hàng nhận ra tín hiệu giả từ sớm như vậy sẽ không cuộn đủ xa để những bằng chứng mạnh phía dưới có cơ hội phát huy tác dụng. Đây là điều cần thay thế đầu tiên, trước khi bất cứ thứ gì khác được đưa lên.</div>
+    </div>
+
+    <div class="direction-block">
+      <p><strong>Tại sao chỉ chỉnh sửa copy là không đủ.</strong> Phương án nhẹ hơn, chỉnh sửa tiêu đề và sắp xếp lại bằng chứng trong cấu trúc một trang hiện tại, có thể sửa móc hero và hiển thị số người theo dõi. Nhưng nó không sửa được kiến trúc. Site vẫn sẽ không có bề mặt tìm kiếm tự nhiên, không có trang đặt lịch riêng, không có trang FAQ, và không có cách xây dựng uy tín qua nội dung. Tỷ lệ chuyển đổi từ traffic trả phí hoặc mạng xã hội có thể cải thiện, nhưng trần tăng trưởng dài hạn vẫn giữ nguyên.</p>
+      <p><strong>Phạm vi thiết kế lại một phần có nghĩa là gì trong thực tế:</strong> giữ nguyên kết quả thực tế từ khách hàng, ngôn ngữ cam kết hoàn tiền, chi tiết lộ trình, và cách trình bày CTA đúng như hiện tại. Xây dựng lại phần hero với móc cảm xúc theo đúng thứ tự. Sửa lại cơ chế khan hiếm. Mở rộng thành sáu trang theo brief SEO. Sửa link mạng xã hội và hiển thị số người theo dõi ngay màn hình đầu tiên. Giải quyết NAP trước khi bắt đầu bất kỳ công việc nào liên quan đến Google.</p>
+      <p><em class="italic-accent" style="font-size: 1.05rem; color: var(--ink-faint);">Bắt đầu với đồng hồ đếm ngược. Mọi thứ khác được xây dựng dựa trên việc khách hàng có tin vào những gì họ thấy đầu tiên hay không.</em></p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Thực hiện bởi <strong>TechPersona Studio / Thao Phuong</strong> &nbsp;&middot;&nbsp; 25 tháng 6, 2026 &nbsp;&middot;&nbsp; Báo Cáo Phân Tích Website cho Young Group / Trần Thủy Tiên</p>
+</footer>
+
+</body>
+</html>
