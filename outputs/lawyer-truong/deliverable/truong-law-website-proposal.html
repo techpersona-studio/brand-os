@@ -361,8 +361,8 @@
   }
   .shared-list span::before { content: ""; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
 
-  .ongoing { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
-  @media (max-width: 760px) { .ongoing { grid-template-columns: 1fr; } }
+  .ongoing { display: flex; flex-direction: column; gap: 1.25rem; }
+  .side p { max-width: 72ch; }
 
   .scroller {
     overflow-x: auto;
@@ -573,8 +573,8 @@
         <tbody>
           <tr><td><b>Technical</b></td><td class="num">$39/mo</td><td>I watch the site: it stays up, the forms work, everything stays patched. No content changes.</td></tr>
           <tr><td><b>Website</b></td><td class="num">$129/mo</td><td>The above, plus <b>1 hour</b> of changes a month, either language.</td></tr>
-          <tr><td><b>Growth</b></td><td class="num">$269/mo</td><td>The above, plus <b>2 hours</b> a month and a check every quarter on what is working.</td></tr>
-          <tr><td>No plan</td><td class="num">$125/hr</td><td>Changes on request, one hour minimum.</td></tr>
+          <tr><td><b>Growth</b></td><td class="num">$269/mo</td><td>The above, plus <b>2 hours</b> a month and a check every quarter on what is working, with changes made based on the traffic.</td></tr>
+          <tr><td>Hourly</td><td class="num">$125/hr</td><td>Changes on request, one hour minimum. No plan needed.</td></tr>
         </tbody>
       </table>
     </div>
@@ -591,9 +591,9 @@
 
       <aside class="side">
         <p class="kicker">Add-on</p>
-        <h4>Review requests</h4>
-        <p>When a matter closes, an automatic review request in the client's own language. This is what moves you up in Google Maps.</p>
-        <p class="quote">Quoted with the form work.</p>
+        <h4>Ongoing SEO</h4>
+        <p>The setup is already in your build, so this is not the same thing twice. This is the work that follows: new articles each month, keeping Google and the AI assistants up to date on you, and watching what other Boston firms are ranking for. Both languages.</p>
+        <p class="quote">$485/mo as a founding client, then $969. Three months minimum.</p>
       </aside>
     </div>
   </section>

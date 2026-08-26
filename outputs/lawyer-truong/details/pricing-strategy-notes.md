@@ -165,7 +165,25 @@ founding setup $249. Carrier costs are the client's, $10–25/mo, never marked u
 **Review requests** has no rate-card equivalent; closest is Lead Catcher's follow-up
 sequence. Left as "quoted with the intake work".
 
-### Monthly SEO retainer — deliberately held back
+### Monthly SEO retainer — NOW IN, as an add-on
+
+Reversed at the client's direction. Sits in the after-launch section as
+**Ongoing SEO, $485/mo founding, $969 standard, 3-month minimum** — the rate card's
+Service 02 Growth tier.
+
+Two things to check before sending:
+
+1. **The rate card says the founding discount is "50% off any service, once."** He has
+   already claimed it on the build. Whether $485/mo is his to have as well is
+   genuinely ambiguous. Decide, and if it is not, quote $969 or scope a different
+   number.
+2. The card opens with *"the setup is already in your build, so this is not the same
+   thing twice"* — that is the rate card's own instruction, since Package A and B both
+   ship the SEO and AI-search setup. Do not drop that line.
+
+The earlier reasoning for holding it back is below and still worth knowing:
+
+### Why it was held back originally
 
 Not in this proposal, and it should stay out:
 
