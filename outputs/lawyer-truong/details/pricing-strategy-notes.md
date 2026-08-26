@@ -26,7 +26,22 @@ until this changes.
 the client team, Google's index of the site (title tags, URL slugs, page inventory),
 and Massachusetts legal directory listings.
 
-### Correction — the site is already bilingual
+### Correction 2 — he already has a contact form
+
+The Liên hệ page carries a working form: full name, phone, address, email, subject,
+message, plus a send button. The finding is not "no form" but "nothing on the
+homepage points to it", and the form itself asks for six fields including a home
+address before any conversation has happened. Retitled accordingly, and a separate
+moderate finding added on form friction.
+
+**Vietnamese check needed before sending:** the form's subject field is labelled
+**"Chủ thể"**. For a message topic that reads wrong to me — "Chủ đề" or "Tiêu đề"
+looks correct, and "Chủ thể" means subject in the legal or grammatical sense. I have
+deliberately kept this out of the client document because a language claim aimed at a
+native speaker is not worth being wrong about. Confirm, then decide whether to raise
+it on the call as evidence the Vietnamese needs a proper pass.
+
+### Correction 1 — the site is already bilingual
 
 An earlier draft of this analysis claimed there was no Vietnamese version. That was
 wrong. The homepage carries a Tiếng Anh / Tiếng Việt toggle in the navigation and a
