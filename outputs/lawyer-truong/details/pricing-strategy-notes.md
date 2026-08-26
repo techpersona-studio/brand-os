@@ -293,7 +293,11 @@ neither package needs a content-production line.
 ### Margin guardrails — B at $2,000 is only viable if scope holds
 
 - Page list fixed at the Blueprint step and not reopened
-- Fixed revision rounds (2), further rounds quoted separately
+- **No revision-round cap.** Removed at the client's direction: the support window
+  (30 days on A, 60 on B) is the guardrail instead. Worth knowing the exposure —
+  "support" is undefined in both the proposal and the rate card, so nothing on paper
+  stops a redesign request on day 55. If it bites, define support on the next
+  proposal as bug fixes and small copy changes, with anything larger quoted.
 - Practice-area pages are template instances with distinct copy, not bespoke layouts
 - Client effort is deliberately minimal: a short intake form, no interview. Research is
   ours. His only other task is reviewing the Vietnamese copy before launch.
