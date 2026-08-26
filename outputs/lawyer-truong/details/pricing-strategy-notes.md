@@ -168,15 +168,15 @@ sequence. Left as "quoted with the intake work".
 ### Monthly SEO retainer — NOW IN, as an add-on
 
 Reversed at the client's direction. Sits in the after-launch section as
-**Ongoing SEO, $485/mo founding, $969 standard, 3-month minimum** — the rate card's
-Service 02 Growth tier.
+**Ongoing SEO, $485/mo for the first year, then $969, 3-month minimum** — the rate
+card's Service 02 Growth tier at the founding rate, time-boxed to 12 months.
 
 Two things to check before sending:
 
-1. **The rate card says the founding discount is "50% off any service, once."** He has
-   already claimed it on the build. Whether $485/mo is his to have as well is
-   genuinely ambiguous. Decide, and if it is not, quote $969 or scope a different
-   number.
+1. **Resolved:** the founding rate runs for the **first year**, then reverts to $969.
+   That settles the rate card's "50% off any service, once" ambiguity for this client
+   by bounding it in time rather than by service. Worth writing the same rule into the
+   rate card so the next founding client is not argued case by case.
 2. The card opens with *"the setup is already in your build, so this is not the same
    thing twice"* — that is the rate card's own instruction, since Package A and B both
    ship the SEO and AI-search setup. Do not drop that line.
