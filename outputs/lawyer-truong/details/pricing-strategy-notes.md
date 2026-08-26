@@ -135,10 +135,21 @@ is a larger scoped Custom job, so pricing above the floor is consistent.
 Package A and B are now $750 apart rather than $800. The gap still reads as good value
 for roughly double the scope, so no change needed there.
 
-Also unreconciled: the rate card sells **Lead Catcher** (form routing, follow-up
-sequence, email + SMS notification, spam guard, monthly summary) at $899 setup +
-**$149/mo**, founding $450. The proposal folds that into Package B with no monthly.
-Either carry the $149/mo across or accept that B absorbs it.
+**Lead Catcher: settled.** It is Package B's "form that answers for you", and it is
+included, priced in. The bullet now describes it the way the rate card does (instant
+reply, email and text notification, spam filtered, monthly summary) and states
+**"On its own this is $899, and it is already in the price above"** so the value is
+visible rather than assumed.
+
+The rate card's **$149/mo is deliberately not carried across.** The Google Sheets path
+genuinely costs nothing to run, so no monthly is owed there; the n8n path is where a
+monthly would live and is described as "a small monthly cost" without a number.
+Naming $149 would put his recurring stack at $79 + $129 + $485 + $149 = **$842/mo**,
+which turns the monthly column into the objection. Quote n8n separately later if he
+wants it.
+
+**Never Miss a Call** now shows $499 struck through beside the $249 founding setup,
+matching how the packages display their discount.
 
 ## Pricing structure
 
