@@ -103,13 +103,13 @@ read the site, and the press is on an interior page titled "Chronicle".
 **Commercial anchor:** any single retained matter exceeds the cost of the build. Use
 this **on the call if price comes up**, not in the document. It was cut from the
 proposal: explaining his own unit economics to a 22-year attorney reads as
-condescending, it assumes fees we do not know, and at $1,200 to $2,000 price is not
+condescending, it assumes fees we do not know, and at $1,250 to $2,000 price is not
 the real objection. The objections are "will this be a hassle" and "is this person any
 good", and the findings answer both faster than an ROI argument does.
 
 ---
 
-## ⚠ CONFLICT WITH THE RATE CARD — resolve before sending
+## RATE CARD ALIGNMENT — resolved
 
 Source: `services-and-pricing-rate-card.html` in Drive (Draft v3, 24 Aug 2026).
 Care tiers and the after-hours price in the proposal now come from it. **The package
@@ -125,15 +125,15 @@ The rate card says:
   once — taken by Vy H. Truong."* Logged as **Custom, 14 pages, bilingual, scoped,
   founding 50% off**, and it is the last founding slot.
 
-Against that, the proposal's Package A at **$1,200 is below the $1,250 founding floor**
-for the tier this job actually sits in, and it is a six-page bilingual build, so it is
-Custom, not Growth. Package B at $2,000 is above the floor and defensible.
+**Resolved:** Package A moved from $1,200 to **$1,250, list $2,500**, which is exactly
+the Custom + Systems founding price. A six-page bilingual build is Custom, not Growth,
+so the tier and the number now agree with the rate card.
 
-Three ways out, pick one:
-1. **Follow the rate card.** One Custom quote, scoped, founding 50%. Drop the A/B split.
-2. **Keep A/B but re-floor A at $1,250** so it matches the founding Custom price.
-3. **Re-badge A as Growth Website** ($925 founding) by cutting it to five pages — but
-   his nav has six, so this means dropping News or Video. Not recommended.
+Package B stays at **$2,000, list $4,000**. Custom is "a floor, not a formula", and B
+is a larger scoped Custom job, so pricing above the floor is consistent.
+
+Package A and B are now $750 apart rather than $800. The gap still reads as good value
+for roughly double the scope, so no change needed there.
 
 Also unreconciled: the rate card sells **Lead Catcher** (form routing, follow-up
 sequence, email + SMS notification, spam guard, monthly summary) at $899 setup +
@@ -146,8 +146,8 @@ Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off li
 
 | | Package A — Foundation | Package B — Bilingual Practice System |
 | --- | --- | --- |
-| List | $2,400 | $4,000 |
-| Offered | **$1,200** | **$2,000** |
+| List | $2,500 | $4,000 |
+| Offered | **$1,250** | **$2,000** |
 | Build | 4 weeks | 4–5 weeks |
 | Scope (est.) | ~6 core pages × 2 languages | + ~6 practice-area pages × 2 languages |
 | Support | 30 days | 60 days + 30-day review |
@@ -254,7 +254,7 @@ Care.
 
 **AI posting moved to Package A**, nested under the news bullet, because that is
 where it belongs logically: it is a way to publish, alongside WordPress. It is real
-setup work at the $1,200 tier, so watch it. If margin gets tight this is the item to
+setup work at the $1,250 tier, so watch it. If margin gets tight this is the item to
 pull out as a paid add-on, not the FAQ.
 
 The FAQ's AI-visibility angle (getting named when someone asks ChatGPT or Google's
@@ -283,7 +283,7 @@ would take away a capability he has today, which is a defect, not an upsell
 opportunity. So the editor sits in Package A and B inherits it.
 
 **Open cost question:** migration volume. Count his existing posts before quoting.
-A handful is nothing; fifty bilingual posts is real work and the $1,200 does not
+A handful is nothing; fifty bilingual posts is real work and the $1,250 does not
 carry it. If the archive is large, either cap the migration ("most recent N posts,
 the rest on request") or move the overflow to the Care Plan. Decide before sending.
 
