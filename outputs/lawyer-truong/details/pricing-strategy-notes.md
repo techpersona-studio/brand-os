@@ -140,6 +140,15 @@ clients low. Frame as a **foundation-client rate**: the studio is building its
 Boston legal-vertical case study, and the half rate buys a testimonial plus
 permission to show the work. Honest, verifiable, and it protects list pricing.
 
+### Voice and copy
+
+- **First person singular.** Zero instances of "we", "our" or "us". Solo operator,
+  and the proposal reads that way.
+- **No em-dashes.** Label bullets use a bold label plus colon; prose rewritten rather
+  than character-swapped. En-dashes kept in numeric ranges (3–4 weeks).
+- **Cut 42%**, from 2,177 to ~1,270 words. Owner skims, does not read: findings are a
+  headline, one or two short sentences, and a one-line cost.
+
 ### Structural decisions (client-directed)
 
 - **Brand OS doc set is in BOTH packages.** It runs before design — it is how each
@@ -148,12 +157,15 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
 - **After-hours phone handling is NOT a website finding.** Pulled out of the audit and
   listed as a separately quoted service alongside the site. *Still needs a price — decide
   before sending.*
-- **Review engine splits across both layers:** the post-matter request flow is
-  automation; displaying reviews on the site is website work. Listed under their
-  respective headings in Package B rather than as one ambiguous line.
-- **Intake engine is a client choice:** Google Sheets (free, no ongoing cost) or n8n
-  (small maintenance fee, correct base if they want to expand automation later).
-  Recommendation made after the interview.
+- **Review requests moved OUT of Package B** and into the add-ons, same logic as the
+  phone automation: it runs after a matter closes, outside the site, so it is not
+  website work. Displaying reviews on the site stays in B. Audit finding 8 still
+  raises the review problem, which now makes the add-on the obvious next yes.
+- **Intake engine folded into the case-intake line**, not a separate bullet: Google
+  Sheets (free, no ongoing cost) or n8n (small maintenance fee, correct base if they
+  expand automation later). Chosen with the client before build.
+- **Add-ons now number two:** after-hours calls and review requests. Both priced
+  separately. **Neither has a number yet — decide before sending.**
 - **Page counts are estimates, not commitments.** Locked at the Website Blueprint step.
   Package A ≈ 6 core pages × 2 languages; Package B adds ≈ 6 practice-area pages × 2.
   Five pages was rejected — the existing nav already carries six items
