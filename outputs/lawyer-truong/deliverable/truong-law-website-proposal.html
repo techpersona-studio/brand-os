@@ -255,6 +255,12 @@
   .pkg li strong { color: var(--ink); font-weight: 600; }
   .pkg-b li strong { color: var(--on-pine); }
 
+  .pkg .sub { margin-top: .6rem; gap: .45rem; }
+  .pkg .sub li { font-size: .88rem; padding-left: 1rem; }
+  .pkg .sub li::before {
+    width: 6px; height: 1px; border-radius: 0; top: .85em; opacity: .7;
+  }
+
   .pkg-foot {
     padding-top: 1.1rem;
     border-top: 1px solid var(--hair);
@@ -525,8 +531,13 @@
         <ul>
           <li><strong>Easy to reach you:</strong> call, message, email or form, all within two clicks, placed where visitors are ready to act</li>
           <li><strong>A shorter form:</strong> cut back to the fields you actually need to start a conversation</li>
-          <li><strong>Your existing pages rebuilt:</strong> Home, Services, Biography, News, Video, Contact, in both languages. Nothing dropped.</li>
-          <li><strong>News you can update yourself:</strong> your existing posts moved across, plus a simple editor so you can publish in either language without calling me</li>
+          <li><strong>Your 6 existing pages rebuilt:</strong> Home, Services, Biography, News, Video, Contact, in both languages. Nothing dropped.</li>
+          <li><strong>News and blog posts you can update yourself:</strong> your existing posts moved across, and two ways to publish in either language without calling me.
+            <ul class="sub">
+              <li><strong>WordPress:</strong> log in and write, the same as any blog.</li>
+              <li><strong>Or talk to AI:</strong> if you use Claude or ChatGPT, I can connect it so you describe a post and it publishes to the site in both languages.</li>
+            </ul>
+          </li>
           <li><strong>One consistent look:</strong> colours and type taken from your seal and carried across every page, so the site reads as a serious firm and not a template</li>
           <li><strong>Record and press up front:</strong> the Globe, <em>Chronicle</em> and your years as a prosecutor shown where people see them first, not buried in a paragraph</li>
           <li><strong>Search fixed:</strong> real titles, clean URLs, duplicates retired, one domain, schema, sitemap, Search Console</li>
@@ -545,7 +556,7 @@
         <div class="pkg-head">
           <span class="tag">Package B · Recommended</span>
           <h3>Bilingual Practice System</h3>
-          <p class="pkg-for">Everything above, plus a page for each service you offer.</p>
+          <p class="pkg-for">Everything above, plus a page for each service and a form that answers for you.</p>
         </div>
 
         <div class="price-block">
@@ -559,10 +570,15 @@
         <p class="carry">Everything in A, plus:</p>
 
         <ul>
-          <li><strong>A page for every service:</strong> Criminal, Immigration, Real Estate, Family, Injury, Business, each in both languages, each written to answer the searches for that one service. Roughly double Package A.</li>
-          <li><strong>Why that matters:</strong> Google ranks pages, not websites. One Services page cannot rank for six practice areas.</li>
+          <li><strong>A page for every service:</strong> Criminal, Immigration, Real Estate, Family, Injury, Business, each in both languages, each written to answer the searches for that one service. <strong>Roughly double Package A.</strong> Google ranks pages, not websites, and one Services page cannot rank for six practice areas.</li>
+          <li><strong>A form that answers for you:</strong> someone sends an enquiry, they get a reply straight away in their own language, and you get a notification so you can follow up shortly after. Any hour, any day. In urgent matters the firm that replies first usually gets the case.
+            <ul class="sub">
+              <li><strong>Google Sheets:</strong> free, nothing to maintain, every enquiry landing in one sheet you can open on your phone.</li>
+              <li><strong>n8n:</strong> a small monthly cost to keep running, but the better base if you want to add more automation to the practice later.</li>
+            </ul>
+          </li>
+          <li><strong>Answers to what people ask before they call:</strong> a bilingual FAQ built from what Boston clients actually search. Cost, timelines, what happens at arraignment. People search the question before they search for a lawyer, and this is also how you get named when someone asks ChatGPT or Google's AI for a Vietnamese lawyer in Boston.</li>
           <li><strong>Testimonials on the site:</strong> your existing reviews from Yelp and Google brought across, and new ones shown as they arrive</li>
-          <li><strong>Case intake:</strong> the enquiry form sends an instant bilingual reply, an SMS to your phone, and a logged entry. Any hour. Runs on Google Sheets, free with no upkeep, or n8n, small upkeep but the better base if you automate more later. I will pick one with you before the build.</li>
           <li>Two revision rounds · first month of Care included</li>
         </ul>
 

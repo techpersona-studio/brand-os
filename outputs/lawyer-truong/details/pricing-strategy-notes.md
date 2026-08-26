@@ -194,6 +194,27 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
   (Trang Chủ · Dịch Vụ · Tiểu Sử · Tin Tức · Video · Liên Hệ), so a five-page rebuild
   would have silently dropped News and Video.
 
+### What carries the $800 gap
+
+Package B now stands on three things a client can repeat back:
+1. **A page per service**, both languages, each written for that service's searches.
+2. **A form that answers**, instant bilingual reply plus a notification to him.
+3. **A bilingual FAQ** built from what Boston clients actually search, which is how
+   people find a lawyer before they know they want one, and how the firm gets named
+   in ChatGPT and Google AI answers. That second point is the freshest angle in the
+   whole proposal; lead with it on the call.
+Plus testimonials brought across, a second revision round, and the first month of
+Care.
+
+**AI posting moved to Package A**, nested under the news bullet, because that is
+where it belongs logically: it is a way to publish, alongside WordPress. It is real
+setup work at the $1,200 tier, so watch it. If margin gets tight this is the item to
+pull out as a paid add-on, not the FAQ.
+
+The FAQ's AI-visibility angle (getting named when someone asks ChatGPT or Google's
+AI for a Vietnamese lawyer in Boston) is the freshest thing in the proposal. Lead
+with it on the call.
+
 ### News / CMS is in both packages, not an upsell
 
 He already has News and Video sections. Shipping a rebuild without a way to post
