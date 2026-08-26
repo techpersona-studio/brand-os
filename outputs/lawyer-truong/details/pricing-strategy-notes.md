@@ -172,8 +172,10 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
 - **Brand OS doc set is in BOTH packages,** presented as a **Discovery phase** band
   above the two cards. Framed by what it does, not by what it produces: understand the
   business goals and direction, understand the customers, then design each page to do
-  a job rather than list services. The five document names sit as one quiet footer line
-  underneath so the deliverable is still visible without leading with jargon.
+  a job rather than list services. The five document names are **not** listed: he does not care what the
+  process outputs are called. The footer line sells the one deliverable with life
+  beyond the project instead, the brand guide, framed as something he can hand to a
+  printer, a designer or an AI tool so his flyers, ads and posts match the site.
 - **After-hours phone handling is NOT a website finding.** Pulled out of the audit and
   listed as a separately quoted service alongside the site. *Still needs a price — decide
   before sending.*
