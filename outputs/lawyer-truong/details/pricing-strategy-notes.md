@@ -167,8 +167,7 @@ Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off li
 **Ongoing:** the three real tiers from the rate card, 3-month minimum —
 Technical Care $39/mo · Website Care $129/mo · Growth Care $269/mo · no plan $125/hr.
 Unused time does not roll over; plan time works out to $90/hr against $125 on demand.
-First month of Website Care included with Package B (my choice of tier — change it if
-you meant another).
+One month of Website Care with Package A, two months with Package B.
 
 **After-hours calls** is the rate card's *Never Miss a Call*: $499 setup + $79/mo,
 founding setup $249. Carrier costs are the client's, $10–25/mo, never marked up.
@@ -311,10 +310,16 @@ He already has News and Video sections. Shipping a rebuild without a way to post
 would take away a capability he has today, which is a defect, not an upsell
 opportunity. So the editor sits in Package A and B inherits it.
 
-**Open cost question:** migration volume. Count his existing posts before quoting.
-A handful is nothing; fifty bilingual posts is real work and the $1,250 does not
-carry it. If the archive is large, either cap the migration ("most recent N posts,
-the rest on request") or move the overflow to the Care Plan. Decide before sending.
+**Resolved: four items, no cap needed.** The News page holds a 2003 Boston Globe
+clipping, a 2012 Pell Grants event, a 2003 WCVB *Chronicle* segment, and a 2025 real
+estate item. Migration is trivial. It is a press archive, not a blog, and he does not
+intend to blog, so the bullet reads "News and press you can add to yourself."
+
+**The find worth acting on:** the Globe piece is a *scan of a newspaper page* headlined
+"Journey to freedom from Vietnam shaped new prosecutor's life". His single best story
+is currently an image. Unreadable on a phone, invisible to Google and to AI answers.
+Typing it out as real text is close to free and is probably the highest-value single
+change in the whole project. It is now an audit finding and a Package A line.
 
 Ongoing posting is already covered by the Care Plan at one new page a month, so
 neither package needs a content-production line.
