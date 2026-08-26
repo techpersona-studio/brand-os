@@ -370,26 +370,35 @@
     padding-top: .5rem; margin-bottom: -.3rem;
   }
 
-  .ongoing { display: grid; grid-template-columns: 1.45fr 1fr; gap: 1.25rem; align-items: start; }
+  .ongoing { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
   @media (max-width: 760px) { .ongoing { grid-template-columns: 1fr; } }
 
-  .care {
-    background: var(--core);
+  .scroller {
+    overflow-x: auto;
     border: 1px solid var(--hair);
     border-radius: var(--r);
-    padding: 2rem 1.85rem 2.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    background: var(--core);
     box-shadow: var(--lift);
+    margin-bottom: 1.25rem;
   }
-  .care h3 { font-size: 1.35rem; letter-spacing: -.03em; }
-  .care ul { display: flex; flex-direction: column; gap: .7rem; }
-  .care li { font-size: .93rem; line-height: 1.5; padding-left: 1.15rem; position: relative; color: var(--ink-soft); }
-  .care li::before { content: ""; position: absolute; left: 0; top: .58em; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
-  .care li strong { color: var(--ink); font-weight: 600; }
-
-  .side-stack { display: flex; flex-direction: column; gap: 1.25rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  caption {
+    text-align: left; font-size: .6875rem; font-weight: 700; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-faint); padding: 1.15rem 1.4rem .3rem;
+  }
+  th {
+    text-align: left; font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-faint);
+    padding: 1rem 1.4rem .6rem; border-bottom: 1px solid var(--hair);
+  }
+  td {
+    padding: .9rem 1.4rem; border-bottom: 1px solid var(--hair);
+    font-size: .92rem; color: var(--ink-soft); vertical-align: top;
+  }
+  td b { color: var(--ink); font-weight: 600; }
+  th.num, td.num { text-align: right; white-space: nowrap; }
+  td.num { font-weight: 600; color: var(--ink); }
+  tbody tr:last-child td { border-bottom: none; }
 
   .side {
     background: var(--pine-wash);
@@ -527,7 +536,7 @@
         </ul>
 
         <div class="pkg-foot">
-          <span>3 weeks</span>
+          <span>4 weeks</span>
           <span>30 days support</span>
         </div>
       </article>
@@ -559,11 +568,11 @@
           </li>
           <li><strong>Answers to what people ask before they call:</strong> a bilingual FAQ built from what Boston clients actually search. Cost, timelines, what happens at arraignment. People search the question before they search for a lawyer, and this is also how you get named when someone asks ChatGPT or Google's AI for a Vietnamese lawyer in Boston.</li>
           <li><strong>Testimonials on the site:</strong> your existing reviews from Yelp and Google brought across, and new ones shown as they arrive</li>
-          <li>Two revision rounds · first month of Care included</li>
+          <li>Two revision rounds · first month of Website Care included</li>
         </ul>
 
         <div class="pkg-foot">
-          <span>3–4 weeks</span>
+          <span>4–5 weeks</span>
           <span>60 days support + 30-day review</span>
         </div>
       </article>
@@ -576,14 +585,15 @@
   <section>
     <div class="sec-head">
       <p class="kicker">Terms</p>
-      <h2>The deal, in six lines.</h2>
+      <h2>The deal, in seven lines.</h2>
     </div>
     <div class="terms">
       <div class="term"><h4>Payment</h4><p><strong>50% to start, 50% at launch.</strong> One-time. No retainer, no lock-in.</p></div>
       <div class="term"><h4>Communication</h4><p><strong>Kept to a minimum.</strong> Most of the work does not need you at all.</p><p>When I need something I send an intake form: your goals, the work you want more of, whatever the next stage needs. Fill it in whenever suits, so the build keeps moving while you work. No calls needed until the final handover.</p></div>
       <div class="term"><h4>Scope</h4><p>Page counts are <strong>estimates</strong>. The exact list is agreed with you before any build starts, then fixed.</p></div>
       <div class="term"><h4>Ownership</h4><p>Domain, hosting and every account <strong>in your name</strong>. Leave any time.</p></div>
-      <div class="term"><h4>Timeline</h4><p><strong>3 weeks</strong> for A, <strong>3–4</strong> for B, from deposit.</p></div>
+      <div class="term"><h4>Timeline</h4><p><strong>4 weeks</strong> for A, <strong>4–5</strong> for B, from deposit.</p></div>
+      <div class="term"><h4>Why not faster</h4><p>I do use AI, and it is part of why these prices are what they are. What AI does not decide is who you are speaking to, what each page has to prove, or how it reads in Vietnamese.</p><p><strong>Four weeks is that thinking.</strong> The building is the fast part.</p></div>
       <div class="term"><h4>Why half price</h4><p>I am building my <strong>Boston legal case study</strong>. In exchange: a testimonial, and permission to show the work.</p></div>
     </div>
   </section>
@@ -595,54 +605,58 @@
       <p>The care plan keeps the site healthy. The two automations run alongside the site, not inside it. None of this is bundled into the price above.</p>
     </div>
 
+    <div class="scroller">
+      <table>
+        <caption>Ongoing care · 3-month minimum</caption>
+        <thead>
+          <tr><th>Plan</th><th class="num">Price</th><th>What it covers</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Technical Care</b></td><td class="num">$39/mo</td>
+            <td>I watch the site: hosting, uptime and form checks, security updates, bug fixes. No content changes.</td>
+          </tr>
+          <tr>
+            <td><b>Website Care</b></td><td class="num">$129/mo</td>
+            <td>Technical Care, plus <b>1 hour</b> of content updates a month, in either language.</td>
+          </tr>
+          <tr>
+            <td><b>Growth Care</b></td><td class="num">$269/mo</td>
+            <td>Technical Care, plus <b>2 hours</b> a month and a quarterly check on what the site is converting.</td>
+          </tr>
+          <tr>
+            <td>No plan</td><td class="num">$125/hr</td>
+            <td>On-demand edits, one hour minimum.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">Unused time does not roll over. On a plan your time works out to <strong>$90 an hour against $125 on demand</strong>, which is the only real reason to be on one. First month of Website Care is included with Package B.</p>
+
     <div class="ongoing">
-      <article class="care">
-        <div class="pkg-head">
-          <span class="tag">Monthly</span>
-          <h3>Web Care Plan</h3>
-          <p class="pkg-for">Keeping it up, fast, and saying something new.</p>
-        </div>
+      <aside class="side">
+        <p class="kicker">Add-on</p>
+        <h4>Never miss a call</h4>
+        <p>Missed calls and after-hours messages get an instant text back in the right language, with a booking link. Arrests and accidents do not keep office hours.</p>
+        <p class="quote">$249 to set up as a founding client, then $79/mo. Carrier costs are yours, roughly $10 to $25 a month.</p>
+      </aside>
 
-        <div class="price-block">
-          <div class="price-row">
-            <span class="price">$180</span>
-            <span class="price-note">per month</span>
-          </div>
-          <p class="price-note">Cancel any time · first month included with Package B</p>
-        </div>
-
-        <ul>
-          <li>Hosting, backups, security updates</li>
-          <li>Content and copy changes, both languages</li>
-          <li><strong>One new page a month:</strong> a case result, a practice area, a question clients keep asking</li>
-          <li><strong>Monthly snapshot:</strong> visitors, enquiries, and which pages produced them</li>
-          <li>Priority response if something breaks</li>
-        </ul>
-      </article>
-
-      <div class="side-stack">
-        <aside class="side">
-          <p class="kicker">Add-on</p>
-          <h4>After-hours calls</h4>
-          <p>Arrests and accidents do not keep office hours. Bilingual phone automation that answers, screens and routes calls outside 9 to 6.</p>
-          <p class="quote">Quoted separately.</p>
-        </aside>
-
-        <aside class="side">
-          <p class="kicker">Add-on</p>
-          <h4>Review requests</h4>
-          <p>When a matter closes, an automatic Google review request in the client's own language, with one follow-up if there is no reply. This is what moves you up the map results.</p>
-          <p class="quote">Quoted separately.</p>
-        </aside>
-      </div>
+      <aside class="side">
+        <p class="kicker">Add-on</p>
+        <h4>Review requests</h4>
+        <p>When a matter closes, an automatic Google review request in the client's own language, with one follow-up if there is no reply. This is what moves you up the map results.</p>
+        <p class="quote">Quoted with the intake work.</p>
+      </aside>
     </div>
   </section>
 
   <section>
     <div class="close">
-      <p class="kicker kicker-light">Next step</p>
-      <h2>Thirty minutes. You keep the audit either way.</h2>
-      <p>I will walk you through these findings against your live site. If they are fixes your current provider can handle, that is a fine outcome too.</p>
+      <p class="kicker kicker-light">Thank you</p>
+      <h2>Thank you for reading this far.</h2>
+      <p>Twenty-two years of work speaks for itself, and it was a pleasure to spend time with what you have built. Whatever you decide, the findings above are yours to keep. If they are things your current provider can handle, that is a good outcome.</p>
+      <p>If you would like to talk any of it through, I am here.</p>
       <p><a href="mailto:techpersonastudio@gmail.com">techpersonastudio@gmail.com</a></p>
     </div>
   </section>

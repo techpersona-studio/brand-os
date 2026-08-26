@@ -109,6 +109,37 @@ good", and the findings answer both faster than an ROI argument does.
 
 ---
 
+## ⚠ CONFLICT WITH THE RATE CARD — resolve before sending
+
+Source: `services-and-pricing-rate-card.html` in Drive (Draft v3, 24 Aug 2026).
+Care tiers and the after-hours price in the proposal now come from it. **The package
+prices do not.**
+
+The rate card says:
+
+- **Tiering is by page count, no overlap:** 1 page Launch · 2–5 Growth · **6+ Custom**.
+- **Custom + Systems: $2,500 standard, $1,250 founding.** "$2,500 is the floor, not a
+  formula." Custom already includes multi-language, owner-editable content, custom
+  forms and integrations.
+- It already names this client: *"Founding client · claimed — 50% off any service,
+  once — taken by Vy H. Truong."* Logged as **Custom, 14 pages, bilingual, scoped,
+  founding 50% off**, and it is the last founding slot.
+
+Against that, the proposal's Package A at **$1,200 is below the $1,250 founding floor**
+for the tier this job actually sits in, and it is a six-page bilingual build, so it is
+Custom, not Growth. Package B at $2,000 is above the floor and defensible.
+
+Three ways out, pick one:
+1. **Follow the rate card.** One Custom quote, scoped, founding 50%. Drop the A/B split.
+2. **Keep A/B but re-floor A at $1,250** so it matches the founding Custom price.
+3. **Re-badge A as Growth Website** ($925 founding) by cutting it to five pages — but
+   his nav has six, so this means dropping News or Video. Not recommended.
+
+Also unreconciled: the rate card sells **Lead Catcher** (form routing, follow-up
+sequence, email + SMS notification, spam guard, monthly summary) at $899 setup +
+**$149/mo**, founding $450. The proposal folds that into Package B with no monthly.
+Either carry the $149/mo across or accept that B absorbs it.
+
 ## Pricing structure
 
 Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off list.
@@ -117,19 +148,22 @@ Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off li
 | --- | --- | --- |
 | List | $2,400 | $4,000 |
 | Offered | **$1,200** | **$2,000** |
-| Build | 3 weeks | 3–4 weeks |
+| Build | 4 weeks | 4–5 weeks |
 | Scope (est.) | ~6 core pages × 2 languages | + ~6 practice-area pages × 2 languages |
 | Support | 30 days | 60 days + 30-day review |
 | Revisions | 1 round | 2 rounds |
 
-**Ongoing (own section at the foot of the proposal):** Web Care Plan $180/mo —
-hosting, backups, updates, bilingual content changes, one new page per month,
-monthly performance snapshot, priority response. Month to month. First month free
-with B.
+**Ongoing:** the three real tiers from the rate card, 3-month minimum —
+Technical Care $39/mo · Website Care $129/mo · Growth Care $269/mo · no plan $125/hr.
+Unused time does not roll over; plan time works out to $90/hr against $125 on demand.
+First month of Website Care included with Package B (my choice of tier — change it if
+you meant another).
 
-**Separate service:** after-hours bilingual call handling. Explicitly *not* priced into
-either package and flagged as not a website problem. **Still needs a number — decide
-before sending.**
+**After-hours calls** is the rate card's *Never Miss a Call*: $499 setup + $79/mo,
+founding setup $249. Carrier costs are the client's, $10–25/mo, never marked up.
+
+**Review requests** has no rate-card equivalent; closest is Lead Catcher's follow-up
+sequence. Left as "quoted with the intake work".
 
 ### Monthly SEO retainer — deliberately held back
 
@@ -150,6 +184,18 @@ Deliberate. A sits close enough to B that B reads as obviously better value —
 roughly triple the surface area for 67% more money. A exists to make B the
 default choice, and to give a price-sensitive prospect somewhere to land rather
 than walking.
+
+### Own the AI use, do not hide it
+
+The proposal says plainly that AI is used, and frames it as the reason the prices
+are what they are. Then it draws the line: AI does not decide who he is speaking to,
+what each page has to prove, or how it reads in Vietnamese. "Four weeks is that
+thinking. The building is the fast part."
+
+This does three jobs at once: it justifies a four-week timeline against "can't AI do
+this in a day", it explains the low price without devaluing the work, and it
+pre-empts the question he will otherwise ask on the call. Do not walk this back into
+an anti-AI pitch; the studio runs on Brand OS and the honesty is the advantage.
 
 ### Discount framing
 
