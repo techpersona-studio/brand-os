@@ -8,20 +8,35 @@
 
 ## Research constraint
 
-The live site could **not** be loaded from the Brand OS session — `lawyertruong.com`
-and `www.lawyertruong.com` are both blocked by this environment's network egress
-policy. Every finding below is derived from Google's index of the site (title tags,
-live URL slugs, indexed page set) and from Massachusetts legal directory listings.
+The live site cannot be loaded from this session. `lawyertruong.com` and
+`www.lawyertruong.com` both return a 403 at the proxy CONNECT. This is the
+environment's network policy, not a site-specific denial — the environment runs at
+**Trusted** network access, which allowlists package registries and GitHub only.
+Every general website is blocked, including `example.com` and Wikipedia. Headless
+Chromium fails identically (`ERR_TUNNEL_CONNECTION_FAILED`), so no crawler or
+browser tool gets around it.
 
-**Verified from the index:** title tags, URL structure, page inventory, both hostnames
-indexed, firm name rendering, review footprint across platforms.
+**Fix:** set the environment's Network access to **Custom** (add `lawyertruong.com`,
+`*.lawyertruong.com`, plus `*.frame.claudeusercontent.com` for artifacts) or **Full**,
+at claude.ai environment settings, then start a **new** session — the policy is fixed
+at session start. Brand OS steps `01a` and `04a` cannot run against any client site
+until this changes.
 
-**Not yet verified — requires site access:** page speed, mobile rendering, form
-delivery and destination, analytics/tracking, accessibility, actual design quality,
-whether a Vietnamese version exists but is unindexed.
+**Evidence used instead:** a screenshot of the live Vietnamese homepage supplied by
+the client team, Google's index of the site (title tags, URL slugs, page inventory),
+and Massachusetts legal directory listings.
 
-To run the full Brand OS pipeline against this client, the domain must be added to
-the environment's allowed egress hosts, or the pipeline must be run locally.
+### Correction — the site is already bilingual
+
+An earlier draft of this analysis claimed there was no Vietnamese version. That was
+wrong. The homepage carries a Tiếng Anh / Tiếng Việt toggle in the navigation and a
+full Vietnamese edition. The real gap is that the bilingual content is almost
+certainly not set up to *rank* — indexable per-language URLs, hreflang pairing and
+Vietnamese keyword targeting. Confirm in the technical audit before asserting it to
+the client.
+
+**Still unverified — needs site access:** page speed, mobile rendering, form delivery,
+analytics, accessibility, hreflang implementation, English-side page content.
 
 ---
 
@@ -34,7 +49,7 @@ the environment's allowed egress hosts, or the pipeline must be run locally.
 | Background | Former Assistant District Attorney, Suffolk County — first Vietnamese-born appointee at the time |
 | Press | WCVB Channel 5 *Chronicle*; Boston Globe |
 | Practice areas | Criminal defense, immigration, real estate conveyancing, family, personal injury, business, civil litigation, bankruptcy |
-| Languages | English, Vietnamese |
+| Languages | English + Vietnamese — full bilingual site with a nav toggle (confirmed from homepage) |
 | Market | Boston metro; Vietnamese community concentrated in Dorchester / Fields Corner |
 | Review footprint | FB 4 reviews unrated · Lawyers.com none · BBB A+ unaccredited · Yelp few positive · Avvo one negative (2017) |
 
@@ -120,11 +135,15 @@ Without these, B loses money. They are in the proposal's terms section for that 
 
 ## Highest-leverage recommendations, ranked
 
-1. **Vietnamese edition** — the only defensible moat; no local competitor can copy it
-2. **Title tags and canonical domain** — cheapest fix, immediate search visibility gain
-3. **Press and record on the homepage** — converts hesitant visitors on authority, not price
-4. **Google review engine** — the dominant local ranking and conversion factor, currently unaddressed
-5. **After-hours intake** — criminal, immigration and PI leads arrive outside office hours
+1. **A call-to-action** — there is currently no consultation button in the nav or hero;
+   this is the cheapest change with the largest immediate effect
+2. **Bilingual SEO architecture** — the moat is already built and is not being indexed;
+   hreflang, per-language URLs, Vietnamese keyword targeting
+3. **Title tags and canonical domain** — cheap fix, immediate search visibility gain
+4. **Press as visual proof** — Globe and Chronicle are currently an inline text link in
+   the fourth hero paragraph
+5. **Google review engine** — dominant local ranking and conversion factor, unaddressed
+6. **After-hours intake** — criminal, immigration and PI leads arrive outside office hours
 
 ---
 
