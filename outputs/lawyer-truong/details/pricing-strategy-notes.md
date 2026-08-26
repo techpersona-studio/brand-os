@@ -216,6 +216,12 @@ Findings are presented in three named groups rather than a severity list:
 Severity chips dropped, count per group shown instead so the concentration reads at
 a glance. Strength kept as a single band underneath.
 
+**Every design point states a customer cost, not a craft observation.** He does not
+care about colour theory. "Three colour stories above the fold" became "the colours do
+not match, so a visitor reads the firm as smaller and newer than it is." Same shape
+for the rest: what is there, then what it costs in clients. Hold this line for any
+future edits to the audit.
+
 Testimonials are now called out explicitly: he has strong reviews on Yelp and Google
 and none of them appear on the site. Package B's review line was broadened to bring
 the existing ones across, not just display new ones.
