@@ -84,7 +84,7 @@ Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off li
 | --- | --- | --- |
 | List | $2,400 | $4,000 |
 | Offered | **$1,200** | **$2,000** |
-| Build | 2 weeks | 3–4 weeks |
+| Build | 3 weeks | 3–4 weeks |
 | Support | 30 days | 60 days + 30-day review |
 | Revisions | 1 round | 2 rounds |
 
