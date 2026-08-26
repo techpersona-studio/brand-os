@@ -177,7 +177,7 @@ matching how the packages display their discount.
 
 Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off list.
 
-| | Package A — Foundation | Package B — Bilingual Practice System |
+| | Package A — Foundation | Package B — Growth |
 | --- | --- | --- |
 | List | $2,500 | $4,000 |
 | Offered | **$1,250** | **$2,000** |
@@ -367,6 +367,15 @@ neither package needs a content-production line.
 Without these, B loses money. They are in the proposal's terms section for that reason.
 
 ---
+
+### Package names: Foundation and Growth
+
+"Bilingual Practice System" was dropped because it claimed a difference that does not
+exist. Package A is bilingual too, and he would have spotted that in a second.
+
+**Growth** matches the naming already running through the rate card (Growth Website,
+Growth Care, Growth SEO tier), so the two packages now pair as Foundation and Growth
+and the word carries the same meaning everywhere the studio uses it.
 
 ### Audit is grouped, not ranked
 
