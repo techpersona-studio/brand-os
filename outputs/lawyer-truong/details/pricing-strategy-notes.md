@@ -85,9 +85,12 @@ claims that. It is the intersection nobody else in Boston occupies:
 Two of those three are currently invisible online: the Vietnamese audience cannot
 read the site, and the press is on an interior page titled "Chronicle".
 
-**Commercial anchor for the pitch:** any single retained matter in any of the firm's
-practice areas exceeds the cost of the entire build. This is the argument that makes
-a $2,000 project trivially justifiable and should lead the conversation.
+**Commercial anchor:** any single retained matter exceeds the cost of the build. Use
+this **on the call if price comes up**, not in the document. It was cut from the
+proposal: explaining his own unit economics to a 22-year attorney reads as
+condescending, it assumes fees we do not know, and at $1,200 to $2,000 price is not
+the real objection. The objections are "will this be a hassle" and "is this person any
+good", and the findings answer both faster than an ROI argument does.
 
 ---
 
