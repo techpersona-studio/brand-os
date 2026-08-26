@@ -100,11 +100,31 @@ Interpretation of the brief: two tiers, second at ~$2k, both shown at 50% off li
 | List | $2,400 | $4,000 |
 | Offered | **$1,200** | **$2,000** |
 | Build | 3 weeks | 3–4 weeks |
+| Scope (est.) | ~6 core pages × 2 languages | + ~6 practice-area pages × 2 languages |
 | Support | 30 days | 60 days + 30-day review |
 | Revisions | 1 round | 2 rounds |
 
-**Add-on:** Care Plan $180/mo — hosting, backups, updates, one content page per
-month, monthly performance snapshot. Month to month. First month free with B.
+**Ongoing (own section at the foot of the proposal):** Web Care Plan $180/mo —
+hosting, backups, updates, bilingual content changes, one new page per month,
+monthly performance snapshot, priority response. Month to month. First month free
+with B.
+
+**Separate service:** after-hours bilingual call handling. Explicitly *not* priced into
+either package and flagged as not a website problem. **Still needs a number — decide
+before sending.**
+
+### Monthly SEO retainer — deliberately held back
+
+Not in this proposal, and it should stay out:
+
+- The document already asks for one decision plus two optional yeses. A fifth line
+  item dilutes the close.
+- Package B already sells the SEO *foundation*. Offering a retainer beside it invites
+  "wait, isn't SEO already in the price?"
+- Sold now it is a promise; sold at the **30-day performance review** it is a number
+  against a baseline. That review is the pitch moment.
+- The Care Plan is already the wedge — one new page a month plus a performance
+  snapshot is entry-level SEO under another name. Let it run, then upgrade.
 
 ### Why the gap is only $800
 
@@ -120,10 +140,31 @@ clients low. Frame as a **foundation-client rate**: the studio is building its
 Boston legal-vertical case study, and the half rate buys a testimonial plus
 permission to show the work. Honest, verifiable, and it protects list pricing.
 
+### Structural decisions (client-directed)
+
+- **Brand OS doc set is in BOTH packages.** It runs before design — it is how each
+  site gets tailored to the target customer rather than templated. Presented once as a
+  shared band above the two cards, not duplicated inside each.
+- **After-hours phone handling is NOT a website finding.** Pulled out of the audit and
+  listed as a separately quoted service alongside the site. *Still needs a price — decide
+  before sending.*
+- **Review engine splits across both layers:** the post-matter request flow is
+  automation; displaying reviews on the site is website work. Listed under their
+  respective headings in Package B rather than as one ambiguous line.
+- **Intake engine is a client choice:** Google Sheets (free, no ongoing cost) or n8n
+  (small maintenance fee, correct base if they want to expand automation later).
+  Recommendation made after the interview.
+- **Page counts are estimates, not commitments.** Locked at the Website Blueprint step.
+  Package A ≈ 6 core pages × 2 languages; Package B adds ≈ 6 practice-area pages × 2.
+  Five pages was rejected — the existing nav already carries six items
+  (Trang Chủ · Dịch Vụ · Tiểu Sử · Tin Tức · Video · Liên Hệ), so a five-page rebuild
+  would have silently dropped News and Video.
+
 ### Margin guardrails — B at $2,000 is only viable if scope holds
 
-- Fixed page count (12 pages = 6 practice areas × 2 languages), stated in writing
+- Page list fixed at the Blueprint step and not reopened
 - Fixed revision rounds (2), further rounds quoted separately
+- Practice-area pages are template instances with distinct copy, not bespoke layouts
 - Client supplies content and photography; copy adapted from existing site + one interview
 - Vietnamese produced via `util-vi-voice-adapter` → `util-vi-translator`, attorney reviews
 - Intake automation limited to form → auto-reply → SMS → log. No case management integration

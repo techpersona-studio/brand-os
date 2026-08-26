@@ -383,6 +383,60 @@
     gap: .35rem;
   }
 
+  .shared {
+    background: var(--pine-wash);
+    border: 1px solid var(--hair);
+    border-radius: var(--r);
+    padding: 1.6rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    margin-bottom: 1.25rem;
+  }
+  .shared h3 { font-size: 1.05rem; }
+  .shared > p { font-size: .93rem; color: var(--ink-soft); max-width: 70ch; }
+  .shared-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .5rem 1.25rem; }
+  .shared-list span { font-size: .88rem; color: var(--ink-soft); padding-left: 1rem; position: relative; }
+  .shared-list span::before { content: ""; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
+
+  .sublabel {
+    font-size: .625rem; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--on-pine-faint);
+    padding-top: .5rem; margin-bottom: -.3rem;
+  }
+
+  .ongoing { display: grid; grid-template-columns: 1.45fr 1fr; gap: 1.25rem; align-items: start; }
+  @media (max-width: 760px) { .ongoing { grid-template-columns: 1fr; } }
+
+  .care {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: var(--r);
+    padding: 2rem 1.85rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--lift);
+  }
+  .care h3 { font-size: 1.35rem; letter-spacing: -.03em; }
+  .care ul { display: flex; flex-direction: column; gap: .7rem; }
+  .care li { font-size: .93rem; line-height: 1.5; padding-left: 1.15rem; position: relative; color: var(--ink-soft); }
+  .care li::before { content: ""; position: absolute; left: 0; top: .58em; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
+  .care li strong { color: var(--ink); font-weight: 600; }
+
+  .side {
+    background: var(--pine-wash);
+    border: 1px solid var(--hair);
+    border-radius: var(--r);
+    padding: 1.75rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+  }
+  .side h4 { font-size: 1.1rem; }
+  .side p { font-size: .92rem; color: var(--ink-soft); }
+  .side p.quote { font-size: .88rem; color: var(--ink); font-weight: 600; padding-top: .7rem; border-top: 1px solid var(--hair); }
+
   :focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; border-radius: 2px; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
@@ -416,7 +470,7 @@
   <section>
     <div class="sec-head">
       <p class="kicker">What we found</p>
-      <h2>Nine issues, and one asset you are underusing.</h2>
+      <h2>Eight issues, and one asset you are underusing.</h2>
       <p>Findings come from the homepage as it renders today and from how the site currently appears in Google's index — the same two views a prospective client gets. A full technical audit covering speed, mobile rendering, form delivery, analytics and accessibility is the first deliverable once we begin.</p>
     </div>
 
@@ -494,15 +548,6 @@
         </div>
       </article>
 
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Intake stops at 6pm on Friday</h3><span class="chip">Moderate</span></div>
-          <p>The only routes in are a phone number and an email address, staffed Monday to Friday, 9am to 6pm. Arrests, accidents and immigration notices do not observe office hours, and the client in that moment calls down the list until somebody responds.</p>
-          <p class="cost">Cost: the highest-urgency, highest-value matters arrive when nobody is there to catch them.</p>
-        </div>
-      </article>
-
       <article class="finding good">
         <div class="stripe"></div>
         <div class="f-body">
@@ -524,6 +569,18 @@
       <p>Both prices are the foundation-client rate — half of standard — described at the bottom of this page. Both are one-time project fees, not retainers.</p>
     </div>
 
+    <div class="shared">
+      <h3>Both packages begin with the same five documents</h3>
+      <p>This is the part that makes the site yours rather than a template with your name on it. Nothing gets designed until we have agreed who the practice is speaking to and what each page has to do. You keep all five whatever happens next.</p>
+      <div class="shared-list">
+        <span>Business Persona Brief</span>
+        <span>Branding Visual Guide</span>
+        <span>SEO Foundation Brief</span>
+        <span>Website Analysis Report</span>
+        <span>Website Blueprint</span>
+      </div>
+    </div>
+
     <div class="pkgs">
 
       <article class="pkg pkg-a">
@@ -543,8 +600,7 @@
 
         <ul>
           <li><strong>Conversion layer</strong> — a consultation call-to-action in the navigation and the hero, click-to-call on every screen, and a contact form that notifies you the moment it is submitted</li>
-          <li><strong>Business Persona brief</strong> — positioning, audience and message, written up as a document you keep</li>
-          <li><strong>Five-page rebuild</strong> — Home · Attorney Vy H. Truong · Practice Areas · Record &amp; Press · Contact, in both languages</li>
+          <li><strong>Your existing pages rebuilt</strong> — Home · Services · Biography · News · Video · Contact, each in English and Vietnamese. Around a dozen builds, nothing dropped.</li>
           <li><strong>Palette rebuilt around the seal</strong> — one colour story instead of three, carried across every page</li>
           <li><strong>SEO foundation</strong> — real title tags and descriptions, clean URLs, duplicate pages retired, one canonical domain, LegalService schema, sitemap, Search Console</li>
           <li><strong>Google Business Profile</strong> — cleaned up, categories and services corrected, hours and address verified</li>
@@ -576,12 +632,18 @@
 
         <ul>
           <li><strong>Bilingual SEO architecture</strong> — your existing Vietnamese content given its own indexable URLs, correct hreflang pairing and Vietnamese keyword targeting, so it ranks for Vietnamese searches instead of only existing for them</li>
-          <li><strong>Twelve rankable pages</strong> — six practice areas (Criminal Defense · Immigration · Real Estate &amp; Conveyancing · Family · Personal Injury · Business &amp; Civil Litigation) in two languages</li>
-          <li><strong>Case intake automation</strong> — enquiry form triggers an instant bilingual acknowledgement to the client, an SMS alert to your phone, and a logged entry, at any hour</li>
-          <li><strong>Review engine</strong> — a post-matter Google review request flow in both languages, plus reviews displayed on the site as they arrive</li>
+          <li><strong>Dedicated practice-area pages</strong> — Criminal Defense · Immigration · Real Estate &amp; Conveyancing · Family · Personal Injury · Business &amp; Civil Litigation, each in both languages. Roughly double the Foundation scope.</li>
+          <li><strong>Why this is the difference</strong> — Google ranks pages, not websites. One Services page cannot rank for six practice areas in two languages; six pages can, and each one answers the question its visitor actually typed.</li>
           <li><strong>Record &amp; Press module</strong> — the <em>Chronicle</em> feature, the Globe recognition and the ADA appointment rebuilt as visual proof above the fold, not a link in a paragraph</li>
-          <li><strong>Full Brand OS documentation set</strong> — five client deliverables: Business Persona Brief, Branding Visual Guide, SEO Foundation Brief, Website Analysis Report, Website Blueprint</li>
+          <li><strong>Reviews on the site</strong> — your Google reviews pulled through and displayed as they arrive</li>
           <li>Two revision rounds · first month of the Care Plan included</li>
+        </ul>
+
+        <p class="sublabel">Automation layer</p>
+        <ul>
+          <li><strong>Case intake</strong> — the enquiry form sends an instant bilingual acknowledgement to the client, an SMS alert to your phone, and a logged entry, at any hour</li>
+          <li><strong>Review requests</strong> — once a matter closes, an automatic Google review request in the client's own language, with one follow-up if there is no response</li>
+          <li><strong>Your choice of engine</strong> — Google Sheets, which is free and has no ongoing cost, or n8n, which costs a little to maintain but is the right base if you want to add more automation to the practice later. We will recommend one after the interview.</li>
         </ul>
 
         <div class="pkg-foot">
@@ -592,14 +654,14 @@
 
     </div>
 
-    <p class="note">Optional, either package — <strong>Care Plan, $180/month:</strong> hosting, backups, security updates, one new content page each month, and a monthly performance snapshot. Month to month, cancel any time. Included for the first month with Package B.</p>
+    <p class="note">Ongoing support and after-hours call handling are covered at the end of this document. Neither is required.</p>
   </section>
 
   <section>
     <div class="sec-head">
       <p class="kicker">How the work runs</p>
       <h2>Six steps, each one reviewed before the next begins.</h2>
-      <p>This is the studio's standard process. Nothing is built on an assumption you have not seen and approved first.</p>
+      <p>This is the studio's standard process. Steps 1 to 5 produce the five documents above, and they happen before anything is designed — that is what stops the site becoming a template with your photograph in it. Nothing is built on an assumption you have not seen and approved first.</p>
     </div>
     <div class="steps">
       <div class="step"><span class="step-n">01</span><div><h4>Business Persona</h4><p>Who the practice serves, what they are afraid of, and the language they use when they search — in both languages. One sixty-minute interview plus research.</p></div></div>
@@ -619,10 +681,52 @@
     <div class="terms">
       <div class="term"><h4>Payment</h4><p><strong>50% to start, 50% at launch.</strong> One-time project fee. No retainer, no lock-in.</p></div>
       <div class="term"><h4>From you</h4><p>Access to the current site, one <strong>60-minute interview</strong>, and review of the Vietnamese copy before it goes live.</p></div>
-      <div class="term"><h4>Fixed scope</h4><p>Page counts and revision rounds are as listed. Additional pages or rounds are quoted separately before any work starts.</p></div>
+      <div class="term"><h4>Scope</h4><p>Page counts above are <strong>estimates</strong>. The exact list is agreed with you at the Website Blueprint step, before any build starts, and fixed from there. Revision rounds are as listed.</p></div>
       <div class="term"><h4>Ownership</h4><p>Domain, hosting, and every account stay <strong>in the firm's name</strong>. You can take the site elsewhere at any point.</p></div>
       <div class="term"><h4>Timeline</h4><p>Three weeks for Package A, three to four for Package B, from deposit and receipt of access.</p></div>
       <div class="term"><h4>Why half price</h4><p>We are building our <strong>Boston legal case study</strong>. In exchange for the foundation rate we ask for a testimonial and permission to show the work.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">After launch</p>
+      <h2>Keeping it working once it is live.</h2>
+      <p>Neither of these is required, and neither is bundled into the price above. The site is yours outright either way.</p>
+    </div>
+
+    <div class="ongoing">
+      <article class="care">
+        <div class="pkg-head">
+          <span class="tag">Monthly</span>
+          <h3>Web Care Plan</h3>
+          <p class="pkg-for">Someone whose job it is to keep the site up, fast, and saying something new.</p>
+        </div>
+
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">$180</span>
+            <span class="price-note">per month</span>
+          </div>
+          <p class="price-note">Month to month · cancel any time · first month included with Package B</p>
+        </div>
+
+        <ul>
+          <li>Hosting, backups, and security updates</li>
+          <li>Content and copy changes as you need them, in both languages</li>
+          <li><strong>One new page each month</strong> — a case result, a practice area in more depth, or an answer to a question clients keep asking</li>
+          <li><strong>Monthly performance snapshot</strong> — visitors, enquiries, and which pages produced them</li>
+          <li>Priority response if something breaks</li>
+        </ul>
+      </article>
+
+      <aside class="side">
+        <p class="kicker">Separate service</p>
+        <h4>After-hours call handling</h4>
+        <p>Arrests, accidents and immigration notices do not keep office hours. A phone automation that answers, screens and routes calls in both languages outside 9 to 6, so the most urgent matters are caught rather than lost to whoever picks up first.</p>
+        <p>This is not a website problem and we have not priced it into either package.</p>
+        <p class="quote">Quoted separately, if and when you want it.</p>
+      </aside>
     </div>
   </section>
 
