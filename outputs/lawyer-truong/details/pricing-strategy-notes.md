@@ -65,14 +65,13 @@ two minutes to check, and each is the kind of thing a lawyer will check.
    slugs on `/auto-accident-1` and `/real-estate-2`. If those are the only versions
    and no `/auto-accident` or `/real-estate` exists, the claim is wrong. Load both
    unsuffixed URLs. **Highest risk: easily disproved in one click.**
-2. **"Vietnamese pages are not set up to be found."** Cannot check hreflang or
-   per-language URLs without the code. Confirm the Vietnamese pages have their own
-   addresses rather than swapping text on the same URL.
-3. **Reviews.** Yelp positives are confirmed; Google was never verified. The word
-   "strong" has been removed from the finding for that reason. **Check his actual
-   Google rating before promising to display reviews** — Avvo carries a 1.0 from a
-   single review, and if Google is similarly thin or mixed, pulling reviews onto the
-   site actively hurts him and Package B's line should be cut.
+2. **Vietnamese: CONFIRMED.** Both languages share one URL, so Google only ever
+   indexes one of them. The finding now says exactly that.
+3. **Reviews: CONFIRMED and better than assumed.** **4.4 stars from 29 Google
+   reviews.** The finding now leads with that number, and Package B sells showing
+   the 4.4 rather than a vague "your reviews". This is one of the strongest lines in
+   the document: he earned it and is wasting it. The lone Avvo 1.0 is noise against
+   29 at 4.4 and is not worth raising.
 
 **Structural note, not a defect:** the reviews finding is the one item Package A does
 not answer, since displaying reviews sits in B. That is deliberate and gives B a job,
