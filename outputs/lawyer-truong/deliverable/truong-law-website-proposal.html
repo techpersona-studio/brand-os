@@ -146,39 +146,56 @@
   .sec-head h2 { font-size: clamp(1.45rem, 3.2vw, 1.95rem); }
   .sec-head p { color: var(--ink-soft); max-width: 64ch; }
 
-  /* ---------- FINDINGS ---------- */
-  .findings { display: flex; flex-direction: column; gap: .9rem; }
-  .finding {
+  /* ---------- GROUPS ---------- */
+  .groups { display: flex; flex-direction: column; gap: 1.25rem; }
+  .group {
     background: var(--core);
     border: 1px solid var(--hair);
-    border-radius: var(--r-sm);
-    padding: 1.25rem 1.4rem 1.3rem;
-    display: grid;
-    grid-template-columns: 3px 1fr;
-    gap: 0 1.25rem;
+    border-radius: var(--r);
+    padding: 1.5rem 1.7rem 1.6rem;
     box-shadow: var(--lift);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  .stripe { border-radius: 2px; background: var(--sig-mod); grid-row: 1 / -1; }
-  .finding.crit .stripe { background: var(--sig-crit); }
-  .finding.good .stripe { background: var(--sig-good); }
-  .f-body { display: flex; flex-direction: column; gap: .45rem; }
-  .f-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .75rem; }
-  .f-top h3 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.015em; }
-  .chip {
-    font-size: .625rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    padding: .18rem .5rem;
-    border-radius: 3px;
-    border: 1px solid currentColor;
-    color: var(--sig-mod);
-    white-space: nowrap;
+  .group-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: .85rem;
+    border-bottom: 1px solid var(--hair);
   }
-  .finding.crit .chip { color: var(--sig-crit); }
-  .finding.good .chip { color: var(--sig-good); }
-  .f-body p { color: var(--ink-soft); font-size: .95rem; }
-  .f-body p.cost { color: var(--ink); font-size: .9rem; font-weight: 600; }
+  .group-head h3 { font-size: 1.1rem; letter-spacing: -.025em; }
+  .count {
+    font-size: .7rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--terra); white-space: nowrap;
+  }
+  .group ul { display: flex; flex-direction: column; gap: .6rem; }
+  .group li {
+    font-size: .94rem; line-height: 1.5; padding-left: 1.15rem;
+    position: relative; color: var(--ink-soft);
+  }
+  .group li::before {
+    content: ""; position: absolute; left: 0; top: .58em;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--terra);
+  }
+  .group li strong { color: var(--ink); font-weight: 600; }
+
+  .strength {
+    background: var(--pine-wash);
+    border: 1px solid var(--hair);
+    border-left: 3px solid var(--sig-good);
+    border-radius: var(--r-sm);
+    padding: 1.3rem 1.5rem;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+  }
+  .strength h3 { font-size: 1.02rem; }
+  .strength p { font-size: .94rem; color: var(--ink-soft); }
+
   code {
     font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     font-size: .84em;
@@ -442,104 +459,58 @@
   <section>
     <div class="sec-head">
       <p class="kicker">What I found</p>
-      <h2>Nine issues. One asset you are not using.</h2>
+      <h2>Twelve issues, in three groups.</h2>
     </div>
 
-    <div class="findings">
+    <div class="groups">
 
-      <article class="finding crit">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Your contact form is one click too far</h3><span class="chip">Critical</span></div>
-          <p>The form on your Liên hệ page is fine. Nothing points to it. No consultation button in the nav, none in the hero, and the phone number sits in the header as plain text. The homepage opens with four paragraphs and ends on a tagline.</p>
-          <p class="cost">The people most ready to hire you have to go looking for the way in.</p>
+      <article class="group">
+        <div class="group-head">
+          <h3>Search optimization</h3>
+          <span class="count">5 issues</span>
         </div>
+        <ul>
+          <li>Page titles were never set: <code>/criminal-law</code> is titled "Lawyertruong", your biography page "Chronicle".</li>
+          <li>No title anywhere says Boston, attorney, or a practice area.</li>
+          <li>The Vietnamese pages have no hreflang or language URLs, so they do not rank in Vietnamese.</li>
+          <li>Duplicate pages are still live at <code>/real-estate-2</code> and <code>/auto-accident-1</code>, splitting the ranking.</li>
+          <li>Both <code>lawyertruong.com</code> and <code>www.lawyertruong.com</code> are indexed, with nothing telling Google which is real.</li>
+        </ul>
       </article>
 
-      <article class="finding crit">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Basic SEO is missing</h3><span class="chip">Critical</span></div>
-          <p>The tags that tell Google what a page is about were never set. <code>/criminal-law</code> is titled "Lawyertruong". Your biography page is titled "Chronicle". No title says Boston, attorney, or a practice area.</p>
-          <p class="cost">Search "Vietnamese criminal lawyer Boston" and your result describes nothing.</p>
+      <article class="group">
+        <div class="group-head">
+          <h3>Design</h3>
+          <span class="count">3 issues</span>
         </div>
+        <ul>
+          <li>Three colour stories above the fold: navy seal, navy nav, violet headline, pale blue ground.</li>
+          <li>The homepage runs four paragraphs at one size, with nothing to guide the eye.</li>
+          <li>Nothing is styled to be clicked, so there is no obvious next step on any screen.</li>
+        </ul>
       </article>
 
-      <article class="finding crit">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>The bilingual site is not set up to rank</h3><span class="chip">Critical</span></div>
-          <p>You already built both languages, which is the expensive part. But Vietnamese pages need their own URLs, hreflang tags and Vietnamese keywords to surface in search. That layer looks missing.</p>
-          <p class="cost">Vietnamese speakers searching in Vietnamese do not find you.</p>
+      <article class="group">
+        <div class="group-head">
+          <h3>Conversion</h3>
+          <span class="count">4 issues</span>
         </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>The form asks for more than a first contact needs</h3><span class="chip">Moderate</span></div>
-          <p>Six fields, including a home address, before anyone has spoken to you. For immigration and criminal enquiries in particular that is a lot to hand a stranger. Nothing on the page says when you will reply.</p>
-          <p class="cost">The more you ask for, the fewer people finish it.</p>
-        </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Your press is a sentence, not a credential</h3><span class="chip">Moderate</span></div>
-          <p>The Globe and WCVB <em>Chronicle</em> appear as a text link in paragraph four. No logos, no quote, nothing above the fold.</p>
-          <p class="cost">Your best proof is the easiest thing to skim past.</p>
-        </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Duplicate pages are splitting your rankings</h3><span class="chip">Moderate</span></div>
-          <p><code>/real-estate-2</code> and <code>/auto-accident-1</code> are both live. Old copies were never removed.</p>
-          <p class="cost">Two half-strength pages competing instead of one strong one.</p>
-        </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>The site answers on two addresses</h3><span class="chip">Moderate</span></div>
-          <p>Both <code>lawyertruong.com</code> and <code>www.lawyertruong.com</code> are indexed, with nothing telling Google which one is real.</p>
-          <p class="cost">Google splits your ranking between the two.</p>
-        </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>The brand does not hold together</h3><span class="chip">Moderate</span></div>
-          <p>Navy seal, navy nav, violet headline, pale blue background. Three colour stories in the first screen. The seal is the good one.</p>
-          <p class="cost">Reads assembled, not designed.</p>
-        </div>
-      </article>
-
-      <article class="finding">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>Your reviews are thin and scattered</h3><span class="chip">Moderate</span></div>
-          <p>Four on Facebook, none on Lawyers.com, one unanswered negative on Avvo. Nothing on the site asks a happy client for one.</p>
-          <p class="cost">Google reviews decide the map results. Weaker firms outrank you.</p>
-        </div>
-      </article>
-
-      <article class="finding good">
-        <div class="stripe"></div>
-        <div class="f-body">
-          <div class="f-top"><h3>The asset: you are bilingual and almost nobody is</h3><span class="chip">Strength</span></div>
-          <p>Full Vietnamese edition, a real seal, professional photography, news and video, 22 years, both sides of the bar, press credentials. Every expensive ingredient is already paid for.</p>
-          <p class="cost">Nothing here needs writing from scratch. It needs pointing in the right direction.</p>
-        </div>
+        <ul>
+          <li>The homepage reads like a biography, not a page built to get a call.</li>
+          <li><strong>No testimonials anywhere</strong>, though you have strong ones on Yelp and Google.</li>
+          <li>The Globe and <em>Chronicle</em> credits are a text link in paragraph four, not visible proof.</li>
+          <li>The contact form sits on another page and asks for six fields, including a home address.</li>
+        </ul>
       </article>
 
     </div>
 
-    <p class="note">Speed, mobile, forms, analytics and hreflang need access to the code. Those come in the full audit, which is the first thing I do.</p>
+    <div class="strength">
+      <h3>One asset you are not using</h3>
+      <p>You are already bilingual and almost nobody is. Add a real seal, professional photography, news and video, 22 years, both sides of the bar, and press credentials. Nothing here needs writing from scratch.</p>
+    </div>
+
+    <p class="note">Speed, mobile rendering, form delivery and analytics need access to the code. Those come in the full audit, which is the first thing I do.</p>
   </section>
 
   <section>
@@ -615,7 +586,7 @@
           <li><strong>A page per practice area:</strong> Criminal, Immigration, Real Estate, Family, Injury, Business, each in both languages. Roughly double Package A.</li>
           <li><strong>Why that matters:</strong> Google ranks pages, not websites. One Services page cannot rank for six practice areas.</li>
           <li><strong>Record &amp; Press</strong> rebuilt as visual proof above the fold</li>
-          <li><strong>Your Google reviews</strong> displayed on the site as they arrive</li>
+          <li><strong>Testimonials on the site:</strong> your existing reviews from Yelp and Google brought across, and new ones shown as they arrive</li>
           <li><strong>Case intake:</strong> the enquiry form sends an instant bilingual reply, an SMS to your phone, and a logged entry. Any hour. Runs on Google Sheets, free with no upkeep, or n8n, small upkeep but the better base if you automate more later. I will pick one with you before the build.</li>
           <li>Two revision rounds · first month of Care included</li>
         </ul>

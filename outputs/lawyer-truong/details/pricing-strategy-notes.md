@@ -207,6 +207,17 @@ Without these, B loses money. They are in the proposal's terms section for that 
 
 ---
 
+### Audit is grouped, not ranked
+
+Findings are presented in three named groups rather than a severity list:
+**Search optimization (5), Design (3), Conversion (4)**, each point one sentence.
+Severity chips dropped, count per group shown instead so the concentration reads at
+a glance. Strength kept as a single band underneath.
+
+Testimonials are now called out explicitly: he has strong reviews on Yelp and Google
+and none of them appear on the site. Package B's review line was broadened to bring
+the existing ones across, not just display new ones.
+
 ## Highest-leverage recommendations, ranked
 
 1. **A call-to-action** — there is currently no consultation button in the nav or hero;
