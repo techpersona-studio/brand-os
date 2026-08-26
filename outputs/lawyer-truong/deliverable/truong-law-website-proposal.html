@@ -1,0 +1,634 @@
+<title>Truong Law Website Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F6F3EE;
+    --paper-deep:   #EFEAE1;
+    --core:         #FBFAF7;
+    --pine:         #1E3A34;
+    --pine-soft:    #2E5148;
+    --pine-wash:    #E8EFEC;
+    --ink:          #171717;
+    --ink-soft:     #4E4E4E;
+    --ink-faint:    #7A746A;
+    --terra:        #C06A45;
+    --terra-deep:   #9F4F33;
+    --on-pine:      #EDF1EF;
+    --on-pine-soft: rgba(237,241,239,.78);
+    --on-pine-faint:rgba(237,241,239,.55);
+    --hair:         rgba(23,23,23,.12);
+    --hair-pine:    rgba(237,241,239,.18);
+    --sig-crit:     #A8462C;
+    --sig-mod:      #A87C3C;
+    --sig-good:     #2E5148;
+    --lift:         0 1px 2px rgba(30,58,52,.04), 0 18px 40px -24px rgba(30,58,52,.28);
+    --r:            1.25rem;
+    --r-sm:         .6rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:        #131512;
+      --paper-deep:   #0E100E;
+      --core:         #1B1E1B;
+      --pine:         #21403A;
+      --pine-soft:    #2E5148;
+      --pine-wash:    #1B2521;
+      --ink:          #ECE8E1;
+      --ink-soft:     #B5AFA5;
+      --ink-faint:    #8A857B;
+      --terra:        #DB8C68;
+      --terra-deep:   #E7A282;
+      --on-pine:      #E8EFEC;
+      --on-pine-soft: rgba(232,239,236,.78);
+      --on-pine-faint:rgba(232,239,236,.55);
+      --hair:         rgba(236,232,225,.14);
+      --hair-pine:    rgba(232,239,236,.18);
+      --sig-crit:     #E08B6A;
+      --sig-mod:      #CBA063;
+      --sig-good:     #6E9A88;
+      --lift:         0 1px 2px rgba(0,0,0,.3), 0 18px 40px -24px rgba(0,0,0,.6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:        #131512;
+    --paper-deep:   #0E100E;
+    --core:         #1B1E1B;
+    --pine:         #21403A;
+    --pine-soft:    #2E5148;
+    --pine-wash:    #1B2521;
+    --ink:          #ECE8E1;
+    --ink-soft:     #B5AFA5;
+    --ink-faint:    #8A857B;
+    --terra:        #DB8C68;
+    --terra-deep:   #E7A282;
+    --on-pine:      #E8EFEC;
+    --on-pine-soft: rgba(232,239,236,.78);
+    --on-pine-faint:rgba(232,239,236,.55);
+    --hair:         rgba(236,232,225,.14);
+    --hair-pine:    rgba(232,239,236,.18);
+    --sig-crit:     #E08B6A;
+    --sig-mod:      #CBA063;
+    --sig-good:     #6E9A88;
+    --lift:         0 1px 2px rgba(0,0,0,.3), 0 18px 40px -24px rgba(0,0,0,.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2, h3, h4 { margin: 0; text-wrap: balance; letter-spacing: -.03em; line-height: 1.1; font-weight: 800; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -.02em;
+  }
+
+  .kicker {
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+  .kicker-light { color: var(--on-pine-faint); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--pine);
+    color: var(--on-pine);
+    padding: 4.5rem 0 4rem;
+    border-bottom: 1px solid var(--hair-pine);
+  }
+  .hero-inner { display: flex; flex-direction: column; gap: 1.75rem; }
+  .hero h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.1rem, 5.6vw, 3.4rem);
+    letter-spacing: -.025em;
+    line-height: 1.06;
+    color: var(--on-pine);
+  }
+  .hero h1 em { font-style: italic; color: var(--terra-deep); }
+  .hero-lede { color: var(--on-pine-soft); max-width: 60ch; font-size: 1.075rem; }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--hair-pine);
+  }
+  .hero-meta div { display: flex; flex-direction: column; gap: .2rem; }
+  .hero-meta span { font-size: .95rem; color: var(--on-pine); font-weight: 600; }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 3.75rem 0; border-bottom: 1px solid var(--hair); }
+  section:last-of-type { border-bottom: 0; }
+  .sec-head { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 2.25rem; }
+  .sec-head h2 { font-size: clamp(1.45rem, 3.2vw, 1.95rem); }
+  .sec-head p { color: var(--ink-soft); max-width: 64ch; }
+
+  /* ---------- THESIS ---------- */
+  .thesis {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-left: 3px solid var(--terra);
+    border-radius: var(--r-sm);
+    padding: 1.75rem 1.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+  }
+  .thesis p.big {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .thesis p.small { color: var(--ink-soft); font-size: .95rem; max-width: 66ch; }
+
+  /* ---------- FINDINGS ---------- */
+  .findings { display: flex; flex-direction: column; gap: .9rem; }
+  .finding {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-sm);
+    padding: 1.25rem 1.4rem 1.3rem;
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 1.25rem;
+    box-shadow: var(--lift);
+  }
+  .stripe { border-radius: 2px; background: var(--sig-mod); grid-row: 1 / -1; }
+  .finding.crit .stripe { background: var(--sig-crit); }
+  .finding.good .stripe { background: var(--sig-good); }
+  .f-body { display: flex; flex-direction: column; gap: .45rem; }
+  .f-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .75rem; }
+  .f-top h3 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.015em; }
+  .chip {
+    font-size: .625rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: .18rem .5rem;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+    color: var(--sig-mod);
+    white-space: nowrap;
+  }
+  .finding.crit .chip { color: var(--sig-crit); }
+  .finding.good .chip { color: var(--sig-good); }
+  .f-body p { color: var(--ink-soft); font-size: .95rem; }
+  .f-body p.cost { color: var(--ink); font-size: .9rem; font-weight: 600; }
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: .84em;
+    background: var(--pine-wash);
+    color: var(--ink);
+    padding: .1rem .34rem;
+    border-radius: 3px;
+  }
+
+  .note {
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    color: var(--ink-faint);
+    max-width: 68ch;
+    padding-left: 1rem;
+    border-left: 1px solid var(--hair);
+  }
+
+  /* ---------- PACKAGES ---------- */
+  .pkgs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+  @media (max-width: 760px) { .pkgs { grid-template-columns: 1fr; } }
+
+  .pkg {
+    border-radius: var(--r);
+    padding: 2rem 1.85rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--lift);
+  }
+  .pkg-a { background: var(--core); border: 1px solid var(--hair); color: var(--ink); }
+  .pkg-b { background: var(--pine); border: 1px solid var(--pine); color: var(--on-pine); }
+
+  .pkg-head { display: flex; flex-direction: column; gap: .55rem; }
+  .pkg h3 { font-size: 1.35rem; letter-spacing: -.03em; }
+  .pkg-b h3 { color: var(--on-pine); }
+  .pkg-for { font-size: .92rem; color: var(--ink-soft); }
+  .pkg-b .pkg-for { color: var(--on-pine-soft); }
+
+  .price-block { display: flex; flex-direction: column; gap: .3rem; padding-top: .35rem; }
+  .price-row { display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap; }
+  .price {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -.03em;
+  }
+  .pkg-b .price { color: var(--terra-deep); }
+  .was {
+    font-size: 1rem;
+    color: var(--ink-faint);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+  .pkg-b .was { color: var(--on-pine-faint); }
+  .price-note { font-size: .82rem; color: var(--ink-faint); }
+  .pkg-b .price-note { color: var(--on-pine-faint); }
+
+  .pkg ul { display: flex; flex-direction: column; gap: .7rem; }
+  .pkg li {
+    font-size: .93rem;
+    line-height: 1.5;
+    padding-left: 1.15rem;
+    position: relative;
+    color: var(--ink-soft);
+  }
+  .pkg-b li { color: var(--on-pine-soft); }
+  .pkg li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .58em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--terra);
+  }
+  .pkg-b li::before { background: var(--terra-deep); }
+  .pkg li strong { color: var(--ink); font-weight: 600; }
+  .pkg-b li strong { color: var(--on-pine); }
+
+  .pkg-foot {
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--hair);
+    font-size: .86rem;
+    color: var(--ink-faint);
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+  }
+  .pkg-b .pkg-foot { border-top-color: var(--hair-pine); color: var(--on-pine-faint); }
+
+  .tag {
+    align-self: flex-start;
+    font-size: .625rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    padding: .28rem .6rem;
+    border-radius: 3px;
+    background: var(--terra);
+    color: #FBFAF7;
+  }
+  .pkg-b .tag { background: var(--terra-deep); color: #17251F; }
+
+  .carry {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--on-pine);
+    padding: .7rem .9rem;
+    border: 1px dashed var(--hair-pine);
+    border-radius: var(--r-sm);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 2.6rem 1fr;
+    gap: 0 1.1rem;
+    padding: 1.05rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .step:last-child { border-bottom: 0; }
+  .step-n {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--terra);
+    line-height: 1.5;
+  }
+  .step h4 { font-size: 1rem; font-weight: 700; margin-bottom: .18rem; }
+  .step p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* ---------- TERMS ---------- */
+  .terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.25rem; }
+  .term {
+    background: var(--core);
+    border: 1px solid var(--hair);
+    border-radius: var(--r-sm);
+    padding: 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+  .term h4 { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; }
+  .term p { font-size: .93rem; color: var(--ink-soft); }
+  .term p strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- CLOSE ---------- */
+  .close {
+    background: var(--pine);
+    color: var(--on-pine);
+    border-radius: var(--r);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .close h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3.6vw, 2.05rem);
+    color: var(--on-pine);
+  }
+  .close p { color: var(--on-pine-soft); max-width: 58ch; }
+  .close a {
+    color: var(--terra-deep);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .close a:hover, .close a:focus-visible { color: var(--on-pine); }
+
+  footer {
+    padding: 2.5rem 0 3.5rem;
+    color: var(--ink-faint);
+    font-size: .85rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+  }
+
+  :focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <p class="kicker kicker-light">Website proposal · Prepared for Law Offices of Vy H. Truong, P.C.</p>
+    <h1>Twenty-two years of trial record.<br>A website that <em>shows none of it.</em></h1>
+    <p class="hero-lede">A former Suffolk County prosecutor, featured on WCVB's <em>Chronicle</em> and in the Boston Globe, with the only significant Vietnamese-language trial practice in the city — currently represented online by a page Google labels "Lawyertruong." This is what we would fix, what it costs, and what it should return.</p>
+    <div class="hero-meta">
+      <div><p class="kicker kicker-light">Prepared by</p><span>TechPersona Studio · Thao Phuong</span></div>
+      <div><p class="kicker kicker-light">Date</p><span>26 August 2026</span></div>
+      <div><p class="kicker kicker-light">Site reviewed</p><span>lawyertruong.com</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">The case for spending anything at all</p>
+      <h2>One retained matter covers the entire build.</h2>
+    </div>
+    <div class="thesis">
+      <p class="big">A criminal defense retainer, an immigration filing, a conveyancing file — any single one of them is worth more than this whole project.</p>
+      <p class="small">That changes what the website is. It is not an expense to be minimized; it is the intake channel for a practice where one additional client per quarter pays for it several times over. Everything below is built around that one number, and around a second one: the share of Boston's Vietnamese-speaking community that currently cannot read a word of your site.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">What we found from the outside</p>
+      <h2>Nine issues visible without touching the site.</h2>
+      <p>This review was built from how the site currently appears in Google's index and across the legal directories — the same view a prospective client gets. A full technical audit (speed, mobile, forms, analytics, accessibility) is the first deliverable once we begin.</p>
+    </div>
+
+    <div class="findings">
+
+      <article class="finding crit">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>Your page titles are the wrong words</h3><span class="chip">Critical</span></div>
+          <p>The title tag is the blue headline a searcher clicks in Google. Right now <code>/criminal-law</code> is titled "Lawyertruong", the attorney biography page is titled "Chronicle", and the auto accident page is titled "Traffic accident". None of them contain "Boston", "attorney", or a practice area.</p>
+          <p class="cost">Cost: someone searching "Vietnamese criminal lawyer Boston" sees a result that describes nothing and scrolls past it.</p>
+        </div>
+      </article>
+
+      <article class="finding crit">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>There is no Vietnamese version of the site</h3><span class="chip">Critical</span></div>
+          <p>The strongest claim the practice can make — the only Vietnamese attorney in Boston with significant trial experience before judges and juries, in state and federal court — is currently published exclusively in English. A Vietnamese-speaking family in Fields Corner searching for help in their own language will not find this firm.</p>
+          <p class="cost">Cost: the single differentiator no competitor can copy is invisible to the audience it was built for.</p>
+        </div>
+      </article>
+
+      <article class="finding crit">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>Your proof is buried on a page nobody finds</h3><span class="chip">Critical</span></div>
+          <p>The WCVB <em>Chronicle</em> feature, the Boston Globe recognition, twenty-two years of practice, and appointment as the first Vietnamese-born Assistant District Attorney in Suffolk County are the most persuasive assets the firm owns. They sit on an interior page titled "Chronicle" rather than on the homepage where a hesitant client decides whether to call.</p>
+          <p class="cost">Cost: every visitor who leaves without seeing this decides on price instead of on record.</p>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>Duplicate pages are splitting your rankings</h3><span class="chip">Moderate</span></div>
+          <p>Live URLs include <code>/real-estate-2</code> and <code>/auto-accident-1</code>. Numbered suffixes mean pages were duplicated inside the site builder and the originals were never removed. Google then has to choose between two versions of the same page, and splits the ranking signal across both.</p>
+          <p class="cost">Cost: two half-strength pages competing with each other instead of one strong page.</p>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>The site answers on two different addresses</h3><span class="chip">Moderate</span></div>
+          <p>Both <code>lawyertruong.com</code> and <code>www.lawyertruong.com</code> are indexed. Without a canonical tag or a redirect picking one, search engines treat them as two separate sites carrying the same content.</p>
+          <p class="cost">Cost: authority earned over twenty-two years is divided in half.</p>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>The firm name is misspelled sitewide</h3><span class="chip">Moderate</span></div>
+          <p>Every page title reads "Law Offices of Vy H.Truong" — no space after the initial. A biography page is published at <code>/biographys</code>. Small errors, but they appear in search results and in the browser tab on every visit.</p>
+          <p class="cost">Cost: the first impression on a detail-driven purchase is a typo.</p>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>Your review footprint is thin and scattered</h3><span class="chip">Moderate</span></div>
+          <p>Facebook shows four reviews and no rating. Lawyers.com carries none. A single negative review from 2017 sits unanswered on Avvo. Yelp has a handful of genuinely strong ones. For local legal search, review volume and recency on Google are among the strongest ranking factors there are — and nothing on the site currently asks a satisfied client for one.</p>
+          <p class="cost">Cost: competitors with a fraction of the record outrank the firm in the map results.</p>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>Intake stops at 6pm on Friday</h3><span class="chip">Moderate</span></div>
+          <p>The only routes in are a phone number and an email address, staffed Monday to Friday, 9am to 6pm. Arrests, accidents, and immigration notices do not observe office hours, and the client in that moment calls down the list until somebody responds.</p>
+          <p class="cost">Cost: the highest-urgency, highest-value matters arrive when nobody is there to catch them.</p>
+        </div>
+      </article>
+
+      <article class="finding good">
+        <div class="stripe"></div>
+        <div class="f-body">
+          <div class="f-top"><h3>The foundation underneath is genuinely strong</h3><span class="chip">Strength</span></div>
+          <p>Twenty-two years in practice, prosecutorial and defense experience on both sides of the bar, a full-service range across criminal, immigration, real estate, family, civil and business matters, an established Dorchester Avenue address, and press credentials most firms would pay to manufacture. Nothing here needs inventing.</p>
+          <p class="cost">This is a presentation problem, not a positioning problem — which is the cheaper of the two to fix.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">Findings above are drawn from publicly indexed data. Page speed, mobile rendering, form delivery, analytics coverage and accessibility require access to the live site and are covered in the full audit at the start of either engagement.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">Two ways to do this</p>
+      <h2>Pick the scope that matches the ambition.</h2>
+      <p>Both prices are the foundation-client rate — half of standard — described at the bottom of this page. Both are one-time project fees, not retainers.</p>
+    </div>
+
+    <div class="pkgs">
+
+      <article class="pkg pkg-a">
+        <div class="pkg-head">
+          <span class="tag">Package A</span>
+          <h3>Foundation</h3>
+          <p class="pkg-for">Fix what is broken, get found, and look like the record. The essentials, done properly.</p>
+        </div>
+
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">$1,200</span>
+            <span class="was">$2,400</span>
+          </div>
+          <p class="price-note">One-time · 50% to start, 50% at launch</p>
+        </div>
+
+        <ul>
+          <li><strong>Business Persona brief</strong> — positioning, audience and message, written up as a document you keep</li>
+          <li><strong>Five-page rebuild</strong> — Home · Attorney Vy H. Truong · Practice Areas · Record &amp; Press · Contact</li>
+          <li><strong>Mobile-first build</strong> — fast, accessible, correct on a phone, which is where most legal searches start</li>
+          <li><strong>SEO foundation</strong> — real title tags and descriptions, clean URLs, one canonical domain, LegalService schema, sitemap, Search Console</li>
+          <li><strong>Google Business Profile</strong> — cleaned up, categories and services corrected, hours and address verified</li>
+          <li><strong>Click-to-call and contact form</strong> with instant email notification</li>
+          <li>One revision round</li>
+        </ul>
+
+        <div class="pkg-foot">
+          <span>Two-week build</span>
+          <span>30 days post-launch support</span>
+        </div>
+      </article>
+
+      <article class="pkg pkg-b">
+        <div class="pkg-head">
+          <span class="tag">Package B · Recommended</span>
+          <h3>Bilingual Practice System</h3>
+          <p class="pkg-for">Everything in Foundation, plus the parts that actually generate and capture cases.</p>
+        </div>
+
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">$2,000</span>
+            <span class="was">$4,000</span>
+          </div>
+          <p class="price-note">One-time · 50% to start, 50% at launch</p>
+        </div>
+
+        <p class="carry">Everything in Package A, and then:</p>
+
+        <ul>
+          <li><strong>Complete Vietnamese edition</strong> — every page in both languages with a toggle, voice-adapted rather than machine-translated, and reviewed by you before publication</li>
+          <li><strong>Twelve rankable pages</strong> — six practice areas (Criminal Defense · Immigration · Real Estate &amp; Conveyancing · Family · Personal Injury · Business &amp; Civil Litigation) in two languages</li>
+          <li><strong>Case intake automation</strong> — enquiry form triggers an instant bilingual acknowledgement to the client, an SMS alert to your phone, and a logged entry, at any hour</li>
+          <li><strong>Review engine</strong> — a post-matter Google review request flow in both languages, plus reviews displayed on the site as they arrive</li>
+          <li><strong>Record &amp; Press module</strong> — the <em>Chronicle</em> feature, the Globe recognition and the ADA appointment built into the homepage as primary proof</li>
+          <li><strong>Full Brand OS documentation set</strong> — five client deliverables: Business Persona Brief, Branding Visual Guide, SEO Foundation Brief, Website Analysis Report, Website Blueprint</li>
+          <li>Two revision rounds · first month of the Care Plan included</li>
+        </ul>
+
+        <div class="pkg-foot">
+          <span>Three to four week build</span>
+          <span>60 days support, plus a 30-day performance review</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">Optional, either package — <strong>Care Plan, $180/month:</strong> hosting, backups, security updates, one new content page each month, and a monthly performance snapshot. Month to month, cancel any time. Included for the first month with Package B.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">How the work runs</p>
+      <h2>Six steps, each one reviewed before the next begins.</h2>
+      <p>This is the studio's standard process. Nothing is built on an assumption you have not seen and approved first.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="step-n">01</span><div><h4>Business Persona</h4><p>Who the practice serves, what they are afraid of, and the language they use when they search. One sixty-minute interview plus research.</p></div></div>
+      <div class="step"><span class="step-n">02</span><div><h4>Branding Visual Guide</h4><p>Colour, type, imagery and tone — locked in writing before a single page is designed.</p></div></div>
+      <div class="step"><span class="step-n">03</span><div><h4>SEO Foundation Brief</h4><p>Page architecture and the search intent each page is built to answer, in both languages.</p></div></div>
+      <div class="step"><span class="step-n">04</span><div><h4>Website Analysis</h4><p>The full technical audit of the current site — what is kept, what is fixed, what is removed.</p></div></div>
+      <div class="step"><span class="step-n">05</span><div><h4>Website Blueprint</h4><p>Every page mapped section by section, approved before build starts.</p></div></div>
+      <div class="step"><span class="step-n">06</span><div><h4>Build and launch</h4><p>Construction, your revision rounds, migration, and handover with everything in your own accounts.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="kicker">Scope and terms</p>
+      <h2>What is fixed, and what we need from you.</h2>
+    </div>
+    <div class="terms">
+      <div class="term"><h4>Payment</h4><p><strong>50% to start, 50% at launch.</strong> One-time project fee. No retainer, no lock-in.</p></div>
+      <div class="term"><h4>From you</h4><p>Existing content and photographs, one <strong>60-minute interview</strong>, and review of the Vietnamese copy before it goes live.</p></div>
+      <div class="term"><h4>Fixed scope</h4><p>Page counts and revision rounds are as listed. Additional pages or rounds are quoted separately before any work starts.</p></div>
+      <div class="term"><h4>Ownership</h4><p>Domain, hosting, and every account stay <strong>in the firm's name</strong>. You can take the site elsewhere at any point.</p></div>
+      <div class="term"><h4>Timeline</h4><p>Two weeks for Package A, three to four for Package B, from deposit and receipt of content.</p></div>
+      <div class="term"><h4>Why half price</h4><p>We are building our <strong>Boston legal case study</strong>. In exchange for the foundation rate we ask for a testimonial and permission to show the work.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="close">
+      <p class="kicker kicker-light">Next step</p>
+      <h2>Thirty minutes, and you will have the audit either way.</h2>
+      <p>Book a call and we will walk through the findings above against the live site together. The technical audit is yours to keep whether or not you engage us — if the fixes are ones your current provider can handle, that is a good outcome too.</p>
+      <p><a href="mailto:techpersonastudio@gmail.com">techpersonastudio@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Prepared by TechPersona Studio · Thao Phuong · 26 August 2026</p>
+    <p>Findings drawn from publicly indexed data for lawyertruong.com and from Massachusetts legal directory listings. Pricing valid for 30 days from the date above.</p>
+  </footer>
+
+</main>
