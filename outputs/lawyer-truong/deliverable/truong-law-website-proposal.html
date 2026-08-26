@@ -393,8 +393,12 @@
   }
   .shared h3 { font-size: 1.05rem; }
   .shared > p { font-size: .93rem; color: var(--ink-soft); max-width: 70ch; }
-  .shared-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .5rem 1.25rem; }
-  .shared-list span { font-size: .88rem; color: var(--ink-soft); padding-left: 1rem; position: relative; }
+  .shared-list { display: flex; flex-direction: column; gap: .55rem; }
+  .shared-list span { font-size: .94rem; line-height: 1.5; color: var(--ink-soft); padding-left: 1.15rem; position: relative; }
+  .shared-foot {
+    font-size: .85rem; color: var(--ink-faint);
+    padding-top: .9rem; border-top: 1px solid var(--hair);
+  }
   .shared-list span::before { content: ""; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
 
   .sublabel {
@@ -521,15 +525,13 @@
     </div>
 
     <div class="shared">
-      <h3>Both start with the same five documents</h3>
-      <p>Nothing gets designed until I know who you are speaking to and what each page has to do. You keep all five either way.</p>
+      <h3>Both packages start with discovery</h3>
       <div class="shared-list">
-        <span>Business Persona Brief</span>
-        <span>Branding Visual Guide</span>
-        <span>SEO Foundation Brief</span>
-        <span>Website Analysis Report</span>
-        <span>Website Blueprint</span>
+        <span>Understand your business goals and the direction you are heading.</span>
+        <span>Understand your customers.</span>
+        <span>Then design each page to do a job: explain your services, show your value, and get the visitor to act. Not just a list of what you offer.</span>
       </div>
+      <p class="shared-foot">You keep all five documents: Business Persona Brief, Branding Visual Guide, SEO Foundation Brief, Website Analysis Report, Website Blueprint.</p>
     </div>
 
     <div class="pkgs">

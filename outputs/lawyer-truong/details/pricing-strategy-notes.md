@@ -169,9 +169,11 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
 
 ### Structural decisions (client-directed)
 
-- **Brand OS doc set is in BOTH packages.** It runs before design — it is how each
-  site gets tailored to the target customer rather than templated. Presented once as a
-  shared band above the two cards, not duplicated inside each.
+- **Brand OS doc set is in BOTH packages,** presented as a **Discovery phase** band
+  above the two cards. Framed by what it does, not by what it produces: understand the
+  business goals and direction, understand the customers, then design each page to do
+  a job rather than list services. The five document names sit as one quiet footer line
+  underneath so the deliverable is still visible without leading with jargon.
 - **After-hours phone handling is NOT a website finding.** Pulled out of the audit and
   listed as a separately quoted service alongside the site. *Still needs a price — decide
   before sending.*
