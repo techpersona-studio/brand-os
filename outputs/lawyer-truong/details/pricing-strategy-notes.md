@@ -194,6 +194,20 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
   (Trang Chủ · Dịch Vụ · Tiểu Sử · Tin Tức · Video · Liên Hệ), so a five-page rebuild
   would have silently dropped News and Video.
 
+### News / CMS is in both packages, not an upsell
+
+He already has News and Video sections. Shipping a rebuild without a way to post
+would take away a capability he has today, which is a defect, not an upsell
+opportunity. So the editor sits in Package A and B inherits it.
+
+**Open cost question:** migration volume. Count his existing posts before quoting.
+A handful is nothing; fifty bilingual posts is real work and the $1,200 does not
+carry it. If the archive is large, either cap the migration ("most recent N posts,
+the rest on request") or move the overflow to the Care Plan. Decide before sending.
+
+Ongoing posting is already covered by the Care Plan at one new page a month, so
+neither package needs a content-production line.
+
 ### Margin guardrails — B at $2,000 is only viable if scope holds
 
 - Page list fixed at the Blueprint step and not reopened
