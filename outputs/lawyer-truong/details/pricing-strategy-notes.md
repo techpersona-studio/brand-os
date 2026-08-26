@@ -55,6 +55,29 @@ analytics, accessibility, hreflang implementation, English-side page content.
 
 ---
 
+## PRE-SEND CHECKS — three claims not fully verified
+
+Technical and structural review passed clean. These three findings are **inferred, not
+confirmed**, because the site was never reachable from the session. Each takes about
+two minutes to check, and each is the kind of thing a lawyer will check.
+
+1. **"Old copies of pages are still live."** Inferred purely from the `-1` / `-2`
+   slugs on `/auto-accident-1` and `/real-estate-2`. If those are the only versions
+   and no `/auto-accident` or `/real-estate` exists, the claim is wrong. Load both
+   unsuffixed URLs. **Highest risk: easily disproved in one click.**
+2. **"Vietnamese pages are not set up to be found."** Cannot check hreflang or
+   per-language URLs without the code. Confirm the Vietnamese pages have their own
+   addresses rather than swapping text on the same URL.
+3. **Reviews.** Yelp positives are confirmed; Google was never verified. The word
+   "strong" has been removed from the finding for that reason. **Check his actual
+   Google rating before promising to display reviews** — Avvo carries a 1.0 from a
+   single review, and if Google is similarly thin or mixed, pulling reviews onto the
+   site actively hurts him and Package B's line should be cut.
+
+**Structural note, not a defect:** the reviews finding is the one item Package A does
+not answer, since displaying reviews sits in B. That is deliberate and gives B a job,
+but expect him to notice.
+
 ## Firm profile
 
 | Field | Value |
