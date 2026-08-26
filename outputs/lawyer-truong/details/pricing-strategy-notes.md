@@ -165,7 +165,10 @@ permission to show the work. Honest, verifiable, and it protects list pricing.
 - Page list fixed at the Blueprint step and not reopened
 - Fixed revision rounds (2), further rounds quoted separately
 - Practice-area pages are template instances with distinct copy, not bespoke layouts
-- Client supplies content and photography; copy adapted from existing site + one interview
+- Client effort is deliberately minimal: a short intake form, no interview. Research is
+  ours. His only other task is reviewing the Vietnamese copy before launch.
+- Process shown to the client as **five steps**, not six — blueprint and build are
+  combined. He does not need the internal pipeline detail.
 - Vietnamese produced via `util-vi-voice-adapter` → `util-vi-translator`, attorney reviews
 - Intake automation limited to form → auto-reply → SMS → log. No case management integration
 - No custom development beyond the listed scope
