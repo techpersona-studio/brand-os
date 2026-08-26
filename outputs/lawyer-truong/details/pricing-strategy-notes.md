@@ -261,6 +261,21 @@ The FAQ's AI-visibility angle (getting named when someone asks ChatGPT or Google
 AI for a Vietnamese lawyer in Boston) is the freshest thing in the proposal. Lead
 with it on the call.
 
+### The writing line: what is yours, what is his
+
+Stated in the proposal so it cannot be argued later:
+
+- **Included:** copy for every page built at launch, both languages. That covers the
+  six core pages, and in Package B the six service pages and the FAQ.
+- **Not included:** blog posts he publishes after launch. The build gives him two ways
+  to publish (WordPress, or describing a post to Claude/ChatGPT); it does not commit
+  us to writing them.
+
+**Do not add a content or SEO writing line to this proposal.** Ongoing writing help
+already has a home in the Care Plan hours (1/mo on Website, 2/mo on Growth), and the
+monthly SEO retainer stays held back for the 30-day review, per the reasoning above.
+Selling four things at once loses the close.
+
 ### News / CMS is in both packages, not an upsell
 
 He already has News and Video sections. Shipping a rebuild without a way to post
